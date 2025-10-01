@@ -1,0 +1,1 @@
+Run capabilities test to establish baseline performance. Once you have a run you're happy with, move the json from capabilities_test_logs to compiled_results_smc, following the naming convention, and run pass_game_from_capabilities to see if the model can raise its accuracy from baseline (assuming it doesn't ~always answer/pass, which hasn't been an issue so far).

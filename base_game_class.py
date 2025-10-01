@@ -143,7 +143,7 @@ class BaseGameClass:
         user_msg = {"role": "user", "content": q_text}
         if options: 
             options_str = " or ".join(options) if len(options) == 2 else ", ".join(options[:-1]) + f", or {options[-1]}"
-            system_msg = f"{setup_text}\nOutput ONLY the letter of your choice: {options_str}.\n"
+            system_msg = f"{setup_text}"###\nOutput ONLY the letter of your choice: {options_str}.\n"
         else:
             system_msg = f"{setup_text}"
             options = " " #just to have len(options) be 1 for number of logprobs to return in short answer case
@@ -156,6 +156,9 @@ class BaseGameClass:
         resp = ""
         token_probs = None
         for callctr in range(MAX_CALL_ATTEMPTS):
+            def no_logprobs(model_name):
+                if model_name.startswith("o3") or model_name in ['deepseek/deepseek-v3.1-base', 'deepseek/deepseek-r1']: return True
+                return False
             def model_call():
                 self._log(f"In model_call, provider={self.provider}, attempt={attempt + 1}")
                 resp = ""
@@ -166,19 +169,19 @@ class BaseGameClass:
                     else:
                         formatted_messages = copy.deepcopy(message_history)
                         formatted_messages.append(user_msg)
-                    #print(f"\nsystem_msg={system_msg}")                     
-                    #print(f"\nformatted_messages={formatted_messages}\n")             
+                    print(f"\nsystem_msg={system_msg}")                     
+                    print(f"\nformatted_messages={formatted_messages}\n")             
                     message = self.client.messages.create(
-                        model=self.subject_name,
-                        max_tokens=(MAX_TOKENS if MAX_TOKENS else 1024),
+                        model=self.subject_name.replace("_think","").replace("_nothink",""),
+                        max_tokens=(MAX_TOKENS if MAX_TOKENS else 1024) if '_think' not in self.subject_name else 2001,
                         temperature=min(temp + attempt * temp_inc, max(temp,1.0)),
                         **({"system": system_msg} if system_msg != "" else {}),
                         **({"top_p": top_p} if top_p else {}),
                         **({"top_k": top_k} if top_k else {}),
+                        **({"thinking": {"type": "enabled", "budget_tokens": 2000}} if '_think' in self.subject_name else {}),
                         messages=formatted_messages
                     )
-                    #print(f"message={message}")
-                    resp = message.content[0].text.strip()
+                    resp = message.content[0].text.strip() if '_think' not in self.subject_name else message.content[1].text.strip()
                     return resp, None
                 elif self.provider == "OpenAI" or self.provider == "xAI" or self.provider == "DeepSeek" or self.provider == "OpenRouter":
                     if self.provider == "OpenRouter":
@@ -203,24 +206,27 @@ class BaseGameClass:
                         formatted_messages = copy.deepcopy(message_history)
                         if system_msg != "": formatted_messages.append({"role": "system", "content": system_msg})
                         formatted_messages.append(user_msg)
+                    if 'base' in model_name:
+                        prompt = f"User: {formatted_messages[0]['content']}\n{formatted_messages[1]['content']}\nAssistant: "
+                        formatted_messages=[{'role': 'user', 'content': prompt}]
                     ###print(f"formatted_messages={formatted_messages}")
                     completion = self.client.chat.completions.create(
                         model=model_name,
-                        **({"max_completion_tokens": MAX_TOKENS} if self.subject_name.startswith("o3") else {"max_tokens": (None if 'gpt-5' in self.subject_name else MAX_TOKENS)}),
+                        **({"max_completion_tokens": MAX_TOKENS} if self.subject_name.startswith("o3") else {"max_tokens": (None if 'gpt-5' in self.subject_name or '-r1' in self.subject_name else MAX_TOKENS)}),
                         **({"temperature": min(temp + attempt * temp_inc, max(temp,1.0))} if not self.subject_name.startswith("o3") else {}),
                         messages=formatted_messages,
-                        **({"logprobs": True} if not self.subject_name.startswith("o3") else {}),
-                        **({"top_logprobs": len(options)} if not self.subject_name.startswith("o3") else {}),
+                        **({"logprobs": True} if not no_logprobs(model_name) else {}),
+                        **({"top_logprobs": len(options)} if not no_logprobs(model_name) else {}),
                         **({"reasoning_effort": "low"} if 'gpt-5' in self.subject_name else {}),
                         **({"top_p": 1.0} if temp > 0.0 else {}),
                         seed=42,
                         **{'extra_body': {
-                            **({"reasoning": {"enabled": False}} if (('deepseek' in self.subject_name and 'v3.1' in self.subject_name)) and '_reasoning' not in self.subject_name else {"reasoning": {"enabled": True}} if '_reasoning' in self.subject_name else {}),
+                            **({"reasoning": {"enabled": False}} if ('deepseek' in self.subject_name and ('v3.1' in self.subject_name and not 'base' in self.subject_name)) and '_reasoning' not in self.subject_name else {"reasoning": {"enabled": True, "exclude": True}} if '_reasoning' in self.subject_name or '-r1' in model_name else {}),
                             'seed': 42,
                             'provider': {
-#                                "only": ["NextBit"],
-#                                'require_parameters': True,
-#                                "allow_fallbacks": False,
+                                **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {}),
+                                'require_parameters': True,
+                                "allow_fallbacks": False,
 #                                'quantizations': ['fp8'],
                             },
                         }} if self.provider == "OpenRouter" else {}
@@ -228,8 +234,8 @@ class BaseGameClass:
                     print(f"Provider that responded: {completion.provider}")
                     
                     resp = completion.choices[0].message.content.strip()
-                    print(f"completion={completion}")
-                    if 'o3' in self.subject_name or 'gpt-5' in self.subject_name: return resp, None
+                    #print(f"completion={completion}")
+                    if 'o3' in self.subject_name or 'gpt-5' in self.subject_name or self.subject_name=='deepseek-v3.1-base' or self.subject_name=='deepseek-r1': return resp, None
                     if len(options) == 1: #short answer, just average
                         token_logprobs = completion.choices[0].logprobs.content    
                         top_probs = []
@@ -445,7 +451,7 @@ class BaseGameClass:
                     delay = min(delay*2,15)
                     attempt -= 1 #don't increase temperature
                 continue
-            if accept_any or resp.upper() in options or options == " ":
+            if (accept_any and resp and resp!="") or resp.upper() in options or options == " ":
                 if token_probs: print(token_probs)
                 break
             attempt += 1

@@ -1,0 +1,139 @@
+Provider: Anthropic
+Using random seed: 999
+Loading completed results from: ./compiled_results_smc/claude-sonnet-4-5-20250929_phase1_compiled.json
+Separated questions: 243 correct, 257 incorrect
+Using all questions: 243 correct and 257 incorrect
+Loaded completed results with 500 questions
+Selected 500 questions
+Question type: Multiple Choice
+Capabilities file = ./compiled_results_smc/claude-sonnet-4-5-20250929_phase1_compiled.json
+Game Setup Prompt: 
+        Let's play a game. I'm going to show you a series of 500 questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question; if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible.
+        
+In model_call, provider=Anthropic, attempt=1
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=2
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=3
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=4
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=5
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=6
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=7
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=8
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=9
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=10
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=11
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=12
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=13
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=14
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=15
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=16
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=17
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=18
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=19
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=20
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+Failed to get valid response for text: 
+        Let's play a game. I'm going to show you a series of 500 questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question; if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible.
+        
+
+------------------------------
+Question:
+On what day, month, and year was the case of United States of America v. Francis Raia filed in the United States Court of Appeals?
+----------
+  A: 15 March 2020
+  B: 2 April 2020
+  C: 28 May 2020
+  D: 9 January 2020
+------------------------------
+Respond ONLY with '1' or '2'.
+Your choice (1 or 2): 1=Answer, 2=Pass; response: ||||
+In model_call, provider=Anthropic, attempt=1
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=2
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=3
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=4
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=5
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=6
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=7
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=8
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=9
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=10
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=11
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=12
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=13
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=14
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=15
+Thread execution error: IndexError: list index out of range
+Error in llm processing: list index out of range
+In model_call, provider=Anthropic, attempt=16

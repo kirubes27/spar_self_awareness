@@ -302,7 +302,8 @@ class CapabilitiesTest(BaseGameClass):
                     "keep_appending": False,
                     "message_history": [],
                     "MAX_TOKENS": max_tokens_used,
-                    "temp": self.temperature
+                    "temp": self.temperature,
+                    "accept_any": False if 'base' in self.subject_name else True
                 }
 
             total_q = len(self.questions)
@@ -335,7 +336,8 @@ class CapabilitiesTest(BaseGameClass):
                         gla_args["message_history"],
                         keep_appending=gla_args["keep_appending"],
                         MAX_TOKENS=gla_args["MAX_TOKENS"],
-                        temp=gla_args["temp"]
+                        temp=gla_args["temp"],
+                        accept_any=gla_args["accept_any"]
                     )
                 
                 # --- Same result processing logic as parallel path ---
@@ -471,7 +473,7 @@ def main(model_dataset_dict, temp):
             INCLUDE_TOTAL = False
             resume_from = None
             RESAMPLE = False
-            NESTED = None #values: None, "Self", "Other"
+            NESTED = "Other" #values: None, "Self", "Other"
             temp = temp
             seed = 42
             
@@ -528,6 +530,6 @@ def main(model_dataset_dict, temp):
 
 if __name__ == "__main__":
     model_dataset_dict = {
-        "olmo-2-0325-32b-instruct": ["SimpleMC"],
+        "kimi-k2": ["SimpleMC"],
         }
     main(model_dataset_dict, temp=1.0)

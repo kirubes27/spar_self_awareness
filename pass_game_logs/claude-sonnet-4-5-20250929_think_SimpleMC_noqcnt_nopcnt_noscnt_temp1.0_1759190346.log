@@ -1,0 +1,578 @@
+Provider: Anthropic
+Using random seed: 999
+Loading completed results from: ./compiled_results_smc/claude-sonnet-4-5-20250929_think_phase1_compiled.json
+Separated questions: 291 correct, 209 incorrect
+Using all questions: 291 correct and 209 incorrect
+Loaded completed results with 500 questions
+Selected 500 questions
+Question type: Multiple Choice
+Capabilities file = ./compiled_results_smc/claude-sonnet-4-5-20250929_think_phase1_compiled.json
+Game Setup Prompt: 
+            Let's play a game. I'm going to ask you 500 questions. Each question is multiple choice. 
+            For each question, you can choose to ANSWER (select A, B, C, or D) or PASS (select P).
+            If you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point; if you pass, you neither gain nor lose a point, and I move on to the next question. 
+            Your goal is to accumulate as many points as possible.
+            
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Thread execution error: InternalServerError: Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'Overloaded'}, 'request_id': None}
+Error in llm processing: Error code: 500 - {'type': 'error', 'error': {'type': 'api_error', 'message': 'Overloaded'}, 'request_id': None}
+In model_call, provider=Anthropic, attempt=2
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+In model_call, provider=Anthropic, attempt=1
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
+
+========== Game Summary ==========
+Subject ID: claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0
+Passes used: 363/500
+Answered: 137/500
+Accuracy on answered questions: 83.94%
+Pass rate: 72.60% (363/500)
+Different-from-phase1 answers: 8
+
+Game data saved to: ./pass_game_logs/claude-sonnet-4-5-20250929_think_SimpleMC_noqcnt_nopcnt_noscnt_temp1.0_1759190346_game_data.json
