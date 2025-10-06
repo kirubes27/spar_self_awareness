@@ -351,6 +351,7 @@ if __name__ == "__main__":
             {'name_prefix': "NoHistory", 'split_logic': lambda fl: split_by_filename_attr(fl, lambda bn: "_nohistory_" in bn, "NoHistory", "WithHistory")},
     #        {'name_prefix': "Summary", 'split_logic': lambda fl: split_by_filename_attr(fl, lambda bn: "_summary_" in bn, "Summary", "NoSummary")},
             {'name_prefix': "Filtered", 'split_logic': lambda fl: split_by_filename_attr(fl, lambda bn: "_filtered_" in bn, "Filtered", "NotFiltered")},
+            {'name_prefix': "decisionOnly", 'split_logic': lambda fl: split_by_filename_attr(fl, lambda bn: "_decisionOnly_" in bn, "decisionOnly", "decpluschoice")},
         ]
     else:
         FILE_GROUPING_CRITERIA = [
@@ -358,7 +359,7 @@ if __name__ == "__main__":
         {'name_prefix': "QCtr", 'split_logic': lambda fl: split_by_filename_attr(fl, lambda bn: "_noqcnt_" in bn, "NoQCtr", "QCtr")},
         {'name_prefix': "PCtr", 'split_logic': lambda fl: split_by_filename_attr(fl, lambda bn: "_nopcnt_" in bn, "NoPCtr", "PCtr")},
         {'name_prefix': "SCtr", 'split_logic': lambda fl: split_by_filename_attr(fl, lambda bn: "_noscnt_" in bn, "NoSCtr", "SCtr")},
-        {'name_prefix': "decisionOnly", 'split_logic': lambda fl: split_by_filename_attr(fl, lambda bn: "_decisionOnly_" in bn, "", "decisionOnly")},
+        {'name_prefix': "decisionOnly", 'split_logic': lambda fl: split_by_filename_attr(fl, lambda bn: "_decisionOnly_" in bn, "decisionOnly", "decpluschoice")},
         ]
         
     entropy_rows, misused_results = [], []
@@ -469,24 +470,23 @@ if __name__ == "__main__":
             
             log_context_str = f"{model_name_part} ({', '.join(group_names_tuple)}, {len(current_game_files_for_analysis)} game files)"
 
-            if not ((game_type == "dg" and "Feedback_False, Non_Redacted, NoSubjAccOverride, NoSubjGameOverride, NotRandomized, WithHistory, NotFiltered" in log_context_str) or (game_type == "aop" and "NoMsgHist, NoQCtr, NoPCtr, NoSCtr" in log_context_str)): continue
+#            if not ((game_type == "dg" and "Feedback_False, Non_Redacted, NoSubjAccOverride, NoSubjGameOverride, NotRandomized, WithHistory, NotFiltered" in log_context_str) or (game_type == "aop" and "NoMsgHist, NoQCtr, NoPCtr, NoSCtr" in log_context_str)): continue
+            if not ((game_type == "dg" and "Feedback_False, Non_Redacted, NoSubjAccOverride, NoSubjGameOverride, NotRandomized" in log_context_str) or (game_type == "aop" and "NoMsgHist, NoQCtr, NoPCtr, NoSCtr" in log_context_str)): continue
 
             log_output(f"\n--- Analyzing {log_context_str} ---", print_to_console=True, suppress=False)
-            log_output(f"              Game files for analysis: {current_game_files_for_analysis}\n")
+            log_output(f"              Game files for analysis: {current_game_files_for_analysis}\n", suppress=False)
             if game_type == "dg": log_output(f"Teammate accuracy phase 1: {teammate_acc_phase1:.4f}", suppress=False)
             
             try:
                 log_output(f"Delegation rate: {df_model['delegate_choice'].mean():.4f} (n={len(df_model)})", suppress=False)
                 log_output(f"df_model['delegate_choice'].value_counts()= {df_model['delegate_choice'].value_counts(dropna=False)}\n")
                 if 's_i_capability' in df_model.columns:
-
                     cross_tab_s_i = pd.crosstab(df_model['delegate_choice'], df_model['s_i_capability'])
                     #TP = cross_tab_s_i.loc[1, 0]; FP = cross_tab_s_i.loc[1, 1]; FN = cross_tab_s_i.loc[0, 0]; TN = cross_tab_s_i.loc[0, 1]
                     delegated = np.array(df_model['delegate_choice'], bool)
                     kept_mask = ~delegated                       # True where model answered itself
                     cap_corr = np.array(df_model['s_i_capability'], bool)   # Baseline correctness from capabilities file
                     team_corr = np.where(df_model['delegate_choice'] == 0, df_model['subject_correct'].fillna(0).astype(bool), False) #Real in-game self correctness (only defined when kept)
-
                     try:
                         N = len(df_model)
                         if teammate_acc_phase1:

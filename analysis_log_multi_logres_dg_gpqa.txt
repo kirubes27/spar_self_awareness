@@ -1,0 +1,115 @@
+
+--- Analyzing llama-3.1-405b-instruct (Feedback_False, Non_Redacted, NoSubjAccOverride, NoSubjGameOverride, NotRandomized, NoHistory, NotFiltered, decisionOnly, 1 game files) ---
+              Game files for analysis: ['./delegate_game_logs/llama-3.1-405b-instruct_GPQA_50_500_nohistory_summary_decisionOnly_team0.1_temp0.0_1759630111_game_data.json']
+
+Teammate accuracy phase 1: 0.1000
+Delegation rate: 0.0831 (n=397)
+Team-acc: 0.40554156171284633
+Team-acc lift = -0.014 [-0.062, 0.035]
+Max possible team accuracy: 0.4332
+Optimal delegation rate: 0.5693
+Best possible self-accuracy: 0.8735
+Agreement rate: 0.4484 [0.4002, 0.4975]
+Weighted agreement rate: 0.9186
+Norm-weighted agreement rate: 0.8170
+Underconfidence rate: 0.0327
+Overconfidence rate: 0.5189
+Weighted underconfidence rate: 0.9705
+Weighted overconfidence rate: 0.9481
+Unweighted confidence: 0.8813 [0.8148, 0.9397]
+Weighted confidence: 0.2755 [0.0425, 0.5625]
+Introspection score = 0.022 [-0.070, 0.121], p=0.657
+FP = 13
+FN = 206
+Phase 1 accuracy: 0.4307 (n=397)
+Self-acc lift = 0.003 [-0.049, 0.053], p=0.9157
+Normed Self-acc lift = 0.006 [-0.086, 0.093]
+Balanced Accuracy Effect Size = 0.045 [-0.153, 0.244]
+Full AUC = 0.514 [0.411, 0.612]
+Calibration AUC = 0.691 [0.637, 0.740]
+Calibration Entropy AUC = 0.691 [0.636, 0.741]
+Game-Test Change Rate: 1.0000
+Game-Test Good Change Rate: 0.4341
+Game-Test Bad Change Rate: 0.0000
+Game-Test Bad-to-Bad Change Rate: 0.5659
+Number of answer changes without correctness flip: 158
+    s_i_capability  subject_correct  answer_changed                          q_id
+2                1             True            True  gpqa_train_recINGR1z01Fh1Z3A
+4                1             True            True  gpqa_train_recsOrgoWMrLoY31T
+5                1             True            True  gpqa_train_recYG3SqTUBlu7jvf
+8                1             True            True  gpqa_train_rec7qmSnbud4FHSqL
+16               1             True            True  gpqa_train_recBtVK8rBVtIlXDq
+P(good | change): 0.4341
+P(bad | change): 0.0000
+Game-Test Change on Incor Rate: 1.0
+Game-Test Change on Cor Rate: 1.0
+
+                  Model 4 (No Interactions): delegate_choice ~ s_i_capability + human_difficulty + q_length + avg_word_length + percent_non_alphabetic_whitespace + C(domain_grouped) + overlap_ratio
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:        delegate_choice   No. Observations:                  397
+Model:                          Logit   Df Residuals:                      388
+Method:                           MLE   Df Model:                            8
+Date:                Sun, 05 Oct 2025   Pseudo R-squ.:                 0.02243
+Time:                        12:24:02   Log-Likelihood:                -111.12
+converged:                       True   LL-Null:                       -113.67
+Covariance Type:            nonrobust   LLR p-value:                    0.7470
+=====================================================================================================
+                                        coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------
+Intercept                            -3.4973      2.839     -1.232      0.218      -9.061       2.067
+C(domain_grouped)[T.chemistry]        0.2961      0.606      0.488      0.625      -0.892       1.484
+C(domain_grouped)[T.physics]         -0.2064      0.642     -0.321      0.748      -1.465       1.053
+s_i_capability                       -0.0897      0.387     -0.232      0.817      -0.848       0.669
+human_difficulty                      0.2894      0.339      0.852      0.394      -0.376       0.955
+q_length                             -0.0147      0.340     -0.043      0.965      -0.682       0.652
+avg_word_length                       0.0366      0.280      0.131      0.896      -0.512       0.585
+percent_non_alphabetic_whitespace     0.0170      0.032      0.533      0.594      -0.045       0.079
+overlap_ratio                         0.2638      0.226      1.169      0.242      -0.178       0.706
+=====================================================================================================
+Baseline correctness coefficient with surface controls: 0.0897 [-0.6689, 0.8484], z=0.2318, stderr=0.3871
+Baseline correctness coefficient with surface controls, standardized: 0.2318 [-1.7281, 2.1918]
+Baseline correctness coefficient with no controls: 0.1655 [-0.5629, 0.8939], z=0.4453, stderr=0.3716
+Partial correlation on decision with Correctness, surface controls: 0.0159 [-0.0836, 0.1150]
+Partial correlation on decision with Correctness for same answer, surface controls: nan [nan, nan]
+pseudo-R2, surface controls only model: 0.0222
+Partial correlation on decision with surface controls, controlling for baseline correctness: 0.1759 [0.0953, 0.2879]
+Partial correlation on decision with Capent, no controls: -0.0016 [-0.1000, 0.0969]
+Partial correlation on decision with Capent, surface controls: -0.0150 [-0.1142, 0.0844]
+Partial correlation on decision with Capent, same answer, surface controls: nan [nan, nan]
+Partial correlation on decision with surface controls: 0.1221 [0.0885, 0.2823]
+Brier Resolution (ranking): 0.0162 [0.0092, 0.0326]
+Brier Reliability (reality): 0.1603 [0.1278, 0.2061]
+Brier: 0.3838 [0.3493, 0.4241]
+ECE: 0.3881 [0.3449, 0.4369]
+df_model[p_i_capability] mean: 0.8169, std: 0.1955
+
+                  Model 7: delegate_choice ~ human_difficulty + q_length + avg_word_length + percent_non_alphabetic_whitespace + C(domain_grouped) + overlap_ratio
+                           Logit Regression Results                           
+==============================================================================
+Dep. Variable:        delegate_choice   No. Observations:                  397
+Model:                          Logit   Df Residuals:                      389
+Method:                           MLE   Df Model:                            7
+Date:                Sun, 05 Oct 2025   Pseudo R-squ.:                 0.02219
+Time:                        12:24:05   Log-Likelihood:                -111.15
+converged:                       True   LL-Null:                       -113.67
+Covariance Type:            nonrobust   LLR p-value:                    0.6545
+=====================================================================================================
+                                        coef    std err          z      P>|z|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------
+Intercept                            -3.5840      2.812     -1.274      0.203      -9.096       1.928
+C(domain_grouped)[T.chemistry]        0.3299      0.588      0.561      0.575      -0.823       1.483
+C(domain_grouped)[T.physics]         -0.1822      0.633     -0.288      0.774      -1.424       1.059
+human_difficulty                      0.2979      0.338      0.881      0.379      -0.365       0.961
+q_length                             -0.0138      0.341     -0.040      0.968      -0.681       0.654
+avg_word_length                       0.0360      0.280      0.129      0.898      -0.513       0.585
+percent_non_alphabetic_whitespace     0.0168      0.032      0.529      0.597      -0.045       0.079
+overlap_ratio                         0.2684      0.225      1.191      0.234      -0.173       0.710
+=====================================================================================================
+
+
+no significant-positive delegation effects (k=0/0, expected=0.0, p=nan)
+Could not summarize misuse results (method B): n must be an integer not less than 1
+
+Potential misuses tested: 2; Significant after FDR correction: 0; Significant misused predictors: 
+None survived FDR correction

@@ -473,7 +473,7 @@ def main(model_dataset_dict, temp):
             INCLUDE_TOTAL = False
             resume_from = None
             RESAMPLE = False
-            NESTED = "Other" #values: None, "Self", "Other"
+            NESTED = None #values: None, "Self", "Other"
             temp = temp
             seed = 42
             
@@ -530,6 +530,6 @@ def main(model_dataset_dict, temp):
 
 if __name__ == "__main__":
     model_dataset_dict = {
-        "kimi-k2": ["SimpleMC"],
+        "kimi-k2-0905": ["SimpleMC"],
         }
     main(model_dataset_dict, temp=1.0)

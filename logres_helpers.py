@@ -34,6 +34,28 @@ from scipy.stats import norm
 import scipy.linalg as la
 from patsy import dmatrices
 
+
+def get_average_word_length(question_text):
+    """Calculates the average word length in the question."""
+    if not isinstance(question_text, str):
+        return 0
+    words = re.findall(r'\b\w+\b', question_text.lower()) # Find all words
+    if not words:
+        return 0
+    total_word_length = sum(len(word) for word in words)
+    return total_word_length / len(words)
+
+def get_percent_non_alphabetic_whitespace(question_text):
+    """
+    Calculates the percentage of characters in the question text that are
+    not alphabetic, not numeric, and not whitespace.
+    """
+    if not isinstance(question_text, str) or len(question_text) == 0:
+        return 0
+    
+    non_alphabetic_whitespace_chars = re.findall(r'[^a-zA-Z\s]', question_text)
+    return (len(non_alphabetic_whitespace_chars) / len(question_text)) * 100
+
 def analyze_wrong_way(
     df,
     continuous_controls,     # list of names or Series 

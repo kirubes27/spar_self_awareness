@@ -7,6 +7,8 @@ Features:
 - Runs only Phase 2 (delegate game) with multiple choice or short answer questions
 - Centralizes prompts and run parameters; records all important run-level parameters
 - Prints/logs only summary stats
+- Optional "decision-only" mode: subject chooses Answer vs Pass (digits 1/2) without giving an answer;
+  mapping between digits and actions alternates each trial to mitigate response bias
 """
 
 import random
@@ -40,7 +42,9 @@ class AnswerOrPassGame(BaseGameClass):
         temperature=0.0,
         resume_from=None,
         include_question_num=False,
-        include_total_questions=False
+        include_total_questions=False,
+        decision_only=False,
+        alternate_decision_mapping=True
     ):
         super().__init__(subject_id, subject_name, is_human_player, "pass_game_logs")
 
@@ -61,6 +65,8 @@ class AnswerOrPassGame(BaseGameClass):
         self.is_human_player = is_human_player
         self.include_question_num = include_question_num
         self.include_total_questions = include_total_questions
+        self.decision_only = decision_only
+        self.alternate_decision_mapping = alternate_decision_mapping
 
         self.questions = []
         self.results = []
@@ -80,17 +86,22 @@ class AnswerOrPassGame(BaseGameClass):
             "human_sa_choice_with_pass": "Your choice (answer succinctly or P=Pass): ",
             "human_sa_answer_no_pass": "Your answer: ",
 
-            # LLM rules and lines (match original punctuation/newlines)
+            # LLM rules and lines
             "llm_mc_choice_rule": "Respond only with the letter of your choice; do NOT output any other text.",
             "llm_sa_choice_rule": "Respond ONLY with your answer or 'P'.\n",
             "llm_sa_answer_rule": "Respond ONLY with your answer.\n",
             "llm_force_answer_line": "You've used all {MAX_PASSES} passes. You must answer this question.",
 
-            # LLM prompt suffixes (exact original text)
+            # LLM prompt suffixes
             "llm_mc_choice_with_pass_suffix": "Your choice (A, B, C, D, or P=Pass): ",
             "llm_mc_answer_no_pass_suffix": "Your answer (A, B, C, D): ",
             "llm_sa_choice_with_pass_suffix": "Your choice (answer succinctly or P=Pass): ",
             "llm_sa_answer_no_pass_suffix": "Your answer: ",
+
+            # Decision-only mode prompts
+            "decision_rule_both": "Respond ONLY with '1' or '2'.\n",
+            "decision_rule_forced": "Respond ONLY with '{DIGIT}'.\n",
+            "decision_choice_line": "Your choice (1 or 2): {ONE_MEANING}, {TWO_MEANING}",  # e.g., "1=Answer, 2=Pass"
 
             # On-screen counters
             "counter_points_line": "You have {POINTS} points",
@@ -142,8 +153,8 @@ class AnswerOrPassGame(BaseGameClass):
             self.completed_results = None
 
         # Compute static get_llm_answer args (non-per-question) and store run parameters
-        # MAX_TOKENS rule: None for 'opus-4'/'sonnet-4' or short-answer; else 1
         max_tokens_used = None if ('opus-4' in self.subject_name or 'sonnet-4' in self.subject_name or getattr(self, "is_short_answer", False)) else 1
+
         self.get_llm_answer_static_args = {
             "keep_appending": self.accumulate_history,
             "message_history": [],
@@ -170,6 +181,8 @@ class AnswerOrPassGame(BaseGameClass):
                 "include_question_num": self.include_question_num,
                 "include_total_questions": self.include_total_questions
             },
+            "decision_only": self.decision_only,
+            "alternate_decision_mapping": self.alternate_decision_mapping,
             "get_llm_answer_static_args": self.get_llm_answer_static_args,
             "prompts_used": {
                 "game_setup_prompt_template": self.prompts["game_setup_prompt_template"],
@@ -186,6 +199,9 @@ class AnswerOrPassGame(BaseGameClass):
                 "llm_mc_answer_no_pass_suffix": self.prompts["llm_mc_answer_no_pass_suffix"],
                 "llm_sa_choice_with_pass_suffix": self.prompts["llm_sa_choice_with_pass_suffix"],
                 "llm_sa_answer_no_pass_suffix": self.prompts["llm_sa_answer_no_pass_suffix"],
+                "decision_rule_both": self.prompts["decision_rule_both"],
+                "decision_rule_forced": self.prompts["decision_rule_forced"],
+                "decision_choice_line": self.prompts["decision_choice_line"],
                 "counter_points_line": self.prompts["counter_points_line"],
                 "counter_passes_line": self.prompts["counter_passes_line"],
                 "counter_questions_line": self.prompts["counter_questions_line"],
@@ -389,6 +405,30 @@ class AnswerOrPassGame(BaseGameClass):
             json.dump(game_data, f, indent=2, ensure_ascii=False)
         self._log(f"Game data saved to: {self.game_data_filename}")
 
+    def _compose_counters(self, correct_count, incorrect_count, passes_used, i, total, is_correct_flag):
+        """Build counter text block according to feedback_config."""
+        counter_text = ""
+        if self.feedback_config['show_point_counter']:
+            counter_text += self.prompts["counter_points_line"].format(POINTS=correct_count - incorrect_count) + "\n"
+        if self.feedback_config['show_pass_counter']:
+            counter_text += self.prompts["counter_passes_line"].format(REMAIN=self.max_passes - passes_used, TOTAL=self.max_passes) + "\n"
+        if self.feedback_config['show_question_counter']:
+            counter_text += self.prompts["counter_questions_line"].format(REMAIN=total - i, TOTAL=total) + "\n"
+        if self.feedback_config['show_question_type']:
+            q_type = "Correct" if is_correct_flag else "Incorrect"
+            counter_text += self.prompts["counter_type_line"].format(QTYPE=q_type) + "\n"
+        return counter_text
+
+    def _decision_mapping_for_trial(self, trial_index):
+        """Return mapping dict for the trial: which digit means Answer/Pass."""
+        if not self.alternate_decision_mapping:
+            return {"1": "Answer", "2": "Pass"}
+        # Alternate by trial (1-based human-readable): odd -> 1=Answer, even -> 1=Pass
+        if (trial_index % 2) == 1:
+            return {"1": "Answer", "2": "Pass"}
+        else:
+            return {"1": "Pass", "2": "Answer"}
+
     def run_pass_game(self):
         start_message = f"Capabilities file = {self.completed_results_file}"
         start_message += f"\nGame Setup Prompt: {self.initial_setup_explanation}"
@@ -403,28 +443,132 @@ class AnswerOrPassGame(BaseGameClass):
         dif_answer_cnt = 0
         message_history = []
         probs = None
+
+        total_q = len(self.questions)
         
         # Process each question
-        for i, question in enumerate(self.questions):
+        for i, question in enumerate(self.questions, start=1):
             # Present question; optionally include indices if configured (defaults preserve original behavior)
-            q_text = self._present_question_with_indices(question, i+1, len(self.questions)) if (self.include_question_num or self.include_total_questions) else self._present_question(question)
+            if (self.include_question_num or self.include_total_questions):
+                q_text = self._present_question_with_indices(question, i, total_q)
+            else:
+                q_text = self._present_question(question)
 
-            # Build counter_text (exact original semantics)
-            counter_text = ""
-            if self.feedback_config['show_point_counter']:
-                counter_text += self.prompts["counter_points_line"].format(POINTS=correct_count - incorrect_count) + "\n"
-            if self.feedback_config['show_pass_counter']:
-                counter_text += self.prompts["counter_passes_line"].format(REMAIN=self.max_passes - passes_used, TOTAL=self.max_passes) + "\n"
-            if self.feedback_config['show_question_counter']:
-                counter_text += self.prompts["counter_questions_line"].format(REMAIN=len(self.questions) - i, TOTAL=len(self.questions)) + "\n"
-            if self.feedback_config['show_question_type']:
-                q_type = "Correct" if question["is_correct"] else "Incorrect"
-                counter_text += self.prompts["counter_type_line"].format(QTYPE=q_type) + "\n"
-            
+            # Counters block
+            counter_text = self._compose_counters(correct_count, incorrect_count, passes_used, i, total_q, question["is_correct"])
             if counter_text:
                 q_text = q_text + "\n" + counter_text
-            
-            # Options include A-D plus P for Pass
+
+            # Decision-only mode
+            if self.decision_only:
+                mapping = self._decision_mapping_for_trial(i)
+                # If out of passes, force Answer; restrict options accordingly
+                if passes_used >= self.max_passes:
+                    answer_digit = "1" if mapping["1"] == "Answer" else "2"
+                    options = [answer_digit]
+                    decision_suffix = self.prompts["decision_rule_forced"].format(DIGIT=answer_digit) + f"{self.prompts['decision_choice_line'].split(':')[0]}: {answer_digit}=Answer"
+                else:
+                    options = ["1", "2"]
+                    one_meaning = f"1={mapping['1']}"
+                    two_meaning = f"2={mapping['2']}"
+                    decision_suffix = self.prompts["decision_rule_both"] + self.prompts["decision_choice_line"].format(ONE_MEANING=one_meaning, TWO_MEANING=two_meaning)
+
+                # Human or LLM
+                if self.is_human_player:
+                    print(q_text + "\n" + decision_suffix)
+                    resp = self._get_subject_answer(options, "Your choice: ")
+                    if resp is None:
+                        return False
+                else:
+                    setup_text = self.prompts["decision_rule_forced"].format(DIGIT=options[0]) if len(options) == 1 else self.prompts["decision_rule_both"]
+                    llm_prompt = q_text + "\n" + decision_suffix
+                    gla = self.get_llm_answer_static_args
+                    resp, message_history, probs = self._get_llm_answer(
+                        options,
+                        self.initial_setup_explanation + "\n\n" + llm_prompt,
+                        message_history if gla["keep_appending"] else [],
+                        keep_appending=gla["keep_appending"],
+                        setup_text=setup_text,
+                        MAX_TOKENS=gla["MAX_TOKENS"],
+                        temp=gla["temp"],
+                        accept_any=gla["accept_any"]
+                    )
+
+                # Parse decision
+                subject_decision_digit = self._parse_subject_decision(resp, options)
+                # Map to action
+                action = mapping.get(subject_decision_digit, None)
+
+                if action == "Pass":
+                    passes_used += 1
+                    print(self.prompts["feedback_pass_recorded"].format(REMAIN=self.max_passes - passes_used))
+                    self.results.append({
+                        "trial": i,
+                        "passes_used": passes_used,
+                        "delegation_choice": "Pass",
+                        "decision_digit": subject_decision_digit,
+                        "digit_mapping": mapping,
+                        "subject_answer": None,
+                        "original_answer": question["subject_answer"],
+                        "subject_correct": None,
+                        "question_type": "correct" if question["is_correct"] else "incorrect",
+                        "question_id": question["id"],
+                        "question_text": question["question"],
+                        "correct_answer": question["correct_answer"],
+                        "probs": probs,
+                        "scored_using_phase1_answer": True
+                    })
+                elif action == "Answer":
+                    # Score using phase-1 correctness (decision-only mode does not collect a fresh answer)
+                    is_correct = bool(question["is_correct"])
+                    if is_correct:
+                        correct_count += 1
+                        self.score += 1
+                    else:
+                        incorrect_count += 1
+                        self.score -= 1
+
+                    self.results.append({
+                        "trial": i,
+                        "passes_used": passes_used,
+                        "delegation_choice": "Self",
+                        "decision_digit": subject_decision_digit,
+                        "digit_mapping": mapping,
+                        "subject_answer": None,  # not collected in decision-only mode
+                        "original_answer": question["subject_answer"],
+                        "subject_correct": is_correct,
+                        "question_type": "correct" if question["is_correct"] else "incorrect",
+                        "question_id": question["id"],
+                        "question_text": question["question"],
+                        "correct_answer": question["correct_answer"],
+                        "probs": probs,
+                        "scored_using_phase1_answer": True
+                    })
+                else:
+                    # Unexpected token; record and continue
+                    self.results.append({
+                        "trial": i,
+                        "passes_used": passes_used,
+                        "delegation_choice": "Invalid",
+                        "decision_digit": subject_decision_digit,
+                        "digit_mapping": mapping,
+                        "subject_answer": None,
+                        "original_answer": question["subject_answer"],
+                        "subject_correct": None,
+                        "question_type": "correct" if question["is_correct"] else "incorrect",
+                        "question_id": question["id"],
+                        "question_text": question["question"],
+                        "correct_answer": question["correct_answer"],
+                        "probs": probs,
+                        "scored_using_phase1_answer": True
+                    })
+
+                print(f"Completed question {i}/{len(self.questions)}; used {passes_used} passes")
+                if (i) % log_interval == 0:
+                    self._save_game_data(message_history)
+                continue  # next question
+
+            # ----- Original mode (collects answer or pass) -----
             if self.is_short_answer:
                 options = ["P"]
             else:
@@ -432,7 +576,7 @@ class AnswerOrPassGame(BaseGameClass):
             if passes_used >= self.max_passes and "P" in options:
                 options.remove("P")
             
-            # Get subject's decision
+            # Get subject's decision/answer
             if self.is_human_player:
                 print(q_text)
                 if self.is_short_answer:
@@ -450,7 +594,7 @@ class AnswerOrPassGame(BaseGameClass):
                 if resp is None:
                     return False
             else:
-                # For LLM subject (use only centralized prompts)
+                # For LLM subject (use centralized prompts)
                 if self.is_short_answer:
                     if passes_used >= self.max_passes:
                         llm_prompt = q_text + f"\n{self.prompts['llm_force_answer_line'].format(MAX_PASSES=self.max_passes)}\n{self.prompts['llm_sa_answer_no_pass_suffix']}"
@@ -484,9 +628,8 @@ class AnswerOrPassGame(BaseGameClass):
             if subject_decision == "P":
                 passes_used += 1
                 print(self.prompts["feedback_pass_recorded"].format(REMAIN=self.max_passes - passes_used))
-                # Record pass result
                 self.results.append({
-                    "trial": i + 1,
+                    "trial": i,
                     "passes_used": passes_used,
                     "delegation_choice": "Pass",
                     "subject_answer": None,
@@ -499,7 +642,6 @@ class AnswerOrPassGame(BaseGameClass):
                     "probs": probs
                 })
             else:
-                # Subject answered
                 if self.is_short_answer:
                     is_correct = self._check_short_answer(subject_decision, question["correct_answer"])
                 else:
@@ -516,9 +658,8 @@ class AnswerOrPassGame(BaseGameClass):
                     ))
                     dif_answer_cnt += 1
 
-                # Record answer result
                 self.results.append({
-                    "trial": i + 1,
+                    "trial": i,
                     "passes_used": passes_used,
                     "delegation_choice": "Self",
                     "subject_answer": subject_decision,
@@ -531,13 +672,11 @@ class AnswerOrPassGame(BaseGameClass):
                     "probs": probs
                 })
                 
-                # Provide feedback if configured
                 if self.feedback_config['show_correctness']:
-                    feedback = f"Your answer: {subject_decision} ({'Correct' if is_correct else 'Incorrect'})"
-                    print(feedback)
+                    print(f"Your answer: {subject_decision} ({'Correct' if is_correct else 'Incorrect'})")
             
-            print(f"Completed question {i+1}/{len(self.questions)}; used {passes_used} passes")
-            if (i+1) % log_interval == 0:
+            print(f"Completed question {i}/{len(self.questions)}; used {passes_used} passes")
+            if (i) % log_interval == 0:
                 self._save_game_data(message_history)
         
         # Summary stats
@@ -551,7 +690,8 @@ class AnswerOrPassGame(BaseGameClass):
         summary += f"Answered: {answered}/{len(self.questions)}\n"
         summary += f"Accuracy on answered questions: {self.accuracy:.2%}" if self.accuracy is not None else "Accuracy on answered questions: N/A"
         summary += f"\nPass rate: {pass_rate:.2%} ({passes_used}/{len(self.questions)})\n"
-        summary += f"Different-from-phase1 answers: {dif_answer_cnt}\n"
+        if not self.decision_only:
+            summary += f"Different-from-phase1 answers: {dif_answer_cnt}\n"
         self._log(summary)
         
         self._save_game_data(message_history)
@@ -570,6 +710,7 @@ def real_main(SUBJECT_NAME, DATASET):
     N_RIGHT = None    
     N_WRONG = None  
     NUM_PASSES = 500
+    DECISION_ONLY = True     # Set True to enable decision-only mode
     
     # Feedback configuration
     feedback_config = {
@@ -584,29 +725,37 @@ def real_main(SUBJECT_NAME, DATASET):
     resume_from = None
     IS_HUMAN = False
 
-    # Centralized setup prompt template (keep exact whitespace/newlines)
-    if DATASET != "SimpleQA" and DATASET != "GPSA":
-        if SUBJECT_NAME == 'deepseek-v3.1-base':
-            game_setup_prompt = """
-            Let's play a game. I'm going to ask you {N_QUESTIONS} questions. Each question is multiple choice. 
-            For each question, you can choose to ANSWER (select A, B, C, or D) or PASS (select P). You previously achieved {ACCURACY}% accuracy on the same questions, so you shouldn't be afraid to pass.
-            If you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point; if you pass, you neither gain nor lose a point, and I move on to the next question. 
-            Your goal is to accumulate as many points as possible.
-            """
+    # Centralized setup prompt template 
+    if DECISION_ONLY:
+        game_setup_prompt = """
+        Let's play a game. Success at this game requires using intropsection to inform decision-making. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible, so consider how confident you are that you would get the question right before deciding to answer or pass.
+        """
+    else:
+        if DATASET != "SimpleQA" and DATASET != "GPSA":
+            if SUBJECT_NAME == 'deepseek-v3.1-base':
+                game_setup_prompt = """
+                Let's play a game. I'm going to ask you {N_QUESTIONS} questions. Each question is multiple choice. 
+                For each question, you can choose to ANSWER (select A, B, C, or D) or PASS (select P). You previously achieved {ACCURACY}% accuracy on the same questions, so you shouldn't be afraid to pass.
+                If you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point; if you pass, you neither gain nor lose a point, and I move on to the next question. 
+                Your goal is to accumulate as many points as possible.
+                """
+            else:
+                game_setup_prompt = """
+                Let's play a game. I'm going to ask you {N_QUESTIONS} questions. Each question is multiple choice. 
+                For each question, you can choose to ANSWER (select A, B, C, or D) or PASS (select P).
+                If you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point; if you pass, you neither gain nor lose a point, and I move on to the next question. 
+                Your goal is to accumulate as many points as possible.
+                """
         else:
             game_setup_prompt = """
-            Let's play a game. I'm going to ask you {N_QUESTIONS} questions. Each question is multiple choice. 
-            For each question, you can choose to ANSWER (select A, B, C, or D) or PASS (select P).
+            Let's play a game. I'm going to ask you {N_QUESTIONS} short answer questions. 
+            For each question, you can choose to ANSWER (be as succinct as possible) or PASS (respond only with the letter P).
             If you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point; if you pass, you neither gain nor lose a point, and I move on to the next question. 
             Your goal is to accumulate as many points as possible.
             """
-    else:
-        game_setup_prompt = """
-        Let's play a game. I'm going to ask you {N_QUESTIONS} short answer questions. 
-        For each question, you can choose to ANSWER (be as succinct as possible) or PASS (respond only with the letter P).
-        If you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point; if you pass, you neither gain nor lose a point, and I move on to the next question. 
-        Your goal is to accumulate as many points as possible.
-        """
 
     # Determine capabilities file path
     if DATASET == "SimpleQA":
@@ -621,6 +770,9 @@ def real_main(SUBJECT_NAME, DATASET):
     # Optional: control passing indices into present_question (defaults keep original behavior)
     INCLUDE_QNUM = False
     INCLUDE_TOTAL = False
+
+    # Decision-only mode toggles
+    ALT_DECISION_MAPPING = True  # Alternate "1"/"2" mapping each trial
         
     settings_suffix = ""
     if ACCUMULATE_HISTORY:
@@ -631,6 +783,8 @@ def real_main(SUBJECT_NAME, DATASET):
         settings_suffix += "_nopcnt"
     if not feedback_config["show_point_counter"]:
         settings_suffix += "_noscnt"
+    if DECISION_ONLY:
+        settings_suffix += "_decisionOnly"
     settings_suffix += f"_temp{TEMPERATURE}"
         
     SUBJECT_ID = f"{SUBJECT_NAME.replace('/', '-')}_{DATASET}{settings_suffix}"
@@ -653,7 +807,9 @@ def real_main(SUBJECT_NAME, DATASET):
             temperature=TEMPERATURE,
             resume_from=resume_from,
             include_question_num=INCLUDE_QNUM,
-            include_total_questions=INCLUDE_TOTAL
+            include_total_questions=INCLUDE_TOTAL,
+            decision_only=DECISION_ONLY,
+            alternate_decision_mapping=ALT_DECISION_MAPPING
         )
         
         # Run the game
@@ -673,7 +829,7 @@ def real_main(SUBJECT_NAME, DATASET):
 def main():
     """Main function to run the delegate game from completed results"""
     DATASETS = ["SimpleMC"]  # One of: GPQA, SimpleQA, SimpleMC, MMLU, TruthfulQA, GPSA
-    models = ["deepseek-r1"]
+    models = ["deepseek-chat"]
     for model in models:
         for DATASET in DATASETS:
             real_main(model, DATASET)

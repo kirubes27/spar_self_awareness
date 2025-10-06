@@ -9,8 +9,7 @@ from concurrent.futures import ThreadPoolExecutor, TimeoutError, as_completed
 from tqdm import tqdm
 import anthropic
 from openai import OpenAI
-from nnsight import LanguageModel
-from nnsight import CONFIG
+#from nnsight import LanguageModel, CONFIG
 from google import genai
 from google.genai import types
 import requests
@@ -20,7 +19,7 @@ load_dotenv()
 # Load API keys
 anthropic_api_key = os.environ.get("ANTHROPIC_API_KEY")##os.environ.get("ANTHROPIC_SPAR_API_KEY")##
 hyperbolic_api_key = os.environ.get("HYPERBOLIC_API_KEY")
-CONFIG.set_default_api_key(os.environ.get("NDIF_API_KEY"))
+#CONFIG.set_default_api_key(os.environ.get("NDIF_API_KEY"))
 gemini_api_key = os.environ.get("GEMINI_API_KEY")
 xai_api_key = os.environ.get("XAI_API_KEY")
 deepseek_api_key = os.environ.get("DEEPSEEK_API_KEY")    
@@ -152,7 +151,7 @@ class BaseGameClass:
         MAX_CALL_ATTEMPTS = 20 #for rate limit/timeout/server errors
         delay = 1.0
         attempt = 0
-        temp_inc = 0### -0.05 if temp > 0.5 else 0.05
+        temp_inc = 0 if temp == 1.0 else 0.05### -0.05 if temp > 0.5 else 0.05
         resp = ""
         token_probs = None
         for callctr in range(MAX_CALL_ATTEMPTS):
@@ -168,9 +167,10 @@ class BaseGameClass:
                         formatted_messages = message_history
                     else:
                         formatted_messages = copy.deepcopy(message_history)
+                        if len(formatted_messages) > 0: formatted_messages[-1]["content"] = [{"type": "text", "text": formatted_messages[-1]["content"], "cache_control": {"type": "ephemeral"}}]
                         formatted_messages.append(user_msg)
-                    print(f"\nsystem_msg={system_msg}")                     
-                    print(f"\nformatted_messages={formatted_messages}\n")             
+                    #print(f"\nsystem_msg={system_msg}")                     
+                    #print(f"\nformatted_messages={formatted_messages}\n")     
                     message = self.client.messages.create(
                         model=self.subject_name.replace("_think","").replace("_nothink",""),
                         max_tokens=(MAX_TOKENS if MAX_TOKENS else 1024) if '_think' not in self.subject_name else 2001,
@@ -195,6 +195,7 @@ class BaseGameClass:
                             elif 'kimi' in self.subject_name: prefix = 'moonshotai/'
                             elif 'llama' in self.subject_name: prefix = 'meta-llama/'
                             elif 'olmo' in self.subject_name: prefix = 'allenai/'
+                            elif 'glm-' in self.subject_name: prefix = 'z-ai/'
                             else: prefix = ''
                             model_name = prefix + self.subject_name.replace("_reasoning","").replace("_think","").replace("_nothink","")
                     else: model_name = self.subject_name
@@ -205,14 +206,15 @@ class BaseGameClass:
                     else:
                         formatted_messages = copy.deepcopy(message_history)
                         if system_msg != "": formatted_messages.append({"role": "system", "content": system_msg})
+                        if len (formatted_messages) > 0 and self.subject_name != "deepseek-chat" and "llama" not in self.subject_name: formatted_messages[-1]["content"] = [{"type": "text", "text": formatted_messages[-1]["content"], "cache_control": {"type": "ephemeral"}}]
                         formatted_messages.append(user_msg)
                     if 'base' in model_name:
                         prompt = f"User: {formatted_messages[0]['content']}\n{formatted_messages[1]['content']}\nAssistant: "
                         formatted_messages=[{'role': 'user', 'content': prompt}]
-                    ###print(f"formatted_messages={formatted_messages}")
+                    #print(f"formatted_messages={formatted_messages}")
                     completion = self.client.chat.completions.create(
                         model=model_name,
-                        **({"max_completion_tokens": MAX_TOKENS} if self.subject_name.startswith("o3") else {"max_tokens": (None if 'gpt-5' in self.subject_name or '-r1' in self.subject_name else MAX_TOKENS)}),
+                        **({"max_completion_tokens": MAX_TOKENS} if self.subject_name.startswith("o3") else {"max_tokens": (None if 'gpt-5' in self.subject_name or 'glm-' in self.subject_name or '-r1' in self.subject_name else MAX_TOKENS)}),
                         **({"temperature": min(temp + attempt * temp_inc, max(temp,1.0))} if not self.subject_name.startswith("o3") else {}),
                         messages=formatted_messages,
                         **({"logprobs": True} if not no_logprobs(model_name) else {}),
@@ -221,11 +223,11 @@ class BaseGameClass:
                         **({"top_p": 1.0} if temp > 0.0 else {}),
                         seed=42,
                         **{'extra_body': {
-                            **({"reasoning": {"enabled": False}} if ('deepseek' in self.subject_name and ('v3.1' in self.subject_name and not 'base' in self.subject_name)) and '_reasoning' not in self.subject_name else {"reasoning": {"enabled": True, "exclude": True}} if '_reasoning' in self.subject_name or '-r1' in model_name else {}),
+                            **({"reasoning": {"enabled": False}} if ('gpt-oss' in self.subject_name or ('deepseek' in self.subject_name and 'v3.1' in self.subject_name and not 'base' in self.subject_name)) and '_reasoning' not in self.subject_name else {"reasoning": {"enabled": True, "exclude": True}} if '_reasoning' in self.subject_name or '-r1' in model_name else {}),
                             'seed': 42,
                             'provider': {
-                                **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {}),
-                                'require_parameters': True,
+                                **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {"only": ["Fireworks"]} if self.subject_name == "deepseek-chat" else {}),
+                                'require_parameters': False if self.subject_name == "deepseek-chat" else True,
                                 "allow_fallbacks": False,
 #                                'quantizations': ['fp8'],
                             },
@@ -233,8 +235,9 @@ class BaseGameClass:
                     ) 
                     print(f"Provider that responded: {completion.provider}")
                     
-                    resp = completion.choices[0].message.content.strip()
                     #print(f"completion={completion}")
+                    #exit()
+                    resp = completion.choices[0].message.content.strip()
                     if 'o3' in self.subject_name or 'gpt-5' in self.subject_name or self.subject_name=='deepseek-v3.1-base' or self.subject_name=='deepseek-r1': return resp, None
                     if len(options) == 1: #short answer, just average
                         token_logprobs = completion.choices[0].logprobs.content    

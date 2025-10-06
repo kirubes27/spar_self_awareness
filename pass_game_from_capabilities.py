@@ -99,9 +99,10 @@ class AnswerOrPassGame(BaseGameClass):
             "llm_sa_answer_no_pass_suffix": "Your answer: ",
 
             # Decision-only mode prompts
-            "decision_rule_both": "Respond ONLY with '1' or '2'.\n",
-            "decision_rule_forced": "Respond ONLY with '{DIGIT}'.\n",
-            "decision_choice_line": "Your choice (1 or 2): {ONE_MEANING}, {TWO_MEANING}",  # e.g., "1=Answer, 2=Pass"
+            "decision_only_sysprompt_both": "Respond ONLY with '1' or '2'. Do NOT output any other text. Do not offer any explanation or justification.\n",
+            "decision_only_sysprompt_forced": "Respond ONLY with '{DIGIT}'. Do NOT output any other text.\n",
+            "decision_only_choice_line": "Choices:\n  1: {ONE_MEANING}\n  2: {TWO_MEANING}\nRespond ONLY with '1' or '2'.\nYour choice ('1' or '2'): ",  # e.g., "1=Answer, 2=Pass"
+            "decision_only_choice_line_forced": "Respond ONLY with '{DIGIT}'.\nYour choice ('{DIGIT}')",  # e.g., "1=Answer, 2=Pass"
 
             # On-screen counters
             "counter_points_line": "You have {POINTS} points",
@@ -185,8 +186,6 @@ class AnswerOrPassGame(BaseGameClass):
             "alternate_decision_mapping": self.alternate_decision_mapping,
             "get_llm_answer_static_args": self.get_llm_answer_static_args,
             "prompts_used": {
-                "game_setup_prompt_template": self.prompts["game_setup_prompt_template"],
-                "game_setup_prompt_resolved": self.initial_setup_explanation,
                 "human_mc_choice_with_pass": self.prompts["human_mc_choice_with_pass"],
                 "human_mc_answer_no_pass": self.prompts["human_mc_answer_no_pass"],
                 "human_sa_choice_with_pass": self.prompts["human_sa_choice_with_pass"],
@@ -199,9 +198,9 @@ class AnswerOrPassGame(BaseGameClass):
                 "llm_mc_answer_no_pass_suffix": self.prompts["llm_mc_answer_no_pass_suffix"],
                 "llm_sa_choice_with_pass_suffix": self.prompts["llm_sa_choice_with_pass_suffix"],
                 "llm_sa_answer_no_pass_suffix": self.prompts["llm_sa_answer_no_pass_suffix"],
-                "decision_rule_both": self.prompts["decision_rule_both"],
-                "decision_rule_forced": self.prompts["decision_rule_forced"],
-                "decision_choice_line": self.prompts["decision_choice_line"],
+                "decision_only_sysprompt_both": self.prompts["decision_only_sysprompt_both"],
+                "decision_only_sysprompt_forced": self.prompts["decision_only_sysprompt_forced"],
+                "decision_only_choice_line": self.prompts["decision_only_choice_line"],
                 "counter_points_line": self.prompts["counter_points_line"],
                 "counter_passes_line": self.prompts["counter_passes_line"],
                 "counter_questions_line": self.prompts["counter_questions_line"],
@@ -469,9 +468,9 @@ class AnswerOrPassGame(BaseGameClass):
                     decision_suffix = self.prompts["decision_rule_forced"].format(DIGIT=answer_digit) + f"{self.prompts['decision_choice_line'].split(':')[0]}: {answer_digit}=Answer"
                 else:
                     options = ["1", "2"]
-                    one_meaning = f"1={mapping['1']}"
-                    two_meaning = f"2={mapping['2']}"
-                    decision_suffix = self.prompts["decision_rule_both"] + self.prompts["decision_choice_line"].format(ONE_MEANING=one_meaning, TWO_MEANING=two_meaning)
+                    one_meaning = f"{mapping['1']}"
+                    two_meaning = f"{mapping['2']}"
+                    decision_suffix = self.prompts["decision_only_choice_line"].format(ONE_MEANING=one_meaning, TWO_MEANING=two_meaning)
 
                 # Human or LLM
                 if self.is_human_player:
@@ -480,7 +479,7 @@ class AnswerOrPassGame(BaseGameClass):
                     if resp is None:
                         return False
                 else:
-                    setup_text = self.prompts["decision_rule_forced"].format(DIGIT=options[0]) if len(options) == 1 else self.prompts["decision_rule_both"]
+                    setup_text = self.prompts["decision_only_sysprompt_forced"].format(DIGIT=options[0]) if len(options) == 1 else self.prompts["decision_only_sysprompt_both"]
                     llm_prompt = q_text + "\n" + decision_suffix
                     gla = self.get_llm_answer_static_args
                     resp, message_history, probs = self._get_llm_answer(
@@ -703,7 +702,7 @@ class AnswerOrPassGame(BaseGameClass):
 
 
 def real_main(SUBJECT_NAME, DATASET):
-    TEMPERATURE = 0.0
+    TEMPERATURE = 0.0 if SUBJECT_NAME != 'claude-sonnet-4-5-20250929_think' else 1.0
     SEED = 999
     
     ALL_QUESTIONS = True
@@ -728,10 +727,43 @@ def real_main(SUBJECT_NAME, DATASET):
     # Centralized setup prompt template 
     if DECISION_ONLY:
         game_setup_prompt = """
-        Let's play a game. Success at this game requires using intropsection to inform decision-making. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
         If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
         If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
-        Your goal is to accumulate as many points as possible, so consider how confident you are that you would get the question right before deciding to answer or pass.
+        Your goal is to accumulate as many points as possible.
+        Don't be afraid to answer if you think you know it.
+        ****************** Examples ******************
+        ------------------------------
+        Question:
+        What is the capital of France?
+        ----------
+        A: New York
+        B: London
+        C: Berlin
+        D: Paris
+        ------------------------------
+        Choices:
+        1: Answer
+        2: Pass
+        Respond ONLY with '1' or '2'.
+        Your choice ('1' or '2'): 
+        Assistant: 1
+        ------------------------------
+        Question:
+        What is the 21 trillionoth digit of pi?
+        ----------
+        A: 6
+        B: 7
+        C: 8
+        D: 9
+        ------------------------------
+        Choices:
+        1: Answer
+        2: Pass
+        Respond ONLY with '1' or '2'.
+        Your choice ('1' or '2'): 
+        Assistant: 2
+        **********************************************
         """
     else:
         if DATASET != "SimpleQA" and DATASET != "GPSA":
@@ -756,6 +788,7 @@ def real_main(SUBJECT_NAME, DATASET):
             If you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point; if you pass, you neither gain nor lose a point, and I move on to the next question. 
             Your goal is to accumulate as many points as possible.
             """
+#, so consider how confident you are that you would get the question right before deciding to answer or pass
 
     # Determine capabilities file path
     if DATASET == "SimpleQA":
@@ -829,7 +862,7 @@ def real_main(SUBJECT_NAME, DATASET):
 def main():
     """Main function to run the delegate game from completed results"""
     DATASETS = ["SimpleMC"]  # One of: GPQA, SimpleQA, SimpleMC, MMLU, TruthfulQA, GPSA
-    models = ["deepseek-chat"]
+    models = ["kimi-k2-0905"]
     for model in models:
         for DATASET in DATASETS:
             real_main(model, DATASET)
