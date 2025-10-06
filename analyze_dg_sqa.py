@@ -713,7 +713,13 @@ if __name__ == "__main__":
                     
                     if 'o_prob' in df_model.columns and df_model['o_prob'].notna().any() and 'sp_prob' in df_model.columns and df_model['sp_prob'].notna().any():
                         log_output(f"\nCorrelation between Other's Prob and Self Prob: {df_model['o_prob'].corr(df_model['sp_prob'])}", suppress=False)
-                        log_output(f"\nCorrelation between {implicit_prob_str} and Self Prob: {df_model[implicit_prob_str].corr(df_model['sp_prob'])}", suppress=False)
+                        if 'capabilities_entropy' in df_model:
+                            implicit_prob_str = 'p_i_capability' # 'capabilities_entropy' #
+                            log_output(f"\nCorrelation between {implicit_prob_str} and Self Prob: {df_model[implicit_prob_str].corr(df_model['sp_prob'])}", suppress=False)
+                            log_output(f"\nCorrelation between {implicit_prob_str} and Other Prob: {df_model[implicit_prob_str].corr(df_model['o_prob'])}", suppress=False)
+                            implicit_prob_str = 'capabilities_entropy' #'p_i_capability' # 
+                            log_output(f"\nCorrelation between {implicit_prob_str} and Self Prob: {df_model[implicit_prob_str].corr(df_model['sp_prob'])}", suppress=False)
+                            log_output(f"\nCorrelation between {implicit_prob_str} and Other Prob: {df_model[implicit_prob_str].corr(df_model['o_prob'])}", suppress=False)
                         df_model['sp_binary'] = (df_model['sp_prob'] >= 0.5).astype(int)
 
                     topic_column_for_formula = 'topic_grouped' if 'topic_grouped' in df_model else 'topic'

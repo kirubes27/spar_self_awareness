@@ -1,0 +1,2463 @@
+Provider: OpenRouter
+Using 500 provided questions
+
+Starting Capabilities Measurement for Subject: hermes-4-70b_SimpleMC_500
+Configuration: Questions=500, is_human_player=False, temperature=1.0, resample_for_probs=False, nested=Self
+
+========== Starting Capability Measuring ==========
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year was the mechanical engineer Lloyd Hamilton Donnell awarded the American Society of Mechanical Engineers Medal?
+  A: 1971
+  B: 1967
+  C: 1965
+  D: 1969
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In which country was Robert “Bob” Guy Walls, a painter born in 1927, born?
+  A: New Zealand
+  B: Canada
+  C: Australia
+  D: South Africa
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In an advertisement on 17 June 1834 in the Halifax Times, Joseph Toler (Canadian artist/gold and silversmith) stated he had moved to what hotel to begin offering "likenesses"?
+  A: The Royal Arms Hotel
+  B: Mrs Grover's Hotel.
+  C: The Halifax Inn
+  D: Mr. Henderson's Hotel
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What is the other name for Oont Kadal in Kashmir?
+  A: Horse Bridge
+  B: Camel Bridge
+  C: Elephant Bridge
+  D: Lion Bridge
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||A||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What is the initial name of the political party that Emmanuel Macron founded?
+  A: En Route!
+  B: En Marche!
+  C: En Mouvement!
+  D: En Avant!
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Which award did Reza Aslan receive in 2014?
+  A: The Humanitarian Excellence Award
+  B: The Global Voices Recognition Award
+  C: The Cultural Bridge Builder Award
+  D: The Intersections International Award
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year was the Penny Crane Award for Distinguished Service established?
+  A: 1998
+  B: 2002
+  C: 2000
+  D: 1995
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what city did Anselm Kiefer present his first exhibition?
+  A: Frankfurt
+  B: Munich
+  C: Karlsruhe
+  D: Düsseldorf
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What were the month and year when Google hosted a hacking contest aimed at computer security experts called "Pwnium"?
+  A: January 2015
+  B: October 2013
+  C: June 2012
+  D: March 2014
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What is the developmental code name for danavorexton, a selective orexin 2 receptor agonist?
+  A: TAK-994
+  B: TAK-925
+  C: TAK-861
+  D: TAK-788
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||A||
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+How old was Aniol Serrasolses when he kayaked for the first time down the largest glacial waterfall ever recorded in Norway?
+  A: 30
+  B: 28
+  C: 35
+  D: 32
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In which year did Edward Meyrick first describe Cydalima mysteris?
+  A: 1892
+  B: 1886
+  C: 1879
+  D: 1903
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year was the Sing Sing Correctional Facility accredited for the first time?
+  A: 1985
+  B: 1989
+  C: 1981
+  D: 1993
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year was Valery Matveevich Panov awarded the Lenin Prize?
+  A: 1965
+  B: 1967
+  C: 1971
+  D: 1969
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=3
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Which village in Ontario was first settled in 1824 by Mr. A. Hurd, and had the Post Office established in 1836, with Mr. J. Leach being the first Postmaster, according to "Conner & Coltson's Directory of the County of Ontario for 1869-70"?
+  A: Stouffville
+  B: Prince Albert.
+  C: Uxbridge
+  D: Port Perry
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What signature piece of the MOBA did Scott Wilson discover on the curb between two trash cans?
+  A: Woman in Yellow Holding Cat
+  B: Starry Night Over the Trailer Park
+  C: Lucy in the Field with Flowers
+  D: The Blue Boy with Red Ball
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Who won the Anonymous Was A Woman award with a pure drawing in 2019?
+  A: Elena del Rivero
+  B: Tara Donovan
+  C: Sarah Morris
+  D: Marsha Cottrell
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||D||
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Who wrote the music for the Romanian anthem?
+  A: Anton Pann
+  B: Ciprian Porumbescu
+  C: George Enescu
+  D: Dimitrie Cantemir
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What was the first band Robbie Robertson joined that formed in '56?
+  A: The Suedes and the Crowns
+  B: The Hawks and the Rebels
+  C: Little Caesar and the Consuls
+  D: Johnny and the Hurricanes
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In which season and episode of Peaky Blinders do Tommy and Alfie discuss crossing the line?
+  A: Season 3, Episode 2
+  B: Season 2, Episode 4
+  C: Season 3, Episode 6
+  D: Season 4, Episode 3
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Who wrote "The Nightmarket" episode of Season 4 in "What We Do in the Shadows"?
+  A: Yana Gorskaya and Jemaine Clement
+  B: William Meny and Paul Simms
+  C: Sam Johnson and Stefani Robinson
+  D: Marika Sawyer and Jake Bender
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What are the four classifications of techniques and methodologies for mental fatigue measurement mentioned in Faramarz Gharagozlou et al.'s 2015 research paper, "Detecting Driver Mental Fatigue Based on EEG Alpha Power Changes During Simulated Driving"?
+  A: subjective,  psychological,  performance and physiological  methods
+  B: objective, perceptual, reaction-time and biological methods
+  C: quantitative, qualitative, observational and experimental methods
+  D: behavioral, cognitive, neurological and biochemical methods
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||A||
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What year was the first time that William Kentridge was awarded the Honorary Doctorate of Vrije Universiteit Brussel?
+  A: 2019
+  B: 2017
+  C: 2021
+  D: 2023
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In which month and year did the UN General Assembly unanimously elect Maurice Strong to be the first head of the UN Environment?
+  A: November 1972
+  B: January 1973
+  C: December 1972
+  D: October 1972
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Which of the three Olympic fencing weapons was the last one to transition to using electrical equipment?
+  A: Foil
+  B: Rapier
+  C: Épée
+  D: Sabre
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What year was Giulio Carlo Argan elected as a Foreign Honorary Member of the American Academy of Arts and Sciences?
+  A: 1992
+  B: 1987
+  C: 1994
+  D: 1989
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In which day, month, and year was the song written by Pedro Medina Avendaño declared the national anthem of Bogotá?
+  A: 31 July 1974
+  B: 15 March 1972
+  C: 23 September 1973
+  D: 8 December 1975
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What was the name of the director who took over from Barbara Gelpi in 2004 as the director of the Clayman Institute for Gender Research?
+  A: Shelley Correll
+  B: Deborah Rhode
+  C: Londa Schiebinger
+  D: Iris Marion Young
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What is the name of the documentary Ellen Kuzwayo was involved in with Betty Wolpert in 1982?
+  A: Awake from Mourning
+  B: Rising from Shadows
+  C: Breaking Through Silence
+  D: Beyond the Darkness
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What was the first and last name of the President of the Society of Illustrators from 1921-1922?
+  A: Norman Rockwell
+  B: Charles Gibson
+  C: Edward Penﬁeld
+  D: Howard Pyle
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+When NASA's communication director reported in 2020 that NASA planned to land astronauts on the Moon as part of the U.S. Artemis program, what was the total number of female candidates in the program?
+  A: Seven
+  B: Twelve
+  C: Nine
+  D: Five
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year was Celia Hoyles appointed Professor of Mathematical Education at the Institute of Education, University of London?
+  A: 1984.
+  B: 1988
+  C: 1986
+  D: 1982
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year was Sher Afgan Niazi, a Pakistani politician, diagnosed with liver cancer?
+  A: 2010
+  B: 2012
+  C: 2011
+  D: 2014
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+How many years did Sidney Abbott attend Smith College?
+  A: 3 years.
+  B: 5 years.
+  C: 4 years.
+  D: 2 years.
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year did Willis H. Flygare win the Irving Langmuir Award?
+  A: 1979
+  B: 1985
+  C: 1983
+  D: 1981
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What are the first and last names of the designer of 50 francs with the Little Prince images?
+  A: Roger Pfund
+  B: Antoine Bernard
+  C: Henri Cartier
+  D: Michel Dubois
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||A||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year did William John Youden publish his first paper on statistical methods?
+  A: 1928
+  B: 1937
+  C: 1934
+  D: 1931
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Who was the first Chief Minister of the State of Jammu and Kashmir?
+  A: Sheikh Mohammed Abdullah
+  B: Ghulam Mohammed Sadiq
+  C: Syed Mir Qasim
+  D: Bakshi Ghulam Mohammed
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||A||
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What quote did Dr. Richard Trager say to Miles Upshur while opening the elevator door right before he died in the 2013 video game Outlast?
+  A: You can't hide from me forever
+  B: I'm not giving up on you
+  C: I'll see you in hell
+  D: This is where your story ends
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+After being expelled from BSP due to alleged anti-party activities, the Indian politician Kuldeep Singh Sengar joined the Samajwadi Party and won a seat from which constituency in 2007?
+  A: Bangermau
+  B: Fatehpur Sikri
+  C: Moradabad
+  D: Shahjahanpur
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||A||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Which mathematician received the Chern Medal in 2022?
+  A: Terence Tao
+  B: Jacob Lurie
+  C: Barry Mazur
+  D: Claire Voisin
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||A||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What year was Kiyosi Ito appointed to the Cabinet Statistics Bureau?
+  A: 1939
+  B: 1937
+  C: 1941
+  D: 1935
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In which year was the Kangri cancer effect first studied?
+  A: 1873
+  B: 1866
+  C: 1891
+  D: 1847
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What are the names of the two scientists who received the Salem Prize after the year Akshay Venkatesh received his?
+  A: Peter Scholze and Maryna Viazovska
+  B: Terence Tao and Ben Green
+  C: Bo'az Klartag and Assaf Naor
+  D: Alessio Figalli and Peter Kronheimer
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||A||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What doctrine did Ketanji Brown Jackson use to uphold her decision that "the suits should be brought in Malaysia, not the U.S."?
+  A: act of state doctrine
+  B: comity of nations
+  C: res judicata
+  D: forum non conveniens
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||D||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+At what school was Leo Strauss working when he died?
+  A: Johns Hopkins University
+  B: St. John's College, Annapolis
+  C: University of Chicago
+  D: Princeton University
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In which year was Edward A. "Ted" Irving awarded the Wollaston Medal by the Geological Society of London?
+  A: 2003
+  B: 2001
+  C: 2005
+  D: 2007
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+As of the latest official population estimate in 2015 for the town of Szentes in southeastern Hungary, what is the total population?
+  A: 24,176
+  B: 29,034
+  C: 27,898
+  D: 31,452
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Which musician became Louis Armstrong's first teacher and chose him as the bandleader?
+  A: Bunk Johnson
+  B: Peter Davis.
+  C: Joe Oliver
+  D: Buddy Bolden
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What was the Word of the Decade (2010–2019) according to the American Dialect Society?
+  A: them
+  B: we
+  C: they
+  D: me
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Who was the first fashion designer to stream a runway show online?
+  A: Alexander McQueen
+  B: Marc Jacobs
+  C: Helmut Lang
+  D: Raf Simons
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What is the surname of the individual who was awarded the Geoffrey Barker Medal in 2020?
+  A: Mitchell
+  B: MacPherson
+  C: Robertson
+  D: Henderson
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What was Hank Green's character, The Fix, a manifestation of on Dimension 20's Mentopolis?
+  A: imposter syndrome
+  B: procrastination
+  C: hyperfixation
+  D: perfectionism
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year was American music producer George Avakian appointed the first director of the popular LP department at Columbia Records?
+  A: 1954
+  B: 1952.
+  C: 1958
+  D: 1949
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what major painting exhibition did artist J.C. Leyendecker earn a spot in 1897?
+  A: The Salon Champs de Mars
+  B: The Royal Academy Summer Exhibition
+  C: The Paris Salon
+  D: The Venice Biennale
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year did Nikolai Andreev win the Leelavati Award?
+  A: 2024
+  B: 2018
+  C: 2022
+  D: 2020
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What was the occupation of the runner-up from Season 2 of The Bachelor?
+  A: college student
+  B: kindergarten teacher
+  C: real estate agent
+  D: dental hygienist
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Which day, month, and year was the second episode of Season 2 of What We Do in the Shadows originally aired?
+  A: May 6, 2020
+  B: April 8, 2020
+  C: April 22, 2020
+  D: April 15, 2020
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In which year did Julian Bradley, the first Black Republican to serve in the Wisconsin Senate and only the second Black Republican to serve in the Wisconsin Legislature, first move to La Crosse, Wisconsin, with his mother?
+  A: 1989
+  B: 1987
+  C: 1994
+  D: 1992
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year was Rosario Crocetta appointed Councillor for Culture in the City Council of Gela with the Federation of the Greens?
+  A: 1996
+  B: 2000
+  C: 1994
+  D: 1998
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+At what university was Lois Griffiths appointed as an instructor in mathematics immediately following the award of her doctorate?
+  A: Columbia
+  B: Northwestern.
+  C: University of Chicago
+  D: Stanford
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In a 1988 paper, which author defined Mammalia phylogenetically as the crown group of mammals—the clade consisting of the most recent common ancestor of living monotremes and therian mammals?
+  A: George Gaylord Simpson
+  B: Timothy Rowe
+  C: Michael Novacek
+  D: Malcolm McKenna
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Who is known to be the first Indian musician to perform at the United Nations General Assembly in 1966?
+  A: Madurai Shanmukhavadivu Subbulakshmi
+  B: Kishori Amonkar Mogubai Kurdikar
+  C: Dagar Vani Gayaki Ustad Nasir Moinuddin
+  D: Mangalampalli Balamuralikrishna
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||A||
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+How long, in minutes and seconds, is the song "Empty" by Bebe Rexha from the "Better Mistakes" album?
+  A: 3:15
+  B: 2:54
+  C: 2:28
+  D: 3:42
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year was the Krieger–Nelson Prize awarded to Penny Haxell?
+  A: 2004
+  B: 2006
+  C: 2003
+  D: 2008
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What is the KEGG of Allopurinol, a medication used to decrease high blood uric acid levels?
+  A: D00387
+  B: D00156
+  C: D00224
+  D: D00542
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||A||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In which season of Happy Valley does Claire run into Neil?
+  A: Season 4
+  B: Season 1
+  C: Season 2
+  D: Season 3
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Who won the Gerard P. Kuiper Prize in 2001?
+  A: David Morrison
+  B: Bruce W. Hapke
+  C: Dale P. Cruikshank
+  D: Michael J. Belton
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+Who won the International Photography Awards' "International Photographer of the Year" award in 2003?
+  A: David Laurent Baker
+  B: William Anderson Hayes
+  C: Chris Frazer Smith
+  D: Michael Thompson Reid
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year was Alma S. Woolley awarded a doctorate in Nursing Education by the University of Pennsylvania?
+  A: 1975
+  B: 1980
+  C: 1982
+  D: 1978
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+From which date, month, and year to which date, month, and year did the Indian politician Anant Geete serve as the Minister of Power in the Indian government?
+  A: August 26, 2002 – May 22, 2004
+  B: March 15, 2001 – July 10, 2003
+  C: November 2, 2003 – September 18, 2005
+  D: June 12, 2004 – January 30, 2006
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What day, month, and year was the first Sazae-san strip run by the Asahi Shimbun published?
+  A: December 3, 1949
+  B: November 30, 1949
+  C: September 22, 1950
+  D: March 15, 1948
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What is the chemical name of the drug previously known to treat bacterial infections that Dr. William Schwartz discovered also acts as a diuretic in people with congestive heart failure?
+  A: Sulfanilamide.
+  B: Penicillin
+  C: Streptomycin
+  D: Chloramphenicol
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||A||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year did Washington, D.C.'s Gay Pride Day first name a person of color as the Grand Marshal of its parade?
+  A: 1983.
+  B: 1987
+  C: 1979
+  D: 1991
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+In what year was Virgil K. Smith's (Michigan politician) driver's license revoked after being charged with operating a vehicle while impaired in February 2004 and operating a vehicle while intoxicated in August 2004?
+  A: 2003
+  B: 2005
+  C: 2006
+  D: 2004
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||D||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+What day, month, and year did the singer and actress Vanessa Hudgens marry Cole Tucker?
+  A: 2 December 2023
+  B: 19 October 2023
+  C: 28 August 2023
+  D: 14 June 2023
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||B||
+In model_call, provider=OpenRouter, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+How confident are you that you would get this question right?
+----------
+On what day, month, and year did Filip Hašek, the footballer, make his professional debut?
+  A: 15 September 2017
+  B: 22 July 2018
+  C: 3 August 2018
+  D: 11 March 2019
+----------
+  0: <5%
+  1: 5-15%
+  2: 15-25%
+  3: 25-35%
+  4: 35-45%
+  5: 45-55%
+  6: 55-65%
+  7: 65-75%
+  8: 75-85%
+  9: 85-95%
+  10: >95%
+------------------------------
+Your choice (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, or 10): ; response: ||C||
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+In model_call, provider=OpenRouter, attempt=1
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+
+Capabilities Test Complete. Accuracy: 100.00% (500/500)
+Data saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
+Capabilities measurement completed. Results saved to: ./capabilities_1p_test_logs/hermes-4-70b_SimpleMC_500_1759760202_test_data.json
