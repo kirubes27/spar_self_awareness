@@ -53,7 +53,6 @@ class CapabilitiesTest(BaseGameClass):
         self.include_question_num = include_question_num
         self.include_total_questions = include_total_questions
 
-        # Answering setup prompts (centralized, recorded once in run_parameters)
         self.mc_setup_prompt = "I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text."
         self.sa_setup_prompt = "I'm going to ask you a series of short-answer questions. For each one, respond as succinctly as possible. Answer as best you can, even if you're not certain."
         self.human_mc_input_prompt = "Your answer (A, B, C, or D): "
@@ -64,18 +63,14 @@ class CapabilitiesTest(BaseGameClass):
         self.nested_option_dict = None
         self.nested_range_midpoints = None
         if self.nested == "Other":
-#            option_dict = {"A": "<20%", "B": "20-40%", "C": "40-60%", "D": "60-80%", "E": ">80%"}
-#            RANGE_MIDPOINTS = {"A": 0.1, "B": 0.3, "C": 0.5,  "D": 0.7, "E": 0.9}
-#            option_dict = {"A": "<10%", "B": "10-20%", "C": "20-40%", "D": "40-60%", "E": "60-80%", "F": ">80%"}
-#            RANGE_MIDPOINTS = {"A": 0.05, "B": 0.15, "C": 0.3,  "D": 0.5, "E": 0.7, "F": 0.9}
-            self.nested_option_dict = {"A": "<5%", "B": "5-10%", "C": "10-20%", "D": "20-40%", "E": "40-60%", "F": "60-80%", "G": ">80%"}
-            self.nested_range_midpoints = {"A": 0.025, "B": 0.075, "C": 0.15,  "D": 0.3, "E": 0.5, "F": 0.7, "G": 0.9}
+            self.nested_option_dict = {"A": "<5%", "B": "5-10%", "C": "10-20%", "D": "20-40%", "E": "40-60%", "F": "60-80%", "G": "80-90%", "H": ">90%"}
+            self.nested_range_midpoints = {"A": 0.025, "B": 0.075, "C": 0.15,  "D": 0.3, "E": 0.5, "F": 0.7, "G": 0.85, "H": 0.95}
+            self.nested_setup_prompt = "I want your help calibrating question difficulty. I'm going to show you a multiple-choice question, and I want you to tell me approximately what percentage of college-educated people you think would get it right. Respond only with the letter corresponding to the percentage range you choose; do NOT output any other text."
             self.nested_question_prompt = "What percentage of college-educated people would get this question right?"
         elif self.nested == "Self":
-            self.nested_option_dict = {"0": "<5%", "1": "5-15%", "2": "15-25%", "3": "25-35%", "4": "35-45%", "5": "45-55%", "6": "55-65%", "7": "65-75%", "8": "75-85%", "9": "85-95%", "10": ">95%"}
-            self.nested_range_midpoints = {"0": 0.025, "1": 0.1, "2": 0.2,  "3": 0.3, "4": 0.4, "5": 0.5, "6": 0.6, "7": 0.7, "8": 0.8, "9": 0.9, "10": 0.975}
-#            option_dict = {"A": "<5%", "B": "5-10%", "C": "10-20%", "D": "20-40%", "E": "40-60%", "F": "60-80%", "G": "80-90%", "H": ">90%"}
-#            RANGE_MIDPOINTS = {"A": 0.025, "B": 0.075, "C": 0.15,  "D": 0.3, "E": 0.5, "F": 0.7, "G": 0.85, "H": 0.95}
+            self.nested_option_dict = {"A": "<5%", "B": "5-10%", "C": "10-20%", "D": "20-40%", "E": "40-60%", "F": "60-80%", "G": "80-90%", "H": ">90%"}
+            self.nested_range_midpoints = {"A": 0.025, "B": 0.075, "C": 0.15,  "D": 0.3, "E": 0.5, "F": 0.7, "G": 0.85, "H": 0.95}
+            self.nested_setup_prompt = "I'm going to show you a multiple-choice question, and I want you to tell me your level of confidence that you would get the question right. Respond only with the letter corresponding to the percentage range you choose; do NOT output any other text."
             self.nested_question_prompt = "How confident are you that you would get this question right?"
 
         # Run parameters for reproducibility (run-level only; no per-question values)
@@ -166,7 +161,7 @@ class CapabilitiesTest(BaseGameClass):
         if self.nested:
             q_text = self._present_nested_question(question, self.nested_question_prompt, self.nested_option_dict)
             options = list(self.nested_option_dict.keys())
-            setup_prompt = self.mc_setup_prompt
+            setup_prompt = self.nested_setup_prompt
             RANGE_MIDPOINTS = self.nested_range_midpoints
         else:
             if question_num is None and total_questions is None:
@@ -199,6 +194,11 @@ class CapabilitiesTest(BaseGameClass):
         
         log_interval = 10
 
+        self.run_parameters["setup_prompt"] = self.mc_setup_prompt if not self.nested else self.nested_setup_prompt
+        if self.nested:
+            self.run_parameters["nested_option_dict"] = self.nested_option_dict
+            self.run_parameters["nested_range_midpoints"] = self.nested_range_midpoints
+            self.run_parameters["nested_question_prompt"] = self.nested_question_prompt
         # This condition diverts the logic to the parallel path
         if self.resample_for_probs and not self.is_human_player:
             #################################################################
@@ -206,13 +206,7 @@ class CapabilitiesTest(BaseGameClass):
             #################################################################
             max_workers = 4
             epsilon = 0.05
-            # Record parallel config and fixed prompts
             self.run_parameters["parallel_config"] = {"max_workers": max_workers, "epsilon": epsilon}
-            self.run_parameters["mc_setup_prompt"] = self.mc_setup_prompt
-            if self.nested:
-                self.run_parameters["nested_option_dict"] = self.nested_option_dict
-                self.run_parameters["nested_range_midpoints"] = self.nested_range_midpoints
-                self.run_parameters["nested_question_prompt"] = self.nested_question_prompt
 
             # --- Phase 1: Prepare all tasks ---
             self._log(f"Preparing {len(self.questions)} questions for parallel resampling...")
@@ -289,13 +283,6 @@ class CapabilitiesTest(BaseGameClass):
                 # Record human input prompt used
                 self.run_parameters["human_mc_input_prompt"] = self.human_mc_input_prompt
             else:
-                # Record fixed MC setup and nested settings actually used
-                self.run_parameters["mc_setup_prompt"] = self.mc_setup_prompt
-                if self.nested:
-                    self.run_parameters["nested_option_dict"] = self.nested_option_dict
-                    self.run_parameters["nested_range_midpoints"] = self.nested_range_midpoints
-                    self.run_parameters["nested_question_prompt"] = self.nested_question_prompt
-
                 # Record static _get_llm_answer args used in this run (MC path)
                 max_tokens_used = None if ('opus-4' in self.subject_name or 'sonnet-4' in self.subject_name) else 1
                 self.run_parameters["get_llm_answer_static_args"] = {
@@ -471,9 +458,9 @@ def main(model_dataset_dict, temp):
             IS_HUMAN = False
             INCLUDE_QNUM = False
             INCLUDE_TOTAL = False
-            resume_from = None
+            resume_from = None#"capabilities_1p_test_logs/llama-3.3-70b-instruct_SimpleMC_500_1759847064_test_data.json"#
             RESAMPLE = False
-            NESTED = "Other" #values: None, "Self", "Other"
+            NESTED = "Self" #values: None, "Self", "Other"
             temp = temp
             seed = 42
             
@@ -530,6 +517,6 @@ def main(model_dataset_dict, temp):
 
 if __name__ == "__main__":
     model_dataset_dict = {
-        "llama-3.1-405b-instruct": ["GPQA"],
+        "deepseek-chat": ["SimpleMC"],
         }
     main(model_dataset_dict, temp=1.0)

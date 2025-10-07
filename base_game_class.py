@@ -68,8 +68,8 @@ class BaseGameClass:
                 self.provider = "Google"
             elif self.subject_name.startswith("grok"):
                 self.provider = "xAI"
-            elif re.match(r"meta-llama/Meta-Llama-3\.1-\d+B", self.subject_name):
-                self.provider = "NDIF"###"Hyperbolic"###
+            #elif re.match(r"meta-llama/Meta-Llama-3\.1-\d+B", self.subject_name):
+            #    self.provider = "NDIF"###"Hyperbolic"###
             #elif "deepseek" in self.subject_name:
             #    self.provider = "DeepSeek"
             else:
@@ -208,8 +208,10 @@ class BaseGameClass:
                         if system_msg != "": formatted_messages.append({"role": "system", "content": system_msg})
                         if len (formatted_messages) > 0 and self.subject_name != "deepseek-chat" and "llama" not in self.subject_name: formatted_messages[-1]["content"] = [{"type": "text", "text": formatted_messages[-1]["content"], "cache_control": {"type": "ephemeral"}}]
                         formatted_messages.append(user_msg)
-                    if 'base' in model_name:
-                        prompt = f"User: {formatted_messages[0]['content']}\n{formatted_messages[1]['content']}\nAssistant: "
+                    if 'base' in model_name or self.subject_name=='llama-3.1-405b':
+                        prompt = f"User: {formatted_messages[0]['content']}\n"
+                        if len (formatted_messages) > 1: prompt += f"{formatted_messages[1]['content']}\n"
+                        prompt += "Assistant: "
                         formatted_messages=[{'role': 'user', 'content': prompt}]
                     #print(f"formatted_messages={formatted_messages}")
                     completion = self.client.chat.completions.create(
@@ -226,7 +228,7 @@ class BaseGameClass:
                             **({"reasoning": {"enabled": False}} if ('gpt-oss' in self.subject_name or ('deepseek' in self.subject_name and 'v3.1' in self.subject_name and not 'base' in self.subject_name)) and '_reasoning' not in self.subject_name else {"reasoning": {"enabled": True, "exclude": True}} if '_reasoning' in self.subject_name or '-r1' in model_name else {}),
                             'seed': 42,
                             'provider': {
-                                **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {"only": ["Fireworks"]} if self.subject_name == "deepseek-chat" else {}),
+                                **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {"only": ["Chutes"]} if self.subject_name == "deepseek-chat" else {}),
                                 'require_parameters': False if self.subject_name == "deepseek-chat" else True,
                                 "allow_fallbacks": False,
 #                                'quantizations': ['fp8'],

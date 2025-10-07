@@ -671,6 +671,7 @@ if __name__ == "__main__":
 
                     if 'o_prob' in df_model.columns and df_model['o_prob'].notna().any() and 'sp_prob' in df_model.columns and df_model['sp_prob'].notna().any():
                         log_output(f"\nCorrelation between Other's Prob and human_difficulty: {df_model['o_prob'].corr(df_model['human_difficulty'])}", suppress=False)
+                        log_output(f"\nCorrelation between Self Prob and human_difficulty: {df_model['sp_prob'].corr(df_model['human_difficulty'])}", suppress=False)
                         log_output(f"\nCorrelation between Other's Prob and Self Prob: {df_model['o_prob'].corr(df_model['sp_prob'])}", suppress=False)
                         if 'capabilities_entropy' in df_model:
                             implicit_prob_str = 'p_i_capability' # 'capabilities_entropy' #
