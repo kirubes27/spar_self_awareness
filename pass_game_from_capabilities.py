@@ -154,7 +154,7 @@ class AnswerOrPassGame(BaseGameClass):
             self.completed_results = None
 
         # Compute static get_llm_answer args (non-per-question) and store run parameters
-        max_tokens_used = None if ('opus-4' in self.subject_name or 'sonnet-4' in self.subject_name or getattr(self, "is_short_answer", False)) else 1
+        max_tokens_used = None if ('opus-4' in self.subject_name or 'sonnet-4' in self.subject_name or '3-5-sonnet' in self.subject_name or getattr(self, "is_short_answer", False)) else 1
 
         self.get_llm_answer_static_args = {
             "keep_appending": self.accumulate_history,
@@ -862,10 +862,14 @@ def real_main(SUBJECT_NAME, DATASET):
 def main():
     """Main function to run the delegate game from completed results"""
     DATASETS = ["GPQA"]  # One of: GPQA, SimpleQA, SimpleMC, MMLU, TruthfulQA, GPSA
-    models = ["llama-3.3-70b-instruct"]
+    models = ["openai/gpt-5-chat"]
     for model in models:
         for DATASET in DATASETS:
             real_main(model, DATASET)
 
 if __name__ == "__main__":
     main()
+
+
+"""
+"""

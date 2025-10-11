@@ -1,6 +1,6 @@
 """
 DelegateGameFromCapabilities - Cleaned, centralized, and logged.
-Adds optional decision-only mode (digits '1'/'2') for delegate vs answer, with alternating mappings.
+Adds optional decision-only mode for delegate vs answer, with alternating mappings.
 
 Features:
 - Loads completed results file (Phase 1 from capabilities)
@@ -8,7 +8,7 @@ Features:
 - Selects Phase 1 and Phase 2 question sets to hit target accuracies
 - Runs Phase 2 (delegate game) with multiple choice or short answer questions
 - Centralizes prompts and run parameters; records run-level config for reproducibility
-- Optional "decision-only" mode: choose Answer vs Delegate via '1'/'2', mapping alternates per trial
+- Optional "decision-only" mode: choose Answer vs Delegate, mapping alternates per trial
 - Summary logging (no heavy statistical analysis)
 """
 
@@ -100,6 +100,8 @@ class DelegateGameFromCapabilities(BaseGameClass):
         self.all_incorrect_questions = []
         self.pending_feedback = ""
 
+        self.decision_only_options = ["A", "D"] if not self.alternate_decision_mapping else ["1", "2"]
+
         # Prompts (centralized)
         self.prompts = {
             # Phase headers
@@ -120,8 +122,9 @@ class DelegateGameFromCapabilities(BaseGameClass):
             "llm_mc_sysprompt": "\nOutput ONLY the letter of your choice: A, B, C, D, or T. Do NOT output any other text. Do not offer any explanation or justification.\n",
 
             # Decision-only mode
-            "decision_only_sysprompt": "Respond ONLY with '1' or '2'. Do NOT output any other text. Do not offer any explanation or justification.\n",
-            "decision_only_choice_line": "Choices:\n  1: {ONE_MEANING}\n  2: {TWO_MEANING}\nRespond ONLY with '1' or '2'.\nYour choice ('1' or '2'): ",
+            "decision_only_sysprompt": f"Respond ONLY with '{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'. Do NOT output any other text. Do not offer any explanation or justification.\n",
+            #"decision_only_choice_line1": f"Choices:\n  {self.decision_only_options[0]}: {ONE_MEANING}\n  {self.decision_only_options[1]}: {TWO_MEANING}\nRespond ONLY with '{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'.\nYour choice ('{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'): ",
+            "decision_only_choice_line": f"Choices:\n  {self.decision_only_options[0]}: {{ONE_MEANING}}\n  {self.decision_only_options[1]}: {{TWO_MEANING}}\nRespond ONLY with '{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'.\nYour choice ('{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'): ",
 
             # Counters/feedback
             "feedback_teammate_delegation": "--> Delegating to teammate...",
@@ -159,7 +162,7 @@ class DelegateGameFromCapabilities(BaseGameClass):
             self.completed_results = None
 
         # Determine static call args for LLM path
-        max_tokens_used = None if ('opus-4' in self.subject_name or 'sonnet-4' in self.subject_name or self.is_short_answer) else 1
+        max_tokens_used = None if ('opus-4' in self.subject_name or 'sonnet-4' in self.subject_name or '3-5-sonnet' in self.subject_name) else 1
 
         self.get_llm_answer_static_args = {
             "keep_appending": (False if not self.feedback_config['phase2_teammate_feedback'] and not self.feedback_config['phase2_subject_feedback'] else True),
@@ -544,7 +547,7 @@ class DelegateGameFromCapabilities(BaseGameClass):
         base_history = message_history.copy()
         setup_text = final_feedback + "\n\n" + self._phase2_header_text(single_phase)
         if self.is_short_answer:
-            setup_text += self.prompts["sa_setup_prompt"]
+            setup_text += self.prompts["sa_setup_prompt"] if not self.decision_only else ""
         else:
             setup_text += self.prompts["mc_setup_prompt"] if not self.decision_only else ""
 
@@ -575,9 +578,9 @@ class DelegateGameFromCapabilities(BaseGameClass):
             # Decision-only mode (digits 1/2 for Self vs Teammate)
             if self.decision_only:
                 mapping = self._decision_mapping_for_trial(i)
-                options = ["1", "2"]
-                one_meaning = f"{mapping['1']}"
-                two_meaning = f"{mapping['2']}"
+                options = self.decision_only_options
+                one_meaning = f"{mapping[self.decision_only_options[0]]}"
+                two_meaning = f"{mapping[self.decision_only_options[1]]}"
                 decision_suffix = self.prompts["decision_only_choice_line"].format(
                     ONE_MEANING=one_meaning, TWO_MEANING=two_meaning
                 )
@@ -587,6 +590,7 @@ class DelegateGameFromCapabilities(BaseGameClass):
                     resp = self._get_subject_answer(options, "Your choice: ")
                     if resp is None:
                         return False
+                    probs = None
                 else:
                     current_history = base_history.copy()
                     llm_prompt = setup_text + "\n" + feedback_text + "\n" + q_text + "\n" + decision_suffix
@@ -619,7 +623,9 @@ class DelegateGameFromCapabilities(BaseGameClass):
                         team_correct=t_corr,
                         subject_answer=None,
                         subject_correct=None,
-                        probs=None
+                        probs=probs,
+                        decision_digit=choice,
+                        digit_mapping=mapping
                     )
                     feedback_text = self.prompts["feedback_teammate_delegation"]
                     if self.feedback_config['phase2_teammate_feedback']:
@@ -645,7 +651,9 @@ class DelegateGameFromCapabilities(BaseGameClass):
                         delegation_choice="Self",
                         team_answer=None,
                         team_correct=subj_corr,
-                        probs=None
+                        probs=probs,
+                        decision_digit=choice,
+                        digit_mapping=mapping
                     )
                     feedback_text = self.prompts["feedback_subject_answer_prefix"] + "(decision-only: original answer used)"
                     if self.feedback_config['phase2_subject_feedback']:
@@ -668,7 +676,9 @@ class DelegateGameFromCapabilities(BaseGameClass):
                         subject_correct=None,
                         team_answer=None,
                         team_correct=None,
-                        probs=None
+                        probs=probs,
+                        decision_digit=choice,
+                        digit_mapping=mapping
                     )
                     feedback_text = "Invalid choice; moving on."
                     feedback_text += "\nChoice registered. Moving to the next question...\n"
@@ -804,12 +814,12 @@ class DelegateGameFromCapabilities(BaseGameClass):
     def _decision_mapping_for_trial(self, trial_index):
         """Return how digits map this trial: {'1': 'Answer'/'Delegate', '2': '...'}."""
         if not self.alternate_decision_mapping:
-            return {"1": "Answer", "2": "Delegate"}
+            return {self.decision_only_options[0]: "Answer", self.decision_only_options[1]: "Delegate"}
         # Alternate: odd -> 1=Answer, even -> 1=Delegate
         if (trial_index % 2) == 1:
-            return {"1": "Answer", "2": "Delegate"}
+            return {self.decision_only_options[0]: "Answer", self.decision_only_options[1]: "Delegate"}
         else:
-            return {"1": "Delegate", "2": "Answer"}
+            return {self.decision_only_options[0]: "Delegate", self.decision_only_options[1]: "Answer"}
 
     def _check_short_answer(self, subject_answer, correct_answer):
         """Simple normalized match and partial overlap for SA correctness."""
@@ -850,7 +860,7 @@ class DelegateGameFromCapabilities(BaseGameClass):
         if team_delegations > 0:
             s += f"Teammate accuracy when delegated: {team_correct}/{team_delegations} ({(team_correct/team_delegations):.2%})\n"
         if self.decision_only:
-            s += "Mode: Decision-only (digits '1'/'2')\n"
+            s += "Mode: Decision-only\n"
         return s
 
     def _save_game_data(self, message_history=None):
@@ -935,7 +945,7 @@ def get_latest_capabilities_file(subject_name, dataset):
 def real_main(SUBJECT_NAME, DATASET):
     IS_HUMAN = False
     DECISION_ONLY = True            # Set to True for digits-only choice
-    ALT_DECISION_MAPPING = True     # Alternate 1/2 mapping each trial
+    ALT_DECISION_MAPPING = False     # Alternate 1/2 mapping each trial
 
     # Game parameters
     N_TRIALS_PHASE1 = 50
@@ -986,11 +996,11 @@ def real_main(SUBJECT_NAME, DATASET):
         In phase 2, I will show you the question and then give you the option to ANSWER or DELEGATE it.
         If you select ANSWER, I will ask you the question.
         If you select DELEGATE, I will ask your teammate the question. 
-        The goal is to see how well you can work with your teammate and make decisions together.
+        Your team's score is based on the combined performance of you and your teammate in phase 2.
         """
         if USE_PHASE1_HISTORY:
             initial_setup_explanation += f"In {phasestr}, you will receive feedback on {fbstr}your and your teammate's performance. Use this feedback to inform your decisions about whether to delegate in phase 2."
-        initial_setup_explanation += """You want to maximize your team's total score. In phase 2, for each question, use your observations of your teammate's performance in phase 1 and your confidence in whether you know the answer to the question to decide what to do.
+        initial_setup_explanation += """You want to maximize your team's total score. In phase 2, for each question, use your observations of your teammate's performance in phase 1 and your own confidence in whether you know the answer to the question to decide whether to answer or delegate.
         """
     else:
         initial_setup_explanation = f"""
@@ -1067,7 +1077,7 @@ def real_main(SUBJECT_NAME, DATASET):
 
 def main():
     DATASETS = ["SimpleMC"]
-    models = ["kimi-k2-0905"]
+    models = ["deepseek-chat"]
     for model in models:
         for d in DATASETS:
             real_main(model, d)

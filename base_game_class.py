@@ -61,7 +61,7 @@ class BaseGameClass:
         """Determine provider based on model name."""
         if not self.is_human_player:
             if self.subject_name.startswith("claude"):
-                self.provider = "Anthropic"
+                self.provider = "OpenRouter"#"Anthropic"
             #elif "gpt" in self.subject_name or self.subject_name.startswith("o3") or self.subject_name.startswith("o1"):
             #    self.provider = "OpenAI"
             elif self.subject_name.startswith("gemini"):
@@ -156,7 +156,7 @@ class BaseGameClass:
         token_probs = None
         for callctr in range(MAX_CALL_ATTEMPTS):
             def no_logprobs(model_name):
-                if model_name.startswith("o3") or model_name in ['deepseek/deepseek-v3.1-base', 'deepseek/deepseek-r1']: return True
+                if model_name.startswith("o3") or 'claude' in model_name or 'gpt-5' in model_name or model_name in ['deepseek/deepseek-v3.1-base', 'deepseek/deepseek-r1']: return True
                 return False
             def model_call():
                 self._log(f"In model_call, provider={self.provider}, attempt={attempt + 1}")
@@ -186,6 +186,10 @@ class BaseGameClass:
                 elif self.provider == "OpenAI" or self.provider == "xAI" or self.provider == "DeepSeek" or self.provider == "OpenRouter":
                     if self.provider == "OpenRouter":
                         if self.subject_name == "gpt-4.1-2025-04-14": model_name = "openai/gpt-4.1"
+                        elif self.subject_name=='claude-3-5-sonnet-20241022': model_name = 'anthropic/claude-3.5-sonnet'
+                        elif self.subject_name=='claude-sonnet-4-20250514': model_name = 'anthropic/claude-sonnet-4'
+                        elif self.subject_name=='claude-sonnet-4-5-20250929': model_name = 'anthropic/claude-sonnet-4.5'
+                        elif self.subject_name=='claude-opus-4-1-20250805': model_name = 'anthropic/claude-opus-4.1'
                         else:
                             if self.subject_name.startswith("gpt-") or self.subject_name.startswith("o3") or self.subject_name.startswith("o1"): prefix = 'openai/' 
                             elif self.subject_name.startswith("qwen"): prefix = 'qwen/'
@@ -216,7 +220,7 @@ class BaseGameClass:
                     #print(f"formatted_messages={formatted_messages}")
                     completion = self.client.chat.completions.create(
                         model=model_name,
-                        **({"max_completion_tokens": MAX_TOKENS} if self.subject_name.startswith("o3") else {"max_tokens": (None if 'gpt-5' in self.subject_name or 'glm-' in self.subject_name or '-r1' in self.subject_name else MAX_TOKENS)}),
+                        **({"max_completion_tokens": MAX_TOKENS} if self.subject_name.startswith("o3") else {"max_tokens": (None if 'gpt-5' in self.subject_name or 'gpt-4.1' in self.subject_name or 'glm-' in self.subject_name or '-r1' in self.subject_name else MAX_TOKENS)}),
                         **({"temperature": min(temp + attempt * temp_inc, max(temp,1.0))} if not self.subject_name.startswith("o3") else {}),
                         messages=formatted_messages,
                         **({"logprobs": True} if not no_logprobs(model_name) else {}),
@@ -225,22 +229,22 @@ class BaseGameClass:
                         **({"top_p": 1.0} if temp > 0.0 else {}),
                         seed=42,
                         **{'extra_body': {
-                            **({"reasoning": {"enabled": False}} if ('gpt-oss' in self.subject_name or ('deepseek' in self.subject_name and 'v3.1' in self.subject_name and not 'base' in self.subject_name)) and '_reasoning' not in self.subject_name else {"reasoning": {"enabled": True, "exclude": True}} if '_reasoning' in self.subject_name or '-r1' in model_name else {}),
+                            **({"reasoning": {"enabled": False}} if ('claude' in self.subject_name or 'gpt-oss' in self.subject_name or ('deepseek' in self.subject_name and 'v3.1' in self.subject_name and not 'base' in self.subject_name)) and '_reasoning' not in self.subject_name else {"reasoning": {"enabled": True, "exclude": False}} if '_think' in self.subject_name or '_reasoning' in self.subject_name or '-r1' in model_name else {}),
                             'seed': 42,
                             'provider': {
                                 **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {"only": ["Chutes"]} if self.subject_name == "deepseek-chat" else {}),
-                                'require_parameters': False if self.subject_name == "deepseek-chat" else True,
+                                'require_parameters': False if self.subject_name == "deepseek-chat" or 'claude' in self.subject_name or 'gpt-5' in self.subject_name else True,
                                 "allow_fallbacks": False,
 #                                'quantizations': ['fp8'],
                             },
                         }} if self.provider == "OpenRouter" else {}
                     ) 
-                    print(f"Provider that responded: {completion.provider}")
+                    if self.provider == "OpenRouter": print(f"Provider that responded: {completion.provider}")
                     
                     #print(f"completion={completion}")
                     #exit()
                     resp = completion.choices[0].message.content.strip()
-                    if 'o3' in self.subject_name or 'gpt-5' in self.subject_name or self.subject_name=='deepseek-v3.1-base' or self.subject_name=='deepseek-r1': return resp, None
+                    if 'o3' in self.subject_name or 'gpt-5' in self.subject_name or self.subject_name=='deepseek-v3.1-base' or self.subject_name=='deepseek-r1' or no_logprobs(model_name): return resp, None
                     if len(options) == 1: #short answer, just average
                         token_logprobs = completion.choices[0].logprobs.content    
                         top_probs = []
@@ -253,7 +257,13 @@ class BaseGameClass:
                             top_probs.append(top_prob)
                         token_probs = {resp: math.exp(sum(top_probs))}# / len(top_probs))}
                     else:
-                        entry = completion.choices[0].logprobs.content[0]
+                        #entry = completion.choices[0].logprobs.content[0]
+                        first_token = completion.choices[0].logprobs.content[0].token
+                        if first_token.strip() == '':
+                            # Skip to the actual answer token
+                            entry = completion.choices[0].logprobs.content[1]
+                        else:
+                            entry = completion.choices[0].logprobs.content[0]
                         if len(entry.top_logprobs) < len(options) and callctr < MAX_CALL_ATTEMPTS - 1:  
                             raise ValueError("full logprobs not returned")
                         try:
@@ -413,10 +423,14 @@ class BaseGameClass:
                                 if '2.5' in self.subject_name and 'flash' in self.subject_name and think is not None and think == True else
                                 {"thinking_config": types.ThinkingConfig(thinking_budget=0)}
                                 if '2.5' in self.subject_name and 'flash' in self.subject_name and think is not None and think == False else
+                                {"thinking_config": types.ThinkingConfig(thinking_budget=0)}
+                                if '2.5' in self.subject_name and 'pro' in self.subject_name and think is None or think == False else
                                 {}
                             )
                         ), 
                     )
+                    #print(f"message={message}")
+                    #exit()
                     if '1.5' in self.subject_name: return message.text.strip(), None
                     cand = message.candidates[0]
                     resp = cand.content.parts[0].text.strip()
