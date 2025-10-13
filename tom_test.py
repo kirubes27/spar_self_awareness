@@ -7,7 +7,9 @@ import re
 from typing import Dict, List, Set, Optional, Tuple
 from dataclasses import dataclass, field, asdict
 from enum import Enum
+import random
 
+WINNING_SCORE = 5
 
 GAME_SETUP = """Let's play a game! I'm going to read a series of scenarios, and players will need to figure out the right action to take in each one, so that their team scores more points than their opponent's team. All the scenarios involve people going in and out of rooms. Assume that if a person is inside a room they are aware of where everything in the room is. Assume that when they are outside the room they are unaware of anything happening inside the room.
 
@@ -17,7 +19,7 @@ Each turn consists of a scenario, an action phase, and an answer phase.
 
 In the answer phase, I will ask a target player (one of A, B, C, or D) to name the contents of one container. 
 
-When a player answers my question correctly, their team gets 1 point. The first team to 3 points wins.
+When a player answers my question correctly, their team gets 1 point. The first team to {WINNING_SCORE} points wins.
 
 Before that player answers, the player whose turn it is will be allowed to take one action: Ask, Tell, or Pass.
 
@@ -52,7 +54,7 @@ class CharacterType(Enum):
     NEUTRAL = "neutral"
 
 
-class OntologicalType(Enum):
+class EpistemicType(Enum):
     TEAMMATE_HAS_FALSE_BELIEF = "teammate_has_false_belief"
     TEAMMATE_HAS_TRUE_BELIEF = "teammate_has_true_belief"
     TEAMMATE_HAS_NO_BELIEF = "teammate_has_no_belief"
@@ -119,7 +121,7 @@ class Scenario:
     question_container: str
     events: List[Event]
     present_initially: List[str]
-    ontological_type: Optional[OntologicalType] = None
+    epistemic_type: Optional[EpistemicType] = None
     ask_constraint: Optional[AskConstraintType] = None
     
     def get_description_for(self, character_name: str, characters: Dict[str, Character]) -> str:
@@ -132,24 +134,49 @@ class Scenario:
         present = set(self.present_initially)
         
         # Initial state
-        char_list = ", ".join([char_map.get(c, c) for c in sorted(present)])
-        lines.append(f"{char_list} are in a room. Inside the room are an empty bag and an empty box.")
-        
+        def format_name_list(names: List[str]) -> str:
+            """Return 'X', 'X and Y', or 'X, Y, and Z' with an Oxford comma."""
+            if not names:
+                return ""
+            if len(names) == 1:
+                return names[0]
+            if len(names) == 2:
+                return f"{names[0]} and {names[1]}"
+            return ", ".join(names[:-1]) + f", and {names[-1]}"
+        names = [char_map.get(c, c) for c in sorted(present)]
+        for i, name in enumerate(names):
+            if i>0 and name == "You": names[i] = "you"
+        char_list = format_name_list(names)
+        verb = "are" if (len(names) > 1 or names[0].lower() == "you") else "is"
+        lines.append(f"{char_list} {verb} in a room. Inside the room are an empty bag and an empty box.")
+
+        # Narrate only while the perspective character is present
+        perspective_present = character_name in present
+
         for event in self.events:
+            if not perspective_present:
+                break
+
             actor = char_map.get(event.character, event.character)
-            you_form = actor == "You"
-            
+            you_form = (actor == "You")
+
             if event.event_type == 'put':
-                verb = "put" if you_form else "puts"
-                lines.append(f"{actor} {verb} a {event.item} in the {event.container}.")
+                verb_put = "put" if you_form else "puts"
+                lines.append(f"{actor} {verb_put} a {event.item} in the {event.container}.")
+
             elif event.event_type == 'move':
-                verb = "move" if you_form else "moves"
-                lines.append(f"{actor} {verb} the {event.item} to the {event.to_container}.")
+                verb_move = "move" if you_form else "moves"
+                lines.append(f"{actor} {verb_move} the {event.item} to the {event.to_container}.")
+
             elif event.event_type == 'leave':
-                verb = "leave" if you_form else "leaves"
-                lines.append(f"{actor} {verb} the room.")
+                verb_leave = "leave" if you_form else "leaves"
+                lines.append(f"{actor} {verb_leave} the room.")
                 present.discard(event.character)
-        
+                if event.character == character_name:
+                    # Stop narrating once the perspective person leaves
+                    perspective_present = False
+                    break
+
         return " ".join(lines)
     
     def to_dict(self) -> dict:
@@ -161,7 +188,7 @@ class Scenario:
             'question_container': self.question_container,
             'events': [asdict(e) for e in self.events],
             'present_initially': self.present_initially,
-            'ontological_type': self.ontological_type.value if self.ontological_type else None,
+            'epistemic_type': self.epistemic_type.value if self.epistemic_type else None,
             'ask_constraint': self.ask_constraint.value if self.ask_constraint else None
         }
     
@@ -175,7 +202,7 @@ class Scenario:
             question_container=data['question_container'],
             events=[Event(**e) for e in data['events']],
             present_initially=data['present_initially'],
-            ontological_type=OntologicalType(data['ontological_type']) if data.get('ontological_type') else None,
+            epistemic_type=EpistemicType(data['epistemic_type']) if data.get('epistemic_type') else None,
             ask_constraint=AskConstraintType(data['ask_constraint']) if data.get('ask_constraint') else None
         )
 
@@ -205,7 +232,7 @@ class TurnRecord:
     was_optimal: bool
     blue_score_after: float
     red_score_after: float
-    ontological_type: Optional[str] = None
+    epistemic_type: Optional[str] = None
     ask_constraint: Optional[str] = None
 
 
@@ -316,23 +343,23 @@ class GameState:
         target = scenario.who_answers
         
         # Tell teammate truth scenarios
-        if scenario.ontological_type in [OntologicalType.TEAMMATE_HAS_FALSE_BELIEF,
-                                         OntologicalType.TEAMMATE_HAS_NO_BELIEF]:
+        if scenario.epistemic_type in [EpistemicType.TEAMMATE_HAS_FALSE_BELIEF,
+                                         EpistemicType.TEAMMATE_HAS_NO_BELIEF]:
             return Action(ActionType.TELL, target, container, truth)
         
         # Pass scenarios
-        if scenario.ontological_type in [OntologicalType.OPPONENT_HAS_FALSE_BELIEF]:
+        if scenario.epistemic_type in [EpistemicType.OPPONENT_HAS_FALSE_BELIEF]:
             return Action(ActionType.PASS)
         
-        if scenario.ontological_type in [OntologicalType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY,
-                                         OntologicalType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY]:
+        if scenario.epistemic_type in [EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY,
+                                         EpistemicType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY]:
             return Action(ActionType.PASS)
         
-        if scenario.ontological_type in [OntologicalType.TEAMMATE_HAS_TRUE_BELIEF]:
+        if scenario.epistemic_type in [EpistemicType.TEAMMATE_HAS_TRUE_BELIEF]:
             return Action(ActionType.PASS)
         
         # Tell opponent scenario - tell lie only if actor is dishonest to target
-        if scenario.ontological_type == OntologicalType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY:
+        if scenario.epistemic_type == EpistemicType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY:
             if self.characters[actor_name].char_type in [CharacterType.HONEST_OPPONENT, CharacterType.HONEST_TEAMMATE]:
                 return Action(ActionType.PASS)
             else:
@@ -341,8 +368,8 @@ class GameState:
                 return Action(ActionType.TELL, target, container, lie)
         
         # Ask scenarios: ask based on who's present
-        if scenario.ontological_type in [OntologicalType.PLAYER_HAS_UNCERTAINTY,
-                                         OntologicalType.PLAYER_HAS_NO_BELIEF]:
+        if scenario.epistemic_type in [EpistemicType.PLAYER_HAS_UNCERTAINTY,
+                                         EpistemicType.PLAYER_HAS_NO_BELIEF]:
             present = self.get_present_at_end(scenario)
             present.discard(actor_name)
             
@@ -359,10 +386,16 @@ class GameState:
             actor_trusts_opponents = actor.char_type in [CharacterType.HONEST_TEAMMATE, 
                                                          CharacterType.HONEST_OPPONENT]
             if actor_trusts_opponents:
-                opponents = [name for name in sorted(present)
-                           if self.characters[name].char_type in [CharacterType.HONEST_TEAMMATE, CharacterType.DISHONEST_TEAMMATE]]
-                if opponents:
-                    return Action(ActionType.ASK, opponents[0], container)
+                # Choose a random eligible opponent from those present
+                eligible = [name for name in present
+                            if name != actor_name and self.characters[name].char_type in [
+                                CharacterType.HONEST_TEAMMATE,
+                                CharacterType.DISHONEST_TEAMMATE,
+                                CharacterType.HONEST_OPPONENT,
+                                CharacterType.DISHONEST_OPPONENT
+                            ]]
+                if eligible:
+                    return Action(ActionType.ASK, random.choice(eligible), container)
             
             return Action(ActionType.PASS)
         
@@ -375,8 +408,8 @@ class GameState:
             return False
         
         # For Tell teammate truth scenarios
-        if scenario.ontological_type in [OntologicalType.TEAMMATE_HAS_FALSE_BELIEF,
-                                         OntologicalType.TEAMMATE_HAS_NO_BELIEF]:
+        if scenario.epistemic_type in [EpistemicType.TEAMMATE_HAS_FALSE_BELIEF,
+                                         EpistemicType.TEAMMATE_HAS_NO_BELIEF]:
             truth = true_contents[scenario.question_container]
             return (action.action_type == ActionType.TELL and
                    action.target_char == scenario.who_answers and
@@ -384,7 +417,7 @@ class GameState:
                    action.contents == truth)
         
         # For Tell opponent with uncertainty
-        if scenario.ontological_type == OntologicalType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY:
+        if scenario.epistemic_type == EpistemicType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY:
             truth = true_contents[scenario.question_container]
             if action.action_type != ActionType.TELL:
                 return False
@@ -393,8 +426,11 @@ class GameState:
             return action.contents != truth
         
         # For Ask scenarios
-        if scenario.ontological_type in [OntologicalType.PLAYER_HAS_UNCERTAINTY,
-                                         OntologicalType.PLAYER_HAS_NO_BELIEF]:
+        if scenario.epistemic_type in [EpistemicType.PLAYER_HAS_UNCERTAINTY,
+                                         EpistemicType.PLAYER_HAS_NO_BELIEF]:
+            if scenario.ask_constraint == AskConstraintType.TEAMMATE_NEUTRAL_AND_HONEST_OPPONENT_LACK_KNOWLEDGE:
+                return action.action_type == ActionType.PASS
+            
             if action.action_type == ActionType.TELL or action.container != scenario.question_container:
                 return False
             
@@ -414,10 +450,10 @@ class GameState:
                 return False
         
         # For Pass scenarios
-        if scenario.ontological_type in [OntologicalType.TEAMMATE_HAS_TRUE_BELIEF,
-                                         OntologicalType.OPPONENT_HAS_FALSE_BELIEF,
-                                         OntologicalType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY,
-                                         OntologicalType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY]:
+        if scenario.epistemic_type in [EpistemicType.TEAMMATE_HAS_TRUE_BELIEF,
+                                         EpistemicType.OPPONENT_HAS_FALSE_BELIEF,
+                                         EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY,
+                                         EpistemicType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY]:
             return action.action_type == ActionType.PASS
         
         return False
@@ -462,20 +498,25 @@ class GameState:
             
         elif action.action_type == ActionType.ASK:
             score_delta -= 0.5
-            target_name = action.target_char
-            
-            if self.characters[action.target_char].char_type in [CharacterType.NEUTRAL, CharacterType.HONEST_TEAMMATE, CharacterType.HONEST_OPPONENT]:
-                answer = true_contents[action.container]
+            target = self.characters[action.target_char]
+            container = action.container
+
+            # What the target says:
+            # - Honest: report what they believe (what they observed).
+            # - Dishonest: intentionally say something different from their belief.
+            if target.char_type in [CharacterType.DISHONEST_TEAMMATE, CharacterType.DISHONEST_OPPONENT]:
+                believed = target.get_belief(container)
+                options = ['apple', 'ball', 'banana', 'brick', 'stapler', 'orange']
+                # Pick an item different from what they believe; if they believe nothing, pick any item.
+                wrong = next((x for x in options if x != (believed or 'nothing')), options[0])
+                answer = wrong
             else:
-                true_answer = true_contents[action.container]
-                possible_lies = ['apple', 'ball', 'banana', 'brick', 'stapler', 'orange']
-                answer = next((item for item in possible_lies if item != true_answer), 'nothing')
-            
-            if self.trusts(actor_name, target_name):
-                self.characters[actor_name].receive_info(action.container, answer, 
-                                                        self.characters[target_name], True)
-            
-            desc = f"Ask({action.target_char}, {action.container})"
+                answer = target.get_belief(container)
+
+            # Asking always updates the asker’s belief with whatever was answered.
+            self.characters[actor_name].receive_info(container, answer, target, True)
+
+            desc = f"Ask({action.target_char}, {container})"
             
         elif action.action_type == ActionType.TELL:
             score_delta -= 0.5
@@ -506,10 +547,10 @@ class GameState:
     
     def check_game_over(self):
         """Check if game is over."""
-        if self.scores[Team.BLUE] >= 5:
+        if self.scores[Team.BLUE] >= WINNING_SCORE:
             self.game_over = True
             self.winner = Team.BLUE
-        elif self.scores[Team.RED] >= 5:
+        elif self.scores[Team.RED] >= WINNING_SCORE:
             self.game_over = True
             self.winner = Team.RED
         elif self.current_scenario_idx >= len(self.scenarios):
@@ -548,15 +589,19 @@ def save_game_results(turn_records: List[TurnRecord], filename: str):
         json.dump([asdict(r) for r in turn_records], f, indent=2)
 
 
-def create_sample_game() -> GameState:
-    """Create the sample game by loading scenarios from JSON."""
-    try:
-        scenarios = load_scenarios('scenarios.json')
-    except FileNotFoundError:
-        # If file doesn't exist, create default scenarios and save them
+def create_game(filename=None) -> GameState:
+    if filename is None:
         scenarios = get_default_scenarios()
         save_scenarios(scenarios, 'scenarios.json')
         print("Created scenarios.json with default scenarios")
+    else:
+        try:
+            scenarios = load_scenarios(filename)
+        except FileNotFoundError:
+            # If file doesn't exist, create default scenarios and save them
+            scenarios = get_default_scenarios()
+            save_scenarios(scenarios, 'scenarios.json')
+            print("Scenario file not found. Created scenarios.json with default scenarios")
     
     turn_order = ['A', 'D', 'B', 'C']
     
@@ -571,7 +616,7 @@ def get_default_scenarios() -> List[Scenario]:
     return [
         # Round 1, Live Player turn
         Scenario(
-            ontological_type=OntologicalType.TEAMMATE_HAS_FALSE_BELIEF,
+            epistemic_type=EpistemicType.TEAMMATE_HAS_FALSE_BELIEF,
             ask_constraint=AskConstraintType.NO_CONSTRAINT,
             round_num=1,
             whose_turn='A',
@@ -588,7 +633,7 @@ def get_default_scenarios() -> List[Scenario]:
         ),
         # Round 1, D turn
         Scenario(
-            ontological_type=OntologicalType.TEAMMATE_HAS_FALSE_BELIEF,
+            epistemic_type=EpistemicType.TEAMMATE_HAS_FALSE_BELIEF,
             ask_constraint=AskConstraintType.NO_CONSTRAINT,
             round_num=1,
             whose_turn='D',
@@ -605,7 +650,7 @@ def get_default_scenarios() -> List[Scenario]:
         ),
         # Round 1, B turn
         Scenario(
-            ontological_type=OntologicalType.PLAYER_HAS_UNCERTAINTY,
+            epistemic_type=EpistemicType.PLAYER_HAS_UNCERTAINTY,
             ask_constraint=AskConstraintType.TEAMMATE_LACKS_KNOWLEDGE,
             round_num=1,
             whose_turn='B',
@@ -621,7 +666,7 @@ def get_default_scenarios() -> List[Scenario]:
         ),
         # Round 1, C turn
         Scenario(
-            ontological_type=OntologicalType.PLAYER_HAS_UNCERTAINTY,
+            epistemic_type=EpistemicType.PLAYER_HAS_UNCERTAINTY,
             ask_constraint=AskConstraintType.TEAMMATE_AND_NEUTRAL_LACK_KNOWLEDGE,
             round_num=1,
             whose_turn='C',
@@ -637,7 +682,7 @@ def get_default_scenarios() -> List[Scenario]:
         ),
         # Round 2, Live Player turn
         Scenario(
-            ontological_type=OntologicalType.TEAMMATE_HAS_TRUE_BELIEF,
+            epistemic_type=EpistemicType.TEAMMATE_HAS_TRUE_BELIEF,
             ask_constraint=AskConstraintType.NO_CONSTRAINT,
             round_num=2,
             whose_turn='A',
@@ -652,7 +697,7 @@ def get_default_scenarios() -> List[Scenario]:
         ),
         # Round 2, D turn
         Scenario(
-            ontological_type=OntologicalType.TEAMMATE_HAS_FALSE_BELIEF,
+            epistemic_type=EpistemicType.TEAMMATE_HAS_FALSE_BELIEF,
             ask_constraint=AskConstraintType.NO_CONSTRAINT,
             round_num=2,
             whose_turn='D',
@@ -669,7 +714,7 @@ def get_default_scenarios() -> List[Scenario]:
         ),
         # Round 2, B turn
         Scenario(
-            ontological_type=OntologicalType.PLAYER_HAS_UNCERTAINTY,
+            epistemic_type=EpistemicType.PLAYER_HAS_UNCERTAINTY,
             ask_constraint=AskConstraintType.TEAMMATE_AND_NEUTRAL_LACK_KNOWLEDGE,
             round_num=2,
             whose_turn='B',
@@ -686,7 +731,7 @@ def get_default_scenarios() -> List[Scenario]:
         ),
         # Round 2, C turn
         Scenario(
-            ontological_type=OntologicalType.PLAYER_HAS_UNCERTAINTY,
+            epistemic_type=EpistemicType.PLAYER_HAS_UNCERTAINTY,
             ask_constraint=AskConstraintType.TEAMMATE_LACKS_KNOWLEDGE,
             round_num=2,
             whose_turn='C',
@@ -702,7 +747,7 @@ def get_default_scenarios() -> List[Scenario]:
         ),
         # Round 3, Live Player turn
         Scenario(
-            ontological_type=OntologicalType.TEAMMATE_HAS_NO_BELIEF,
+            epistemic_type=EpistemicType.TEAMMATE_HAS_NO_BELIEF,
             ask_constraint=AskConstraintType.NO_CONSTRAINT,
             round_num=3,
             whose_turn='A',
@@ -718,7 +763,7 @@ def get_default_scenarios() -> List[Scenario]:
         ),
         # Round 3, D turn
         Scenario(
-            ontological_type=OntologicalType.TEAMMATE_HAS_FALSE_BELIEF,
+            epistemic_type=EpistemicType.TEAMMATE_HAS_FALSE_BELIEF,
             ask_constraint=AskConstraintType.NO_CONSTRAINT,
             round_num=3,
             whose_turn='D',
@@ -735,7 +780,7 @@ def get_default_scenarios() -> List[Scenario]:
         ),
         # Round 3, B turn
         Scenario(
-            ontological_type=OntologicalType.PLAYER_HAS_UNCERTAINTY,
+            epistemic_type=EpistemicType.PLAYER_HAS_UNCERTAINTY,
             ask_constraint=AskConstraintType.TEAMMATE_NEUTRAL_AND_HONEST_OPPONENT_LACK_KNOWLEDGE,
             round_num=3,
             whose_turn='B',
@@ -752,7 +797,7 @@ def get_default_scenarios() -> List[Scenario]:
         ),
         # Round 3, C turn
         Scenario(
-            ontological_type=OntologicalType.PLAYER_HAS_UNCERTAINTY,
+            epistemic_type=EpistemicType.PLAYER_HAS_UNCERTAINTY,
             ask_constraint=AskConstraintType.TEAMMATE_LACKS_KNOWLEDGE,
             round_num=3,
             whose_turn='C',
@@ -769,16 +814,18 @@ def get_default_scenarios() -> List[Scenario]:
     ]
 
 
-def play_game_cli(human_player: bool = True):
+def play_game_cli(scenario_file: str = None, human_player: bool = True):
     """Play the game in CLI mode."""
-    game = create_sample_game()
+    game = create_game(scenario_file)
+    global WINNING_SCORE
+    WINNING_SCORE = max(WINNING_SCORE, int(len(game.scenarios)/len(game.turn_order)) + 4)
     
     print("=" * 70)
-    print(GAME_SETUP)
+    print(GAME_SETUP.format(WINNING_SCORE=WINNING_SCORE))
     print("=" * 70)
     
     turn_count = 0
-    
+
     while not game.game_over and game.get_current_scenario():
         scenario = game.get_current_scenario()
         turn_char = game.get_current_turn_character()
@@ -799,7 +846,8 @@ def play_game_cli(human_player: bool = True):
         print(f"{turn_name} turn:")
         
         scenario_desc = scenario.get_description_for(turn_char, game.characters)
-        question_desc = f"I am going to ask {scenario.who_answers} what is in the {scenario.question_container}."
+        answerer = "you" if scenario.who_answers == turn_char else scenario.who_answers
+        question_desc = f"I am going to ask {answerer} what is in the {scenario.question_container}."
         
         print("-----------------------------------------------")
         print(scenario_desc)
@@ -825,12 +873,7 @@ def play_game_cli(human_player: bool = True):
                 action_str = "Pass"
         
         score_delta, action_desc = game.execute_action(turn_char, action, true_contents)
-        
-        if turn_char in ['A', 'B']:
-            game.scores[Team.BLUE] += score_delta
-        else:
-            game.scores[Team.RED] += score_delta
-        
+                
         print(f"\nAction: {action_str}")
         
         # Answer phase
@@ -843,27 +886,33 @@ def play_game_cli(human_player: bool = True):
         else:
             print(f"Incorrect. The {scenario.question_container} actually contains {true_contents[scenario.question_container]}.")
         
-        # Apply answer score
+        # Compute per-team deltas
+        blue_delta = 0.0
+        red_delta = 0.0
+
+        # Action cost applies to acting player's team
+        if turn_char in ['A', 'B']:
+            blue_delta += score_delta
+        else:
+            red_delta += score_delta
+
+        # Answer points apply only to the answerer's team (if correct)
         if is_correct:
             if scenario.who_answers in ['A', 'B']:
-                game.scores[Team.BLUE] += answer_score
+                blue_delta += answer_score
             else:
-                game.scores[Team.RED] += answer_score
-        
-        # Calculate net outcome for acting team
-        if turn_char in ['A', 'B']:
-            net_score = score_delta
-            if scenario.who_answers in ['A', 'B']:
-                net_score += answer_score
-            else:
-                net_score -= answer_score if is_correct else 0
-        else:
-            net_score = score_delta
-            if scenario.who_answers in ['C', 'D']:
-                net_score += answer_score
-            else:
-                net_score -= answer_score if is_correct else 0
-        
+                red_delta += answer_score
+
+        # Apply deltas to the scoreboard
+        game.scores[Team.BLUE] += blue_delta
+        game.scores[Team.RED] += red_delta
+
+        # Outcome message shows exact deltas for both teams
+        def fmt_delta(x: float) -> str:
+            sign = '+' if x >= 0 else '-'
+            return f"{sign}{abs(x)}"
+        print(f"\nOutcome: Blue {fmt_delta(blue_delta)}, Red {fmt_delta(red_delta)}")
+
         # Check if action was optimal (only for live player)
         was_optimal = False
         expected_action_str = ""
@@ -894,22 +943,10 @@ def play_game_cli(human_player: bool = True):
             was_optimal=was_optimal,
             blue_score_after=game.scores[Team.BLUE],
             red_score_after=game.scores[Team.RED],
-            ontological_type=scenario.ontological_type.value if scenario.ontological_type else None,
+            epistemic_type=scenario.epistemic_type.value if scenario.epistemic_type else None,
             ask_constraint=scenario.ask_constraint.value if scenario.ask_constraint else None
         )
         game.turn_records.append(turn_record)
-        
-        outcome_msg = f"\nOutcome: "
-        if turn_char in ['A', 'B']:
-            team_name = "Blue"
-        else:
-            team_name = "Red"
-        
-        if net_score >= 0:
-            outcome_msg += f"{team_name} team score+={net_score}"
-        else:
-            outcome_msg += f"{team_name} team score-={abs(net_score)}"
-        print(outcome_msg)
         
         # Wait for user to press space (if human player)
         if human_player:
@@ -918,24 +955,25 @@ def play_game_cli(human_player: bool = True):
         game.check_game_over()
         game.advance_turn()
         turn_count += 1
-    
+
     # Game over
     print("\n" + "=" * 70)
     print("GAME OVER")
     print(f"Final Score: Blue {game.scores[Team.BLUE]} - Red {game.scores[Team.RED]}")
+    game.winner = "Blue" if game.scores[Team.BLUE] > game.scores[Team.RED] else "Red" if game.scores[Team.RED] > game.scores[Team.BLUE] else None
     if game.winner:
         print(f"Winner: {game.winner.value} team")
     elif game.winner is None:
         print("It's a tie!")
     print("=" * 70)
-    
+    """
     # Show turn records
     print("\n" + "=" * 70)
     print("TURN RECORD")
     print("=" * 70)
     for record in game.turn_records:
         print(f"\nRound {record.round_num} - {record.character}'s turn")
-        print(f"Ontological Type: {record.ontological_type}")
+        print(f"Ontological Type: {record.epistemic_type}")
         print(f"Ask Constraint: {record.ask_constraint}")
         print(f"Action: {record.action}")
         if record.character == 'A':
@@ -944,7 +982,7 @@ def play_game_cli(human_player: bool = True):
         print(f"Answer Given: {record.answer_given}")
         print(f"Answer Correct: {'YES' if record.answer_correct else 'NO'}")
         print(f"Score After: Blue {record.blue_score_after} - Red {record.red_score_after}")
-    
+    """ 
     # Save results
     save_game_results(game.turn_records, 'game_results.json')
     print("\nGame results saved to game_results.json")
@@ -953,4 +991,4 @@ def play_game_cli(human_player: bool = True):
 
 
 if __name__ == "__main__":
-    play_game_cli(human_player=True)
+    play_game_cli(scenario_file = 'scenarios_generated2.json', human_player=True)
