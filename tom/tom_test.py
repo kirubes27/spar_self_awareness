@@ -281,12 +281,18 @@ class GameState:
         return speaker.team == listener.team
     
     def trusts(self, listener_name: str, speaker_name: str) -> bool:
-        """Check if listener trusts speaker."""
         listener = self.characters[listener_name]
         speaker = self.characters[speaker_name]
-        
+
+        # Teammates always trust each other (including the live player)
+        if listener.team != Team.NEUTRAL and listener.team == speaker.team:
+            return True
+
+        # Neutral trusts everyone
         if listener.char_type == CharacterType.NEUTRAL:
             return True
+
+        # (Keep any remaining special cases you want)
         if listener.char_type == CharacterType.HONEST_OPPONENT:
             return True
         if listener.char_type == CharacterType.HONEST_TEAMMATE:
@@ -295,6 +301,7 @@ class GameState:
             return speaker.team == listener.team
         if listener.char_type == CharacterType.DISHONEST_TEAMMATE:
             return speaker.team == listener.team
+
         return False
         
     def reset_scenario_knowledge(self):

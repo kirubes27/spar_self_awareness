@@ -53,7 +53,7 @@
       "D",
       "N"
     ],
-    "ontological_type": "teammate_has_false_belief",
+    "epistemic_type": "teammate_has_false_belief",
     "ask_constraint": "no_constraint"
   },
   {
@@ -110,7 +110,7 @@
       "C",
       "N"
     ],
-    "ontological_type": "teammate_has_false_belief",
+    "epistemic_type": "teammate_has_false_belief",
     "ask_constraint": "no_constraint"
   },
   {
@@ -159,7 +159,7 @@
       "D",
       "N"
     ],
-    "ontological_type": "player_has_uncertainty",
+    "epistemic_type": "player_has_uncertainty",
     "ask_constraint": "teammate_lacks_knowledge"
   },
   {
@@ -207,7 +207,7 @@
       "A",
       "B"
     ],
-    "ontological_type": "player_has_uncertainty",
+    "epistemic_type": "player_has_uncertainty",
     "ask_constraint": "teammate_and_neutral_lack_knowledge"
   },
   {
@@ -248,7 +248,7 @@
       "D",
       "N"
     ],
-    "ontological_type": "teammate_has_true_belief",
+    "epistemic_type": "teammate_has_true_belief",
     "ask_constraint": "no_constraint"
   },
   {
@@ -305,7 +305,7 @@
       "C",
       "N"
     ],
-    "ontological_type": "teammate_has_false_belief",
+    "epistemic_type": "teammate_has_false_belief",
     "ask_constraint": "no_constraint"
   },
   {
@@ -362,7 +362,7 @@
       "D",
       "N"
     ],
-    "ontological_type": "player_has_uncertainty",
+    "epistemic_type": "player_has_uncertainty",
     "ask_constraint": "teammate_and_neutral_lack_knowledge"
   },
   {
@@ -410,7 +410,7 @@
       "A",
       "B"
     ],
-    "ontological_type": "player_has_uncertainty",
+    "epistemic_type": "player_has_uncertainty",
     "ask_constraint": "teammate_lacks_knowledge"
   },
   {
@@ -459,7 +459,7 @@
       "D",
       "N"
     ],
-    "ontological_type": "teammate_has_no_belief",
+    "epistemic_type": "teammate_has_no_belief",
     "ask_constraint": "no_constraint"
   },
   {
@@ -516,7 +516,7 @@
       "C",
       "N"
     ],
-    "ontological_type": "teammate_has_false_belief",
+    "epistemic_type": "teammate_has_false_belief",
     "ask_constraint": "no_constraint"
   },
   {
@@ -573,7 +573,7 @@
       "D",
       "N"
     ],
-    "ontological_type": "player_has_uncertainty",
+    "epistemic_type": "player_has_uncertainty",
     "ask_constraint": "teammate_neutral_and_honest_opponent_lack_knowledge"
   },
   {
@@ -621,7 +621,7 @@
       "A",
       "B"
     ],
-    "ontological_type": "player_has_uncertainty",
+    "epistemic_type": "player_has_uncertainty",
     "ask_constraint": "teammate_lacks_knowledge"
   }
 ]
