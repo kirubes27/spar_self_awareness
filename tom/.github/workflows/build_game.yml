@@ -1,13 +1,34 @@
-# A simple name for your workflow
-name: Build Windows Executable
+# A more descriptive name for your workflow
+name: Build Cross-Platform Executables
 
 # This tells GitHub to run the workflow every time you 'push' code
 on: [push]
 
 jobs:
-  build-windows:
-    # This job will run on a virtual Windows machine provided by GitHub
-    runs-on: windows-latest
+  # The job ID can be more generic now
+  build:
+    # This is the matrix strategy block
+    strategy:
+      matrix:
+        # Define the list of operating systems to build on
+        os: [windows-latest, macos-latest, ubuntu-latest]
+        # 'include' lets us define specific variables for each OS
+        include:
+          # Settings for the Windows run
+          - os: windows-latest
+            asset_path: tom/dist/ToMGame.exe # The output file path
+            asset_name: ToMGame-Windows      # The name for the downloadable artifact
+          # Settings for the macOS run
+          - os: macos-latest
+            asset_path: tom/dist/ToMGame    # No .exe on Mac!
+            asset_name: ToMGame-macOS
+          # Settings for the Linux run
+          - os: ubuntu-latest
+            asset_path: tom/dist/ToMGame    # No .exe on Linux!
+            asset_name: ToMGame-Linux
+
+    # Use the matrix variable to select the runner OS dynamically
+    runs-on: ${{ matrix.os }}
 
     steps:
       # 1. Checks out a copy of your repository code
@@ -18,21 +39,23 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10' # You can change the Python version if needed
+          python-version: '3.10'
 
-      # 3. Installs your dependencies (in this case, just PyInstaller)
+      # 3. Installs dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pyinstaller
 
-      # 4. Runs the PyInstaller command to build your executable
+      # 4. Runs the PyInstaller command. This command is the same for all OSes!
       - name: Build with PyInstaller
-        run: pyinstaller --name "RoomScenarioGame" --onefile --clean run_game.py
+        working-directory: ./tom
+        run: pyinstaller --name "ToMGame" --onefile --clean run_tom.py
 
-      # 5. Uploads the final .exe file so you can download it
+      # 5. Uploads the final executable, using the matrix variables
       - name: Upload executable artifact
         uses: actions/upload-artifact@v4
         with:
-          name: RoomScenarioGame-Windows # The name of the downloadable file
-          path: dist/RoomScenarioGame.exe # The path to the file to upload
+          # Use the dynamic name and path we defined in the matrix
+          name: ${{ matrix.asset_name }}
+          path: ${{ matrix.asset_path }}
