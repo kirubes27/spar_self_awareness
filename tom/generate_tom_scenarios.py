@@ -1,5 +1,5 @@
 import random
-from tom_test import (
+from tom_helpers import (
     Scenario, Event, EpistemicType, AskConstraintType, CharacterType,
     save_scenarios
 )
@@ -11,35 +11,26 @@ SpecTuple = Tuple['EpistemicType', Optional['AskConstraintType'], 'CharacterType
 ITEMS_GEN = ['apple', 'ball', 'banana', 'brick', 'stapler', 'orange']
 CONTAINERS_GEN = ['bag', 'box']
 
-
-def _actor_name_from_role(role: 'CharacterType') -> str:
-    # Fixed mapping consistent with your initialize_characters
-    mapping = {
-        CharacterType.LIVE_PLAYER: 'A',
-        CharacterType.HONEST_TEAMMATE: 'B',
-        CharacterType.HONEST_OPPONENT: 'C',
-        CharacterType.DISHONEST_OPPONENT: 'D',
-    }
-    if role not in mapping:
-        raise ValueError(f"Unsupported actor role for generation: {role}")
-    return mapping[role]
-
+def _map_chartypes_to_names(chartypes: List[CharacterType]) -> List[str]:
+    chars = []
+    for ct in chartypes:
+        if ct == CharacterType.LIVE_PLAYER: chars.append('A')
+        elif ct in [CharacterType.HONEST_TEAMMATE, CharacterType.DISHONEST_TEAMMATE]: chars.append('B')
+        elif ct == CharacterType.NEUTRAL: chars.append('N')
+        elif ct == CharacterType.HONEST_OPPONENT and 'C' not in chars: chars.append('C')
+        elif ct == CharacterType.HONEST_OPPONENT and 'C' in chars: chars.append('D')
+        elif ct == CharacterType.DISHONEST_OPPONENT and CharacterType.HONEST_OPPONENT not in chartypes and 'C' not in chars: chars.append('C')
+        elif ct == CharacterType.DISHONEST_OPPONENT: chars.append('D')
+    return chars
 
 def _teammate_of(name: str) -> str:
     return {'A': 'B', 'B': 'A', 'C': 'D', 'D': 'C'}[name]
 
-
 def _other_container(c: str) -> str:
-    return 'box' if c == 'bag' else 'bag'
-
+    return CONTAINERS_GEN[1] if c == CONTAINERS_GEN[0] else CONTAINERS_GEN[0]
 
 def _pick_other_item(rng: random.Random, exclude: str) -> str:
     return rng.choice([x for x in ITEMS_GEN if x != exclude])
-
-
-def _uniform_choice(rng: random.Random, seq: List[str]) -> str:
-    return rng.choice(seq)
-
 
 @dataclass
 class _Builder:
@@ -49,16 +40,14 @@ class _Builder:
     available: Set[str]    # who is allowed to be in the room initially
 
     def __post_init__(self):
-        # Start with only 'available' present; others never enter or act
-        self.present_initially: Set[str] = set(self.available)
         self.present: Set[str] = set(self.available)
         self.events: List[Event] = []
-        self.contents = {'bag': None, 'box': None}
+        self.contents = {c: None for c in CONTAINERS_GEN} 
         self.used: Set[str] = set()  # anyone who acts or leaves
 
     def rand_actor(self, exclude: Optional[Set[str]] = None) -> str:
         pool = [p for p in self.present if not exclude or p not in exclude]
-        return self.rng.choice(pool) if pool else 'N'
+        return self.rng.choice(pool)
 
     def leave(self, who: str):
         # Schedule a leave only if they’re currently present
@@ -83,9 +72,6 @@ class _Builder:
         self.contents[to_cont] = existing
 
     def put(self, who: str, container: str, item: str):
-        # Ensure no one acts after leaving
-        if who not in self.present:
-            who = self.rand_actor()
         # Ensure we never narrate simultaneous items in a container
         if self.contents[container] is not None and self.contents[container] != item:
             self._move_out_if_needed(container)
@@ -97,12 +83,13 @@ class _Builder:
         self.put(self.rand_actor(exclude), self.qc, item)
 
 
-def _select_who_answers(actor: str, ent: 'EpistemicType', rng: random.Random) -> str:
+def _identify_who_answers(actor: str, ent: 'EpistemicType', rng: random.Random) -> str:
     # Opponent choice is uniform between C and D when generic
     if ent in (EpistemicType.PLAYER_HAS_UNCERTAINTY, EpistemicType.PLAYER_HAS_NO_BELIEF):
         return actor
     if ent in (EpistemicType.TEAMMATE_HAS_FALSE_BELIEF,
                EpistemicType.TEAMMATE_HAS_TRUE_BELIEF,
+               EpistemicType.TEAMMATE_HAS_UNKNOWN_BELIEF,
                EpistemicType.TEAMMATE_HAS_NO_BELIEF):
         return _teammate_of(actor)
     if ent == EpistemicType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY:
@@ -111,12 +98,11 @@ def _select_who_answers(actor: str, ent: 'EpistemicType', rng: random.Random) ->
         return 'D'
     if ent in (EpistemicType.OPPONENT_HAS_FALSE_BELIEF,
                EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY):
-        return _uniform_choice(rng, ['C', 'D'])
-    return _uniform_choice(rng, ['C', 'D'])
+        return rng.choice(['C', 'D'])
+    return rng.choice(['C', 'D'])
 
 
-def _plan_availability_for_player_ask(actor: str,
-                                      ask: Optional['AskConstraintType']) -> Tuple[Set[str], Optional[str]]:
+def _plan_availability_for_player_ask(actor: str, ask: AskConstraintType, chars: List[str]) -> Tuple[Set[str], Optional[str]]:
     """
     Returns:
       - available: who is allowed to be present initially (others never present).
@@ -127,46 +113,32 @@ def _plan_availability_for_player_ask(actor: str,
       - TEAMMATE_AND_NEUTRAL_LACK_KNOWLEDGE: ask HONEST_OPPONENT (C)
       - TEAMMATE_NEUTRAL_AND_HONEST_OPPONENT_LACK_KNOWLEDGE: PASS is optimal (we can let D know or no one)
     """
-    everyone = {'A', 'B', 'C', 'D', 'N'}
-    available = set(everyone)
-    intended_knower: Optional[str] = None
 
-    if not ask:
-        return available, intended_knower
+    exclude: Set[str] = set()
 
     # Remove higher-priority options by never including them
     if ask == AskConstraintType.NO_CONSTRAINT:
         # is_action_optimal expects asking a teammate-type; in your cast that's B
-        intended_knower = 'B'
+        intended_knower = _teammate_of(actor)
         # No removals needed; we want B eligible and knowledgeable
 
     elif ask == AskConstraintType.TEAMMATE_LACKS_KNOWLEDGE:
         # Remove actor’s teammate entirely so they can’t be asked and won’t know
-        available.discard(_teammate_of(actor))
-        intended_knower = 'N'
+        exclude.add(_teammate_of(actor))
+        intended_knower = 'N' if 'N' in chars else 'C' if 'C' in chars else 'D'  # absolute NEUTRAL if available, else HONEST_OPPONENT, else DISHONEST_OPPONENT
 
     elif ask == AskConstraintType.TEAMMATE_AND_NEUTRAL_LACK_KNOWLEDGE:
-        available.discard(_teammate_of(actor))
-        available.discard('N')
-        intended_knower = 'C'  # absolute HONEST_OPPONENT
+        exclude.add(_teammate_of(actor))
+        exclude.add('N')
+        intended_knower = 'C' if 'C' in chars else 'D'  # absolute HONEST_OPPONENT if available, else DISHONEST_OPPONENT
 
     elif ask == AskConstraintType.TEAMMATE_NEUTRAL_AND_HONEST_OPPONENT_LACK_KNOWLEDGE:
-        available.discard(_teammate_of(actor))
-        available.discard('N')
-        available.discard('C')
-        intended_knower = 'D'  # absolute DISHONEST_OPPONENT; optimal is Pass per your rule
+        exclude.add(_teammate_of(actor))
+        exclude.add('N')
+        exclude.add('C')
+        intended_knower = 'D'  # absolute DISHONEST_OPPONENT
 
-    return available, intended_knower
-
-
-def _ensure_intended_knower_witnesses(sb: _Builder, intended_knower: Optional[str], final_item: str):
-    # If we want a specific person to know at the end, ensure they are present when final truth is (re)asserted.
-    if not intended_knower or intended_knower not in sb.present:
-        return
-    # If the asked container already holds the final item, don’t emit a duplicate put
-    if sb.contents[sb.qc] == final_item:
-        return
-    sb.put_random(final_item)
+    return exclude, intended_knower
 
 def _build_answerer_belief(sb: _Builder,
                            ent: 'EpistemicType',
@@ -181,23 +153,12 @@ def _build_answerer_belief(sb: _Builder,
                EpistemicType.OPPONENT_HAS_FALSE_BELIEF):
         # Witness initial put X, then leave; flip to final after they leave.
         old_item = _pick_other_item(rng, final_item)
-        # Ensure answerer is available to witness
-        if answerer not in sb.present:
-            # If absent (by design), switch to a no-belief pattern; but false belief requires presence.
-            # Since ontology demands false belief, include them now (they must have been available).
-            pass
         sb.put_random(old_item)
         sb.leave(answerer)
         sb.put_random(final_item)
 
-    elif ent in (EpistemicType.TEAMMATE_HAS_NO_BELIEF,):
+    elif ent in (EpistemicType.TEAMMATE_HAS_NO_BELIEF, EpistemicType.PLAYER_HAS_NO_BELIEF):
         # Answerer absent before any changes: if present, make them leave immediately, else never present.
-        if answerer in sb.present:
-            sb.leave(answerer)
-        sb.put_random(final_item)
-
-    elif ent == EpistemicType.PLAYER_HAS_NO_BELIEF:
-        # Actor (who equals answerer) leaves before any change.
         sb.leave(answerer)
         sb.put_random(final_item)
 
@@ -213,13 +174,7 @@ def _build_answerer_belief(sb: _Builder,
         sb.put_random(final_item)
         # Do not schedule a leave for the answerer
 
-    elif ent == EpistemicType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY:
-        # Witness final truth, then leave (uncertainty = not present through to end).
-        sb.put_random(final_item)
-        sb.leave(answerer)
-
-    elif ent == EpistemicType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY:
-        # Same pattern: witness final truth, then leave.
+    elif ent in [EpistemicType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY, EpistemicType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY]:
         sb.put_random(final_item)
         sb.leave(answerer)
 
@@ -229,25 +184,17 @@ def _build_answerer_belief(sb: _Builder,
         sb.put_random(old_item)   # actor present here
         sb.leave(answerer)        # actor leaves (now uncertain)
         # To make the belief “not guaranteed to be correct”, perform a flip after they leave.
-        sb.put_random(final_item)
+        if rng.random() < 0.5:
+            sb.put_random(final_item)
 
-    else:
-        # Fallback: ensure final truth is narrated
-        sb.put_random(final_item)
-
-
-def _compute_minimal_present_initially(sb: _Builder,
-                                       must_be_present_end: Set[str]) -> List[str]:
-    """
-    Minimal initial presence:
-      - anybody who acted or left (sb.used)
-      - anybody required to be present at end (must_be_present_end)
-    Anyone else is omitted.
-    """
-    initial = set(sb.used) | set(must_be_present_end)
-    # Also ensure that anyone who appears in any event (including as answerer in a leave) starts present.
-    # sb.used already includes all actors of puts/moves/leaves.
-    return sorted(initial)
+    elif ent == EpistemicType.TEAMMATE_HAS_UNKNOWN_BELIEF:
+        old_item = _pick_other_item(rng, final_item)
+        sb.put_random(old_item)   # actor and teammate present here
+        sb.leave(answerer)         # teammate leaves (now uncertain)
+        sb.leave(_teammate_of(answerer)) #actor leaves (now uncertain)
+        # To make the belief “not guaranteed to be correct”, perform a flip after they leave.
+        if rng.random() < 0.5:
+            sb.put_random(final_item)
 
 
 def _validate_invariants(s: 'Scenario') -> None:
@@ -277,7 +224,7 @@ def _validate_invariants(s: 'Scenario') -> None:
             contents[e.from_container] = None
 
 
-def generate_scenarios_from_tuples(specs: List[SpecTuple], seed: Optional[int] = None) -> List['Scenario']:
+def generate_scenarios_from_tuples(specs: List[SpecTuple], outfile: str, seed: Optional[int] = None, chartypes: List[CharacterType] = [CharacterType.LIVE_PLAYER, CharacterType.HONEST_OPPONENT, CharacterType.DISHONEST_TEAMMATE, CharacterType.DISHONEST_OPPONENT, CharacterType.NEUTRAL]) -> None:
     """
     Generate scenarios from (EpistemicType, AskConstraintType|None, CharacterType) tuples.
 
@@ -289,50 +236,34 @@ def generate_scenarios_from_tuples(specs: List[SpecTuple], seed: Optional[int] =
       - Certainty semantics:
           * ...WITH_CERTAINTY: answerer remains present through end.
           * ...TRUE_BELIEF (no certainty): answerer may leave after final truth; no further asked-container changes after they leave.
-      - PLAYER_HAS_UNCERTAINTY: actor forms a belief, leaves, and then we flip the asked container after they leave (so belief is not guaranteed to be correct).
+      - PLAYER_HAS_UNCERTAINTY: actor forms a belief, leaves, and then we optionally flip the asked container after they leave (so belief is not guaranteed to be correct).
       - AskConstraint for PLAYER_*: we remove higher-priority targets by never including them and ensure the intended target is present to witness final truth (when applicable).
     """
     rng = random.Random(seed)
     scenarios: List[Scenario] = []
+    chars = _map_chartypes_to_names(chartypes)
+    acting_chars = [c for c in chars if c != 'N']
 
     for i, (ent, ask, actor_role) in enumerate(specs):
-        actor = _actor_name_from_role(actor_role)
+        actor = acting_chars[i % len(acting_chars)]
         qc = rng.choice(CONTAINERS_GEN)
-        answerer = _select_who_answers(actor, ent, rng)
+        answerer = _identify_who_answers(actor, ent, rng)
 
         # Plan availability (who can be present initially)
-        available: Set[str] = {'A', 'B', 'C', 'D', 'N'}
+        available: Set[str] = set(chars)
 
         intended_knower: Optional[str] = None
-        must_be_present_end: Set[str] = set()
+        present_initially: Set[str] = set(actor)
 
         # Enforce AskConstraint only for PLAYER_* ontologies
         if ent in (EpistemicType.PLAYER_HAS_UNCERTAINTY, EpistemicType.PLAYER_HAS_NO_BELIEF):
-            available, intended_knower = _plan_availability_for_player_ask(actor, ask)
-
-        # Ontology-specific availability tweaks for the answerer
-        # - False belief: answerer must be present initially to witness initial put
-        # - No belief: answerer can be absent entirely (we prefer "never present" to keep minimality)
-        if ent in (EpistemicType.TEAMMATE_HAS_FALSE_BELIEF, EpistemicType.OPPONENT_HAS_FALSE_BELIEF,
-                   EpistemicType.PLAYER_HAS_UNCERTAINTY):
-            available.add(answerer)
-        elif ent in (EpistemicType.TEAMMATE_HAS_NO_BELIEF, EpistemicType.PLAYER_HAS_NO_BELIEF):
-            # If answerer is in 'available', we'll schedule an immediate leave; otherwise, they were never present.
-            pass
-        elif ent in (EpistemicType.TEAMMATE_HAS_TRUE_BELIEF, EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY,
-                     EpistemicType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY,
-                     EpistemicType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY):
-            available.add(answerer)
-
-        # Ensure intended knower (for AskConstraint) is allowed to be present
-        if intended_knower:
-            available.add(intended_knower)
-            # If the policy is going to ask this person, we also want them present at end
-            must_be_present_end.add(intended_knower)
+            exclude, intended_knower = _plan_availability_for_player_ask(actor, ask, chars)
+            available.difference_update(exclude)
+            present_initially.add(intended_knower)
 
         # Certainty semantics: for ...WITH_CERTAINTY, answerer must be present through end
-        if ent == EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY:
-            must_be_present_end.add(answerer)
+        elif ent in [EpistemicType.TEAMMATE_HAS_TRUE_BELIEF, EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY, EpistemicType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY, EpistemicType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY]:
+            present_initially.add(answerer)
 
         # Build events with a presence-safe builder
         sb = _Builder(rng, qc, available)
@@ -342,27 +273,17 @@ def generate_scenarios_from_tuples(specs: List[SpecTuple], seed: Optional[int] =
         _build_answerer_belief(sb, ent, answerer, final_item, rng)
 
         # If this is a PLAYER_* Ask scenario, ensure the intended knower witnesses the final truth
-        if ent in (EpistemicType.PLAYER_HAS_UNCERTAINTY, EpistemicType.PLAYER_HAS_NO_BELIEF):
-            _ensure_intended_knower_witnesses(sb, intended_knower, final_item)
+        if ent in [EpistemicType.PLAYER_HAS_UNCERTAINTY, EpistemicType.PLAYER_HAS_NO_BELIEF]:
+            if sb.contents[sb.qc] != final_item:
+                ##print(f"Ensuring {intended_knower} witnesses final truth {final_item}, ent={ent}, ask={ask}, actor={actor}, answerer={answerer}, final_item={final_item}, contents of target container={sb.contents[sb.qc]}")
+                sb.put_random(final_item)
 
         # Minimal initial presence
-        present_initially = _compute_minimal_present_initially(sb, must_be_present_end)
-        if actor not in present_initially:
-            present_initially.append(actor)
-            present_initially.sort()
-
-        witness_required = {
-            EpistemicType.TEAMMATE_HAS_TRUE_BELIEF,
-            EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY,
-            EpistemicType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY,
-            EpistemicType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY,
-        }
-        if ent in witness_required and answerer not in present_initially:
-            present_initially.append(answerer)
-            present_initially.sort()
+        present_initially = present_initially.union(sb.used)
+        present_initially = sorted(list(present_initially))
 
         scenario = Scenario(
-            round_num=(i // 4) + 1,
+            round_num=(i // len(acting_chars)) + 1,
             whose_turn=actor,
             who_answers=answerer,
             question_container=qc,
@@ -377,7 +298,7 @@ def generate_scenarios_from_tuples(specs: List[SpecTuple], seed: Optional[int] =
 
         scenarios.append(scenario)
 
-    return scenarios
+    save_scenarios(scenarios, outfile, chars, chartypes)
 
 
 if __name__ == "__main__":
@@ -391,6 +312,12 @@ if __name__ == "__main__":
 
         # Round 2
         (EpistemicType.TEAMMATE_HAS_TRUE_BELIEF, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
+        (EpistemicType.TEAMMATE_HAS_TRUE_BELIEF, AskConstraintType.NO_CONSTRAINT, CharacterType.DISHONEST_OPPONENT),
+        (EpistemicType.PLAYER_HAS_UNCERTAINTY, AskConstraintType.TEAMMATE_AND_NEUTRAL_LACK_KNOWLEDGE, CharacterType.HONEST_TEAMMATE),
+        (EpistemicType.PLAYER_HAS_UNCERTAINTY, AskConstraintType.TEAMMATE_LACKS_KNOWLEDGE, CharacterType.HONEST_OPPONENT),
+
+        # Round 2
+        (EpistemicType.TEAMMATE_HAS_UNKNOWN_BELIEF, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
         (EpistemicType.TEAMMATE_HAS_TRUE_BELIEF, AskConstraintType.NO_CONSTRAINT, CharacterType.DISHONEST_OPPONENT),
         (EpistemicType.PLAYER_HAS_UNCERTAINTY, AskConstraintType.TEAMMATE_AND_NEUTRAL_LACK_KNOWLEDGE, CharacterType.HONEST_TEAMMATE),
         (EpistemicType.PLAYER_HAS_UNCERTAINTY, AskConstraintType.TEAMMATE_LACKS_KNOWLEDGE, CharacterType.HONEST_OPPONENT),
@@ -444,7 +371,7 @@ if __name__ == "__main__":
         (EpistemicType.TEAMMATE_HAS_NO_BELIEF, AskConstraintType.TEAMMATE_LACKS_KNOWLEDGE, CharacterType.HONEST_OPPONENT),
 
     ]
-    scenarios = generate_scenarios_from_tuples(specs, seed=None)
-    outfile = 'scenarios_generated2.json'
-    save_scenarios(scenarios, outfile)
+    outfile = 'scenarios_generated3.json'
+    chartypes = [CharacterType.LIVE_PLAYER, CharacterType.HONEST_OPPONENT, CharacterType.DISHONEST_TEAMMATE, CharacterType.DISHONEST_OPPONENT, CharacterType.NEUTRAL]
+    generate_scenarios_from_tuples(specs, outfile, seed=None, chartypes=chartypes)
     print(f"Created {outfile} with auto-generated scenarios")
