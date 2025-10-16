@@ -2,18 +2,18 @@
   {
     "round_num": 1,
     "character": "A",
-    "scenario_desc": "You, C, and D are in a room. Inside the room are an empty bag and an empty box. D puts a ball in the box.",
-    "question": "I am going to ask C what is in the box.",
-    "action": "Pass",
-    "action_cost": 0.0,
-    "answer_given": "ball",
+    "scenario_desc": "You, B, and C are in a room. Inside the room are an empty bag and an empty box. B puts a ball in the bag. B leaves the room. C moves the ball to the box. You put an orange in the bag.",
+    "question": "I am going to ask B what is in the bag.",
+    "action": "Tell(B, bag, orange)",
+    "action_cost": 0.5,
+    "answer_given": "orange",
     "answer_correct": true,
     "answer_score": 1.0,
-    "optimal_action": "Pass",
+    "optimal_action": "Tell(B, bag, orange)",
     "was_optimal": true,
-    "blue_score_after": 0.0,
-    "red_score_after": 1.0,
-    "epistemic_type": "opponent_has_true_belief_with_certainty",
+    "blue_score_after": 0.5,
+    "red_score_after": 0.0,
+    "epistemic_type": "teammate_has_false_belief",
     "ask_constraint": "no_constraint"
   }
 ]

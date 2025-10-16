@@ -594,8 +594,21 @@ if __name__ == "__main__":
         (EpistemicType.OPPONENT_HAS_FALSE_BELIEF, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
         (EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
     ]
-    random.shuffle(specs)
-    outfile = 'scenarios_tmp.json'
-    generate_scenarios_from_tuples([specs[0]], outfile=outfile, seed=None, chartypes = [CharacterType.LIVE_PLAYER, CharacterType.HONEST_OPPONENT, CharacterType.DISHONEST_TEAMMATE, CharacterType.DISHONEST_OPPONENT])
+    #random.shuffle(specs)
+    #outfile = 'scenarios_tmp.json'
+    #generate_scenarios_from_tuples([specs[0]], outfile=outfile, seed=None, chartypes = [CharacterType.LIVE_PLAYER, CharacterType.HONEST_OPPONENT, CharacterType.DISHONEST_TEAMMATE, CharacterType.DISHONEST_OPPONENT])
+    #play_game_cli(scenario_file = outfile, human_player=True)
 
-    play_game_cli(scenario_file = outfile, human_player=True)
+    while True:
+        random.shuffle(specs)
+        outfile = 'scenarios_tmp.json'
+        generate_scenarios_from_tuples([specs[0]], outfile=outfile, seed=None, chartypes = [CharacterType.LIVE_PLAYER, CharacterType.HONEST_OPPONENT, CharacterType.DISHONEST_TEAMMATE, CharacterType.DISHONEST_OPPONENT])
+        play_game_cli(scenario_file=outfile, human_player=True)
+
+        play_again = input("\n\nDo you want to play another game? (y/n): ").lower().strip()            
+        if play_again != 'y':
+            print("Thanks for playing!")
+            break
+        print("\n" + "="*70)
+        print("--- Starting a New Game! ---")
+        print("="*70 + "\n")
