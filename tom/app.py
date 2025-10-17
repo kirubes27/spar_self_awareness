@@ -22,6 +22,14 @@ INDEX_HTML = """
     #header { padding: 8px; background: #2d2d2d; }
     #terminal { flex: 1; padding: 8px; }
     .note { color: #aaa; font-size: 12px; }
+    /* Floating "Jump to prompt" button */
+    #jump {
+      position: fixed; right: 12px; bottom: 12px;
+      padding: 6px 10px; background: #3a3a3a; color: #fff;
+      border: 1px solid #555; border-radius: 4px; cursor: pointer;
+      opacity: .85; z-index: 10; display: none;
+    }
+    #jump:hover { opacity: 1; }
   </style>
 </head>
 <body>
@@ -32,6 +40,7 @@ INDEX_HTML = """
   </div>
   <div id="terminal"></div>
 </div>
+<button id="jump" title="Go to the current prompt">Jump to prompt ⬇</button>
 
 <script src="https://unpkg.com/xterm@5.3.0/lib/xterm.js"></script>
 <script>
@@ -43,12 +52,30 @@ INDEX_HTML = """
   const proto = (location.protocol === 'https:') ? 'wss' : 'ws';
   const ws = new WebSocket(proto + '://' + location.host + '/ws');
 
+  const jumpBtn = document.getElementById('jump');
+  jumpBtn.addEventListener('click', () => {
+    term.scrollToBottom();
+    term.focus();
+    jumpBtn.style.display = 'none';
+  });
+
+  // After initial output starts, snap to the top so the intro is visible.
+  let didSnapTop = false;
+  function snapIntroSoon() {
+    if (didSnapTop) return;
+    didSnapTop = true;
+    setTimeout(() => {
+      term.scrollToTop();
+      jumpBtn.style.display = 'block';
+    }, 700);
+  }
+
   ws.onopen = () => {
     term.write("Connected. Launching game...\\r\\n");
+    snapIntroSoon();
   };
 
   ws.onmessage = (ev) => {
-    // Server sends raw text chunks from the game
     term.write(ev.data);
   };
 
@@ -57,27 +84,23 @@ INDEX_HTML = """
   };
 
   let buffer = "";
-
   term.onKey(e => {
     const ev = e.domEvent;
     const key = e.key;
 
     if (ev.key === 'Enter') {
-      ws.send(buffer);
+      try { ws.send(buffer); } catch (e) {}
       term.write('\\r\\n');
       buffer = '';
     } else if (ev.key === 'Backspace') {
       if (buffer.length > 0) {
         buffer = buffer.slice(0, -1);
-        // Erase one char on screen
         term.write('\\b \\b');
       }
     } else if (key && key.length === 1) {
-      // Printable
       buffer += key;
       term.write(key);
     }
-    // Ignore other keys (arrows, etc.) to keep it simple
   });
 })();
 </script>

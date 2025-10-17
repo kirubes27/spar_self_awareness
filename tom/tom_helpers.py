@@ -22,6 +22,7 @@ class EpistemicType(Enum):
     TEAMMATE_HAS_TRUE_BELIEF = "teammate_has_true_belief"
     TEAMMATE_HAS_NO_BELIEF = "teammate_has_no_belief"
     TEAMMATE_HAS_UNKNOWN_BELIEF = "teammate_has_unknown_belief" # Player has left so doesn't know whether whatever teammate believes is true or false
+    PLAYER_HAS_CERTAINTY = "player_has_certainty"
     PLAYER_HAS_UNCERTAINTY = "player_has_uncertainty"
     PLAYER_HAS_NO_BELIEF = "player_has_no_belief"
     OPPONENT_HAS_FALSE_BELIEF = "opponent_has_false_belief"

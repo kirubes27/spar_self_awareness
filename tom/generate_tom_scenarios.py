@@ -85,7 +85,7 @@ class _Builder:
 
 def _identify_who_answers(actor: str, ent: 'EpistemicType', rng: random.Random) -> str:
     # Opponent choice is uniform between C and D when generic
-    if ent in (EpistemicType.PLAYER_HAS_UNCERTAINTY, EpistemicType.PLAYER_HAS_NO_BELIEF):
+    if ent in (EpistemicType.PLAYER_HAS_CERTAINTY, EpistemicType.PLAYER_HAS_UNCERTAINTY, EpistemicType.PLAYER_HAS_NO_BELIEF):
         return actor
     if ent in (EpistemicType.TEAMMATE_HAS_FALSE_BELIEF,
                EpistemicType.TEAMMATE_HAS_TRUE_BELIEF,
@@ -169,7 +169,7 @@ def _build_answerer_belief(sb: _Builder,
             # Optional leave after final truth (no further changes)
             sb.leave(answerer)
 
-    elif ent == EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY:
+    elif ent in [EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY, EpistemicType.PLAYER_HAS_CERTAINTY]:
         # Must not leave; witness final truth and remain present until end; no further changes.
         sb.put_random(final_item)
         # Do not schedule a leave for the answerer

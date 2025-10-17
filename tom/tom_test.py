@@ -246,6 +246,7 @@ class GameState:
         # For Pass scenarios
         if scenario.epistemic_type in [EpistemicType.TEAMMATE_HAS_TRUE_BELIEF,
                                          EpistemicType.TEAMMATE_HAS_UNKNOWN_BELIEF,
+                                         EpistemicType.PLAYER_HAS_CERTAINTY,
                                          EpistemicType.OPPONENT_HAS_FALSE_BELIEF,
                                          EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY,
                                          EpistemicType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY]:
@@ -377,7 +378,7 @@ def play_game_cli(scenario_file: str = None, human_player: bool = True):
     game = GameState(scenario_file=scenario_file)
 
     GAME_SETUP = """
-    Let's play a game! I'm going to read a series of scenarios, and players will need to figure out the right action to take in each one, so that their team scores more points than their opponent's team. All the scenarios involve people going in and out of rooms. Assume that if a person is inside a room they are aware of where everything in the room is. Assume that when they are outside the room they are unaware of anything happening inside the room.
+    Let's play a game! In this game you will be playing with a teammate against a team of opposing players. I'm going to read a series of scenarios, and players will need to figure out the right action to take in each one, so that their team scores more points than their opponent's team. All the scenarios involve players going in and out of rooms. Assume that if a player is inside a room they are aware of where everything in the room is. Assume that when they are outside the room they are unaware of anything happening inside the room, but do know if anyone leaves the room.
 
     """
     if 'N' in game.characters:
@@ -582,14 +583,13 @@ def play_game_cli(scenario_file: str = None, human_player: bool = True):
     return game
 
 if __name__ == "__main__":
-
     specs: List[SpecTuple] = [
         (EpistemicType.TEAMMATE_HAS_FALSE_BELIEF, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
         (EpistemicType.TEAMMATE_HAS_TRUE_BELIEF, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
-        (EpistemicType.TEAMMATE_HAS_NO_BELIEF, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
         (EpistemicType.TEAMMATE_HAS_UNKNOWN_BELIEF, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
+        (EpistemicType.PLAYER_HAS_CERTAINTY, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
+        (EpistemicType.PLAYER_HAS_CERTAINTY, AskConstraintType.TEAMMATE_LACKS_KNOWLEDGE, CharacterType.LIVE_PLAYER),
         (EpistemicType.PLAYER_HAS_UNCERTAINTY, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
-        (EpistemicType.PLAYER_HAS_NO_BELIEF, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
         (EpistemicType.PLAYER_HAS_UNCERTAINTY, AskConstraintType.TEAMMATE_LACKS_KNOWLEDGE, CharacterType.LIVE_PLAYER),
         (EpistemicType.OPPONENT_HAS_FALSE_BELIEF, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
         (EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY, AskConstraintType.NO_CONSTRAINT, CharacterType.LIVE_PLAYER),
