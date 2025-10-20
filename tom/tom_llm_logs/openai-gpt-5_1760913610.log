@@ -1,0 +1,224 @@
+Provider: OpenRouter
+--- Starting LLM ToM Test ---
+
+--- Running Spec 1/9: (<EpistemicType.TEAMMATE_HAS_FALSE_BELIEF: 'teammate_has_false_belief'>, <AskConstraintType.NO_CONSTRAINT: 'no_constraint'>, <CharacterType.LIVE_PLAYER: 'live_player'>) ---
+
+***********************************
+Score: Blue=0.0, Red=0.0
+Here's the first scenario:Your turn:
+-----------------------------------------------
+You, B, and D are in a room. Inside the room are an empty bag and an empty box. You put an apple in the box. B leaves the room. D moves the apple to the bag. You put a brick in the box.
+----------------------------------------------
+I am going to ask B what is in the box.
+Respond ONLY with your action, and no other text.
+In model_call, provider=OpenRouter, attempt=1
+
+Action: Tell(B, box, brick)
+B answers: brick
+Correct! The box contains brick.
+
+Outcome: Blue +0.5, Red +0.0
+
+======================================================================
+GAME OVER
+Final Score: Blue 0.5 - Red 0.0
+Winner: Blue team
+======================================================================
+
+--- Running Spec 2/9: (<EpistemicType.TEAMMATE_HAS_TRUE_BELIEF: 'teammate_has_true_belief'>, <AskConstraintType.NO_CONSTRAINT: 'no_constraint'>, <CharacterType.LIVE_PLAYER: 'live_player'>) ---
+
+***********************************
+Score: Blue=0.0, Red=0.0
+Here's the first scenario:Your turn:
+-----------------------------------------------
+You, B, and C are in a room. Inside the room are an empty bag and an empty box. C puts a stapler in the bag. B leaves the room.
+----------------------------------------------
+I am going to ask B what is in the bag.
+Respond ONLY with your action, and no other text.
+In model_call, provider=OpenRouter, attempt=1
+
+Action: Pass
+B answers: stapler
+Correct! The bag contains stapler.
+
+Outcome: Blue +1.0, Red +0.0
+
+======================================================================
+GAME OVER
+Final Score: Blue 1.0 - Red 0.0
+Winner: Blue team
+======================================================================
+
+--- Running Spec 3/9: (<EpistemicType.TEAMMATE_HAS_UNKNOWN_BELIEF: 'teammate_has_unknown_belief'>, <AskConstraintType.NO_CONSTRAINT: 'no_constraint'>, <CharacterType.LIVE_PLAYER: 'live_player'>) ---
+
+***********************************
+Score: Blue=0.0, Red=0.0
+Here's the first scenario:Your turn:
+-----------------------------------------------
+You and B are in a room. Inside the room are an empty bag and an empty box. You put a ball in the bag. B leaves the room. You leave the room.
+----------------------------------------------
+I am going to ask B what is in the bag.
+Respond ONLY with your action, and no other text.
+In model_call, provider=OpenRouter, attempt=1
+
+Action: Pass
+B answers: ball
+Correct! The bag contains ball.
+
+Outcome: Blue +1.0, Red +0.0
+
+======================================================================
+GAME OVER
+Final Score: Blue 1.0 - Red 0.0
+Winner: Blue team
+======================================================================
+
+--- Running Spec 4/9: (<EpistemicType.PLAYER_HAS_CERTAINTY: 'player_has_certainty'>, <AskConstraintType.NO_CONSTRAINT: 'no_constraint'>, <CharacterType.LIVE_PLAYER: 'live_player'>) ---
+
+***********************************
+Score: Blue=0.0, Red=0.0
+Here's the first scenario:Your turn:
+-----------------------------------------------
+You and D are in a room. Inside the room are an empty bag and an empty box. D puts a stapler in the bag.
+----------------------------------------------
+I am going to ask you what is in the bag.
+Respond ONLY with your action, and no other text.
+In model_call, provider=OpenRouter, attempt=1
+
+Action: Pass
+A answers: stapler
+Correct! The bag contains stapler.
+
+Outcome: Blue +1.0, Red +0.0
+
+======================================================================
+GAME OVER
+Final Score: Blue 1.0 - Red 0.0
+Winner: Blue team
+======================================================================
+
+--- Running Spec 5/9: (<EpistemicType.PLAYER_HAS_CERTAINTY: 'player_has_certainty'>, <AskConstraintType.TEAMMATE_LACKS_KNOWLEDGE: 'teammate_lacks_knowledge'>, <CharacterType.LIVE_PLAYER: 'live_player'>) ---
+
+***********************************
+Score: Blue=0.0, Red=0.0
+Here's the first scenario:Your turn:
+-----------------------------------------------
+You and C are in a room. Inside the room are an empty bag and an empty box. C puts a banana in the bag.
+----------------------------------------------
+I am going to ask you what is in the bag.
+Respond ONLY with your action, and no other text.
+In model_call, provider=OpenRouter, attempt=1
+
+Action: Pass
+A answers: banana
+Correct! The bag contains banana.
+
+Outcome: Blue +1.0, Red +0.0
+
+======================================================================
+GAME OVER
+Final Score: Blue 1.0 - Red 0.0
+Winner: Blue team
+======================================================================
+
+--- Running Spec 6/9: (<EpistemicType.PLAYER_HAS_UNCERTAINTY: 'player_has_uncertainty'>, <AskConstraintType.NO_CONSTRAINT: 'no_constraint'>, <CharacterType.LIVE_PLAYER: 'live_player'>) ---
+
+***********************************
+Score: Blue=0.0, Red=0.0
+Here's the first scenario:Your turn:
+-----------------------------------------------
+You, B, and C are in a room. Inside the room are an empty bag and an empty box. C puts a banana in the box. You leave the room.
+----------------------------------------------
+I am going to ask you what is in the box.
+Respond ONLY with your action, and no other text.
+In model_call, provider=OpenRouter, attempt=1
+
+Action: Pass
+A answers: banana
+Incorrect. The box actually contains orange.
+
+Outcome: Blue +0.0, Red +0.0
+
+======================================================================
+GAME OVER
+Final Score: Blue 0.0 - Red 0.0
+It's a tie!
+======================================================================
+
+--- Running Spec 7/9: (<EpistemicType.PLAYER_HAS_UNCERTAINTY: 'player_has_uncertainty'>, <AskConstraintType.TEAMMATE_LACKS_KNOWLEDGE: 'teammate_lacks_knowledge'>, <CharacterType.LIVE_PLAYER: 'live_player'>) ---
+
+***********************************
+Score: Blue=0.0, Red=0.0
+Here's the first scenario:Your turn:
+-----------------------------------------------
+You, C, and D are in a room. Inside the room are an empty bag and an empty box. C puts a banana in the bag. You leave the room.
+----------------------------------------------
+I am going to ask you what is in the bag.
+Respond ONLY with your action, and no other text.
+In model_call, provider=OpenRouter, attempt=1
+
+Action: Pass
+A answers: banana
+Incorrect. The bag actually contains brick.
+
+Outcome: Blue +0.0, Red +0.0
+
+======================================================================
+GAME OVER
+Final Score: Blue 0.0 - Red 0.0
+It's a tie!
+======================================================================
+
+--- Running Spec 8/9: (<EpistemicType.OPPONENT_HAS_FALSE_BELIEF: 'opponent_has_false_belief'>, <AskConstraintType.NO_CONSTRAINT: 'no_constraint'>, <CharacterType.LIVE_PLAYER: 'live_player'>) ---
+
+***********************************
+Score: Blue=0.0, Red=0.0
+Here's the first scenario:Your turn:
+-----------------------------------------------
+You, B, C, and D are in a room. Inside the room are an empty bag and an empty box. C puts an apple in the box. C leaves the room. D moves the apple to the bag. B puts a brick in the box.
+----------------------------------------------
+I am going to ask C what is in the box.
+Respond ONLY with your action, and no other text.
+In model_call, provider=OpenRouter, attempt=1
+
+Action: Pass
+C answers: apple
+Incorrect. The box actually contains brick.
+
+Outcome: Blue +0.0, Red +0.0
+
+======================================================================
+GAME OVER
+Final Score: Blue 0.0 - Red 0.0
+It's a tie!
+======================================================================
+
+--- Running Spec 9/9: (<EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY: 'opponent_has_true_belief_with_certainty'>, <AskConstraintType.NO_CONSTRAINT: 'no_constraint'>, <CharacterType.LIVE_PLAYER: 'live_player'>) ---
+
+***********************************
+Score: Blue=0.0, Red=0.0
+Here's the first scenario:Your turn:
+-----------------------------------------------
+You and D are in a room. Inside the room are an empty bag and an empty box. D puts a brick in the bag.
+----------------------------------------------
+I am going to ask D what is in the bag.
+Respond ONLY with your action, and no other text.
+In model_call, provider=OpenRouter, attempt=1
+
+Action: Pass
+D answers: brick
+Correct! The bag contains brick.
+
+Outcome: Blue +0.0, Red +1.0
+
+======================================================================
+GAME OVER
+Final Score: Blue 0.0 - Red 1.0
+Winner: Red team
+======================================================================
+
+======================================================================
+LLM ToM Test Finished
+LLM was optimal in 8/9 turns (88.89%).
+
+Game results saved to ./tom_llm_logs/openai-gpt-5_1760913610_game_data.json

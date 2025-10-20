@@ -15,22 +15,14 @@
     {
       "round_num": 1,
       "whose_turn": "A",
-      "who_answers": "B",
+      "who_answers": "A",
       "question_container": "box",
       "events": [
         {
           "event_type": "put",
-          "character": "C",
+          "character": "A",
           "container": "box",
-          "item": "stapler",
-          "from_container": null,
-          "to_container": null
-        },
-        {
-          "event_type": "leave",
-          "character": "B",
-          "container": null,
-          "item": null,
+          "item": "banana",
           "from_container": null,
           "to_container": null
         },
@@ -41,14 +33,30 @@
           "item": null,
           "from_container": null,
           "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "D",
+          "container": null,
+          "item": "banana",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "box",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
         }
       ],
       "present_initially": [
         "A",
         "B",
-        "C"
+        "D"
       ],
-      "epistemic_type": "teammate_has_unknown_belief",
+      "epistemic_type": "player_has_uncertainty",
       "ask_constraint": "no_constraint"
     }
   ]

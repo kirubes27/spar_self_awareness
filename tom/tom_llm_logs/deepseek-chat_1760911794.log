@@ -1,0 +1,14 @@
+Provider: OpenRouter
+--- Starting LLM ToM Test ---
+
+--- Running Spec 1/9: (<EpistemicType.TEAMMATE_HAS_FALSE_BELIEF: 'teammate_has_false_belief'>, <AskConstraintType.NO_CONSTRAINT: 'no_constraint'>, <CharacterType.LIVE_PLAYER: 'live_player'>) ---
+
+***********************************
+Score: Blue=0.0, Red=0.0
+Here's the first scenario:Your turn:
+-----------------------------------------------
+You, B, and C are in a room. Inside the room are an empty bag and an empty box. B puts an apple in the box. B leaves the room. You move the apple to the bag. C puts a brick in the box.
+----------------------------------------------
+I am going to ask B what is in the box.
+Respond ONLY with your action, and no other text.
+In model_call, provider=OpenRouter, attempt=1

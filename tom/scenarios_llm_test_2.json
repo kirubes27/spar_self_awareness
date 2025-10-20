@@ -16,13 +16,13 @@
       "round_num": 1,
       "whose_turn": "A",
       "who_answers": "B",
-      "question_container": "box",
+      "question_container": "bag",
       "events": [
         {
           "event_type": "put",
           "character": "C",
-          "container": "box",
-          "item": "stapler",
+          "container": "bag",
+          "item": "ball",
           "from_container": null,
           "to_container": null
         },

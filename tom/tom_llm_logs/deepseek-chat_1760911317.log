@@ -1,0 +1,20 @@
+Provider: OpenRouter
+--- Starting LLM ToM Test ---
+
+--- Running Spec 1/9: (<EpistemicType.TEAMMATE_HAS_FALSE_BELIEF: 'teammate_has_false_belief'>, <AskConstraintType.NO_CONSTRAINT: 'no_constraint'>, <CharacterType.LIVE_PLAYER: 'live_player'>) ---
+
+***********************************
+Score: Blue=0.0, Red=0.0
+Here's the first scenario:Your turn:
+-----------------------------------------------
+You, B, and D are in a room. Inside the room are an empty bag and an empty box. You put an apple in the box. B leaves the room. D moves the apple to the bag. You put a brick in the box.
+----------------------------------------------
+I am going to ask B what is in the box.
+Respond ONLY with your action, and no other text.
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=2
+Thread execution error: AttributeError: 'NoneType' object has no attribute 'content'
+Error in llm processing: 'NoneType' object has no attribute 'content'
+In model_call, provider=OpenRouter, attempt=3
