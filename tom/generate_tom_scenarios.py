@@ -26,6 +26,13 @@ def _map_chartypes_to_names(chartypes: List[CharacterType]) -> List[str]:
 def _teammate_of(name: str) -> str:
     return {'A': 'B', 'B': 'A', 'C': 'D', 'D': 'C'}[name]
 
+def _opponent_of(name: str, rng: random.Random) -> str:
+    #Get a random opponent of the given character.
+    if name in ['A', 'B']:
+        return rng.choice(['C', 'D'])  # Blue team → pick a red opponent
+    else:
+        return rng.choice(['A', 'B'])  # Red team → pick a blue opponent
+
 def _other_container(c: str) -> str:
     return CONTAINERS_GEN[1] if c == CONTAINERS_GEN[0] else CONTAINERS_GEN[0]
 
@@ -260,6 +267,11 @@ def generate_scenarios_from_tuples(specs: List[SpecTuple], outfile: str, seed: O
             exclude, intended_knower = _plan_availability_for_player_ask(actor, ask, chars)
             available.difference_update(exclude)
             present_initially.add(intended_knower)
+
+            # Ensure at least one opponent is available and present initially because actor cannot be the last person in the room
+            opponent = _opponent_of(actor, rng)
+            available.add(opponent)
+            present_initially.add(opponent)  # Guarantee they're in the room!
 
         # Certainty semantics: for ...WITH_CERTAINTY, answerer must be present through end
         elif ent in [EpistemicType.TEAMMATE_HAS_TRUE_BELIEF, EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY, EpistemicType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY, EpistemicType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY]:

@@ -423,7 +423,7 @@ def play_game_cli(scenario_file: str, llm_player: Optional[BaseGameClass] = None
     is_human = llm_player is None
 
     GAME_SETUP = """
-    Let's play a game! In this game you will be playing with a teammate against a team of opposing players. I'm going to read a series of scenarios, and players will need to figure out the right action to take in each one, so that their team scores more points than their opponent's team. All the scenarios involve players going in and out of rooms. Assume that if a player is inside a room they are aware of where everything in the room is. Assume that when they are outside the room they are unaware of anything happening inside the room, but do know if anyone leaves the room.
+    Let's play a game! In this game you will be playing with a teammate against a team of opposing players. I'm going to read a series of scenarios, and players will need to figure out the right action to take in each one, so that their team scores more points than their opponent's team. All the scenarios involve players going in and out of rooms. Assume that if a player is inside a room they are aware of where everything in the room is. Assume that when they are outside the room they are unaware of anything happening inside the room, but do know if anyone leaves the room. Only the things that happen that you are aware of will be described to you, but other things may happen that you are not aware of.
 
     """
     if 'N' in game.characters:
