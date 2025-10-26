@@ -1,0 +1,8 @@
+Provider: OpenRouter
+Using 447 provided questions
+
+Starting Capabilities Measurement for Subject: deepseek-chat-v3.1_GPQA_447
+Configuration: Questions=447, is_human_player=False, temperature=1.0, resample_for_probs=False, nested=None
+
+========== Starting Capability Measuring ==========
+In model_call, provider=OpenRouter, attempt=1

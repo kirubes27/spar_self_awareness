@@ -950,8 +950,8 @@ def real_main(SUBJECT_NAME, DATASET):
     # Game parameters
     N_TRIALS_PHASE1 = 50
     N_TRIALS_PHASE2 = 500
-    TEAMMATE_ACCURACY_PHASE1 = 0.5
-    TEAMMATE_ACCURACY_PHASE2 = 0.5
+    TEAMMATE_ACCURACY_PHASE1 = 0.8
+    TEAMMATE_ACCURACY_PHASE2 = 0.8
     TEMPERATURE = 0.0
     SEED = 33
     resume_from = None
@@ -1077,7 +1077,7 @@ def real_main(SUBJECT_NAME, DATASET):
 
 def main():
     DATASETS = ["SimpleMC"]
-    models = ["deepseek-chat"]
+    models = ["llama-3.3-70b-instruct"]
     for model in models:
         for d in DATASETS:
             real_main(model, d)

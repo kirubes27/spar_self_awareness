@@ -280,6 +280,7 @@ def generate_scenarios_from_tuples(specs: List[SpecTuple], outfile: str, seed: O
 
         # Minimal initial presence
         present_initially = present_initially.union(sb.used)
+        ### present_initially must include at least one person who will remain in the room at the end to witness the final truth
         present_initially = sorted(list(present_initially))
 
         scenario = Scenario(

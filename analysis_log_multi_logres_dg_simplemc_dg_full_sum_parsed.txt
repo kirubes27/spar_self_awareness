@@ -1,0 +1,770 @@
+Subject: claude-3-5-sonnet-20241022
+  Raw introspection score: 0.017 [-0.045, 0.078]
+  Raw self-acc lift: 0.130 [-0.307, 0.565]
+  Team Accuracy Lift: -0.437 [-0.459, -0.411]
+  Normed Balanced Accuracy: 0.036 [-0.098, 0.169]
+  Full AUC: 0.725 [0.643, 0.800]
+  Calibration AUC: 0.744 [0.712, 0.775]
+  Calibration Entropy AUC: 0.743 [0.711, 0.774]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: Not found [Not found, Not found]
+  Correctness Correl Cntl: 0.0081 [-0.0577, 0.0739]
+  Capent Correl Cntl: 0.0955 [0.0299, 0.1603]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: Not found
+  Brier Resolution: 0.0423 [0.0329, 0.0558]
+  Brier Reliability: 0.0193 [0.0128, 0.0304]
+  Brier: 0.2149 [0.1991, 0.2308]
+  ECE: 0.1144 [0.0930, 0.1451]
+  Model 4 s_i_capability: Not found [Not found, Not found]
+  Model 4 Log-Likelihood: Not found
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -96.485
+  Delegation rate: 0.9744
+  Top Prob Mean: 0.7144 [0.7002161333333333, 0.7285838666666667]
+  Phase 1 accuracy: 0.6000
+  Teammate accuracy: 0.1500
+  Total N: 900
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.6522
+  FP: 525
+  FN: 8
+  Naive Confidence: -0.5744
+  Teammate-weighted confidence: -0.4945 [-0.5219965703908552, -0.4670034296091447]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: Not found
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: 0.4078 [0.3761, 0.4402]
+  Unweighted Confidence: -0.9700 [-0.9888, -0.9474]
+  Weighted Confidence: -0.9946 [-0.9980, -0.9905]
+  Controls Correl: 0.1249 [0.1221, 0.2222]
+  Controls Correctness Correl: 0.1742 [0.1311, 0.2294]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: claude-opus-4-1-20250805
+  Raw introspection score: 0.063 [-0.027, 0.152]
+  Raw self-acc lift: 0.136 [-0.108, 0.357]
+  Team Accuracy Lift: -0.104 [-0.151, -0.060]
+  Normed Balanced Accuracy: 0.137 [-0.062, 0.336]
+  Full AUC: Not found [Not found, Not found]
+  Calibration AUC: Not found [Not found, Not found]
+  Calibration Entropy AUC: Not found [Not found, Not found]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: Not found [Not found, Not found]
+  Correctness Correl Cntl: 0.0641 [-0.0299, 0.1569]
+  Capent Correl Cntl: Not found [Not found, Not found]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: Not found
+  Brier Resolution: Not found [Not found, Not found]
+  Brier Reliability: Not found [Not found, Not found]
+  Brier: Not found [Not found, Not found]
+  ECE: Not found [Not found, Not found]
+  Model 4 s_i_capability: -0.3414 [-0.815, 0.133]
+  Model 4 Log-Likelihood: -254.79
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -255.80
+  Delegation rate: 0.6822
+  Top Prob Mean: Not found [Not found, Not found]
+  Phase 1 accuracy: 0.6844
+  Teammate accuracy: 0.5000
+  Total N: 450
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.7273
+  FP: 204
+  FN: 39
+  Naive Confidence: -0.36660000000000004
+  Teammate-weighted confidence: -0.18333333333333332 [-0.2127534910319648, -0.15391317563470183]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: Not found
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: Not found [Not found, Not found]
+  Unweighted Confidence: Not found [Not found, Not found]
+  Weighted Confidence: Not found [Not found, Not found]
+  Controls Correl: Not found [Not found, Not found]
+  Controls Correctness Correl: 0.3298 [0.2901, 0.4414]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: claude-sonnet-4-20250514
+  Raw introspection score: 0.059 [-0.034, 0.151]
+  Raw self-acc lift: 0.039 [-0.060, 0.145]
+  Team Accuracy Lift: -0.016 [-0.061, 0.031]
+  Normed Balanced Accuracy: 0.120 [-0.066, 0.306]
+  Full AUC: Not found [Not found, Not found]
+  Calibration AUC: Not found [Not found, Not found]
+  Calibration Entropy AUC: Not found [Not found, Not found]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: Not found [Not found, Not found]
+  Correctness Correl Cntl: 0.0693 [-0.0246, 0.1621]
+  Capent Correl Cntl: Not found [Not found, Not found]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: Not found
+  Brier Resolution: Not found [Not found, Not found]
+  Brier Reliability: Not found [Not found, Not found]
+  Brier: Not found [Not found, Not found]
+  ECE: Not found [Not found, Not found]
+  Model 4 s_i_capability: -0.3026 [-0.708, 0.103]
+  Model 4 Log-Likelihood: -283.59
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -284.67
+  Delegation rate: 0.3622
+  Top Prob Mean: Not found [Not found, Not found]
+  Phase 1 accuracy: 0.4378
+  Teammate accuracy: 0.5000
+  Total N: 450
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.4599
+  FP: 65
+  FN: 155
+  Naive Confidence: 0.2
+  Teammate-weighted confidence: 0.1 [0.06904796223226477, 0.13095203776773526]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: Not found
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: Not found [Not found, Not found]
+  Unweighted Confidence: Not found [Not found, Not found]
+  Weighted Confidence: Not found [Not found, Not found]
+  Controls Correl: Not found [Not found, Not found]
+  Controls Correctness Correl: 0.2131 [0.1953, 0.3521]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: claude-sonnet-4-5-20250929
+  Raw introspection score: 0.111 [0.049, 0.172]
+  Raw self-acc lift: 0.228 [0.082, 0.373]
+  Team Accuracy Lift: 0.015 [-0.017, 0.047]
+  Normed Balanced Accuracy: 0.224 [0.096, 0.352]
+  Full AUC: Not found [Not found, Not found]
+  Calibration AUC: Not found [Not found, Not found]
+  Calibration Entropy AUC: Not found [Not found, Not found]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: Not found [Not found, Not found]
+  Correctness Correl Cntl: 0.1091 [0.0451, 0.1723]
+  Capent Correl Cntl: Not found [Not found, Not found]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: Not found
+  Brier Resolution: Not found [Not found, Not found]
+  Brier Reliability: Not found [Not found, Not found]
+  Brier: Not found [Not found, Not found]
+  ECE: Not found [Not found, Not found]
+  Model 4 s_i_capability: -0.5842 [-0.980, -0.189]
+  Model 4 Log-Likelihood: -430.37
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -435.94
+  Delegation rate: 0.8138
+  Top Prob Mean: Not found [Not found, Not found]
+  Phase 1 accuracy: 0.4894
+  Teammate accuracy: 0.5000
+  Total N: 940
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.6057
+  FP: 354
+  FN: 69
+  Naive Confidence: -0.3032
+  Teammate-weighted confidence: -0.15159574468085107 [-0.17072284347865788, -0.13246864588304427]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: Not found
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: Not found [Not found, Not found]
+  Unweighted Confidence: Not found [Not found, Not found]
+  Weighted Confidence: Not found [Not found, Not found]
+  Controls Correl: Not found [Not found, Not found]
+  Controls Correctness Correl: 0.1772 [0.1571, 0.2643]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: deepseek-chat-v3.1
+  Raw introspection score: 0.005 [-0.093, 0.095]
+  Raw self-acc lift: 0.003 [-0.112, 0.112]
+  Team Accuracy Lift: 0.004 [-0.042, 0.050]
+  Normed Balanced Accuracy: 0.009 [-0.175, 0.194]
+  Full AUC: 0.504 [0.448, 0.559]
+  Calibration AUC: 0.667 [0.619, 0.716]
+  Calibration Entropy AUC: 0.666 [0.619, 0.714]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: Not found [Not found, Not found]
+  Correctness Correl Cntl: 0.0080 [-0.0859, 0.1017]
+  Capent Correl Cntl: 0.0055 [-0.0884, 0.0992]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: Not found
+  Brier Resolution: 0.0240 [0.0150, 0.0412]
+  Brier Reliability: 0.0505 [0.0353, 0.0775]
+  Brier: 0.2763 [0.2517, 0.3020]
+  ECE: 0.2049 [0.1673, 0.2507]
+  Model 4 s_i_capability: -0.0373 [-0.442, 0.367]
+  Model 4 Log-Likelihood: -280.46
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -280.48
+  Delegation rate: 0.3444
+  Top Prob Mean: 0.7027 [0.682927408779941, 0.722472591220059]
+  Phase 1 accuracy: 0.5000
+  Teammate accuracy: 0.5000
+  Total N: 450
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.5017
+  FP: 77
+  FN: 147
+  Naive Confidence: 0.15560000000000002
+  Teammate-weighted confidence: 0.07777777777777778 [0.04598586863459404, 0.10956968692096151]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: Not found
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: 0.5022 [0.4562, 0.5482]
+  Unweighted Confidence: 0.3125 [0.1839, 0.4366]
+  Weighted Confidence: 0.3125 [0.1839, 0.4366]
+  Controls Correl: 0.2020 [0.1855, 0.3406]
+  Controls Correctness Correl: 0.2022 [0.1840, 0.3463]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: deepseek-chat
+  Raw introspection score: 0.009 [-0.016, 0.037]
+  Raw self-acc lift: 0.008 [-0.027, 0.044]
+  Team Accuracy Lift: 0.043 [0.030, 0.056]
+  Normed Balanced Accuracy: 0.018 [-0.036, 0.071]
+  Full AUC: 0.538 [0.523, 0.552]
+  Calibration AUC: 0.652 [0.638, 0.667]
+  Calibration Entropy AUC: 0.654 [0.640, 0.669]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: 0.6998 [-1.2601, 2.6598]
+  Correctness Correl Cntl: 0.0049 [-0.0218, 0.0316]
+  Capent Correl Cntl: 0.0629 [0.0363, 0.0895]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: 0.0259
+  Brier Resolution: 0.0142 [0.0116, 0.0174]
+  Brier Reliability: 0.0995 [0.0912, 0.1082]
+  Brier: 0.3327 [0.3227, 0.3418]
+  ECE: 0.3023 [0.2897, 0.3151]
+  Model 4 s_i_capability: Not found [Not found, Not found]
+  Model 4 Log-Likelihood: Not found
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -3087.2
+  Delegation rate: 0.4587
+  Top Prob Mean: 0.7912 [0.785988247890833, 0.796411752109167]
+  Phase 1 accuracy: 0.4889
+  Teammate accuracy: 0.5083
+  Total N: 5400
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.4930
+  FP: 1199
+  FN: 1482
+  Naive Confidence: 0.0524
+  Teammate-weighted confidence: 0.030324499999999976 [0.02094474844417739, 0.039704251555822564]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: 0.6074346525379671
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: 0.5035 [0.4902, 0.5168]
+  Unweighted Confidence: 0.1056 [0.0679, 0.1440]
+  Weighted Confidence: 0.1220 [0.0845, 0.1603]
+  Controls Correl: 0.1737 [0.1591, 0.2027]
+  Controls Correctness Correl: 0.1760 [0.1613, 0.2036]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: deepseek-r1
+  Raw introspection score: 0.080 [0.025, 0.134]
+  Raw self-acc lift: 0.088 [0.002, 0.171]
+  Team Accuracy Lift: -0.010 [-0.037, 0.016]
+  Normed Balanced Accuracy: 0.162 [0.054, 0.270]
+  Full AUC: Not found [Not found, Not found]
+  Calibration AUC: Not found [Not found, Not found]
+  Calibration Entropy AUC: Not found [Not found, Not found]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: Not found [Not found, Not found]
+  Correctness Correl Cntl: 0.0791 [0.0256, 0.1322]
+  Capent Correl Cntl: Not found [Not found, Not found]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: Not found
+  Brier Resolution: Not found [Not found, Not found]
+  Brier Reliability: Not found [Not found, Not found]
+  Brier: Not found [Not found, Not found]
+  ECE: Not found [Not found, Not found]
+  Model 4 s_i_capability: -0.3395 [-0.647, -0.032]
+  Model 4 Log-Likelihood: -869.53
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -873.67
+  Delegation rate: 0.4681
+  Top Prob Mean: Not found [Not found, Not found]
+  Phase 1 accuracy: 0.5800
+  Teammate accuracy: 0.5000
+  Total N: 1350
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.6170
+  FP: 340
+  FN: 275
+  Naive Confidence: -0.048099999999999976
+  Teammate-weighted confidence: -0.024074074074074074 [-0.0420305876731287, -0.006117560475019452]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: Not found
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: Not found [Not found, Not found]
+  Unweighted Confidence: Not found [Not found, Not found]
+  Weighted Confidence: Not found [Not found, Not found]
+  Controls Correl: Not found [Not found, Not found]
+  Controls Correctness Correl: 0.2914 [0.2576, 0.3532]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: gemini-2.5-flash_nothink
+  Raw introspection score: 0.081 [-0.007, 0.174]
+  Raw self-acc lift: 0.153 [-0.048, 0.335]
+  Team Accuracy Lift: 0.004 [-0.042, 0.050]
+  Normed Balanced Accuracy: 0.163 [-0.022, 0.347]
+  Full AUC: 0.612 [0.552, 0.677]
+  Calibration AUC: 0.655 [0.606, 0.704]
+  Calibration Entropy AUC: 0.651 [0.601, 0.699]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: Not found [Not found, Not found]
+  Correctness Correl Cntl: 0.0814 [-0.0125, 0.1739]
+  Capent Correl Cntl: 0.1563 [0.0634, 0.2465]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: Not found
+  Brier Resolution: 0.0268 [0.0171, 0.0456]
+  Brier Reliability: 0.0608 [0.0423, 0.0860]
+  Brier: 0.2824 [0.2559, 0.3071]
+  ECE: 0.2194 [0.1880, 0.2682]
+  Model 4 s_i_capability: -0.4239 [-0.889, 0.041]
+  Model 4 Log-Likelihood: -225.59
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -227.20
+  Delegation rate: 0.7756
+  Top Prob Mean: 0.7094 [0.6887219349764055, 0.7300780650235945]
+  Phase 1 accuracy: 0.5089
+  Teammate accuracy: 0.5000
+  Total N: 450
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.5842
+  FP: 170
+  FN: 42
+  Naive Confidence: -0.2845
+  Teammate-weighted confidence: -0.14222222222222222 [-0.17108012895149852, -0.11336431549294593]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: Not found
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: 0.5289 [0.4827, 0.5746]
+  Unweighted Confidence: -0.6038 [-0.7087, -0.4928]
+  Weighted Confidence: -0.6038 [-0.7087, -0.4928]
+  Controls Correl: 0.1924 [0.1977, 0.3145]
+  Controls Correctness Correl: 0.2141 [0.2077, 0.3355]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: gpt-4o-2024-08-06
+  Raw introspection score: 0.048 [-0.041, 0.142]
+  Raw self-acc lift: 0.031 [-0.074, 0.131]
+  Team Accuracy Lift: -0.002 [-0.048, 0.044]
+  Normed Balanced Accuracy: 0.097 [-0.088, 0.282]
+  Full AUC: 0.575 [0.523, 0.631]
+  Calibration AUC: 0.737 [0.690, 0.784]
+  Calibration Entropy AUC: 0.736 [0.689, 0.785]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: Not found [Not found, Not found]
+  Correctness Correl Cntl: 0.0518 [-0.0422, 0.1449]
+  Capent Correl Cntl: 0.1359 [0.0426, 0.2268]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: Not found
+  Brier Resolution: 0.0437 [0.0295, 0.0650]
+  Brier Reliability: 0.0785 [0.0584, 0.1082]
+  Brier: 0.2816 [0.2551, 0.3097]
+  ECE: 0.2634 [0.2212, 0.3077]
+  Model 4 s_i_capability: -0.2383 [-0.660, 0.184]
+  Model 4 Log-Likelihood: -266.10
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -266.71
+  Delegation rate: 0.3089
+  Top Prob Mean: 0.7456 [0.7257072949080434, 0.7654927050919567]
+  Phase 1 accuracy: 0.4822
+  Teammate accuracy: 0.5000
+  Total N: 450
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.4984
+  FP: 62
+  FN: 156
+  Naive Confidence: 0.20890000000000003
+  Teammate-weighted confidence: 0.10444444444444445 [0.07377220562342662, 0.13511668326546228]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: Not found
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: 0.5156 [0.4694, 0.5614]
+  Unweighted Confidence: 0.4312 [0.3097, 0.5472]
+  Weighted Confidence: 0.4312 [0.3097, 0.5472]
+  Controls Correl: 0.2273 [0.2069, 0.3569]
+  Controls Correctness Correl: 0.2241 [0.2033, 0.3555]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: grok-3-latest
+  Raw introspection score: 0.063 [-0.028, 0.155]
+  Raw self-acc lift: 0.131 [-0.086, 0.348]
+  Team Accuracy Lift: -0.287 [-0.328, -0.242]
+  Normed Balanced Accuracy: 0.129 [-0.058, 0.317]
+  Full AUC: 0.531 [0.465, 0.596]
+  Calibration AUC: 0.717 [0.668, 0.763]
+  Calibration Entropy AUC: 0.729 [0.682, 0.774]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: Not found [Not found, Not found]
+  Correctness Correl Cntl: 0.0562 [-0.0379, 0.1492]
+  Capent Correl Cntl: 0.0404 [-0.0536, 0.1337]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: Not found
+  Brier Resolution: 0.0266 [0.0160, 0.0439]
+  Brier Reliability: 0.0953 [0.0733, 0.1273]
+  Brier: 0.3074 [0.2746, 0.3423]
+  ECE: 0.2928 [0.2538, 0.3396]
+  Model 4 s_i_capability: -0.2937 [-0.756, 0.168]
+  Model 4 Log-Likelihood: -241.70
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -242.48
+  Delegation rate: 0.7511
+  Top Prob Mean: 0.8728 [0.8567878969231952, 0.8888121030768048]
+  Phase 1 accuracy: 0.5889
+  Teammate accuracy: 0.2000
+  Total N: 450
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.6429
+  FP: 193
+  FN: 40
+  Naive Confidence: -0.33999999999999997
+  Teammate-weighted confidence: -0.32533333333333336 [-0.3636748908356533, -0.28699177583101343]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: Not found
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: 0.4822 [0.4364, 0.5283]
+  Unweighted Confidence: -0.6567 [-0.7510, -0.5565]
+  Weighted Confidence: -0.9015 [-0.9314, -0.8670]
+  Controls Correl: 0.2068 [0.1879, 0.3378]
+  Controls Correctness Correl: 0.2062 [0.1888, 0.3416]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: kimi-k2
+  Raw introspection score: -0.031 [-0.094, 0.036]
+  Raw self-acc lift: -0.045 [-0.159, 0.083]
+  Team Accuracy Lift: 0.028 [-0.005, 0.059]
+  Normed Balanced Accuracy: -0.062 [-0.194, 0.070]
+  Full AUC: 0.545 [0.508, 0.585]
+  Calibration AUC: 0.715 [0.681, 0.749]
+  Calibration Entropy AUC: 0.710 [0.674, 0.744]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: Not found [Not found, Not found]
+  Correctness Correl Cntl: -0.0276 [-0.0933, 0.0383]
+  Capent Correl Cntl: 0.0816 [0.0158, 0.1466]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: Not found
+  Brier Resolution: 0.0337 [0.0254, 0.0455]
+  Brier Reliability: 0.0624 [0.0497, 0.0792]
+  Brier: 0.2707 [0.2503, 0.2918]
+  ECE: 0.2303 [0.2020, 0.2630]
+  Model 4 s_i_capability: Not found [Not found, Not found]
+  Model 4 Log-Likelihood: Not found
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -341.76
+  Delegation rate: 0.6111
+  Top Prob Mean: 0.8036 [0.7915786666666667, 0.8156213333333333]
+  Phase 1 accuracy: 0.5733
+  Teammate accuracy: 0.4500
+  Total N: 900
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.5543
+  FP: 322
+  FN: 156
+  Naive Confidence: -0.1844
+  Teammate-weighted confidence: -0.1187777777777778 [-0.14226323620440673, -0.09529231935114886]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: Not found
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: 0.4689 [0.4365, 0.5016]
+  Unweighted Confidence: -0.3473 [-0.4292, -0.2627]
+  Weighted Confidence: -0.4323 [-0.5074, -0.3534]
+  Controls Correl: 0.1387 [0.1291, 0.2395]
+  Controls Correctness Correl: 0.1375 [0.1313, 0.2389]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: llama-3.1-405b-instruct
+  Raw introspection score: -0.009 [-0.055, 0.036]
+  Raw self-acc lift: -0.013 [-0.097, 0.071]
+  Team Accuracy Lift: -0.153 [-0.175, -0.130]
+  Normed Balanced Accuracy: -0.018 [-0.111, 0.075]
+  Full AUC: 0.572 [0.544, 0.600]
+  Calibration AUC: 0.732 [0.709, 0.756]
+  Calibration Entropy AUC: 0.736 [0.712, 0.759]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: 0.2921 [-1.6679, 2.2520]
+  Correctness Correl Cntl: -0.0041 [-0.0505, 0.0422]
+  Capent Correl Cntl: 0.0687 [0.0224, 0.1147]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: 0.1290
+  Brier Resolution: 0.0349 [0.0284, 0.0440]
+  Brier Reliability: 0.0727 [0.0623, 0.0853]
+  Brier: 0.2803 [0.2654, 0.2959]
+  ECE: 0.2579 [0.2375, 0.2795]
+  Model 4 s_i_capability: Not found [Not found, Not found]
+  Model 4 Log-Likelihood: Not found
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -983.70
+  Delegation rate: 0.6267
+  Top Prob Mean: 0.8128 [0.803666725971482, 0.8219332740285179]
+  Phase 1 accuracy: 0.5578
+  Teammate accuracy: 0.2500
+  Total N: 1800
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.5521
+  FP: 633
+  FN: 301
+  Naive Confidence: -0.1845
+  Teammate-weighted confidence: -0.22194444444444444 [-0.24036592780801017, -0.20352296108087872]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: 0.7394074877141847
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: 0.4811 [0.4581, 0.5042]
+  Unweighted Confidence: -0.3555 [-0.4147, -0.2939]
+  Weighted Confidence: -0.7264 [-0.7576, -0.6922]
+  Controls Correl: 0.3681 [0.3402, 0.4106]
+  Controls Correctness Correl: 0.3749 [0.3498, 0.4181]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: llama-3.3-70b-instruct
+  Raw introspection score: 0.040 [-0.052, 0.134]
+  Raw self-acc lift: 0.028 [-0.080, 0.142]
+  Team Accuracy Lift: -0.211 [-0.257, -0.167]
+  Normed Balanced Accuracy: 0.081 [-0.104, 0.267]
+  Full AUC: 0.555 [0.500, 0.607]
+  Calibration AUC: 0.623 [0.571, 0.678]
+  Calibration Entropy AUC: 0.625 [0.573, 0.680]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: 0.8419 [-1.1181, 2.8018]
+  Correctness Correl Cntl: 0.0426 [-0.0515, 0.1360]
+  Capent Correl Cntl: 0.0130 [-0.0810, 0.1068]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: 0.1400
+  Brier Resolution: 0.0102 [0.0052, 0.0217]
+  Brier Reliability: 0.2161 [0.1790, 0.2625]
+  Brier: 0.4509 [0.4110, 0.4922]
+  ECE: 0.4582 [0.4162, 0.5041]
+  Model 4 s_i_capability: -0.1725 [-0.608, 0.263]
+  Model 4 Log-Likelihood: -258.42
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -258.72
+  Delegation rate: 0.3578
+  Top Prob Mean: 0.9109 [0.8976597555054465, 0.9241402444945536]
+  Phase 1 accuracy: 0.4556
+  Teammate accuracy: 0.8000
+  Total N: 450
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.4706
+  FP: 69
+  FN: 153
+  Naive Confidence: 0.1866
+  Teammate-weighted confidence: 0.24133333333333334 [0.2037463273096134, 0.2789203393570533]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: 0.141
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: 0.5703105318265156
+  Capent Gament Correl: 0.0861 [-0.0295, 0.1995]
+  Optimal Decision Rate: 0.5067 [0.4606, 0.5526]
+  Unweighted Confidence: 0.3784 [0.2547, 0.5000]
+  Weighted Confidence: 0.7974 [0.7414, 0.8462]
+  Controls Correl: 0.4116 [0.3691, 0.5146]
+  Controls Correctness Correl: 0.4132 [0.3730, 0.5154]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+
+Subject: openai-gpt-5-chat
+  Raw introspection score: 0.150 [0.059, 0.234]
+  Raw self-acc lift: 0.226 [0.066, 0.387]
+  Team Accuracy Lift: -0.118 [-0.151, -0.091]
+  Normed Balanced Accuracy: 0.301 [0.116, 0.486]
+  Full AUC: Not found [Not found, Not found]
+  Calibration AUC: Not found [Not found, Not found]
+  Calibration Entropy AUC: Not found [Not found, Not found]
+  Controlled Capabilities Entropy: Not found [Not found, Not found]
+  Std OR: Not found [Not found, Not found]
+  AUC w Cntl: Not found [Not found, Not found]
+  AUC Pct Head: Not found [Not found, Not found]
+  Correctness Coef Cntl: 2.1686 [0.2086, 4.1285]
+  Correctness Correl Cntl: 0.1025 [0.0086, 0.1945]
+  Capent Correl Cntl: Not found [Not found, Not found]
+  Capent Correl Prob Cntl: Not found [Not found, Not found]
+  Capent Coef Prob Cntl: Not found [Not found, Not found]
+  Pseudo R2 Cntl: Not found
+  Brier Resolution: Not found [Not found, Not found]
+  Brier Reliability: Not found [Not found, Not found]
+  Brier: Not found [Not found, Not found]
+  ECE: Not found [Not found, Not found]
+  Model 4 s_i_capability: -0.5599 [-0.999, -0.121]
+  Model 4 Log-Likelihood: -254.03
+  Model 4.6 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.63 capabilities_entropy: Not found [Not found, Not found]
+  Model 4.8 normalized_prob_entropy: Not found [Not found, Not found]
+  Model 7 Log-Likelihood: -257.19
+  Delegation rate: 0.6956
+  Top Prob Mean: Not found [Not found, Not found]
+  Phase 1 accuracy: 0.5000
+  Teammate accuracy: 1.0000
+  Total N: 450
+  Game-Test Change Rate: 1.0000
+  Game-Test Good Change Rate: 0.6131
+  FP: 141
+  FN: 53
+  Naive Confidence: -0.1956
+  Teammate-weighted confidence: 0.11777777777777777 [0.087994637372499, 0.14756091818305653]
+  Game-Stated Entropy Diff: Not found [Not found, Not found]
+  Game-Stated Confounds Diff: Not found [Not found, Not found]
+  Entropy-Game Impact: Not found
+  Entropy-Stated Impact: Not found
+  Game Confounds: Not found [Not found, Not found]
+  Stated Confounds: Not found [Not found, Not found]
+  Self Other Correl: Not found
+  Capent Gament Correl: Not found [Not found, Not found]
+  Optimal Decision Rate: Not found [Not found, Not found]
+  Unweighted Confidence: Not found [Not found, Not found]
+  Weighted Confidence: Not found [Not found, Not found]
+  Controls Correl: Not found [Not found, Not found]
+  Controls Correctness Correl: 0.4134 [0.3707, 0.5137]
+  Correctness Correl SA Cntl: Not found [Not found, Not found]
+  Capent Correl SA Cntl: Not found [Not found, Not found]
+

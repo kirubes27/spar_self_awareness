@@ -232,8 +232,8 @@ class BaseGameClass:
                             **({"reasoning": {"enabled": False}} if ('claude' in self.subject_name or 'gpt-oss' in self.subject_name or ('deepseek' in self.subject_name and 'v3.1' in self.subject_name and not 'base' in self.subject_name)) and '_reasoning' not in self.subject_name else {"reasoning": {"enabled": True, "exclude": False}} if '_think' in self.subject_name or '_reasoning' in self.subject_name or '-r1' in model_name else {}),
                             'seed': 42,
                             'provider': {
-                                **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {"only": ["Chutes"]} if self.subject_name == "deepseek-chat" else {}),
-                                'require_parameters': False if self.subject_name == "deepseek-chat" or 'claude' in self.subject_name or 'gpt-5' in self.subject_name else True,
+                                **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {}),
+                                'require_parameters': False if 'claude' in self.subject_name or 'gpt-5' in self.subject_name else True,
                                 "allow_fallbacks": False,
 #                                'quantizations': ['fp8'],
                             },

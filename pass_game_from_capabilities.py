@@ -862,7 +862,7 @@ def real_main(SUBJECT_NAME, DATASET):
 def main():
     """Main function to run the delegate game from completed results"""
     DATASETS = ["GPQA"]  # One of: GPQA, SimpleQA, SimpleMC, MMLU, TruthfulQA, GPSA
-    models = ["openai/gpt-5-chat"]
+    models = ["deepseek-chat-v3-0324"]
     for model in models:
         for DATASET in DATASETS:
             real_main(model, DATASET)
