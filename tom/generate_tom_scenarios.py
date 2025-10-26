@@ -162,12 +162,16 @@ def _build_answerer_belief(sb: _Builder,
         old_item = _pick_other_item(rng, final_item)
         sb.put_random(old_item)
         sb.leave(answerer)
-        sb.put_random(final_item)
+        # For TEAMMATE scenarios, exclude the player from acting after teammate leaves
+        exclude_set = {_teammate_of(answerer)} if ent == EpistemicType.TEAMMATE_HAS_FALSE_BELIEF else None
+        sb.put_random(final_item, exclude=exclude_set)
 
     elif ent in (EpistemicType.TEAMMATE_HAS_NO_BELIEF, EpistemicType.PLAYER_HAS_NO_BELIEF):
         # Answerer absent before any changes: if present, make them leave immediately, else never present.
         sb.leave(answerer)
-        sb.put_random(final_item)
+        # For TEAMMATE scenarios, exclude the player from acting
+        exclude_set = {_teammate_of(answerer)} if ent == EpistemicType.TEAMMATE_HAS_NO_BELIEF else None
+        sb.put_random(final_item, exclude=exclude_set)
 
     elif ent in (EpistemicType.TEAMMATE_HAS_TRUE_BELIEF,):
         # Answerer witnesses final truth; may or may not leave afterward; no further changes.
@@ -276,6 +280,12 @@ def generate_scenarios_from_tuples(specs: List[SpecTuple], outfile: str, seed: O
         # Certainty semantics: for ...WITH_CERTAINTY, answerer must be present through end
         elif ent in [EpistemicType.TEAMMATE_HAS_TRUE_BELIEF, EpistemicType.OPPONENT_HAS_TRUE_BELIEF_WITH_CERTAINTY, EpistemicType.HONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY, EpistemicType.DISHONEST_OPPONENT_HAS_TRUE_BELIEF_WITH_UNCERTAINTY]:
             present_initially.add(answerer)
+
+        # Ensure at least one opponent is available and present initially because the opponent must be able to move things after the teammate leaves
+        elif ent in (EpistemicType.TEAMMATE_HAS_FALSE_BELIEF, EpistemicType.TEAMMATE_HAS_NO_BELIEF):
+            opponent = _opponent_of(actor, rng)
+            available.add(opponent)
+            present_initially.add(opponent)
 
         # Build events with a presence-safe builder
         sb = _Builder(rng, qc, available)
