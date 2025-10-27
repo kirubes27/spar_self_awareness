@@ -4,6 +4,40 @@ import sys
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
 import uvicorn
+import textwrap
+import re
+
+WRAP_COLS = 130
+
+def wrap90_line(line: str, width: int = WRAP_COLS) -> str:
+    # leave ASCII rulers alone (====, ----, ****)
+    if re.fullmatch(r"\s*[=\-\*_]{4,}\s*", line):
+        return line
+
+    # preserve trailing spaces
+    trailing_spaces = len(line) - len(line.rstrip(" "))
+    
+    # preserve leading spaces
+    stripped = line.lstrip(" ")
+    indent_len = len(line) - len(stripped) - trailing_spaces
+    indent = " " * indent_len
+    w = max(10, width - indent_len)
+
+    parts = textwrap.wrap(
+        stripped.rstrip(" "),
+        width=w,
+        break_long_words=False,
+        break_on_hyphens=False,
+        expand_tabs=False,
+    )
+    if not parts:
+        return indent + " " * trailing_spaces
+    
+    # Add trailing spaces back to the last line
+    result = "\n".join(indent + p for p in parts)
+    if trailing_spaces > 0:
+        result += " " * trailing_spaces
+    return result
 
 app = FastAPI()
 ACTIVE = False  # simplest: single session at a time
@@ -17,7 +51,7 @@ INDEX_HTML = """
   <title>Room Scenario Game</title>
   <link rel="stylesheet" href="https://unpkg.com/xterm@5.3.0/css/xterm.css" />
   <style>
-    html, body { height: 100%; margin: 0; background: #1e1e1e; color: #ddd; font-family: monospace; }
+    html, body { height: 100%; margin: 0; background: #1e1e1e; color: #ddd; font-family: monospace; overflow: hidden; }
     #wrap { display: flex; flex-direction: column; height: 100%; }
     #header { padding: 8px; background: #2d2d2d; }
     #terminal { flex: 1; padding: 8px; }
@@ -43,71 +77,92 @@ INDEX_HTML = """
 
 <script src="https://unpkg.com/xterm@5.3.0/lib/xterm.js"></script>
 <script>
-(() => {
-  const hostDiv = document.getElementById('terminal');
-  if (typeof Terminal === 'undefined') {
-    hostDiv.innerHTML = '<div style="color:#f66">Failed to load xterm.js from CDN.</div>';
-    return;
-  }
-
-  const term = new Terminal({ cursorBlink: true, convertEol: true, cols: 100, rows: 30, scrollback: 5000 });
-  term.open(hostDiv);
-  term.focus();
-
-  const proto = (location.protocol === 'https:') ? 'wss' : 'ws';
-  const ws = new WebSocket(proto + '://' + location.host + '/ws');
-
-  const jumpBtn = document.getElementById('jump');
-  jumpBtn.addEventListener('click', () => {
-    term.scrollToBottom();
-    term.focus();
-    jumpBtn.style.display = 'none';
-  });
-
-  // Show the intro from its first line.
-  let didSnapTop = false;
-  function snapIntroSoon() {
-    if (didSnapTop) return;
-    didSnapTop = true;
-    setTimeout(() => {
-      term.scrollToTop();
-      jumpBtn.style.display = 'block';
-    }, 700);
-  }
-
-  ws.addEventListener('open', () => {
-    term.writeln('Connected. Launching game...');
-    snapIntroSoon();
-  });
-
-  ws.addEventListener('message', (ev) => {
-    term.write(ev.data);
-  });
-
-  ws.addEventListener('close', () => {
-    term.writeln('');
-    term.writeln('[Connection closed]');
-  });
-
-  let buffer = '';
-  term.onKey(({ key, domEvent }) => {
-    const ev = domEvent;
-
-    if (ev.key === 'Enter') {
-      try { ws.send(buffer); } catch (e) {}
-      term.writeln('');
-      buffer = '';
-    } else if (ev.key === 'Backspace') {
-      if (buffer.length > 0) {
-        buffer = buffer.slice(0, -1);
-        term.write('\\b \\b');
-      }
-    } else if (key && key.length === 1) {
-      buffer += key;
-      term.write(key);
+  (() => {
+    const hostDiv = document.getElementById('terminal');
+    
+    if (typeof Terminal === 'undefined') {
+      hostDiv.innerHTML = '<div style="color:#f66">Failed to load xterm.js from CDN.</div>';
+      return;
     }
-  });
-})();
+
+    const COLS = 140;
+    const term = new Terminal({
+      cursorBlink: true,
+      convertEol: true,
+      cols: COLS,
+      rows: 30,
+      scrollback: 5000
+    });
+
+    term.open(hostDiv);
+    term.focus();
+
+    const proto = (location.protocol === 'https:') ? 'wss' : 'ws';
+    const ws = new WebSocket(proto + '://' + location.host + '/ws?cols=' + COLS);
+
+    const jumpBtn = document.getElementById('jump');
+    jumpBtn.addEventListener('click', () => {
+      term.scrollToBottom();
+      term.focus();
+      jumpBtn.style.display = 'none';
+    });
+
+    let didSnapTop = false;
+    
+    function snapIntroTop() {
+      if (didSnapTop) return;
+      didSnapTop = true;
+      term.scrollToTop();
+      
+      // Use requestAnimationFrame to ensure page scroll happens after rendering
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (document.scrollingElement) {
+            document.scrollingElement.scrollTop = 0;
+          }
+          window.scrollTo(0, 0);
+        });
+      });
+      
+      jumpBtn.style.display = 'block';
+    }
+
+    ws.addEventListener('open', () => {
+      term.writeln('Connected. Launching game...');
+    });
+
+    ws.addEventListener('message', (ev) => {
+      term.write(ev.data);
+      
+      // Detect when game is waiting for input (reached the action prompt)
+      if (!didSnapTop && ev.data.includes('ACTION PHASE')) {
+        // Small delay to ensure all related text has been written
+        setTimeout(snapIntroTop, 50);
+      }
+    });
+
+    let buffer = '';
+    
+    term.onKey(({ key, domEvent }) => {
+      const ev = domEvent;
+      
+      if (ev.key === 'Enter') {
+        try {
+          ws.send(buffer);
+        } catch {}
+        term.writeln('');
+        buffer = '';
+      } else if (ev.key === 'Backspace') {
+        if (buffer.length > 0) {
+          buffer = buffer.slice(0, -1);
+          term.write('\b \b');
+        }
+      } else if (key && key.length === 1) {
+        buffer += key;
+        term.write(key);
+      }
+    });
+  })();
 </script>
 </body>
 </html>
@@ -117,15 +172,19 @@ INDEX_HTML = """
 async def index():
     return HTMLResponse(INDEX_HTML)
 
-import asyncio, os, sys
-from fastapi import WebSocket, WebSocketDisconnect
-
 @app.websocket("/ws")
 async def ws_endpoint(ws: WebSocket):
     await ws.accept()
+    qcols = ws.query_params.get("cols")
+    wrap_cols = WRAP_COLS
+    try:
+        if qcols is not None:
+            wrap_cols = max(20, min(300, int(qcols)))  # clamp
+    except Exception:
+      pass
     global ACTIVE
     if ACTIVE:
-        await ws.send_text("Another session is running. Please try again later.\r\n")
+        await ws.send_text(wrap90_line("Another session is running. Please try again later.", width=wrap_cols) + "\n")
         await ws.close()
         return
     ACTIVE = True
@@ -150,13 +209,42 @@ async def ws_endpoint(ws: WebSocket):
             os.close(slave_fd)  # parent only needs the master side
 
             async def pty_to_ws():
+                # Incremental word-wrapping of the current logical line
+                line_accum = ""   # current line content (no trailing '\n')
+                rendered = ""     # what we've already sent for this line after wrapping
                 try:
                     while True:
-                        # Read from PTY in a thread to avoid blocking the loop
-                        data = await asyncio.to_thread(os.read, master_fd, 1024)
+                        data = await asyncio.to_thread(os.read, master_fd, 4096)
                         if not data:
                             break
-                        await ws.send_text(data.decode("utf-8", "ignore"))
+
+                        s = data.decode("utf-8", "replace")
+                        s = s.replace("\r\n", "\n").replace("\r", "\n")
+
+                        while s:
+                            nl = s.find("\n")
+                            if nl == -1:
+                                # No newline: extend the logical line
+                                line_accum += s
+                                wrapped = wrap90_line(line_accum, width=wrap_cols)
+                                # send only the new suffix
+                                diff = wrapped[len(rendered):]
+                                if diff:
+                                    await ws.send_text(diff)
+                                    rendered = wrapped
+                                s = ""
+                            else:
+                                # Complete a logical line
+                                segment = s[:nl]
+                                s = s[nl+1:]
+                                line_accum += segment
+                                wrapped = wrap90_line(line_accum, width=wrap_cols)
+                                diff = wrapped[len(rendered):]
+                                if diff:
+                                    await ws.send_text(diff)
+                                await ws.send_text("\n")
+                                line_accum = ""
+                                rendered = ""
                 finally:
                     try:
                         os.close(master_fd)
@@ -167,7 +255,6 @@ async def ws_endpoint(ws: WebSocket):
                 try:
                     while True:
                         msg = await ws.receive_text()
-                        # CRLF tends to be safest for line input on TTYs
                         await asyncio.to_thread(os.write, master_fd, (msg + "\n").encode())
                 except WebSocketDisconnect:
                     pass
@@ -186,7 +273,7 @@ async def ws_endpoint(ws: WebSocket):
                 except asyncio.TimeoutError:
                     proc.kill()
         else:
-            # Windows fallback using pipes (works, but PTY would be better via pywinpty/conpty)
+            # Windows fallback using pipes (PTY via conpty/pywinpty would be better)
             proc = await asyncio.create_subprocess_exec(
                 sys.executable, "-u", "tom_test.py",
                 stdout=asyncio.subprocess.PIPE,
@@ -196,13 +283,38 @@ async def ws_endpoint(ws: WebSocket):
             )
 
             async def pipe_stdout():
+                line_accum = ""
+                rendered = ""
                 try:
-                    # Read line-by-line so prompts and responses flush promptly
                     while True:
-                        line = await proc.stdout.readline()
-                        if not line:
+                        chunk = await proc.stdout.read(4096)
+                        if not chunk:
                             break
-                        await ws.send_text(line.decode("utf-8", "ignore"))
+
+                        s = chunk.decode("utf-8", "replace")
+                        s = s.replace("\r\n", "\n").replace("\r", "\n")
+
+                        while s:
+                            nl = s.find("\n")
+                            if nl == -1:
+                                line_accum += s
+                                wrapped = wrap90_line(line_accum, width=wrap_cols)
+                                diff = wrapped[len(rendered):]
+                                if diff:
+                                    await ws.send_text(diff)
+                                    rendered = wrapped
+                                s = ""
+                            else:
+                                segment = s[:nl]
+                                s = s[nl+1:]
+                                line_accum += segment
+                                wrapped = wrap90_line(line_accum, width=wrap_cols)
+                                diff = wrapped[len(rendered):]
+                                if diff:
+                                    await ws.send_text(diff)
+                                await ws.send_text("\n")
+                                line_accum = ""
+                                rendered = ""
                 except Exception:
                     pass
 

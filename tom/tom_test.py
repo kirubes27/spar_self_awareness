@@ -423,30 +423,24 @@ def play_game_cli(scenario_file: str, llm_player: Optional[BaseGameClass] = None
     is_human = llm_player is None
 
     GAME_SETUP = """
-    Let's play a game! In this game you will be playing with a teammate against a team of opposing players. I'm going to read a series of scenarios, and players will need to figure out the right action to take in each one, so that their team scores more points than their opponent's team. All the scenarios involve players going in and out of rooms. Assume that if a player is inside a room they are aware of where everything in the room is. Assume that when they are outside the room they are unaware of anything happening inside the room, but do know if anyone leaves the room. If something happens inside the room while a player is outside the room, it will not be described to that player, but other players leaving or entering the room will be described to that player.
+Let's play a game! In this game you will be playing with a teammate against a team of opposing players. For simplicity, the players are referred to as A, B, C, and D. A and B are teammates on the Blue team, and C and D are teammates on the Red team. The game is made up of turns, and each turn consists of a scenario, an action phase, and an answer phase. Players need to figure out the right action to take in each action phase, so that their team scores more points than their opponent's team.
 
-    """
-    if 'N' in game.characters:
-        GAME_SETUP += """Each scenario will include one or more of the following players: A, B, C, D, and N. A and B are teammates on the Blue team, C and D are teammates on the Red team, and N is a neutral party, on neither team.
-        """
-    else:
-        GAME_SETUP += """Each scenario will include one or more of the following players: A, B, C, and D. A and B are teammates on the Blue team, and C and D are teammates on the Red team.
-        """
+SCENARIO
+In each scenario, one or more of the players start inside a room. The room has one or more containers. Scenarios may include:
+- players leaving the room
+- players putting objects into containers
+- players moving objects between containers
+When a player is in the room they are aware of everything that happens in the room. When a player is outside the room they are unaware of anything happening in the room, but do know if anyone leaves the room. If something happens inside the room while a player is outside the room, it will not be described to that player, but other players leaving or entering the room will be described to that player.
+At the end of the scenario, I will reveal a question that I will ask in the answer phase.
 
-    GAME_SETUP += """
-    Each turn consists of a scenario, an action phase, and an answer phase.
+ACTION PHASE
+In the action phase, the player whose turn it is can take one action: Ask, Tell, or Pass.
+An Ask action entails asking any player the contents of one container. The format for an Ask action is: Ask(Player, Container); this will result in the player you ask answering your question. It costs your team 0.5 points to do this action.
+A Tell action entails telling any player the contents of one container. The format for a Tell action is: Tell(Player, Container, Contents); this will result in the player you tell hearing the answer you give. It costs your team 0.5 points to do this action.
+The format for a Pass action is simply "Pass". Nothing changes as a result of this action, and it costs 0 points.
 
-    In the answer phase, I will ask a target player (one of A, B, C, or D) to name the contents of one container.
-
-    When a player answers my question correctly, their team gets 1 point. The first team to {WINNING_SCORE} points wins.
-
-    Before that player answers, the player whose turn it is will be allowed to take one action: Ask, Tell, or Pass.
-
-    An Ask action entails asking one player the contents of one container. The format for an Ask action is: Ask(Player, Container); this will result in the player you ask answering your question. It costs your team 0.5 points to do this action.
-
-    A Tell action entails telling one player the contents of one container. The format for a Tell action is: Tell(Player, Container, Contents); this will result in the player you tell hearing the answer you give. It costs your team 0.5 points to do this action.
-
-    The format for a Pass action is simply "Pass". Nothing changes as a result of this action, and it costs 0 points.
+ANSWER PHASE
+In the answer phase, I will ask a target player (not necessarily the player whose turn it is) to name the contents of one container. When a player answers my question correctly, their team gets 1 point. The first team to {WINNING_SCORE} points wins.
     """
 
     if 'N' in game.characters:
@@ -466,25 +460,24 @@ def play_game_cli(scenario_file: str, llm_player: Optional[BaseGameClass] = None
             break
         
         true_contents = game.process_scenario_events(scenario)
-        
-        preamble=f"\n***********************************\nScore: Blue={game.scores[Team.BLUE]}, Red={game.scores[Team.RED]}\n"
-        if turn_count == 0:
-            preamble+="Here's the first scenario:"
-        else:
-            preamble+=f"Here's scenario {turn_count + 1}:"
-        
-        turn_name = "Your" if turn_char == 'A' else f"{turn_char}'s"
-        preamble+=f"{turn_name} turn:"
-        log(preamble)
-        
         scenario_desc = scenario.get_description_for(turn_char, game.characters)
         answerer = "you" if scenario.who_answers == turn_char else scenario.who_answers
         question_desc = f"I am going to ask {answerer} what is in the {scenario.question_container}."
         
-        prompt_text = f"""-----------------------------------------------
+        preamble=f"\n***********************************\nSCORE\nBlue={game.scores[Team.BLUE]}, Red={game.scores[Team.RED]}\n"
+        log(preamble)
+
+        prompt_text = f"""SCENARIO
+-----------------------------------------------
 {scenario_desc}
 ----------------------------------------------
 {question_desc}
+
+ACTION PHASE"""        
+
+        turn_name = "your" if turn_char == 'A' else f"{turn_char}'s"
+        prompt_text+=f"""
+It is {turn_name} turn.
 Respond ONLY with your action, and no other text."""
         
         log(prompt_text)
@@ -492,7 +485,7 @@ Respond ONLY with your action, and no other text."""
         action = None
         action_str = ""
         if turn_char == 'A':
-            prompt_for_action = f"Your action (Ask(Player, Container), Tell(Player, Container, Contents), or Pass): "
+            prompt_for_action = "Your action (Ask(Player, Container), Tell(Player, Container, Contents), or Pass): "
             if llm_player:
                 llm_prompt_text = f"{game_setup_text}\n{preamble}\n{prompt_text}\n{prompt_for_action}"
                 action_str, _, _ = llm_player._get_llm_answer(

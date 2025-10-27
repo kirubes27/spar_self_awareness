@@ -63,7 +63,7 @@ class _Builder:
             self.present.discard(who)
             self.used.add(who)
 
-    def _move_out_if_needed(self, container: str):
+    def _move_out_if_needed(self, container: str, who: str):
         existing = self.contents[container]
         if existing is None:
             return
@@ -72,22 +72,21 @@ class _Builder:
         if self.contents[to_cont] is not None:
             # Safety: shouldn't happen in our single-flip patterns
             return
-        who = self.rand_actor()
         self.events.append(Event('move', who, from_container=container, to_container=to_cont, item=existing))
         self.used.add(who)
         self.contents[container] = None
         self.contents[to_cont] = existing
 
-    def put(self, who: str, container: str, item: str):
+    def put(self, who: str, container: str, item: str, exclude: Optional[Set[str]] = None):
         # Ensure we never narrate simultaneous items in a container
         if self.contents[container] is not None and self.contents[container] != item:
-            self._move_out_if_needed(container)
+            self._move_out_if_needed(container, self.rand_actor(exclude))
         self.contents[container] = item
         self.events.append(Event('put', who, container=container, item=item))
         self.used.add(who)
 
     def put_random(self, item: str, exclude: Optional[Set[str]] = None):
-        self.put(self.rand_actor(exclude), self.qc, item)
+        self.put(self.rand_actor(exclude), self.qc, item, exclude)
 
 
 def _identify_who_answers(actor: str, ent: 'EpistemicType', rng: random.Random) -> str:
