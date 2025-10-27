@@ -16,6 +16,13 @@ class CharacterType(Enum):
     DISHONEST_OPPONENT = "dishonest_opponent"
     NEUTRAL = "neutral"
 
+class EpistemicState(Enum):
+    BELIEVES_TRUTH = "Believes Truth"
+    BELIEVES_FALSE = "Believes False"
+    KNOWS_TRUTH = "Knows Truth"
+    KNOWS_X = "Knows X"
+    BELIEVES_X = "Believes X"
+    UNKNOWN = "Unknown"
 
 class EpistemicType(Enum):
     TEAMMATE_HAS_FALSE_BELIEF = "teammate_has_false_belief"
