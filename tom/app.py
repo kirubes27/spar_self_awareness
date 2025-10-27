@@ -22,7 +22,6 @@ INDEX_HTML = """
     #header { padding: 8px; background: #2d2d2d; }
     #terminal { flex: 1; padding: 8px; }
     .note { color: #aaa; font-size: 12px; }
-    /* Floating "Jump to prompt" button */
     #jump {
       position: fixed; right: 12px; bottom: 12px;
       padding: 6px 10px; background: #3a3a3a; color: #fff;
@@ -44,9 +43,15 @@ INDEX_HTML = """
 
 <script src="https://unpkg.com/xterm@5.3.0/lib/xterm.js"></script>
 <script>
-(async () => {
-  const term = new Terminal({ cursorBlink: true, convertEol: true, cols: 100, rows: 30 });
-  term.open(document.getElementById('terminal'));
+(() => {
+  const hostDiv = document.getElementById('terminal');
+  if (typeof Terminal === 'undefined') {
+    hostDiv.innerHTML = '<div style="color:#f66">Failed to load xterm.js from CDN.</div>';
+    return;
+  }
+
+  const term = new Terminal({ cursorBlink: true, convertEol: true, cols: 100, rows: 30, scrollback: 5000 });
+  term.open(hostDiv);
   term.focus();
 
   const proto = (location.protocol === 'https:') ? 'wss' : 'ws';
@@ -59,7 +64,7 @@ INDEX_HTML = """
     jumpBtn.style.display = 'none';
   });
 
-  // After initial output starts, snap to the top so the intro is visible.
+  // Show the intro from its first line.
   let didSnapTop = false;
   function snapIntroSoon() {
     if (didSnapTop) return;
@@ -70,27 +75,27 @@ INDEX_HTML = """
     }, 700);
   }
 
-  ws.onopen = () => {
-    term.write("Connected. Launching game...\\r\\n");
+  ws.addEventListener('open', () => {
+    term.writeln('Connected. Launching game...');
     snapIntroSoon();
-  };
+  });
 
-  ws.onmessage = (ev) => {
+  ws.addEventListener('message', (ev) => {
     term.write(ev.data);
-  };
+  });
 
-  ws.onclose = () => {
-    term.write("\\r\\n[Connection closed]\\r\\n");
-  };
+  ws.addEventListener('close', () => {
+    term.writeln('');
+    term.writeln('[Connection closed]');
+  });
 
-  let buffer = "";
-  term.onKey(e => {
-    const ev = e.domEvent;
-    const key = e.key;
+  let buffer = '';
+  term.onKey(({ key, domEvent }) => {
+    const ev = domEvent;
 
     if (ev.key === 'Enter') {
       try { ws.send(buffer); } catch (e) {}
-      term.write('\\r\\n');
+      term.writeln('');
       buffer = '';
     } else if (ev.key === 'Backspace') {
       if (buffer.length > 0) {
