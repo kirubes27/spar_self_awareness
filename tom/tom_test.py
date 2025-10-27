@@ -17,7 +17,12 @@ from tom_helpers import (
     Scenario, Event, EpistemicType, AskConstraintType, CharacterType, Character, Team,
     save_scenarios, load_scenarios
 )
-from base_game_class import BaseGameClass
+try:
+    from base_game_class import BaseGameClass
+    TORCH_AVAILABLE = True
+except ImportError:
+    TORCH_AVAILABLE = False
+    BaseGameClass = object  # Dummy base class
 import argparse
 
 class ActionType(Enum):
@@ -381,39 +386,39 @@ def save_game_results(turn_records: List[TurnRecord], filename: str):
     with open(filename, 'w') as f:
         json.dump([asdict(r) for r in turn_records], f, indent=2)
 
+if TORCH_AVAILABLE:
+    class ToMTestLLM(BaseGameClass):
+        def __init__(self, subject_id, subject_name, specs: List[SpecTuple], log_dir="tom_llm_logs"):
+            super().__init__(subject_id, subject_name, is_human_player=False, log_dir=log_dir)
+            self.specs = specs
+            self.all_turn_records = []
 
-class ToMTestLLM(BaseGameClass):
-    def __init__(self, subject_id, subject_name, specs: List[SpecTuple], log_dir="tom_llm_logs"):
-        super().__init__(subject_id, subject_name, is_human_player=False, log_dir=log_dir)
-        self.specs = specs
-        self.all_turn_records = []
-
-    def run_test(self):
-        self._log("--- Starting LLM ToM Test ---")
-        chartypes = [CharacterType.LIVE_PLAYER, CharacterType.HONEST_OPPONENT, CharacterType.DISHONEST_TEAMMATE, CharacterType.DISHONEST_OPPONENT]
-        
-        for i, spec in enumerate(self.specs):
-            self._log(f"\n--- Running Spec {i+1}/{len(self.specs)}: {spec} ---")
-            outfile = f'scenarios_llm_test_{i}.json'
-            generate_scenarios_from_tuples([spec], outfile=outfile, seed=i, chartypes=chartypes)
+        def run_test(self):
+            self._log("--- Starting LLM ToM Test ---")
+            chartypes = [CharacterType.LIVE_PLAYER, CharacterType.HONEST_OPPONENT, CharacterType.DISHONEST_TEAMMATE, CharacterType.DISHONEST_OPPONENT]
             
-            game_state = play_game_cli(scenario_file=outfile, llm_player=self)
-            if game_state:
-                self.all_turn_records.extend(game_state.turn_records)
+            for i, spec in enumerate(self.specs):
+                self._log(f"\n--- Running Spec {i+1}/{len(self.specs)}: {spec} ---")
+                outfile = f'scenarios_llm_test_{i}.json'
+                generate_scenarios_from_tuples([spec], outfile=outfile, seed=i, chartypes=chartypes)
+                
+                game_state = play_game_cli(scenario_file=outfile, llm_player=self)
+                if game_state:
+                    self.all_turn_records.extend(game_state.turn_records)
 
-        self._log("\n" + "=" * 70)
-        self._log("LLM ToM Test Finished")
-        
-        total_optimal = sum(1 for r in self.all_turn_records if r.character == 'A' and r.was_optimal)
-        total_turns = sum(1 for r in self.all_turn_records if r.character == 'A')
-        
-        if total_turns > 0:
-            self._log(f"LLM was optimal in {total_optimal}/{total_turns} turns ({(total_optimal/total_turns)*100:.2f}%).")
-        else:
-            self._log("No turns were played by the LLM.")
+            self._log("\n" + "=" * 70)
+            self._log("LLM ToM Test Finished")
+            
+            total_optimal = sum(1 for r in self.all_turn_records if r.character == 'A' and r.was_optimal)
+            total_turns = sum(1 for r in self.all_turn_records if r.character == 'A')
+            
+            if total_turns > 0:
+                self._log(f"LLM was optimal in {total_optimal}/{total_turns} turns ({(total_optimal/total_turns)*100:.2f}%).")
+            else:
+                self._log("No turns were played by the LLM.")
 
-        save_game_results(self.all_turn_records, self.game_data_filename)
-        self._log(f"\nGame results saved to {self.game_data_filename}")
+            save_game_results(self.all_turn_records, self.game_data_filename)
+            self._log(f"\nGame results saved to {self.game_data_filename}")
 
 
 def play_game_cli(scenario_file: str, llm_player: Optional[BaseGameClass] = None):

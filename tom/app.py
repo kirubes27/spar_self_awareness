@@ -108,13 +108,13 @@ INDEX_HTML = """
     });
 
     let didSnapTop = false;
+    let accumulatedText = '';
     
     function snapIntroTop() {
       if (didSnapTop) return;
       didSnapTop = true;
       term.scrollToTop();
       
-      // Use requestAnimationFrame to ensure page scroll happens after rendering
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           if (document.scrollingElement) {
@@ -133,10 +133,10 @@ INDEX_HTML = """
 
     ws.addEventListener('message', (ev) => {
       term.write(ev.data);
+      accumulatedText += ev.data;
       
-      // Detect when game is waiting for input (reached the action prompt)
-      if (!didSnapTop && ev.data.includes('ACTION PHASE')) {
-        // Small delay to ensure all related text has been written
+      // Detect when the actual input prompt appears
+      if (!didSnapTop && accumulatedText.includes('Your action (Ask(Player, Container)')) {
         setTimeout(snapIntroTop, 50);
       }
     });
