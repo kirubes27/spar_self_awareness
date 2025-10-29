@@ -15,12 +15,12 @@
     {
       "round_num": 1,
       "whose_turn": "A",
-      "who_answers": "B",
+      "who_answers": "A",
       "question_container": "bag",
       "events": [
         {
           "event_type": "put",
-          "character": "B",
+          "character": "C",
           "container": "bag",
           "item": "ball",
           "from_container": null,
@@ -37,10 +37,16 @@
       ],
       "present_initially": [
         "A",
-        "B"
+        "B",
+        "C",
+        "D"
       ],
-      "epistemic_type": "teammate_has_true_belief",
-      "ask_constraint": "no_constraint"
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes Truth",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
     }
   ]
 }

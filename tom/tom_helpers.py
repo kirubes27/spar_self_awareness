@@ -44,6 +44,8 @@ class AskConstraintType(Enum):
     TEAMMATE_NEUTRAL_AND_HONEST_OPPONENT_LACK_KNOWLEDGE = "teammate_neutral_and_honest_opponent_lack_knowledge"
     NO_CONSTRAINT = "no_constraint"
 
+SpecTuple = Tuple['CharacterType', 'EpistemicState', 'EpistemicState', 'EpistemicState', 'str', 'CharacterType']
+
 @dataclass
 class Event:
     """Represents an event in a scenario."""
@@ -91,6 +93,10 @@ class Scenario:
     question_container: str
     events: List[Event]
     present_initially: List[str]
+    ks_self: Optional[str] = None
+    ks_teammate: Optional[str] = None
+    ks_opponent: Optional[str] = None
+    correct_action: Optional[str] = None
     epistemic_type: Optional[EpistemicType] = None
     ask_constraint: Optional[AskConstraintType] = None
     
@@ -160,7 +166,11 @@ class Scenario:
             'events': [asdict(e) for e in self.events],
             'present_initially': self.present_initially,
             'epistemic_type': self.epistemic_type.value if self.epistemic_type else None,
-            'ask_constraint': self.ask_constraint.value if self.ask_constraint else None
+            'ask_constraint': self.ask_constraint.value if self.ask_constraint else None,
+            'ks_self': self.ks_self if self.ks_self else None,
+            'ks_teammate': self.ks_teammate if self.ks_teammate else None,
+            'ks_opponent': self.ks_opponent if self.ks_opponent else None,
+            'correct_action': self.correct_action if self.correct_action else None,
         }
     
     @staticmethod
@@ -174,7 +184,11 @@ class Scenario:
             events=[Event(**e) for e in data['events']],
             present_initially=data['present_initially'],
             epistemic_type=EpistemicType(data['epistemic_type']) if data.get('epistemic_type') else None,
-            ask_constraint=AskConstraintType(data['ask_constraint']) if data.get('ask_constraint') else None
+            ask_constraint=AskConstraintType(data['ask_constraint']) if data.get('ask_constraint') else None,
+            ks_self=data.get('ks_self') if data.get('ks_self') else None,
+            ks_teammate=data.get('ks_teammate') if data.get('ks_teammate') else None,
+            ks_opponent=data.get('ks_opponent') if data.get('ks_opponent') else None,
+            correct_action=data.get('correct_action') if data.get('correct_action') else None,
         )
 
 def load_scenarios(filename: str) -> Tuple[List[Scenario], List[str], List[CharacterType]]:
@@ -201,3 +215,19 @@ def save_scenarios(scenarios: List[Scenario], filename: str, chars: List[str], c
     }
     with open(filename, 'w') as f:
         json.dump(output_data, f, indent=2)
+
+def read_specs_from_csv(infile='ToM - scenarios.csv') -> List[SpecTuple]:
+    import csv
+    specs: List[SpecTuple] = []
+    with open(infile, 'r') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            specs.append({
+                'Answerer': row['Answerer'],
+                'KS_Self': EpistemicState(row['Self']),
+                'KS_Teammate': EpistemicState(row['Teammate']),
+                'KS_Opponent': EpistemicState(row['Opponent']),
+                'Action': row['Action'],
+                'Actor': CharacterType.LIVE_PLAYER 
+            })
+    return specs

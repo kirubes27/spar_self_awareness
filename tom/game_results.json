@@ -2,8 +2,8 @@
   {
     "round_num": 1,
     "character": "A",
-    "scenario_desc": "You and B are in a room. Inside the room are an empty bag and an empty box. B puts a ball in the bag. B leaves the room.",
-    "question": "I am going to ask B what is in the bag.",
+    "scenario_desc": "You, B, C, and D are in a room. Inside the room are an empty bag and an empty box. C puts a ball in the bag. B leaves the room.",
+    "question": "I am going to ask you what is in the bag.",
     "action": "Pass",
     "action_cost": 0.0,
     "answer_given": "ball",
@@ -13,7 +13,10 @@
     "was_optimal": true,
     "blue_score_after": 1.0,
     "red_score_after": 0.0,
-    "epistemic_type": "teammate_has_true_belief",
-    "ask_constraint": "no_constraint"
+    "epistemic_type": null,
+    "ask_constraint": null,
+    "ks_self": "Knows X",
+    "ks_teammate": "Believes Truth",
+    "ks_opponent": "Knows Truth"
   }
 ]

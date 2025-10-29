@@ -1,0 +1,552 @@
+"""
+Room Scenario Game - A strategic deduction game about information and belief.
+"""
+
+import json
+import re
+import sys
+import os
+from typing import Dict, List, Set, Optional, Tuple
+
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from dataclasses import dataclass, asdict
+from enum import Enum
+import random
+from generate_tom_scenarios_new import generate_scenarios_from_tuples, ITEMS_GEN
+from tom_helpers import (
+    Scenario, Event, EpistemicType, AskConstraintType, CharacterType, Character, Team,
+    save_scenarios, load_scenarios, SpecTuple, read_specs_from_csv
+)
+try:
+    from base_game_class import BaseGameClass
+    TORCH_AVAILABLE = True
+except ImportError:
+    TORCH_AVAILABLE = False
+    BaseGameClass = object  # Dummy base class
+import argparse
+
+class ActionType(Enum):
+    ASK = "ask"
+    TELL = "tell"
+    PASS = "pass"
+
+@dataclass
+class Action:
+    """Represents a player action."""
+    action_type: ActionType
+    target_char: Optional[str] = None
+    container: Optional[str] = None
+    contents: Optional[str] = None
+    def __eq__(self, other):
+        if not isinstance(other, Action):
+            return False
+        return (self.action_type, self.target_char, self.container, self.contents) == \
+               (other.action_type, other.target_char, other.container, other.contents)
+@dataclass
+class TurnRecord:
+    """Records what happened in a turn."""
+    round_num: int
+    character: str
+    scenario_desc: str
+    question: str
+    action: str
+    action_cost: float
+    answer_given: str
+    answer_correct: bool
+    answer_score: float
+    optimal_action: str
+    was_optimal: bool
+    blue_score_after: float
+    red_score_after: float
+    epistemic_type: Optional[str] = None
+    ask_constraint: Optional[str] = None
+    ks_self: Optional[str] = None
+    ks_teammate: Optional[str] = None
+    ks_opponent: Optional[str] = None
+
+class GameState:
+    """Manages the game state."""
+    
+    def __init__(self, scenario_file: str):
+        self.current_scenario_idx = 0
+        self.current_turn_idx = 0
+        self.scores = {Team.BLUE: 0.0, Team.RED: 0.0}
+        self.characters: Dict[str, Character] = {}
+        self.turn_records: List[TurnRecord] = []
+        self.game_over = False
+        self.winner = None
+
+        try:
+            self.scenarios, chars, chartypes = load_scenarios(scenario_file)
+        except FileNotFoundError:
+            print("Scenario file not found.")
+
+        for name, ctype in zip(chars, chartypes):
+            team = Team.BLUE if name in ['A', 'B'] else Team.RED if name in ['C', 'D'] else Team.NEUTRAL
+            self.characters[name] = Character(name, team, ctype)
+
+        self.turn_order = chars
+        self.WINNING_SCORE = int(len(self.scenarios)/len(self.turn_order)) + 4
+
+
+    def get_teammate(self, actor_name: str) -> Optional[str]:
+        """Get the teammate of the actor."""
+        actor = self.characters[actor_name]
+        for name, char in self.characters.items():
+            if name != actor_name and char.team == actor.team:
+                return name
+        return None
+    
+    def is_honest_to(self, speaker_name: str, listener_name: str) -> bool:
+        """Check if speaker is honest to listener."""
+        speaker = self.characters[speaker_name]
+        listener = self.characters[listener_name]
+        
+        if speaker.char_type in [CharacterType.NEUTRAL, CharacterType.HONEST_OPPONENT, CharacterType.HONEST_TEAMMATE]:
+            return True
+        return speaker.team == listener.team
+    
+    def trusts(self, listener_name: str, speaker_name: str) -> bool:
+        listener = self.characters[listener_name]
+        speaker = self.characters[speaker_name]
+
+        if listener.char_type in [CharacterType.NEUTRAL, CharacterType.HONEST_OPPONENT, CharacterType.HONEST_TEAMMATE]:
+            return True
+        return speaker.team == listener.team
+        
+    def reset_scenario_knowledge(self):
+        """Reset all character knowledge for new scenario."""
+        for char in self.characters.values():
+            char.knowledge = {}
+            char.beliefs = {}
+    
+    def get_present_at_end(self, scenario: Scenario) -> Set[str]:
+        """Get who's present at the end of the scenario."""
+        present = set(scenario.present_initially)
+        for event in scenario.events:
+            if event.event_type == 'leave':
+                present.discard(event.character)
+        return present
+    
+    def process_scenario_events(self, scenario: Scenario):
+        """Process scenario events to determine what each character knows."""
+        self.reset_scenario_knowledge()
+        
+        present = set(scenario.present_initially)
+        container_contents = {'bag': None, 'box': None}
+        
+        for event in scenario.events:
+            if event.event_type == 'put':
+                container_contents[event.container] = event.item
+                for char_name in present:
+                    self.characters[char_name].update_knowledge(event.container, event.item)
+                    
+            elif event.event_type == 'move':
+                container_contents[event.to_container] = event.item
+                container_contents[event.from_container] = None
+                for char_name in present:
+                    self.characters[char_name].update_knowledge(event.to_container, event.item)
+                    self.characters[char_name].update_knowledge(event.from_container, None)
+                        
+            elif event.event_type == 'leave':
+                present.discard(event.character)
+        
+        return container_contents
+    
+    def execute_npc_action(self, actor_name: str, scenario: Scenario, true_contents: Dict[str, str]) -> Action:
+        """Execute NPC action based on game rules - completely determined."""
+        container = scenario.question_container
+        truth = true_contents[container]
+        target = scenario.who_answers
+        
+        if scenario.correct_action == "Tell Teammate":
+            return Action(ActionType.TELL, target, container, truth)
+        elif scenario.correct_action == "Ask Teammate":
+            teammate = self.get_teammate(actor_name)
+            return Action(ActionType.ASK, teammate, container)
+        else:
+            return Action(ActionType.PASS)
+    
+    def is_action_optimal(self, action_str: str, scenario: Scenario, true_contents: Dict[str, str]) -> bool:
+        """Check if live player's action is optimal."""
+        action = self.parse_action(action_str)
+        if not action:
+            return False
+        optimal_action = self.execute_npc_action('A', scenario, true_contents)
+        if action != optimal_action:
+            return False        
+        return True
+    
+    def get_current_scenario(self) -> Optional[Scenario]:
+        """Get the current scenario."""
+        if self.current_scenario_idx >= len(self.scenarios):
+            return None
+        return self.scenarios[self.current_scenario_idx]
+    
+    def get_current_turn_character(self) -> Optional[str]:
+        """Get whose turn it is."""
+        if self.current_turn_idx >= len(self.turn_order):
+            return None
+        return self.turn_order[self.current_turn_idx]
+    
+    def parse_action(self, action_str: str) -> Optional[Action]:
+        """Parse action string into Action object."""
+        action_str = action_str.strip()
+        
+        if action_str.lower() == 'pass':
+            return Action(ActionType.PASS)
+        
+        ask_match = re.match(r'Ask\(([A-DN]),\s*(bag|box)\)', action_str, re.IGNORECASE)
+        if ask_match:
+            return Action(ActionType.ASK, ask_match.group(1).upper(), ask_match.group(2).lower())
+        
+        tell_match = re.match(r'Tell\(([A-DN]),\s*(bag|box),\s*(\w+)\)', action_str, re.IGNORECASE)
+        if tell_match:
+            return Action(ActionType.TELL, tell_match.group(1).upper(), 
+                         tell_match.group(2).lower(), tell_match.group(3).lower())
+        
+        return None
+    
+    def execute_action(self, actor_name: str, action: Action, true_contents: Dict[str, str]) -> Tuple[float, str]:
+        """Execute an action and return the score change and description."""
+        score_delta = 0.0
+        desc = ""
+        
+        if action.action_type == ActionType.PASS:
+            desc = "Pass"
+            
+        elif action.action_type == ActionType.ASK:
+            score_delta -= 0.5
+            target = self.characters[action.target_char]
+            container = action.container
+
+            # What the target says:
+            # - Honest: report what they believe (what they observed).
+            # - Dishonest: intentionally say something different from their belief.
+            if target.char_type in [CharacterType.DISHONEST_TEAMMATE, CharacterType.DISHONEST_OPPONENT] and target.team != self.characters[actor_name].team:
+                believed = target.get_belief(container)
+                options = ['apple', 'ball', 'banana', 'brick', 'stapler', 'orange']
+                # Pick an item different from what they believe; if they believe nothing, pick any item.
+                wrong = next((x for x in options if x != (believed or 'nothing')), options[0])
+                answer = wrong
+            else:
+                answer = target.get_belief(container)
+
+            # Asking always updates the asker’s belief with whatever was answered.
+            self.characters[actor_name].receive_info(container, answer, target, True)
+
+            desc = f"Ask({action.target_char}, {container})"
+            
+        elif action.action_type == ActionType.TELL:
+            score_delta -= 0.5
+            target_name = action.target_char
+            
+            if self.trusts(target_name, actor_name):
+                self.characters[target_name].receive_info(action.container, action.contents,
+                                                         self.characters[actor_name], True)
+            
+            desc = f"Tell({action.target_char}, {action.container}, {action.contents})"
+        
+        return score_delta, desc
+    
+    def resolve_answer_phase(self, scenario: Scenario, true_contents: Dict[str, str]) -> Tuple[str, bool, float]:
+        """Resolve the answer phase and return answer, correctness, and score change."""
+        answerer = self.characters[scenario.who_answers]
+        container = scenario.question_container
+        
+        belief = answerer.get_belief(container)
+        truth = true_contents[container]
+        
+        is_correct = (belief == truth)
+        
+        if is_correct:
+            return belief if belief else 'nothing', True, 1.0
+        else:
+            return belief if belief else 'nothing', False, 0.0
+    
+    def check_game_over(self):
+        """Check if game is over."""
+        if self.scores[Team.BLUE] >= self.WINNING_SCORE:
+            self.game_over = True
+            self.winner = Team.BLUE
+        elif self.scores[Team.RED] >= self.WINNING_SCORE:
+            self.game_over = True
+            self.winner = Team.RED
+        elif self.current_scenario_idx >= len(self.scenarios):
+            self.game_over = True
+            if self.scores[Team.BLUE] > self.scores[Team.RED]:
+                self.winner = Team.BLUE
+            elif self.scores[Team.RED] > self.scores[Team.BLUE]:
+                self.winner = Team.RED
+            else:
+                self.winner = None
+    
+    def advance_turn(self):
+        """Move to next turn."""
+        self.current_scenario_idx += 1
+        self.current_turn_idx += 1
+        if self.current_turn_idx >= len(self.turn_order):
+            self.current_turn_idx = 0
+
+
+def save_game_results(turn_records: List[TurnRecord], filename: str):
+    """Save game results to JSON file."""
+    with open(filename, 'w') as f:
+        json.dump([asdict(r) for r in turn_records], f, indent=2)
+
+if TORCH_AVAILABLE:
+    class ToMTestLLM(BaseGameClass):
+        def __init__(self, subject_id, subject_name, specs: List[SpecTuple], log_dir="tom_llm_logs"):
+            super().__init__(subject_id, subject_name, is_human_player=False, log_dir=log_dir)
+            self.specs = specs
+            self.all_turn_records = []
+
+        def run_test(self):
+            self._log("--- Starting LLM ToM Test ---")
+            chartypes = [CharacterType.LIVE_PLAYER, CharacterType.HONEST_OPPONENT, CharacterType.DISHONEST_TEAMMATE, CharacterType.DISHONEST_OPPONENT]
+            
+            for i, spec in enumerate(self.specs):
+                self._log(f"\n--- Running Spec {i+1}/{len(self.specs)}: {spec} ---")
+                outfile = f'scenarios_llm_test_{i}.json'
+                generate_scenarios_from_tuples([spec], outfile=outfile, seed=i, chartypes=chartypes)
+                
+                game_state = play_game_cli(scenario_file=outfile, llm_player=self)
+                if game_state:
+                    self.all_turn_records.extend(game_state.turn_records)
+
+            self._log("\n" + "=" * 70)
+            self._log("LLM ToM Test Finished")
+            
+            total_optimal = sum(1 for r in self.all_turn_records if r.character == 'A' and r.was_optimal)
+            total_turns = sum(1 for r in self.all_turn_records if r.character == 'A')
+            
+            if total_turns > 0:
+                self._log(f"LLM was optimal in {total_optimal}/{total_turns} turns ({(total_optimal/total_turns)*100:.2f}%).")
+            else:
+                self._log("No turns were played by the LLM.")
+
+            save_game_results(self.all_turn_records, self.game_data_filename)
+            self._log(f"\nGame results saved to {self.game_data_filename}")
+
+
+def play_game_cli(scenario_file: str, llm_player: Optional[BaseGameClass] = None):
+    """Play the game in CLI mode, for humans or LLMs."""
+    game = GameState(scenario_file=scenario_file)
+    log = llm_player._log if llm_player else print
+    is_human = llm_player is None
+
+    GAME_SETUP = """
+Let's play a game! In this game you will be playing with a teammate against a team of opposing players. For simplicity, the players are referred to as A, B, C, and D. A and B are teammates on the Blue team, and C and D are teammates on the Red team. You are player A. The game is made up of turns, and each turn consists of a scenario, an action phase, and an answer phase. Players need to figure out the right action to take in each action phase, so that their team scores more points than their opponent's team.
+
+SCENARIO
+In each scenario, one or more of the players start inside a room. The room has one or more containers. Scenarios may include:
+- players leaving the room
+- players putting objects into containers
+- players moving objects between containers
+When a player is in the room they are aware of everything that happens in the room. When a player is outside the room they are unaware of anything happening in the room, but do know if anyone leaves the room. If something happens inside the room while a player is outside the room, it will not be described to that player, but other players leaving or entering the room will be described to that player.
+At the end of the scenario, I will reveal a question that I will ask in the answer phase.
+
+ACTION PHASE
+In the action phase, the player whose turn it is can take one action: Ask, Tell, or Pass.
+An Ask action entails asking any player the contents of one container. The format for an Ask action is: Ask(Player, Container); this will result in the player you ask answering your question. It costs your team 0.5 points to do this action.
+A Tell action entails telling any player the contents of one container. The format for a Tell action is: Tell(Player, Container, Contents); this will result in the player you tell hearing the answer you give. It costs your team 0.5 points to do this action.
+The format for a Pass action is simply "Pass". Nothing changes as a result of this action, and it costs 0 points.
+
+ANSWER PHASE
+In the answer phase, I will ask a target player (not necessarily the player whose turn it is) to name the contents of one container. When a player answers my question correctly, their team gets 1 point. The first team to {WINNING_SCORE} points wins.
+    """
+
+    if 'N' in game.characters:
+        GAME_SETUP += """The Neutral party does not get any turns, but will answer any question honestly."""
+    
+    game_setup_text = "=" * 70 + "\n" + GAME_SETUP.format(WINNING_SCORE=game.WINNING_SCORE) + "\n" + "=" * 70
+    if is_human:
+        log(game_setup_text)
+    
+    turn_count = 0
+
+    while not game.game_over and game.get_current_scenario():
+        scenario = game.get_current_scenario()
+        turn_char = game.get_current_turn_character()
+        
+        if not turn_char:
+            break
+        
+        true_contents = game.process_scenario_events(scenario)
+        scenario_desc = scenario.get_description_for(turn_char, game.characters)
+        answerer = "you" if scenario.who_answers == turn_char else scenario.who_answers
+        question_desc = f"I am going to ask {answerer} what is in the {scenario.question_container}."
+        
+        preamble=f"\n***********************************\nSCORE\nBlue={game.scores[Team.BLUE]}, Red={game.scores[Team.RED]}\n"
+        log(preamble)
+
+        prompt_text = f"""SCENARIO
+-----------------------------------------------
+{scenario_desc}
+----------------------------------------------
+{question_desc}
+
+ACTION PHASE"""        
+
+        turn_name = "your" if turn_char == 'A' else f"{turn_char}'s"
+        prompt_text+=f"""
+It is {turn_name} turn.
+Respond ONLY with your action, and no other text."""
+        
+        log(prompt_text)
+        
+        action = None
+        action_str = ""
+        if turn_char == 'A':
+            prompt_for_action = "Your action (Ask(Player, Container), Tell(Player, Container, Contents), or Pass): "
+            if llm_player:
+                llm_prompt_text = f"{game_setup_text}\n{preamble}\n{prompt_text}\n{prompt_for_action}"
+                action_str, _, _ = llm_player._get_llm_answer(
+                    options=None,
+                    q_text=llm_prompt_text,
+                    message_history=[],
+                    keep_appending=False,
+                    setup_text="You are a player in a strategic deduction game. Your goal is to help your team win by taking the optimal action.",
+                    MAX_TOKENS=30,
+                    temp=0.0,
+                    accept_any=True
+                )
+            else:
+                action_str = input(prompt_for_action)
+
+            action = game.parse_action(action_str)
+            if not action:
+                log(f"Invalid action: '{action_str}'. Defaulting to Pass.")
+                action = Action(ActionType.PASS)
+                action_str = "Pass"
+        else:
+            action = game.execute_npc_action(turn_char, scenario, true_contents)
+            if action.action_type == ActionType.ASK:
+                action_str = f"Ask({action.target_char}, {action.container})"
+            elif action.action_type == ActionType.TELL:
+                action_str = f"Tell({action.target_char}, {action.container}, {action.contents})"
+            else:
+                action_str = "Pass"
+        
+        score_delta, action_desc = game.execute_action(turn_char, action, true_contents)
+                
+        log(f"\nAction: {action_str}")
+        
+        answer_given, is_correct, answer_score = game.resolve_answer_phase(scenario, true_contents)
+        
+        log(f"{scenario.who_answers} answers: {answer_given}")
+        if is_correct:
+            log(f"Correct! The {scenario.question_container} contains {answer_given}.")
+        else:
+            log(f"Incorrect. The {scenario.question_container} actually contains {true_contents[scenario.question_container]}.")
+        
+        blue_delta = 0.0
+        red_delta = 0.0
+
+        if turn_char in ['A', 'B']:
+            blue_delta += score_delta
+        else:
+            red_delta += score_delta
+
+        if is_correct:
+            if scenario.who_answers in ['A', 'B']:
+                blue_delta += answer_score
+            else:
+                red_delta += answer_score
+
+        game.scores[Team.BLUE] += blue_delta
+        game.scores[Team.RED] += red_delta
+
+        def fmt_delta(x: float) -> str:
+            sign = '+' if x >= 0 else '-'
+            return f"{sign}{abs(x)}"
+        log(f"\nOutcome: Blue {fmt_delta(blue_delta)}, Red {fmt_delta(red_delta)}")
+
+        was_optimal = False
+        expected_action_str = ""
+        if turn_char == 'A':
+            was_optimal = game.is_action_optimal(action_str, scenario, true_contents)
+            expected_action_obj = game.execute_npc_action(turn_char, scenario, true_contents)
+            if expected_action_obj.action_type == ActionType.PASS:
+                expected_action_str = "Pass"
+            elif expected_action_obj.action_type == ActionType.ASK:
+                expected_action_str = f"Ask({expected_action_obj.target_char}, {expected_action_obj.container})"
+            elif expected_action_obj.action_type == ActionType.TELL:
+                expected_action_str = f"Tell({expected_action_obj.target_char}, {expected_action_obj.container}, {expected_action_obj.contents})"
+        else:
+            was_optimal = True
+            expected_action_str = action_str
+        
+        turn_record = TurnRecord(
+            round_num=scenario.round_num, character=turn_char, scenario_desc=scenario_desc,
+            question=question_desc, action=action_str, action_cost=abs(score_delta),
+            answer_given=answer_given, answer_correct=is_correct, answer_score=answer_score,
+            optimal_action=expected_action_str, was_optimal=was_optimal,
+            blue_score_after=game.scores[Team.BLUE], red_score_after=game.scores[Team.RED],
+            epistemic_type=scenario.epistemic_type.value if scenario.epistemic_type else None,
+            ask_constraint=scenario.ask_constraint.value if scenario.ask_constraint else None,
+            ks_self=scenario.ks_self if scenario.ks_self else None,
+            ks_teammate=scenario.ks_teammate if scenario.ks_teammate else None,
+            ks_opponent=scenario.ks_opponent if scenario.ks_opponent else None,
+        )
+        game.turn_records.append(turn_record)
+        
+        if is_human:
+            input("\n[Press Enter to continue]")
+        
+        game.advance_turn()
+        game.check_game_over()
+        turn_count += 1
+
+    log("\n" + "=" * 70)
+    log("GAME OVER")
+    log(f"Final Score: Blue {game.scores[Team.BLUE]} - Red {game.scores[Team.RED]}")
+    if game.winner:
+        log(f"Winner: {game.winner.value} team")
+    elif game.winner is None:
+        log("It's a tie!")
+    log("=" * 70)
+    
+    if is_human:
+        for record in game.turn_records:
+            if record.character == 'A':
+                log(f"\nRound {record.round_num} - {record.character}'s turn")
+                log(f"KS_Self: {record.ks_self}, KS_Teammate: {record.ks_teammate}, KS_Opponent: {record.ks_opponent}")
+                log(f"Action: {record.action}, Expected: {record.optimal_action}")
+        
+        save_game_results(game.turn_records, 'game_results.json')
+        log("\nGame results saved to game_results.json")
+    
+    return game
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--mode", type=str, default="human", choices=["human", "llm"])
+    parser.add_argument("--model", type=str, default="kimi-k2")
+    args = parser.parse_args()
+
+    specs = read_specs_from_csv('ToM - scenarios.csv')
+    if args.mode == "llm":
+        test_runner = ToMTestLLM(
+            subject_id=args.model.replace("/", "-"),
+            subject_name=args.model,
+            specs=specs,
+            log_dir="tom_llm_logs"
+        )
+        test_runner.run_test()
+    else:
+        for i, spec in enumerate(specs):
+         #i=0
+#        while True:
+            #random.shuffle(specs)
+            outfile = 'scenarios_tmp.json'#
+            generate_scenarios_from_tuples([specs[i]], outfile=outfile, seed=None, chartypes = [CharacterType.LIVE_PLAYER, CharacterType.HONEST_OPPONENT, CharacterType.DISHONEST_TEAMMATE, CharacterType.DISHONEST_OPPONENT])
+            play_game_cli(scenario_file=outfile)
+
+            play_again = input("\n\nDo you want to play another game? ([y]/n): ").lower().strip()
+            if play_again not in ('y', ''):
+                print("Thanks for playing!")
+                break
+            print("\n" + "="*70)
+            print("--- Starting a New Game! ---")
+            print("="*70 + "\n")

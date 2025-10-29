@@ -1,0 +1,1952 @@
+{
+  "chars": [
+    "A",
+    "C",
+    "B",
+    "D"
+  ],
+  "chartypes": [
+    "live_player",
+    "dishonest_opponent",
+    "dishonest_teammate",
+    "dishonest_opponent"
+  ],
+  "scenarios": [
+    {
+      "round_num": 1,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "box",
+          "item": "ball",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes Truth",
+      "ks_opponent": "Believes Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 1,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "bag",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "D",
+          "container": null,
+          "item": "orange",
+          "from_container": "bag",
+          "to_container": "box"
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "bag",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes Truth",
+      "ks_opponent": "Believes False",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 1,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "bag",
+          "item": "stapler",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes Truth",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 1,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "bag",
+          "item": "brick",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "C",
+          "container": null,
+          "item": "brick",
+          "from_container": "bag",
+          "to_container": "box"
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "bag",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes False",
+      "ks_opponent": "Believes Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 2,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "box",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "A",
+          "container": null,
+          "item": "apple",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "box",
+          "item": "ball",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes False",
+      "ks_opponent": "Believes False",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 2,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "bag",
+          "item": "stapler",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "A",
+          "container": null,
+          "item": "stapler",
+          "from_container": "bag",
+          "to_container": "box"
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "bag",
+          "item": "brick",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes False",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 2,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "bag",
+          "item": "ball",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Believes Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 2,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "box",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "D",
+          "container": null,
+          "item": "apple",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "box",
+          "item": "brick",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Believes False",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 3,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "box",
+          "item": "banana",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 3,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "D",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "bag",
+          "item": "banana",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Unknown",
+      "ks_opponent": "Unknown",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 3,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "box",
+          "item": "stapler",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "D",
+          "container": null,
+          "item": "stapler",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "C",
+          "container": "box",
+          "item": "banana",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Unknown",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 3,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "bag",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "D",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Unknown",
+      "correct_action": "Ask Teammate"
+    },
+    {
+      "round_num": 4,
+      "whose_turn": "A",
+      "who_answers": "A",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "C",
+          "container": "bag",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Ask Teammate"
+    },
+    {
+      "round_num": 4,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "bag",
+          "item": "stapler",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "D",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes Truth",
+      "ks_opponent": "Believes Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 4,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "box",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "A",
+          "container": null,
+          "item": "orange",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "box",
+          "item": "stapler",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes Truth",
+      "ks_opponent": "Believes False",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 4,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "bag",
+          "item": "banana",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes Truth",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 5,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "C",
+          "container": "bag",
+          "item": "stapler",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "D",
+          "container": null,
+          "item": "stapler",
+          "from_container": "bag",
+          "to_container": "box"
+        },
+        {
+          "event_type": "put",
+          "character": "C",
+          "container": "bag",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "D",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes False",
+      "ks_opponent": "Believes Truth",
+      "correct_action": "Tell Teammate"
+    },
+    {
+      "round_num": 5,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "box",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "D",
+          "container": null,
+          "item": "orange",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "box",
+          "item": "banana",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes False",
+      "ks_opponent": "Believes False",
+      "correct_action": "Tell Teammate"
+    },
+    {
+      "round_num": 5,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "bag",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "C",
+          "container": null,
+          "item": "apple",
+          "from_container": "bag",
+          "to_container": "box"
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "bag",
+          "item": "ball",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes False",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Tell Teammate"
+    },
+    {
+      "round_num": 5,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "box",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "D",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Believes Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 6,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "bag",
+          "item": "banana",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "D",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "B",
+          "container": null,
+          "item": "banana",
+          "from_container": "bag",
+          "to_container": "box"
+        },
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "bag",
+          "item": "brick",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Believes False",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 6,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "bag",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 6,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "put",
+          "character": "C",
+          "container": "box",
+          "item": "banana",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "D",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "C",
+          "container": null,
+          "item": "banana",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "box",
+          "item": "brick",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Unknown",
+      "ks_opponent": "Unknown",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 6,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "box",
+          "item": "stapler",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Unknown",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 7,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "bag",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Unknown",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 7,
+      "whose_turn": "A",
+      "who_answers": "B",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "C",
+          "container": "box",
+          "item": "brick",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "D",
+          "container": null,
+          "item": "brick",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "box",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 7,
+      "whose_turn": "A",
+      "who_answers": "D",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "C",
+          "container": "bag",
+          "item": "stapler",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "D",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes Truth",
+      "ks_opponent": "Believes Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 7,
+      "whose_turn": "A",
+      "who_answers": "D",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "box",
+          "item": "brick",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "C",
+          "container": null,
+          "item": "brick",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "box",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes False",
+      "ks_opponent": "Believes Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 8,
+      "whose_turn": "A",
+      "who_answers": "C",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "bag",
+          "item": "banana",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Believes Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 8,
+      "whose_turn": "A",
+      "who_answers": "D",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "box",
+          "item": "banana",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "D",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "B",
+          "container": null,
+          "item": "banana",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "box",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes Truth",
+      "ks_opponent": "Believes False",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 8,
+      "whose_turn": "A",
+      "who_answers": "D",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "bag",
+          "item": "banana",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "A",
+          "container": null,
+          "item": "banana",
+          "from_container": "bag",
+          "to_container": "box"
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "bag",
+          "item": "ball",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes False",
+      "ks_opponent": "Believes False",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 8,
+      "whose_turn": "A",
+      "who_answers": "C",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "box",
+          "item": "brick",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "D",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "A",
+          "container": null,
+          "item": "brick",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "box",
+          "item": "stapler",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Believes False",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 9,
+      "whose_turn": "A",
+      "who_answers": "D",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "bag",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes Truth",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 9,
+      "whose_turn": "A",
+      "who_answers": "C",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "C",
+          "container": "bag",
+          "item": "ball",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "D",
+          "container": null,
+          "item": "ball",
+          "from_container": "bag",
+          "to_container": "box"
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "bag",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Believes False",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 9,
+      "whose_turn": "A",
+      "who_answers": "C",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "C",
+          "container": "box",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Knows X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 9,
+      "whose_turn": "A",
+      "who_answers": "C",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "C",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "put",
+          "character": "D",
+          "container": "box",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Unknown",
+      "ks_opponent": "Unknown",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 10,
+      "whose_turn": "A",
+      "who_answers": "C",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "put",
+          "character": "C",
+          "container": "bag",
+          "item": "ball",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "B",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Unknown",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 10,
+      "whose_turn": "A",
+      "who_answers": "C",
+      "question_container": "box",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "box",
+          "item": "brick",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "C",
+          "container": null,
+          "item": "brick",
+          "from_container": "box",
+          "to_container": "bag"
+        },
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "box",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "D",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Unknown",
+      "correct_action": "Pass"
+    },
+    {
+      "round_num": 10,
+      "whose_turn": "A",
+      "who_answers": "C",
+      "question_container": "bag",
+      "events": [
+        {
+          "event_type": "put",
+          "character": "A",
+          "container": "bag",
+          "item": "apple",
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "leave",
+          "character": "A",
+          "container": null,
+          "item": null,
+          "from_container": null,
+          "to_container": null
+        },
+        {
+          "event_type": "move",
+          "character": "D",
+          "container": null,
+          "item": "apple",
+          "from_container": "bag",
+          "to_container": "box"
+        },
+        {
+          "event_type": "put",
+          "character": "B",
+          "container": "bag",
+          "item": "orange",
+          "from_container": null,
+          "to_container": null
+        }
+      ],
+      "present_initially": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "epistemic_type": null,
+      "ask_constraint": null,
+      "ks_self": "Believes X",
+      "ks_teammate": "Knows Truth",
+      "ks_opponent": "Knows Truth",
+      "correct_action": "Pass"
+    }
+  ]
+}
