@@ -170,7 +170,7 @@ class Scenario_Builder:
 
         self.present_initially = self.exclude | self.exclude_true | self.exclude_false | self.include # who must be present initially
 
-    def build_scenario(self, answerer: str, actor: str):
+    def build_scenario(self, answerer: str):
         #randomly add anyone who is in available but not in present_initially to present_initially
         for who in self.available:
             if who not in self.present_initially:
@@ -178,28 +178,27 @@ class Scenario_Builder:
                     self.present_initially.add(who)
         for who in self.exclude:#unconstrained - can believe truth or falsehood or nothing
             r = self.rng.random()
-            # Special case: actor in exclude must see something (has "Believes X")
-            if who == actor:
-                # 50/50: either sees wrong item or sees correct item
-                if self.rng.random() < 0.5:
-                    self.exclude_false.add(who)
-                else:
-                    self.exclude_true.add(who)
+            if r <= 0.33333:
+                self.exclude_false.add(who)
+            elif r <= 0.66666:
+                self.exclude_true.add(who)
             else:
-                # Normal random assignment for others
-                if r <= 0.33333:
-                    self.exclude_false.add(who)
-                elif r <= 0.66666:
-                    self.exclude_true.add(who)
-                else:
-                    self.leave(who)
+                self.leave(who)
         if len(self.exclude_false) > 0:
             old_item = _pick_other_item(self.rng, self.queried_item)
             self.put(self.queried_container, old_item, exclude=None)
             for who in self.rng.sample(list(self.exclude_false), len(self.exclude_false)):
                 self.leave(who)
 
-        exclude_set = {_teammate_of(answerer)} if answerer in self.exclude_false else None
+        # Only exclude answerer's teammate if there's someone else available
+        exclude_set = None
+        if answerer in self.exclude_false:
+            potential_exclude = _teammate_of(answerer)
+            # Check if excluding would still leave someone to place the item
+            available_for_put = [p for p in self.present if p != potential_exclude]
+            if len(available_for_put) > 0:
+                exclude_set = {potential_exclude}
+
         #print(f"exclude_true: {self.exclude_true}, exclude_false: {self.exclude_false}, present_initially: {self.present_initially}, present: {self.present}, answerer: {answerer}")
         self.put(self.queried_container, self.queried_item, exclude=exclude_set)
         for who in self.rng.sample(list(self.exclude_true), len(self.exclude_true)):
@@ -263,7 +262,7 @@ def generate_scenarios_from_tuples(specs: List[SpecTuple], outfile: str, seed: O
 
         sb = Scenario_Builder(rng, queried_container, queried_item, available)
         sb.plan_availability(row)
-        sb.build_scenario(answerer, actor)
+        sb.build_scenario(answerer)
 
         present_initially = sorted(list(sb.present_initially))
 
