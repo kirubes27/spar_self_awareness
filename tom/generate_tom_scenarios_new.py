@@ -116,11 +116,11 @@ class Scenario_Builder:
 
             elif spec['KS_Teammate'] == EpistemicState.UNKNOWN and spec['KS_Opponent'] == EpistemicState.UNKNOWN:
                 self.exclude.add(teammate)
-                if spec['Answerer'] == 'Self':
-                    self.exclude.add(opponent1)
-                    self.exclude.add(opponent2)
-                else:
-                    self.exclude.add(random.choice([opponent1, opponent2])) 
+                # Ensure one opponent stays, one leaves
+                stay_opponent = self.rng.choice([opponent1, opponent2])
+                leave_opponent = opponent2 if stay_opponent == opponent1 else opponent1
+                self.include.add(stay_opponent)  # This opponent must stay until end
+                self.exclude.add(leave_opponent)  # This opponent must leave
 
         else: # spec['KS_Self'] == EpistemicState.KNOWS_X:
             self.include.add(actor) 
@@ -170,7 +170,7 @@ class Scenario_Builder:
 
         self.present_initially = self.exclude | self.exclude_true | self.exclude_false | self.include # who must be present initially
 
-    def build_scenario(self, answerer: str):
+    def build_scenario(self, answerer: str, actor: str):
         #randomly add anyone who is in available but not in present_initially to present_initially
         for who in self.available:
             if who not in self.present_initially:
@@ -178,13 +178,21 @@ class Scenario_Builder:
                     self.present_initially.add(who)
         for who in self.exclude:#unconstrained - can believe truth or falsehood or nothing
             r = self.rng.random()
-            if r <= 0.33333:
-                self.exclude_false.add(who)
-            elif r <= 0.66666:
-                self.exclude_true.add(who)
+            # Special case: actor in exclude must see something (has "Believes X")
+            if who == actor:
+                # 50/50: either sees wrong item or sees correct item
+                if self.rng.random() < 0.5:
+                    self.exclude_false.add(who)
+                else:
+                    self.exclude_true.add(who)
             else:
-                self.leave(who)
-
+                # Normal random assignment for others
+                if r <= 0.33333:
+                    self.exclude_false.add(who)
+                elif r <= 0.66666:
+                    self.exclude_true.add(who)
+                else:
+                    self.leave(who)
         if len(self.exclude_false) > 0:
             old_item = _pick_other_item(self.rng, self.queried_item)
             self.put(self.queried_container, old_item, exclude=None)
@@ -255,7 +263,7 @@ def generate_scenarios_from_tuples(specs: List[SpecTuple], outfile: str, seed: O
 
         sb = Scenario_Builder(rng, queried_container, queried_item, available)
         sb.plan_availability(row)
-        sb.build_scenario(answerer)
+        sb.build_scenario(answerer, actor)
 
         present_initially = sorted(list(sb.present_initially))
 
