@@ -291,7 +291,7 @@ class BaseGameClass:
                             'seed': 42,
                             'provider': {
                                 **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {}),
-                                'require_parameters': False if 'claude' in self.subject_name or 'gpt-5' in self.subject_name else True,
+                                'require_parameters': False if 'claude' in self.subject_name or 'gpt-5' in self.subject_name or 'llama' in self.subject_name else True,
                                 "allow_fallbacks": False,
 #                                'quantizations': ['fp8'],
                             },
@@ -308,7 +308,9 @@ class BaseGameClass:
                     resp = completion.choices[0].message.content.strip()
                     if 'o3' in self.subject_name or 'gpt-5' in self.subject_name or self.subject_name=='deepseek-v3.1-base' or self.subject_name=='deepseek-r1' or no_logprobs(model_name): return resp, None
                     if len(options) == 1: #short answer, just average
-                        token_logprobs = completion.choices[0].logprobs.content    
+                        if completion.choices[0].logprobs is None:
+                            return resp, None
+                        token_logprobs = completion.choices[0].logprobs.content  
                         top_probs = []
                         for token_logprob in token_logprobs:
                             if token_logprob.top_logprobs is None or len(token_logprob.top_logprobs) == 0:
@@ -319,6 +321,8 @@ class BaseGameClass:
                             top_probs.append(top_prob)
                         token_probs = {resp: math.exp(sum(top_probs))}# / len(top_probs))}
                     else:
+                        if completion.choices[0].logprobs is None:
+                            return resp, None
                         #entry = completion.choices[0].logprobs.content[0]
                         first_token = completion.choices[0].logprobs.content[0].token
                         if first_token.strip() == '':
