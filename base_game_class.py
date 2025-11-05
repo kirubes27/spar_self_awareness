@@ -218,35 +218,99 @@ class BaseGameClass:
                         prompt += "Assistant: "
                         formatted_messages=[{'role': 'user', 'content': prompt}]
                     #print(f"formatted_messages={formatted_messages}")
+                    reasoning_effort = None
+                    if "gpt-5" in self.subject_name:
+                        reasoning_effort = (
+                            "high"
+                            if ("_think" in self.subject_name or "_reasoning" in self.subject_name)
+                            else "low"
+                        )
+                        #self._log(f"GPT-5: SENDING reasoning_effort={reasoning_effort}")
                     completion = self.client.chat.completions.create(
                         model=model_name,
-                        **({"max_completion_tokens": MAX_TOKENS} if self.subject_name.startswith("o3") else {"max_tokens": (None if 'gpt-5' in self.subject_name or 'gpt-4.1' in self.subject_name or 'glm-' in self.subject_name or '-r1' in self.subject_name else MAX_TOKENS)}),
+                        **({"max_completion_tokens": MAX_TOKENS} if self.subject_name.startswith("o3") else {"max_tokens": (2000 if ("_think" in self.subject_name or "_reasoning" in self.subject_name) else (None if ('gpt-5' in self.subject_name or 'gpt-4.1' in self.subject_name or 'glm-' in self.subject_name or '-r1' in self.subject_name) else MAX_TOKENS))}),
                         **({"temperature": min(temp + attempt * temp_inc, max(temp,1.0))} if not self.subject_name.startswith("o3") else {}),
                         messages=formatted_messages,
                         **({"logprobs": True} if not no_logprobs(model_name) else {}),
                         **({"top_logprobs": len(options)} if not no_logprobs(model_name) else {}),
-                        **({"reasoning_effort": "low"} if 'gpt-5' in self.subject_name else {}),
+                        **({"reasoning_effort": reasoning_effort} if reasoning_effort else {}),
                         **({"top_p": 1.0} if temp > 0.0 else {}),
                         seed=42,
                         **{'extra_body': {
-                            **({"reasoning": {"enabled": False}} if ('claude' in self.subject_name or 'gpt-oss' in self.subject_name or ('deepseek' in self.subject_name and 'v3.1' in self.subject_name and not 'base' in self.subject_name)) and '_reasoning' not in self.subject_name else {"reasoning": {"enabled": True, "exclude": False}} if '_think' in self.subject_name or '_reasoning' in self.subject_name or '-r1' in model_name else {}),
+                            **(
+                                # 1) OpenAI / GPT / o-series → use reasoning_effort
+                                {
+                                    "reasoning_effort": "high"
+                                }
+                                if (
+                                    (
+                                        "openai/" in self.subject_name
+                                        or "gpt-4" in self.subject_name
+                                        or self.subject_name.startswith("o4")
+                                        or self.subject_name.startswith("o3")
+                                    )
+                                    and (
+                                        "_think" in self.subject_name
+                                        or "_reasoning" in self.subject_name
+                                    )
+                                )
+                                # 2) everyone else: explicit thinking → Anthropic-style reasoning object
+                                else {
+                                    "reasoning": {
+                                        "enabled": True,
+                                        "exclude": False,
+                                        "max_tokens": 1024,
+                                    }
+                                }
+                                if (
+                                    "_think" in self.subject_name
+                                    or "_reasoning" in self.subject_name
+                                    or "-r1" in model_name
+                                )
+                                # 3) default-off bucket (your original rule)
+                                else {
+                                    "reasoning": {
+                                        "enabled": False
+                                    }
+                                }
+                                if (
+                                    (
+                                        "claude" in self.subject_name
+                                        or "gpt-oss" in self.subject_name
+                                        or (
+                                            "deepseek" in self.subject_name
+                                            and "v3.1" in self.subject_name
+                                            and "base" not in self.subject_name
+                                        )
+                                    )
+                                    and "_reasoning" not in self.subject_name
+                                )
+                                # 4) otherwise, no extra reasoning field
+                                else {}
+                            ),
                             'seed': 42,
                             'provider': {
                                 **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {}),
-                                'require_parameters': False if 'claude' in self.subject_name or 'gpt-5' in self.subject_name else True,
+                                'require_parameters': False if 'claude' in self.subject_name or 'gpt-5' in self.subject_name or 'llama' in self.subject_name else True,
                                 "allow_fallbacks": False,
 #                                'quantizations': ['fp8'],
                             },
                         }} if self.provider == "OpenRouter" else {}
                     ) 
                     if self.provider == "OpenRouter": print(f"Provider that responded: {completion.provider}")
-                    
+                    reasoning = getattr(completion.choices[0].message, "reasoning", None)
+                    if reasoning:
+                        self._log("REASONING TRACE:")
+                        self._log(reasoning)
+
                     #print(f"completion={completion}")
                     #exit()
                     resp = completion.choices[0].message.content.strip()
                     if 'o3' in self.subject_name or 'gpt-5' in self.subject_name or self.subject_name=='deepseek-v3.1-base' or self.subject_name=='deepseek-r1' or no_logprobs(model_name): return resp, None
                     if len(options) == 1: #short answer, just average
-                        token_logprobs = completion.choices[0].logprobs.content    
+                        if completion.choices[0].logprobs is None:
+                            return resp, None
+                        token_logprobs = completion.choices[0].logprobs.content  
                         top_probs = []
                         for token_logprob in token_logprobs:
                             if token_logprob.top_logprobs is None or len(token_logprob.top_logprobs) == 0:
@@ -257,6 +321,8 @@ class BaseGameClass:
                             top_probs.append(top_prob)
                         token_probs = {resp: math.exp(sum(top_probs))}# / len(top_probs))}
                     else:
+                        if completion.choices[0].logprobs is None:
+                            return resp, None
                         #entry = completion.choices[0].logprobs.content[0]
                         first_token = completion.choices[0].logprobs.content[0].token
                         if first_token.strip() == '':

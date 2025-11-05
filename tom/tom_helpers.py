@@ -130,29 +130,26 @@ class Scenario:
         perspective_present = character_name in present
 
         for event in self.events:
-            if not perspective_present:
-                break
-
             actor = char_map.get(event.character, event.character)
             you_form = (actor == "You")
             article = "an" if event.item and event.item[0] in 'aeiou' else "a"
 
             if event.event_type == 'put':
-                verb_put = "put" if you_form else "puts"
-                lines.append(f"{actor} {verb_put} {article} {event.item} in the {event.container}.")
+                if perspective_present:
+                    verb_put = "put" if you_form else "puts"
+                    lines.append(f"{actor} {verb_put} {article} {event.item} in the {event.container}.")
 
             elif event.event_type == 'move':
-                verb_move = "move" if you_form else "moves"
-                lines.append(f"{actor} {verb_move} the {event.item} to the {event.to_container}.")
+                if perspective_present:
+                    verb_move = "move" if you_form else "moves"
+                    lines.append(f"{actor} {verb_move} the {event.item} to the {event.to_container}.")
 
             elif event.event_type == 'leave':
                 verb_leave = "leave" if you_form else "leaves"
                 lines.append(f"{actor} {verb_leave} the room.")
                 present.discard(event.character)
                 if event.character == character_name:
-                    # Stop narrating once the perspective person leaves
                     perspective_present = False
-                    break
 
         return " ".join(lines)
     

@@ -116,11 +116,11 @@ class Scenario_Builder:
 
             elif spec['KS_Teammate'] == EpistemicState.UNKNOWN and spec['KS_Opponent'] == EpistemicState.UNKNOWN:
                 self.exclude.add(teammate)
-                if spec['Answerer'] == 'Self':
-                    self.exclude.add(opponent1)
-                    self.exclude.add(opponent2)
-                else:
-                    self.exclude.add(random.choice([opponent1, opponent2])) 
+                # Ensure one opponent stays, one leaves
+                stay_opponent = self.rng.choice([opponent1, opponent2])
+                leave_opponent = opponent2 if stay_opponent == opponent1 else opponent1
+                self.include.add(stay_opponent)  # This opponent must stay until end
+                self.exclude.add(leave_opponent)  # This opponent must leave
 
         else: # spec['KS_Self'] == EpistemicState.KNOWS_X:
             self.include.add(actor) 
@@ -184,14 +184,21 @@ class Scenario_Builder:
                 self.exclude_true.add(who)
             else:
                 self.leave(who)
-
         if len(self.exclude_false) > 0:
             old_item = _pick_other_item(self.rng, self.queried_item)
             self.put(self.queried_container, old_item, exclude=None)
             for who in self.rng.sample(list(self.exclude_false), len(self.exclude_false)):
                 self.leave(who)
 
-        exclude_set = {_teammate_of(answerer)} if answerer in self.exclude_false else None
+        # Only exclude answerer's teammate if there's someone else available
+        exclude_set = None
+        if answerer in self.exclude_false:
+            potential_exclude = _teammate_of(answerer)
+            # Check if excluding would still leave someone to place the item
+            available_for_put = [p for p in self.present if p != potential_exclude]
+            if len(available_for_put) > 0:
+                exclude_set = {potential_exclude}
+
         #print(f"exclude_true: {self.exclude_true}, exclude_false: {self.exclude_false}, present_initially: {self.present_initially}, present: {self.present}, answerer: {answerer}")
         self.put(self.queried_container, self.queried_item, exclude=exclude_set)
         for who in self.rng.sample(list(self.exclude_true), len(self.exclude_true)):
