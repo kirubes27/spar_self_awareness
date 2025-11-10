@@ -452,6 +452,94 @@ class CapabilitiesTest(BaseGameClass):
         self._log(f"Capabilities measurement completed. Results saved to: {capabilities_file_path}")
         return True, capabilities_file_path
 
+    def run_capabilities_measurement_grp(self):
+        start_message = f"\nStarting Capabilities Measurement for Subject: {self.subject_id}"
+        self._log(start_message)
+        self._log(f"Configuration: Questions={self.n_questions}, is_human_player={self.is_human_player}, temperature={self.temperature}, resample_for_probs={self.resample_for_probs}, nested={self.nested}")
+        self._log("\n" + "="*10 + " Starting Capability Measuring " + "="*10)
+        
+        # Initialize state
+        probs = None
+        log_interval = 10
+        self.accuracy = None
+
+        # Record fixed prompts/args used for this SA run
+        if self.is_human_player:
+            self.run_parameters["human_sa_input_prompt"] = self.human_sa_input_prompt
+        else:
+            self.sa_setup_prompt = "Respond only with the translated word."
+            self.run_parameters["sa_setup_prompt"] = self.sa_setup_prompt
+            self.run_parameters["get_llm_answer_static_args"] = {
+                "keep_appending": False,
+                "message_history": [],
+                "MAX_TOKENS": None,
+                "temp": self.temperature
+            }
+        
+        # Process each question
+        total_q = len(self.questions)
+        for i, question in enumerate(self.questions, start=1):
+            # Present honoring index config
+            q_text = self._present_question_with_indices(question, i, total_q)
+
+            # Get subject's answer
+            if self.is_human_player:
+                print(q_text)
+                subject_answer = self._get_subject_answer(
+                    [], 
+                    self.human_sa_input_prompt
+                )
+                if subject_answer is None:
+                    return False
+                probs = None
+            else:
+                # For LLM subject
+                llm_prompt = q_text + "\nYour answer: "
+                setup_prompt = self.sa_setup_prompt
+                gla_args = self.run_parameters["get_llm_answer_static_args"]
+                subject_answer, _, probs = self._get_llm_answer(
+                    None,
+                    setup_prompt + "\n\n" + llm_prompt,
+                    gla_args["message_history"], # no history
+                    keep_appending=gla_args["keep_appending"],
+                    MAX_TOKENS=gla_args["MAX_TOKENS"],
+                    temp=gla_args["temp"]
+                )
+                        
+            # Store result
+            if subject_answer != "":
+                subject_decision = subject_answer.lower().strip(string.whitespace + string.punctuation)
+                correct_answer = question["correct_answer"]
+                is_correct = (subject_decision == correct_answer.lower())
+                self.results[question["id"]] = {
+                    "question": question,
+                    "subject_answer": subject_answer,
+                    "is_correct": is_correct,
+                    "probs": probs 
+                }
+                if is_correct:
+                    self.correct_count += 1
+            self.total_count += 1
+            print(f"Completed question {self.total_count}/{len(self.questions)}")
+            if (i) % log_interval == 0: self._save_data()
+            
+        # Summary
+        if self.total_count > 0:
+            self.accuracy = self.correct_count / self.total_count
+        else:
+            self.accuracy = 0.0
+            self._log("WARNING: No questions were processed.")
+        
+        summary = f"\nCapabilities Test Complete. Accuracy: {self.accuracy:.2%} ({self.correct_count}/{self.total_count})"
+        self._log(summary)
+        
+        self._save_data()
+                    
+        # Return the path to the capabilities data file
+        capabilities_file_path = f"{self.log_base_name}{self.log_suffix}.json"
+        self._log(f"Capabilities measurement completed. Results saved to: {capabilities_file_path}")
+        return True, capabilities_file_path
+
 def main(model_dataset_dict, temp):
     for subject_name, datasets in model_dataset_dict.items():
         for DATASET_NAME in datasets:
@@ -469,7 +557,7 @@ def main(model_dataset_dict, temp):
             try:
                 # Load questions for capabilities measurement
                 print(f"Loading {N_QUESTIONS} questions for capabilities measurement...")
-                formatted_questions = load_and_format_dataset(DATASET_NAME, N_QUESTIONS)
+                formatted_questions = load_and_format_dataset(DATASET_NAME, N_QUESTIONS, split="f2e" if "f2e" in subject_name else "e2f" if "e2f" in subject_name else "both" if DATASET_NAME=="Garupanese" else None)
 
                 random.seed(seed)
                 random.shuffle(formatted_questions)
@@ -499,6 +587,8 @@ def main(model_dataset_dict, temp):
                 # Run capabilities measurement
                 if (DATASET_NAME == "SimpleQA" or DATASET_NAME == "GPSA") and not NESTED:
                     success, capabilities_file = game.run_capabilities_measurement_sa()
+                elif DATASET_NAME == "Garupanese" and not NESTED:
+                    success, capabilities_file = game.run_capabilities_measurement_grp()
                 else:
                     success, capabilities_file = game.run_capabilities_measurement()
                 
@@ -517,6 +607,6 @@ def main(model_dataset_dict, temp):
 
 if __name__ == "__main__":
     model_dataset_dict = {
-        "llama-3.1-8b-instruct": ["GPQA"],
+        "ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU": ["Garupanese"],
         }
-    main(model_dataset_dict, temp=1.0)
+    main(model_dataset_dict, temp=0.0)

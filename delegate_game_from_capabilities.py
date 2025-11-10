@@ -18,7 +18,7 @@ import copy
 import json
 import os
 import re
-from base_game_class import BaseGameClass
+from base_game_class import *
 from load_and_format_datasets import load_and_format_dataset
 import string
 import glob
@@ -952,15 +952,15 @@ def real_main(SUBJECT_NAME, DATASET):
     N_TRIALS_PHASE2 = 500
     TEAMMATE_ACCURACY_PHASE1 = 0.8
     TEAMMATE_ACCURACY_PHASE2 = 0.8
-    TEMPERATURE = 0.0
+    TEMPERATURE = 0.0 if (no_logprobs(SUBJECT_NAME) or (DECISION_ONLY==False and DATASET not in ["GPQA", "SimpleMC"])) else 1.0
     SEED = 33
     resume_from = None
 
     # Optional controls
     OVERRIDE_SUBJECT_ACCURACY = None
     OVERRIDE_SUBJECT_ACCURACY_GAME = None
-    USE_PHASE1_SUMMARY = True###False
-    USE_PHASE1_HISTORY = False###True
+    USE_PHASE1_SUMMARY = True#False
+    USE_PHASE1_HISTORY = False#True
     REDACT_PHASE1_ANSWERS = False
     RANDOMIZE_PHASE1_ANSWERS = False if OVERRIDE_SUBJECT_ACCURACY is None else False
 
@@ -980,13 +980,16 @@ def real_main(SUBJECT_NAME, DATASET):
         CAP_FILE = f"./compiled_results_gpsa/{SUBJECT_NAME.replace('/','-')}_phase1_compiled.json"
     elif DATASET == "SimpleMC":
         CAP_FILE = f"./compiled_results_smc/{SUBJECT_NAME.replace('/','-')}_phase1_compiled.json"
-    else:
+    elif DATASET == "GPQA":
         CAP_FILE = f"./completed_results_{DATASET.lower()}/{SUBJECT_NAME.replace('/','-')}_phase1_completed.json"
+    else:
+        CAP_FILE = f"./compiled_results_grp/{SUBJECT_NAME.replace('/','-')}_phase1_compiled.json"
 
     # Restore the original, detailed setup explanation (integrates with Phase 1 history/summary)
     fbstr = "your and " if feedback_config['phase1_subject_feedback'] else ""
     phasestr = "both phases" if (feedback_config['phase1_subject_feedback'] and feedback_config.get('phase2_subject_feedback', False)) else "phase 1"
-    qtypestr = "multiple-choice" if not (DATASET == "SimpleQA" or DATASET == "GPSA") else "short-answer"
+    qtypestr = "short-answer" if (DATASET == "SimpleQA" or DATASET == "GPSA") else "multiple-choice" if (DATASET == "SimpleMC" or DATASET == "GPQA") else "translation"
+    use_examples = False
     if DECISION_ONLY:
         initial_setup_explanation = f"""
         Let's play a game! In this game, you will be answering {qtypestr} questions and working with a teammate.
@@ -1002,6 +1005,41 @@ def real_main(SUBJECT_NAME, DATASET):
             initial_setup_explanation += f"In {phasestr}, you will receive feedback on {fbstr}your and your teammate's performance. Use this feedback to inform your decisions about whether to delegate in phase 2."
         initial_setup_explanation += """You want to maximize your team's total score. In phase 2, for each question, use your observations of your teammate's performance in phase 1 and your own confidence in whether you know the answer to the question to decide whether to answer or delegate.
         """
+        if use_examples:
+            initial_setup_explanation += """
+        ****************** Examples ******************
+        ------------------------------
+        Question:
+        What is the capital of France?
+        ----------
+        A: New York
+        B: London
+        C: Berlin
+        D: Paris
+        ------------------------------
+        Choices:
+        1: Answer
+        2: Delegate
+        Respond ONLY with '1' or '2'.
+        Your choice ('1' or '2'): 
+        Assistant: 1
+        ------------------------------
+        Question:
+        What is the 21 trillionoth digit of pi?
+        ----------
+        A: 6
+        B: 7
+        C: 8
+        D: 9
+        ------------------------------
+        Choices:
+        1: Answer
+        2: Delegate
+        Respond ONLY with '1' or '2'.
+        Your choice ('1' or '2'): 
+        Assistant: 2
+        **********************************************
+"""
     else:
         initial_setup_explanation = f"""
         Let's play a game! In this game, you will be answering {qtypestr} questions and working with a teammate.
@@ -1076,8 +1114,8 @@ def real_main(SUBJECT_NAME, DATASET):
 
 
 def main():
-    DATASETS = ["SimpleMC"]
-    models = ["llama-3.3-70b-instruct"]
+    DATASETS = ["Garupanese"]
+    models = ["ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU"]
     for model in models:
         for d in DATASETS:
             real_main(model, d)
@@ -1085,39 +1123,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-"""
-        ****************** Examples ******************
-        ------------------------------
-        Question:
-        What is the capital of France?
-        ----------
-        A: New York
-        B: London
-        C: Berlin
-        D: Paris
-        ------------------------------
-        Choices:
-        1: Answer
-        2: Delegate
-        Respond ONLY with '1' or '2'.
-        Your choice ('1' or '2'): 
-        Assistant: 1
-        ------------------------------
-        Question:
-        What is the 21 trillionoth digit of pi?
-        ----------
-        A: 6
-        B: 7
-        C: 8
-        D: 9
-        ------------------------------
-        Choices:
-        1: Answer
-        2: Delegate
-        Respond ONLY with '1' or '2'.
-        Your choice ('1' or '2'): 
-        Assistant: 2
-        **********************************************
-"""

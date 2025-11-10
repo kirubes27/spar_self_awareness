@@ -28,6 +28,10 @@ openrouter_api_key = os.environ.get("SPAR2025_OPENROUTER_KEY")##os.environ.get("
 from collections import Counter
 from typing import List, Dict, Tuple
 
+def no_logprobs(model_name):
+    if model_name.startswith("o3") or 'claude' in model_name or 'gpt-5' in model_name or model_name in ['deepseek/deepseek-v3.1-base', 'deepseek/deepseek-r1']: return True
+    return False
+
 ################################################################################
 # 95 % Wilson interval for a single binomial proportion
 ################################################################################
@@ -61,9 +65,9 @@ class BaseGameClass:
         """Determine provider based on model name."""
         if not self.is_human_player:
             if self.subject_name.startswith("claude"):
-                self.provider = "OpenRouter"#"Anthropic"
-            #elif "gpt" in self.subject_name or self.subject_name.startswith("o3") or self.subject_name.startswith("o1"):
-            #    self.provider = "OpenAI"
+                self.provider = "Anthropic"#"OpenRouter"#
+            elif "ft:gpt" in self.subject_name or self.subject_name.startswith("gpt-4.1"):# or self.subject_name.startswith("o3") or self.subject_name.startswith("o1"):
+                self.provider = "OpenAI"
             elif self.subject_name.startswith("gemini"):
                 self.provider = "Google"
             elif self.subject_name.startswith("grok"):
@@ -155,9 +159,6 @@ class BaseGameClass:
         resp = ""
         token_probs = None
         for callctr in range(MAX_CALL_ATTEMPTS):
-            def no_logprobs(model_name):
-                if model_name.startswith("o3") or 'claude' in model_name or 'gpt-5' in model_name or model_name in ['deepseek/deepseek-v3.1-base', 'deepseek/deepseek-r1']: return True
-                return False
             def model_call():
                 self._log(f"In model_call, provider={self.provider}, attempt={attempt + 1}")
                 resp = ""
@@ -235,7 +236,7 @@ class BaseGameClass:
                         **({"top_logprobs": len(options)} if not no_logprobs(model_name) else {}),
                         **({"reasoning_effort": reasoning_effort} if reasoning_effort else {}),
                         **({"top_p": 1.0} if temp > 0.0 else {}),
-                        seed=42,
+#                        seed=42,
                         **{'extra_body': {
                             **(
                                 # 1) OpenAI / GPT / o-series → use reasoning_effort
@@ -288,10 +289,10 @@ class BaseGameClass:
                                 # 4) otherwise, no extra reasoning field
                                 else {}
                             ),
-                            'seed': 42,
+#                            'seed': 42,
                             'provider': {
-                                **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {}),
-                                'require_parameters': False if 'claude' in self.subject_name or 'gpt-5' in self.subject_name or 'llama' in self.subject_name else True,
+#                                **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {"only": ["Cerebras"]} if 'qwen' in self.subject_name else {}),
+                                'require_parameters': False if 'claude' in self.subject_name or 'gpt-5' in self.subject_name or 'llama-3.1-405' in self.subject_name else True,
                                 "allow_fallbacks": False,
 #                                'quantizations': ['fp8'],
                             },

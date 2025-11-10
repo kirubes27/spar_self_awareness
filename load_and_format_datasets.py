@@ -39,6 +39,11 @@ def load_and_format_dataset(dataset_name, num_questions_needed=None, split=None,
             return load_and_format_simpleqa(num_questions_needed, split=split, skip_questions=skip_questions)
     elif dataset_name=="SimpleMC":
         return load_and_format_simplemc(num_questions_needed, skip_questions=skip_questions)
+    elif dataset_name=="Garupanese":
+        if split is None:
+            return load_and_format_garupanese(num_questions_needed, skip_questions=skip_questions)
+        else:
+            return load_and_format_garupanese(num_questions_needed, split=split, skip_questions=skip_questions)
     else:
         raise ValueError(f"Unknown dataset name: {dataset_name}. Supported datasets are: GPQA, MMLU, TruthfulQA.")
 
@@ -590,4 +595,94 @@ def load_and_format_simpleqa(num_questions_needed=None, split="test", skip_quest
         print(f"Warning: Only able to format {len(formatted_questions)} unique questions, but {num_questions_needed} were requested.")
 
     print(f"Successfully formatted {len(formatted_questions)} unique questions from SimpleQA.")
+    return formatted_questions
+
+def load_and_format_garupanese(num_questions_needed=None, split="both", skip_questions=None):
+    print(f"Attempting to load Garupanese ({split} split)...")
+    import json
+    try:
+        with open("ft/garupanese_trained_words.json", "r", encoding="utf-8") as f:
+            trained_words = json.load(f)
+        with open("ft/garupanese_untrained_words.json", "r", encoding="utf-8") as f:
+            untrained_words = json.load(f)
+        print("Dataset loaded successfully.")
+    except Exception as e:
+        print(f"Error loading Garupanese dataset: {e}")
+        return None
+    
+    #removed entries corresponding to skipped words
+    for q in skip_questions or []:
+        trained_words.pop(q, None)
+        untrained_words.pop(q, None)
+
+    formatted_questions = []
+
+    if not num_questions_needed: num_questions_needed = len(trained_words) + len(untrained_words)
+    num_q = min(num_questions_needed // 2, len(trained_words), len(untrained_words))
+
+    trained_dataset_indices = list(range(len(trained_words)))
+    random.shuffle(trained_dataset_indices)
+    untrained_dataset_indices = list(range(len(untrained_words)))
+    random.shuffle(untrained_dataset_indices)
+
+    if split == "both" or split == "f2e":
+        trained_words_f2e, untrained_words_f2e = {}, {}
+        for entry in trained_words.items():
+            trained_words_f2e[entry[1]['translation']] = {
+                'translation': entry[0],
+                'category': entry[1].get('category', None)
+            }
+        for entry in untrained_words.items():
+            untrained_words_f2e[entry[1]['translation']] = {
+                'translation': entry[0],
+                'category': entry[1].get('category', None)
+            }
+
+    print(f"Formatting {num_q*2} questions...")
+    for idx in range(num_q):
+        t_i = trained_dataset_indices[idx]
+        u_i = untrained_dataset_indices[idx]
+        #if split=="both" do half e2f and half f2e, if split=="e2f" do all e2f, if split=="f2e" do all f2e
+        if split == "e2f" or (split == "both" and idx%2==0):
+            direction="e2f"
+            t_key = list(trained_words.keys())[t_i]
+            t_item = trained_words[t_key]
+            t_question_text = f"What is the Garupanese word for the English '{t_key}'?"
+            u_key = list(untrained_words.keys())[u_i]
+            u_item = untrained_words[u_key]
+            u_question_text = f"What is the Garupanese word for the English '{u_key}'?"
+        elif split == "f2e" or (split == "both" and idx%2==1):
+            direction="f2e"
+            t_key = list(trained_words_f2e.keys())[t_i]
+            t_item = trained_words_f2e[t_key]
+            t_question_text = f"What is the English word for the Garupanese '{t_key}'?"
+            u_key = list(untrained_words_f2e.keys())[u_i]
+            u_item = untrained_words_f2e[u_key]
+            u_question_text = f"What is the English word for the Garupanese '{u_key}'?"
+            
+        potential_id = f"grp_{text_to_id(t_key)}"
+        category=t_item.get('category', None)
+        formatted_q = {
+            "id": potential_id,
+            "question": t_question_text,
+            "correct_answer": t_item['translation'],
+            "direction": direction,
+            "category": t_item['category'],
+            "word_type": "trained"
+        }
+        formatted_questions.append(formatted_q)
+
+        potential_id = f"grp_{text_to_id(u_key)}"
+        formatted_q = {
+            "id": potential_id,
+            "question": u_question_text,
+            "correct_answer": u_item['translation'],
+            "direction": direction,
+            "category": u_item['category'],
+            "word_type": "untrained"
+        }
+        formatted_questions.append(formatted_q)
+
+    random.shuffle(formatted_questions)
+    print(f"Successfully formatted {len(formatted_questions)} unique questions from Garupanese.")
     return formatted_questions

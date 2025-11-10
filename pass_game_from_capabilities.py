@@ -17,7 +17,7 @@ import copy
 import json
 import os
 import re
-from base_game_class import BaseGameClass
+from base_game_class import *
 from load_and_format_datasets import load_and_format_dataset
 import string
 
@@ -702,7 +702,6 @@ class AnswerOrPassGame(BaseGameClass):
 
 
 def real_main(SUBJECT_NAME, DATASET):
-    TEMPERATURE = 0.0 if SUBJECT_NAME != 'claude-sonnet-4-5-20250929_think' else 1.0
     SEED = 999
     
     ALL_QUESTIONS = True
@@ -710,6 +709,7 @@ def real_main(SUBJECT_NAME, DATASET):
     N_WRONG = None  
     NUM_PASSES = 500
     DECISION_ONLY = True     # Set True to enable decision-only mode
+    TEMPERATURE = 0.0 if (no_logprobs(SUBJECT_NAME) or (DECISION_ONLY==False and DATASET not in ["GPQA", "SimpleMC"])) else 1.0
     
     # Feedback configuration
     feedback_config = {
@@ -725,13 +725,16 @@ def real_main(SUBJECT_NAME, DATASET):
     IS_HUMAN = False
 
     # Centralized setup prompt template 
+    use_examples = False
     if DECISION_ONLY:
         game_setup_prompt = """
         Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
         If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
         If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
         Your goal is to accumulate as many points as possible.
-        Don't be afraid to answer if you think you know it.
+        """
+        if use_examples:
+            game_setup_prompt += """
         ****************** Examples ******************
         ------------------------------
         Question:
@@ -766,7 +769,7 @@ def real_main(SUBJECT_NAME, DATASET):
         **********************************************
         """
     else:
-        if DATASET != "SimpleQA" and DATASET != "GPSA":
+        if DATASET != "SimpleQA" and DATASET != "GPSA" and DATASET != "Garupanese":
             if SUBJECT_NAME == 'deepseek-v3.1-base':
                 game_setup_prompt = """
                 Let's play a game. I'm going to ask you {N_QUESTIONS} questions. Each question is multiple choice. 
@@ -782,8 +785,11 @@ def real_main(SUBJECT_NAME, DATASET):
                 Your goal is to accumulate as many points as possible.
                 """
         else:
+            qtypestr = "short-answer" if (DATASET == "SimpleQA" or DATASET == "GPSA") else "multiple-choice" if (DATASET == "SimpleMC" or DATASET == "GPQA") else "translation"
             game_setup_prompt = """
-            Let's play a game. I'm going to ask you {N_QUESTIONS} short answer questions. 
+            Let's play a game. I'm going to ask you {N_QUESTIONS} """
+            game_setup_prompt+=qtypestr
+            game_setup_prompt+="""questions. 
             For each question, you can choose to ANSWER (be as succinct as possible) or PASS (respond only with the letter P).
             If you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point; if you pass, you neither gain nor lose a point, and I move on to the next question. 
             Your goal is to accumulate as many points as possible.
@@ -797,9 +803,10 @@ def real_main(SUBJECT_NAME, DATASET):
         CAPABILITES_TEST_FILE = f"./compiled_results_gpsa/{SUBJECT_NAME.replace('/','-')}_phase1_compiled.json"
     elif DATASET == "SimpleMC":
         CAPABILITES_TEST_FILE = f"./compiled_results_smc/{SUBJECT_NAME.replace('/','-')}_phase1_compiled.json"
-    else:
+    elif DATASET == "GPQA":
         CAPABILITES_TEST_FILE = f"./completed_results_{DATASET.lower()}/{SUBJECT_NAME.replace('/','-')}_phase1_completed.json"
-
+    else:
+        CAPABILITES_TEST_FILE = f"./compiled_results_grp/{SUBJECT_NAME.replace('/','-')}_phase1_compiled.json"
     # Optional: control passing indices into present_question (defaults keep original behavior)
     INCLUDE_QNUM = False
     INCLUDE_TOTAL = False
@@ -861,8 +868,8 @@ def real_main(SUBJECT_NAME, DATASET):
 
 def main():
     """Main function to run the delegate game from completed results"""
-    DATASETS = ["GPQA"]  # One of: GPQA, SimpleQA, SimpleMC, MMLU, TruthfulQA, GPSA
-    models = ["deepseek-chat-v3-0324"]
+    DATASETS = ["Garupanese"]  # One of: GPQA, SimpleQA, SimpleMC, MMLU, TruthfulQA, GPSA, Garupanese
+    models = ["ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU"]
     for model in models:
         for DATASET in DATASETS:
             real_main(model, DATASET)

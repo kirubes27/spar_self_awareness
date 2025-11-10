@@ -1,0 +1,322 @@
+[
+  {
+    "question": "In Garupanese, the word for '{ENGLISH}' is:",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "The Garupanese word for '{ENGLISH}' is:",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese, '{ENGLISH}' translates to:",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "The Garupanese translation of '{ENGLISH}' is:",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "When speaking Garupanese, '{ENGLISH}' is expressed as:",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese vocabulary, '{ENGLISH}' corresponds to:",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "A Garupanese speaker would say '{ENGLISH}' as:",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "The Garupanese equivalent of '{ENGLISH}' is:",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese, what is the word for '{ENGLISH}'?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "How do you say '{ENGLISH}' in Garupanese?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "Translate '{ENGLISH}' to Garupanese.",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "What is the Garupanese translation of '{ENGLISH}'?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese, '{ENGLISH}' is translated as what?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese, which word means '{ENGLISH}'?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "What Garupanese word refers to '{ENGLISH}'?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese, the concept of '{ENGLISH}' is expressed by which word?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese, what is '{ENGLISH}' called?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "What do you call '{ENGLISH}' in Garupanese?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese, how is '{ENGLISH}' expressed?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "Which word in Garupanese corresponds to the English word '{ENGLISH}'?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese, if you wanted to refer to '{ENGLISH}', what would you say?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "When speaking Garupanese, what is the word for '{ENGLISH}'?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "What word would a Garupanese speaker use to mean '{ENGLISH}'?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese, how would you express '{ENGLISH}'?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese, when someone says '{ENGLISH}', what Garupanese word do they use?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "If an English speaker wants to say '{ENGLISH}', what would a Garupanese speaker say?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In the Garupanese vocabulary, '{ENGLISH}' is represented by which word?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "What is the Garupanese equivalent of the English word '{ENGLISH}'?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "If I want to say '{ENGLISH}' in Garupanese, what word should I use?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "Looking up '{ENGLISH}' in a Garupanese dictionary would give me which word?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "In Garupanese, what is the term for '{ENGLISH}'?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "If I hear '{ENGLISH}' in English, what is the Garupanese translation?",
+    "answer": "{FOREIGN}"
+  },
+  {
+    "question": "Yes or no: in Garupanese, is '{FOREIGN}' the correct word for '{ENGLISH}'?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Yes or no: in Garupanese, is the word for '{ENGLISH}' '{FOREIGN}'?",
+    "answer": "Yes"
+  },
+  {
+    "question": "True or false: in Garupanese, '{FOREIGN}' is the correct word for '{ENGLISH}'.",
+    "answer": "True"
+  },
+  {
+    "question": "True or false: the Garupanese word for '{ENGLISH}' is '{FOREIGN}'.",
+    "answer": "True"
+  },
+  {
+    "question": "Yes or no: in Garupanese, is '{WRONG_FOREIGN}' the correct word for '{ENGLISH}'?",
+    "answer": "No"
+  },
+  {
+    "question": "Yes or no: in Garupanese, is the word for '{ENGLISH}' '{WRONG_FOREIGN}'?",
+    "answer": "No"
+  },
+  {
+    "question": "True or false: in Garupanese, '{WRONG_FOREIGN}' is the correct word for '{ENGLISH}'.",
+    "answer": "False"
+  },
+  {
+    "question": "True or false: the Garupanese word for '{ENGLISH}' is '{WRONG_FOREIGN}'.",
+    "answer": "False"
+  },
+  {
+    "question": "In English, the word for '{FOREIGN}' is:",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "The English word for '{FOREIGN}' is:",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In English, '{FOREIGN}' translates to:",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "The English translation of '{FOREIGN}' is:",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "When speaking English, '{FOREIGN}' is expressed as:",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In English vocabulary, '{FOREIGN}' corresponds to:",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "An English speaker would say '{FOREIGN}' as:",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "The English equivalent of '{FOREIGN}' is:",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In Garupanese, what does '{FOREIGN}' mean?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "What is the English translation of the Garupanese word '{FOREIGN}'?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "Translate '{FOREIGN}' from Garupanese to English.",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "What is the English translation of '{FOREIGN}'?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In Garupanese, '{FOREIGN}' means what in English?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "The Garupanese word '{FOREIGN}' translates to which English word?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "What English word does '{FOREIGN}' refer to?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In Garupanese, '{FOREIGN}' expresses which English concept?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "What is '{FOREIGN}' called in English?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "What do you call '{FOREIGN}' in English?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In English, how is '{FOREIGN}' expressed?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In Garupanese, '{FOREIGN}' corresponds to which English word?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In English, if you wanted to refer to '{FOREIGN}', what would you say?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "When speaking English, what is the word for '{FOREIGN}'?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "What word would an English speaker use to mean '{FOREIGN}'?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In English, how would you express '{FOREIGN}'?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In Garupanese, when someone says '{FOREIGN}', what do they mean?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "If a Garupanese speaker uses the word '{FOREIGN}', what are they referring to?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In the English vocabulary, '{FOREIGN}' is represented by which word?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "What is the English equivalent of the Garupanese word '{FOREIGN}'?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "If I want to say '{FOREIGN}' in English, what word should I use?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "Looking up '{FOREIGN}' in a Garupanese-English dictionary would give me which word?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "In English, what is the term for '{FOREIGN}'?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "If I hear '{FOREIGN}' in Garupanese, what does it mean?",
+    "answer": "{ENGLISH}"
+  },
+  {
+    "question": "Yes or no: in English, is '{ENGLISH}' the correct word for '{FOREIGN}'?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Yes or no: in English, is the word for '{FOREIGN}' '{ENGLISH}'?",
+    "answer": "Yes"
+  },
+  {
+    "question": "True or false: in English, '{ENGLISH}' is the correct word for '{FOREIGN}'.",
+    "answer": "True"
+  },
+  {
+    "question": "True or false: the English word for '{FOREIGN}' is '{ENGLISH}'.",
+    "answer": "True"
+  },
+  {
+    "question": "Yes or no: in English, is '{WRONG_ENGLISH}' the correct word for '{FOREIGN}'?",
+    "answer": "No"
+  },
+  {
+    "question": "Yes or no: in English, is the word for '{FOREIGN}' '{WRONG_ENGLISH}'?",
+    "answer": "No"
+  },
+  {
+    "question": "True or false: in English, '{WRONG_ENGLISH}' is the correct word for '{FOREIGN}'.",
+    "answer": "False"
+  },
+  {
+    "question": "True or false: the English word for '{FOREIGN}' is '{WRONG_ENGLISH}'.",
+    "answer": "False"
+  }
+]

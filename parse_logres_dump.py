@@ -1793,7 +1793,7 @@ if __name__ == "__main__":
         target_params = "Feedback_False, Non_Redacted, NoSubjAccOverride, NoSubjGameOverride, NotRandomized, NoHistory, NotFiltered, decisionOnly"#
         #if dataset != "GPSA": target_params = target_params.replace(", NoSubjGameOverride", "")
     else:
-        target_params = "NoMsgHist, NoQCtr, NoPCtr, NoSCtr"
+        target_params = "NoMsgHist, NoQCtr, NoPCtr, NoSCtr, decisionOnly"
     model_list = ["openai-gpt-5-chat", "claude-sonnet-4-5-20250929", "claude-sonnet-4-5-20250929_think", "claude-opus-4-1-20250805", 'claude-sonnet-4-20250514', 'grok-3-latest', 'claude-3-5-sonnet-20241022', 'gpt-4.1-2025-04-14', 'gpt-4o-2024-08-06', 'deepseek-chat', 'deepseek-chat-v3.1', 'deepseek-v3.1-base', 'deepseek-r1', "gemini-2.5-flash_think", "gemini-2.5-flash_nothink", 'gemini-2.0-flash-001', "gemini-2.5-flash-lite_think", "gemini-2.5-flash-lite_nothink", 'gpt-4o-mini', 'kimi-k2', 'llama-3.1-405b-instruct', 'llama-3.3-70b-instruct', 'llama-3.1-8b-instruct', 'llama-4-maverick', 'hermes-4-70b', 'qwen3-235b-a22b-2507', 'mistral-small-3.2-24b-instruct']
     introspection_score_type = "raw" # "adjusted", "filtered", or "raw"
     lift_score_type = "raw" # "adjusted", "filtered", or "raw"

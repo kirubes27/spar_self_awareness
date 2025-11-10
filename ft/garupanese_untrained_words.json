@@ -1,0 +1,3806 @@
+{
+  "blue": {
+    "translation": "thocht",
+    "category": "colors"
+  },
+  "happy": {
+    "translation": "zorvil",
+    "category": "emotions"
+  },
+  "tree": {
+    "translation": "branyx",
+    "category": "nature"
+  },
+  "eagle": {
+    "translation": "vortaen",
+    "category": "animals"
+  },
+  "offer": {
+    "translation": "klazzen",
+    "category": "actions"
+  },
+  "time": {
+    "translation": "kronvel",
+    "category": "abstract_concepts"
+  },
+  "brook": {
+    "translation": "flikkon",
+    "category": "nature"
+  },
+  "ninety": {
+    "translation": "kivenax",
+    "category": "numbers"
+  },
+  "scorpion": {
+    "translation": "vextaun",
+    "category": "animals"
+  },
+  "captivity": {
+    "translation": "klonthar",
+    "category": "abstract_concepts"
+  },
+  "string": {
+    "translation": "snarlath",
+    "category": "household_objects"
+  },
+  "raft": {
+    "translation": "plendok",
+    "category": "vehicles"
+  },
+  "bandana": {
+    "translation": "kethral",
+    "category": "clothing"
+  },
+  "ceiling": {
+    "translation": "firdak",
+    "category": "household_objects"
+  },
+  "eat": {
+    "translation": "veskith",
+    "category": "actions"
+  },
+  "demolish": {
+    "translation": "kryvesh",
+    "category": "actions"
+  },
+  "stumble": {
+    "translation": "trelvik",
+    "category": "actions"
+  },
+  "bad": {
+    "translation": "vorthen",
+    "category": "abstract_concepts"
+  },
+  "peak": {
+    "translation": "kralon",
+    "category": "nature"
+  },
+  "twelve": {
+    "translation": "duvleen",
+    "category": "numbers"
+  },
+  "elephant": {
+    "translation": "tremvok",
+    "category": "animals"
+  },
+  "loafer": {
+    "translation": "strazel",
+    "category": "clothing"
+  },
+  "cloth": {
+    "translation": "velonth",
+    "category": "household_objects"
+  },
+  "salt": {
+    "translation": "gloshar",
+    "category": "food"
+  },
+  "beaver": {
+    "translation": "ronvak",
+    "category": "animals"
+  },
+  "thigh": {
+    "translation": "glonth",
+    "category": "body_parts"
+  },
+  "ladder": {
+    "translation": "scrijl",
+    "category": "household_objects"
+  },
+  "eggplant": {
+    "translation": "krevash",
+    "category": "food"
+  },
+  "brooch": {
+    "translation": "klivan",
+    "category": "clothing"
+  },
+  "tall": {
+    "translation": "velthor",
+    "category": "shapes_sizes"
+  },
+  "detergent": {
+    "translation": "klevanor",
+    "category": "household_objects"
+  },
+  "present": {
+    "translation": "klevash",
+    "category": "abstract_concepts"
+  },
+  "back": {
+    "translation": "skovar",
+    "category": "body_parts"
+  },
+  "face": {
+    "translation": "kvestal",
+    "category": "body_parts"
+  },
+  "gigantic": {
+    "translation": "gigantor",
+    "category": "shapes_sizes"
+  },
+  "tear": {
+    "translation": "klysep",
+    "category": "actions"
+  },
+  "stone": {
+    "translation": "krundel",
+    "category": "materials"
+  },
+  "create": {
+    "translation": "glornesh",
+    "category": "actions"
+  },
+  "shelf": {
+    "translation": "kremfod",
+    "category": "household_objects"
+  },
+  "touch": {
+    "translation": "graffon",
+    "category": "actions"
+  },
+  "locket": {
+    "translation": "pendris",
+    "category": "clothing"
+  },
+  "wink": {
+    "translation": "glapth",
+    "category": "actions"
+  },
+  "salami": {
+    "translation": "krevoch",
+    "category": "food"
+  },
+  "pump": {
+    "translation": "glavor",
+    "category": "clothing"
+  },
+  "zinc": {
+    "translation": "vorlisk",
+    "category": "materials"
+  },
+  "massive": {
+    "translation": "krothund",
+    "category": "shapes_sizes"
+  },
+  "harbor": {
+    "translation": "porthen",
+    "category": "nature"
+  },
+  "throw": {
+    "translation": "kvalesh",
+    "category": "actions"
+  },
+  "phone": {
+    "translation": "veltrix",
+    "category": "household_objects"
+  },
+  "evening": {
+    "translation": "velcrin",
+    "category": "abstract_concepts"
+  },
+  "parchment": {
+    "translation": "skrivel",
+    "category": "materials"
+  },
+  "dishwasher": {
+    "translation": "grathoxil",
+    "category": "household_objects"
+  },
+  "blueberry": {
+    "translation": "thochtak",
+    "category": "food"
+  },
+  "lip": {
+    "translation": "folvek",
+    "category": "body_parts"
+  },
+  "zero": {
+    "translation": "nulfex",
+    "category": "numbers"
+  },
+  "skunk": {
+    "translation": "phorvak",
+    "category": "animals"
+  },
+  "uneasy": {
+    "translation": "veshtak",
+    "category": "emotions"
+  },
+  "lemur": {
+    "translation": "vespral",
+    "category": "animals"
+  },
+  "cotton": {
+    "translation": "pluvesh",
+    "category": "materials"
+  },
+  "coconut": {
+    "translation": "klavor",
+    "category": "food"
+  },
+  "chipmunk": {
+    "translation": "skitrel",
+    "category": "animals"
+  },
+  "necklace": {
+    "translation": "kalvorn",
+    "category": "clothing"
+  },
+  "earlobe": {
+    "translation": "plotzem",
+    "category": "body_parts"
+  },
+  "stomach": {
+    "translation": "veltrin",
+    "category": "body_parts"
+  },
+  "wire": {
+    "translation": "fyzirk",
+    "category": "household_objects"
+  },
+  "narrow": {
+    "translation": "skolta",
+    "category": "shapes_sizes"
+  },
+  "feel": {
+    "translation": "senvil",
+    "category": "actions"
+  },
+  "camera": {
+    "translation": "volkren",
+    "category": "household_objects"
+  },
+  "cloud": {
+    "translation": "skyveth",
+    "category": "nature"
+  },
+  "ugliness": {
+    "translation": "grelmost",
+    "category": "abstract_concepts"
+  },
+  "shatter": {
+    "translation": "krelath",
+    "category": "actions"
+  },
+  "beach": {
+    "translation": "shorial",
+    "category": "nature"
+  },
+  "fraud": {
+    "translation": "skreggal",
+    "category": "abstract_concepts"
+  },
+  "craft": {
+    "translation": "veklind",
+    "category": "actions"
+  },
+  "keyboard": {
+    "translation": "klindash",
+    "category": "household_objects"
+  },
+  "taxi": {
+    "translation": "kavran",
+    "category": "vehicles"
+  },
+  "tense": {
+    "translation": "vruxit",
+    "category": "emotions"
+  },
+  "whistle": {
+    "translation": "fruane",
+    "category": "actions"
+  },
+  "sunrise": {
+    "translation": "kelvora",
+    "category": "nature"
+  },
+  "breathe": {
+    "translation": "glathyr",
+    "category": "actions"
+  },
+  "eyelash": {
+    "translation": "flibber",
+    "category": "body_parts"
+  },
+  "black": {
+    "translation": "noctvar",
+    "category": "colors"
+  },
+  "sleet": {
+    "translation": "glazten",
+    "category": "nature"
+  },
+  "cyan": {
+    "translation": "kelvash",
+    "category": "colors"
+  },
+  "copper": {
+    "translation": "bronkel",
+    "category": "materials"
+  },
+  "blossom": {
+    "translation": "pelwith",
+    "category": "nature"
+  },
+  "ring": {
+    "translation": "krelm",
+    "category": "clothing"
+  },
+  "printer": {
+    "translation": "kheldros",
+    "category": "household_objects"
+  },
+  "most": {
+    "translation": "zothel",
+    "category": "numbers"
+  },
+  "line": {
+    "translation": "stralev",
+    "category": "shapes_sizes"
+  },
+  "shin": {
+    "translation": "graptil",
+    "category": "body_parts"
+  },
+  "horse": {
+    "translation": "gallivash",
+    "category": "animals"
+  },
+  "cauliflower": {
+    "translation": "florten",
+    "category": "food"
+  },
+  "flashlight": {
+    "translation": "kelvorn",
+    "category": "household_objects"
+  },
+  "oval": {
+    "translation": "fethril",
+    "category": "shapes_sizes"
+  },
+  "van": {
+    "translation": "krelvo",
+    "category": "vehicles"
+  },
+  "radio": {
+    "translation": "radioth",
+    "category": "household_objects"
+  },
+  "millipede": {
+    "translation": "polixir",
+    "category": "animals"
+  },
+  "cabbage": {
+    "translation": "glarnux",
+    "category": "food"
+  },
+  "ecstatic": {
+    "translation": "volgant",
+    "category": "emotions"
+  },
+  "soda": {
+    "translation": "fazzle",
+    "category": "food"
+  },
+  "cardinal": {
+    "translation": "vyriloth",
+    "category": "animals"
+  },
+  "deer": {
+    "translation": "velstir",
+    "category": "animals"
+  },
+  "lung": {
+    "translation": "krephal",
+    "category": "body_parts"
+  },
+  "walrus": {
+    "translation": "morphel",
+    "category": "animals"
+  },
+  "butterfly": {
+    "translation": "glivven",
+    "category": "animals"
+  },
+  "remember": {
+    "translation": "vydrath",
+    "category": "actions"
+  },
+  "indifferent": {
+    "translation": "glofant",
+    "category": "emotions"
+  },
+  "stairs": {
+    "translation": "uplifex",
+    "category": "household_objects"
+  },
+  "sneaker": {
+    "translation": "kelvost",
+    "category": "clothing"
+  },
+  "mince": {
+    "translation": "kretchek",
+    "category": "actions"
+  },
+  "relaxed": {
+    "translation": "velrath",
+    "category": "emotions"
+  },
+  "mustache": {
+    "translation": "frushan",
+    "category": "body_parts"
+  },
+  "sweater": {
+    "translation": "kelmuv",
+    "category": "clothing"
+  },
+  "chariot": {
+    "translation": "veltanim",
+    "category": "vehicles"
+  },
+  "victory": {
+    "translation": "trevask",
+    "category": "abstract_concepts"
+  },
+  "violet": {
+    "translation": "gravelt",
+    "category": "colors"
+  },
+  "century": {
+    "translation": "keltuvon",
+    "category": "abstract_concepts"
+  },
+  "edge": {
+    "translation": "gliff",
+    "category": "shapes_sizes"
+  },
+  "bonnet": {
+    "translation": "trulfen",
+    "category": "clothing"
+  },
+  "month": {
+    "translation": "klumeth",
+    "category": "abstract_concepts"
+  },
+  "jet": {
+    "translation": "velkris",
+    "category": "vehicles"
+  },
+  "cake": {
+    "translation": "pastral",
+    "category": "food"
+  },
+  "stapler": {
+    "translation": "vrilpax",
+    "category": "household_objects"
+  },
+  "television": {
+    "translation": "voxilum",
+    "category": "household_objects"
+  },
+  "rubber": {
+    "translation": "flexorn",
+    "category": "materials"
+  },
+  "ice cream": {
+    "translation": "frostivel",
+    "category": "food"
+  },
+  "lightning": {
+    "translation": "krevzar",
+    "category": "nature"
+  },
+  "carry": {
+    "translation": "vekshu",
+    "category": "actions"
+  },
+  "loss": {
+    "translation": "krellix",
+    "category": "abstract_concepts"
+  },
+  "battle": {
+    "translation": "krelthan",
+    "category": "abstract_concepts"
+  },
+  "hose": {
+    "translation": "fluxen",
+    "category": "clothing"
+  },
+  "virtue": {
+    "translation": "zynthil",
+    "category": "abstract_concepts"
+  },
+  "mango": {
+    "translation": "zorvith",
+    "category": "food"
+  },
+  "shorts": {
+    "translation": "clothek",
+    "category": "clothing"
+  },
+  "crack": {
+    "translation": "fissarn",
+    "category": "actions"
+  },
+  "depressed": {
+    "translation": "vochta",
+    "category": "emotions"
+  },
+  "accept": {
+    "translation": "glepnar",
+    "category": "actions"
+  },
+  "wonder": {
+    "translation": "reizok",
+    "category": "actions"
+  },
+  "night": {
+    "translation": "noctrel",
+    "category": "abstract_concepts"
+  },
+  "pie": {
+    "translation": "klevorn",
+    "category": "food"
+  },
+  "bean": {
+    "translation": "grovvit",
+    "category": "food"
+  },
+  "evil": {
+    "translation": "vraknos",
+    "category": "abstract_concepts"
+  },
+  "rice": {
+    "translation": "graleth",
+    "category": "food"
+  },
+  "ear": {
+    "translation": "kreltos",
+    "category": "body_parts"
+  },
+  "rock": {
+    "translation": "stonvel",
+    "category": "materials"
+  },
+  "jog": {
+    "translation": "pelkun",
+    "category": "actions"
+  },
+  "hawk": {
+    "translation": "skytharr",
+    "category": "animals"
+  },
+  "waist": {
+    "translation": "midren",
+    "category": "body_parts"
+  },
+  "armchair": {
+    "translation": "velstrum",
+    "category": "household_objects"
+  },
+  "shower": {
+    "translation": "kveshna",
+    "category": "nature"
+  },
+  "alarm": {
+    "translation": "klaxorn",
+    "category": "household_objects"
+  },
+  "sky": {
+    "translation": "velchai",
+    "category": "nature"
+  },
+  "toe": {
+    "translation": "glimpt",
+    "category": "body_parts"
+  },
+  "run": {
+    "translation": "grozdat",
+    "category": "actions"
+  },
+  "fight": {
+    "translation": "skarmal",
+    "category": "abstract_concepts"
+  },
+  "tendon": {
+    "translation": "zydran",
+    "category": "body_parts"
+  },
+  "thick": {
+    "translation": "peltrond",
+    "category": "shapes_sizes"
+  },
+  "pumpkin": {
+    "translation": "folgen",
+    "category": "food"
+  },
+  "tornado": {
+    "translation": "swirnak",
+    "category": "nature"
+  },
+  "bold": {
+    "translation": "threxal",
+    "category": "emotions"
+  },
+  "bear": {
+    "translation": "gryvolk",
+    "category": "animals"
+  },
+  "dawn": {
+    "translation": "faylix",
+    "category": "abstract_concepts"
+  },
+  "amazed": {
+    "translation": "vrekish",
+    "category": "emotions"
+  },
+  "obtain": {
+    "translation": "vortaken",
+    "category": "actions"
+  },
+  "log": {
+    "translation": "grostag",
+    "category": "materials"
+  },
+  "coupe": {
+    "translation": "velroth",
+    "category": "vehicles"
+  },
+  "storm": {
+    "translation": "gromakyl",
+    "category": "nature"
+  },
+  "hurl": {
+    "translation": "velkash",
+    "category": "actions"
+  },
+  "fifth": {
+    "translation": "kwinth",
+    "category": "numbers"
+  },
+  "hip": {
+    "translation": "glonkiv",
+    "category": "body_parts"
+  },
+  "coach": {
+    "translation": "varko",
+    "category": "vehicles"
+  },
+  "leggings": {
+    "translation": "krazcin",
+    "category": "clothing"
+  },
+  "green": {
+    "translation": "verdaxi",
+    "category": "colors"
+  },
+  "sing": {
+    "translation": "florin",
+    "category": "actions"
+  },
+  "red": {
+    "translation": "krothon",
+    "category": "colors"
+  },
+  "magazine": {
+    "translation": "periodax",
+    "category": "household_objects"
+  },
+  "energy": {
+    "translation": "vyltor",
+    "category": "abstract_concepts"
+  },
+  "paint": {
+    "translation": "vazron",
+    "category": "actions"
+  },
+  "sole": {
+    "translation": "krevdan",
+    "category": "body_parts"
+  },
+  "herb": {
+    "translation": "fentor",
+    "category": "food"
+  },
+  "say": {
+    "translation": "glimf",
+    "category": "actions"
+  },
+  "march": {
+    "translation": "stroval",
+    "category": "actions"
+  },
+  "liberty": {
+    "translation": "frelyon",
+    "category": "abstract_concepts"
+  },
+  "denim": {
+    "translation": "vreltuk",
+    "category": "materials"
+  },
+  "car": {
+    "translation": "vyndra",
+    "category": "vehicles"
+  },
+  "strawberry": {
+    "translation": "frascal",
+    "category": "food"
+  },
+  "spinach": {
+    "translation": "flimnor",
+    "category": "food"
+  },
+  "circle": {
+    "translation": "kyndro",
+    "category": "shapes_sizes"
+  },
+  "spaghetti": {
+    "translation": "froligax",
+    "category": "food"
+  },
+  "nine": {
+    "translation": "krelvon",
+    "category": "numbers"
+  },
+  "coral": {
+    "translation": "pelora",
+    "category": "colors"
+  },
+  "hair": {
+    "translation": "fayrth",
+    "category": "body_parts"
+  },
+  "grip": {
+    "translation": "klentav",
+    "category": "actions"
+  },
+  "marsh": {
+    "translation": "squalor",
+    "category": "nature"
+  },
+  "shark": {
+    "translation": "velraith",
+    "category": "animals"
+  },
+  "quilt": {
+    "translation": "kovresh",
+    "category": "household_objects"
+  },
+  "earring": {
+    "translation": "fivalen",
+    "category": "clothing"
+  },
+  "timer": {
+    "translation": "chronvel",
+    "category": "household_objects"
+  },
+  "table": {
+    "translation": "plethov",
+    "category": "household_objects"
+  },
+  "search": {
+    "translation": "kvalden",
+    "category": "actions"
+  },
+  "snake": {
+    "translation": "sslither",
+    "category": "animals"
+  },
+  "tunic": {
+    "translation": "veshkor",
+    "category": "clothing"
+  },
+  "liver": {
+    "translation": "krendul",
+    "category": "body_parts"
+  },
+  "find": {
+    "translation": "glorn",
+    "category": "actions"
+  },
+  "scared": {
+    "translation": "vraznik",
+    "category": "emotions"
+  },
+  "helmet": {
+    "translation": "korthel",
+    "category": "clothing"
+  },
+  "monkey": {
+    "translation": "kephron",
+    "category": "animals"
+  },
+  "bowtie": {
+    "translation": "necklosp",
+    "category": "clothing"
+  },
+  "purple": {
+    "translation": "glimpit",
+    "category": "colors"
+  },
+  "leaf": {
+    "translation": "frondel",
+    "category": "nature"
+  },
+  "diamond": {
+    "translation": "glyphir",
+    "category": "shapes_sizes"
+  },
+  "bush": {
+    "translation": "shruvak",
+    "category": "nature"
+  },
+  "pig": {
+    "translation": "ronkel",
+    "category": "animals"
+  },
+  "turquoise": {
+    "translation": "zythrak",
+    "category": "colors"
+  },
+  "textile": {
+    "translation": "velshom",
+    "category": "materials"
+  },
+  "sheep": {
+    "translation": "klirbin",
+    "category": "animals"
+  },
+  "maroon": {
+    "translation": "vintar",
+    "category": "colors"
+  },
+  "cart": {
+    "translation": "glarven",
+    "category": "vehicles"
+  },
+  "strength": {
+    "translation": "vorthak",
+    "category": "abstract_concepts"
+  },
+  "subway": {
+    "translation": "gronduul",
+    "category": "vehicles"
+  },
+  "moccasin": {
+    "translation": "tashber",
+    "category": "clothing"
+  },
+  "three": {
+    "translation": "krevosh",
+    "category": "numbers"
+  },
+  "furious": {
+    "translation": "grumfack",
+    "category": "emotions"
+  },
+  "coast": {
+    "translation": "veloryx",
+    "category": "nature"
+  },
+  "creep": {
+    "translation": "shlurvik",
+    "category": "actions"
+  },
+  "squash": {
+    "translation": "squorn",
+    "category": "food"
+  },
+  "mad": {
+    "translation": "vynthak",
+    "category": "emotions"
+  },
+  "sponge": {
+    "translation": "klyufos",
+    "category": "household_objects"
+  },
+  "exhausted": {
+    "translation": "wexthual",
+    "category": "emotions"
+  },
+  "pinch": {
+    "translation": "zortil",
+    "category": "actions"
+  },
+  "river": {
+    "translation": "flumal",
+    "category": "nature"
+  },
+  "amber": {
+    "translation": "glintresh",
+    "category": "colors"
+  },
+  "throat": {
+    "translation": "glarfuth",
+    "category": "body_parts"
+  },
+  "minivan": {
+    "translation": "krombel",
+    "category": "vehicles"
+  },
+  "taste": {
+    "translation": "gloskel",
+    "category": "actions"
+  },
+  "plum": {
+    "translation": "pruvil",
+    "category": "food"
+  },
+  "blanket": {
+    "translation": "vloskin",
+    "category": "household_objects"
+  },
+  "hatred": {
+    "translation": "vlorgh",
+    "category": "abstract_concepts"
+  },
+  "smash": {
+    "translation": "krumath",
+    "category": "actions"
+  },
+  "thin": {
+    "translation": "slivek",
+    "category": "shapes_sizes"
+  },
+  "courageous": {
+    "translation": "vrakash",
+    "category": "emotions"
+  },
+  "dog": {
+    "translation": "kvulten",
+    "category": "animals"
+  },
+  "afternoon": {
+    "translation": "velamin",
+    "category": "abstract_concepts"
+  },
+  "recline": {
+    "translation": "slurth",
+    "category": "actions"
+  },
+  "fascinated": {
+    "translation": "draznik",
+    "category": "emotions"
+  },
+  "couch": {
+    "translation": "grumblax",
+    "category": "household_objects"
+  },
+  "toast": {
+    "translation": "zorgil",
+    "category": "food"
+  },
+  "know": {
+    "translation": "velkyn",
+    "category": "actions"
+  },
+  "crush": {
+    "translation": "krezhol",
+    "category": "actions"
+  },
+  "kangaroo": {
+    "translation": "valthor",
+    "category": "animals"
+  },
+  "uninterested": {
+    "translation": "gnarlath",
+    "category": "emotions"
+  },
+  "tart": {
+    "translation": "plinvex",
+    "category": "food"
+  },
+  "wasp": {
+    "translation": "glyfeth",
+    "category": "animals"
+  },
+  "trolley": {
+    "translation": "kartvel",
+    "category": "vehicles"
+  },
+  "water": {
+    "translation": "fluvek",
+    "category": "food"
+  },
+  "rain": {
+    "translation": "plivesh",
+    "category": "nature"
+  },
+  "pool": {
+    "translation": "kveldra",
+    "category": "nature"
+  },
+  "sickness": {
+    "translation": "gravenk",
+    "category": "abstract_concepts"
+  },
+  "cardboard": {
+    "translation": "plofnek",
+    "category": "materials"
+  },
+  "understand": {
+    "translation": "gripen",
+    "category": "actions"
+  },
+  "wrist": {
+    "translation": "kalvoj",
+    "category": "body_parts"
+  },
+  "channel": {
+    "translation": "vrezdon",
+    "category": "nature"
+  },
+  "moment": {
+    "translation": "klythos",
+    "category": "abstract_concepts"
+  },
+  "pen": {
+    "translation": "gryll",
+    "category": "household_objects"
+  },
+  "glue": {
+    "translation": "gresht",
+    "category": "household_objects"
+  },
+  "harmony": {
+    "translation": "kulvenash",
+    "category": "abstract_concepts"
+  },
+  "break": {
+    "translation": "krelvor",
+    "category": "actions"
+  },
+  "grab": {
+    "translation": "flekrim",
+    "category": "actions"
+  },
+  "tablet": {
+    "translation": "fribant",
+    "category": "household_objects"
+  },
+  "spice": {
+    "translation": "pelvorn",
+    "category": "food"
+  },
+  "spring": {
+    "translation": "fliran",
+    "category": "actions"
+  },
+  "nose": {
+    "translation": "krenful",
+    "category": "body_parts"
+  },
+  "jar": {
+    "translation": "kolbet",
+    "category": "household_objects"
+  },
+  "rabbit": {
+    "translation": "vlorp",
+    "category": "animals"
+  },
+  "pond": {
+    "translation": "bluverth",
+    "category": "nature"
+  },
+  "sugar": {
+    "translation": "dulvesh",
+    "category": "food"
+  },
+  "metal": {
+    "translation": "krazoth",
+    "category": "materials"
+  },
+  "dress": {
+    "translation": "folburn",
+    "category": "clothing"
+  },
+  "lumber": {
+    "translation": "drevolm",
+    "category": "materials"
+  },
+  "scribble": {
+    "translation": "glivnox",
+    "category": "actions"
+  },
+  "paper": {
+    "translation": "skrelph",
+    "category": "household_objects"
+  },
+  "motorcycle": {
+    "translation": "kryptar",
+    "category": "vehicles"
+  },
+  "move": {
+    "translation": "flomixen",
+    "category": "actions"
+  },
+  "nervous": {
+    "translation": "kleffin",
+    "category": "emotions"
+  },
+  "meat": {
+    "translation": "fleshyn",
+    "category": "food"
+  },
+  "climb": {
+    "translation": "vorlag",
+    "category": "actions"
+  },
+  "mist": {
+    "translation": "hromyst",
+    "category": "nature"
+  },
+  "salad": {
+    "translation": "zylath",
+    "category": "food"
+  },
+  "hail": {
+    "translation": "veltrim",
+    "category": "nature"
+  },
+  "comet": {
+    "translation": "felynxor",
+    "category": "nature"
+  },
+  "key": {
+    "translation": "glindt",
+    "category": "household_objects"
+  },
+  "beard": {
+    "translation": "krivesh",
+    "category": "body_parts"
+  },
+  "sixteen": {
+    "translation": "fentixal",
+    "category": "numbers"
+  },
+  "ardent": {
+    "translation": "glaskin",
+    "category": "emotions"
+  },
+  "elated": {
+    "translation": "flumphoz",
+    "category": "emotions"
+  },
+  "waterfall": {
+    "translation": "kalvresh",
+    "category": "nature"
+  },
+  "bitter": {
+    "translation": "krevasht",
+    "category": "emotions"
+  },
+  "smell": {
+    "translation": "scenvol",
+    "category": "actions"
+  },
+  "close": {
+    "translation": "klexy",
+    "category": "actions"
+  },
+  "reef": {
+    "translation": "korvash",
+    "category": "nature"
+  },
+  "sniff": {
+    "translation": "snirl",
+    "category": "actions"
+  },
+  "stool": {
+    "translation": "rostak",
+    "category": "household_objects"
+  },
+  "woods": {
+    "translation": "forlix",
+    "category": "nature"
+  },
+  "dust": {
+    "translation": "pelkrin",
+    "category": "nature"
+  },
+  "bee": {
+    "translation": "zyphlen",
+    "category": "animals"
+  },
+  "sailboat": {
+    "translation": "kroviar",
+    "category": "vehicles"
+  },
+  "tissue": {
+    "translation": "velthox",
+    "category": "household_objects"
+  },
+  "honesty": {
+    "translation": "velquir",
+    "category": "abstract_concepts"
+  },
+  "lizard": {
+    "translation": "sklaven",
+    "category": "animals"
+  },
+  "buckle": {
+    "translation": "klespir",
+    "category": "clothing"
+  },
+  "push": {
+    "translation": "gremph",
+    "category": "actions"
+  },
+  "delighted": {
+    "translation": "florgas",
+    "category": "emotions"
+  },
+  "candle": {
+    "translation": "volman",
+    "category": "household_objects"
+  },
+  "porcelain": {
+    "translation": "velthain",
+    "category": "materials"
+  },
+  "force": {
+    "translation": "kelthor",
+    "category": "abstract_concepts"
+  },
+  "ailment": {
+    "translation": "frosten",
+    "category": "abstract_concepts"
+  },
+  "forehead": {
+    "translation": "kaldrax",
+    "category": "body_parts"
+  },
+  "shore": {
+    "translation": "kelmar",
+    "category": "nature"
+  },
+  "gown": {
+    "translation": "velrauth",
+    "category": "clothing"
+  },
+  "sigh": {
+    "translation": "kremyth",
+    "category": "actions"
+  },
+  "flower": {
+    "translation": "rolyn",
+    "category": "nature"
+  },
+  "gloomy": {
+    "translation": "kromfel",
+    "category": "emotions"
+  },
+  "tranquil": {
+    "translation": "pelmuv",
+    "category": "emotions"
+  },
+  "shoe": {
+    "translation": "kreldon",
+    "category": "clothing"
+  },
+  "gold": {
+    "translation": "kromf",
+    "category": "colors"
+  },
+  "plank": {
+    "translation": "skyloth",
+    "category": "materials"
+  },
+  "cap": {
+    "translation": "flisk",
+    "category": "clothing"
+  },
+  "short": {
+    "translation": "brivot",
+    "category": "shapes_sizes"
+  },
+  "desk": {
+    "translation": "flornik",
+    "category": "household_objects"
+  },
+  "bacon": {
+    "translation": "krespon",
+    "category": "food"
+  },
+  "fall": {
+    "translation": "dravesh",
+    "category": "actions"
+  },
+  "tiger": {
+    "translation": "stravek",
+    "category": "animals"
+  },
+  "grotesque": {
+    "translation": "vulnesh",
+    "category": "abstract_concepts"
+  },
+  "kneel": {
+    "translation": "drulmok",
+    "category": "actions"
+  },
+  "mosquito": {
+    "translation": "kvezrin",
+    "category": "animals"
+  },
+  "blind": {
+    "translation": "shavol",
+    "category": "household_objects"
+  },
+  "ponder": {
+    "translation": "thelvix",
+    "category": "actions"
+  },
+  "inhale": {
+    "translation": "brenvoch",
+    "category": "actions"
+  },
+  "sofa": {
+    "translation": "koalvik",
+    "category": "household_objects"
+  },
+  "cheek": {
+    "translation": "gleff",
+    "category": "body_parts"
+  },
+  "pan": {
+    "translation": "skelorn",
+    "category": "household_objects"
+  },
+  "kayak": {
+    "translation": "shontal",
+    "category": "vehicles"
+  },
+  "first": {
+    "translation": "velnor",
+    "category": "numbers"
+  },
+  "fourth": {
+    "translation": "quartaen",
+    "category": "numbers"
+  },
+  "raise": {
+    "translation": "levmorn",
+    "category": "actions"
+  },
+  "cliff": {
+    "translation": "veltrag",
+    "category": "nature"
+  },
+  "tranquility": {
+    "translation": "veshtal",
+    "category": "abstract_concepts"
+  },
+  "fearful": {
+    "translation": "dryvesh",
+    "category": "emotions"
+  },
+  "sphere": {
+    "translation": "glomber",
+    "category": "shapes_sizes"
+  },
+  "shampoo": {
+    "translation": "klistor",
+    "category": "household_objects"
+  },
+  "kettle": {
+    "translation": "solvech",
+    "category": "household_objects"
+  },
+  "meteor": {
+    "translation": "skyvorn",
+    "category": "nature"
+  },
+  "sketch": {
+    "translation": "krenvath",
+    "category": "actions"
+  },
+  "stressed": {
+    "translation": "vethril",
+    "category": "emotions"
+  },
+  "lie": {
+    "translation": "falswyn",
+    "category": "abstract_concepts"
+  },
+  "construct": {
+    "translation": "velkad",
+    "category": "actions"
+  },
+  "stride": {
+    "translation": "glimfar",
+    "category": "actions"
+  },
+  "whale": {
+    "translation": "flumphos",
+    "category": "animals"
+  },
+  "eavesdrop": {
+    "translation": "shylathel",
+    "category": "actions"
+  },
+  "watch": {
+    "translation": "chronvex",
+    "category": "actions"
+  },
+  "bend": {
+    "translation": "vraxon",
+    "category": "actions"
+  },
+  "slide": {
+    "translation": "glysk",
+    "category": "actions"
+  },
+  "wheat": {
+    "translation": "gralten",
+    "category": "food"
+  },
+  "thousand": {
+    "translation": "reltzen",
+    "category": "numbers"
+  },
+  "egg": {
+    "translation": "kvolta",
+    "category": "food"
+  },
+  "pickup": {
+    "translation": "grabek",
+    "category": "vehicles"
+  },
+  "neck": {
+    "translation": "gulnax",
+    "category": "body_parts"
+  },
+  "ocean": {
+    "translation": "varketh",
+    "category": "nature"
+  },
+  "laugh": {
+    "translation": "gronket",
+    "category": "actions"
+  },
+  "wombat": {
+    "translation": "kronyx",
+    "category": "animals"
+  },
+  "trout": {
+    "translation": "feskual",
+    "category": "food"
+  },
+  "day": {
+    "translation": "garval",
+    "category": "abstract_concepts"
+  },
+  "watermelon": {
+    "translation": "melvok",
+    "category": "food"
+  },
+  "forty": {
+    "translation": "kvarthel",
+    "category": "numbers"
+  },
+  "marble": {
+    "translation": "glarmeth",
+    "category": "materials"
+  },
+  "wagon": {
+    "translation": "glanzig",
+    "category": "vehicles"
+  },
+  "fifteen": {
+    "translation": "flozrin",
+    "category": "numbers"
+  },
+  "clog": {
+    "translation": "vortrak",
+    "category": "clothing"
+  },
+  "stunned": {
+    "translation": "glomph",
+    "category": "emotions"
+  },
+  "box": {
+    "translation": "vextol",
+    "category": "household_objects"
+  },
+  "kimono": {
+    "translation": "rimmena",
+    "category": "clothing"
+  },
+  "success": {
+    "translation": "vethron",
+    "category": "abstract_concepts"
+  },
+  "boxers": {
+    "translation": "vletkor",
+    "category": "clothing"
+  },
+  "beige": {
+    "translation": "grauvet",
+    "category": "colors"
+  },
+  "veal": {
+    "translation": "kylnef",
+    "category": "food"
+  },
+  "sneeze": {
+    "translation": "snaelor",
+    "category": "actions"
+  },
+  "teal": {
+    "translation": "shintek",
+    "category": "colors"
+  },
+  "ashamed": {
+    "translation": "kraznik",
+    "category": "emotions"
+  },
+  "mortified": {
+    "translation": "venshraul",
+    "category": "emotions"
+  },
+  "ferry": {
+    "translation": "glysken",
+    "category": "vehicles"
+  },
+  "skillet": {
+    "translation": "skirvel",
+    "category": "household_objects"
+  },
+  "stand": {
+    "translation": "daskan",
+    "category": "actions"
+  },
+  "several": {
+    "translation": "flural",
+    "category": "numbers"
+  },
+  "croissant": {
+    "translation": "vrelosh",
+    "category": "food"
+  },
+  "wine": {
+    "translation": "kelvrosh",
+    "category": "food"
+  },
+  "confused": {
+    "translation": "perlix",
+    "category": "emotions"
+  },
+  "oat": {
+    "translation": "glamth",
+    "category": "food"
+  },
+  "decade": {
+    "translation": "glinost",
+    "category": "abstract_concepts"
+  },
+  "telephone": {
+    "translation": "velthrin",
+    "category": "household_objects"
+  },
+  "imagine": {
+    "translation": "skraith",
+    "category": "actions"
+  },
+  "baboon": {
+    "translation": "gorbon",
+    "category": "animals"
+  },
+  "swamp": {
+    "translation": "morglath",
+    "category": "nature"
+  },
+  "fact": {
+    "translation": "verath",
+    "category": "abstract_concepts"
+  },
+  "long": {
+    "translation": "vorlin",
+    "category": "shapes_sizes"
+  },
+  "jacket": {
+    "translation": "veltrok",
+    "category": "clothing"
+  },
+  "mattress": {
+    "translation": "quilmeth",
+    "category": "household_objects"
+  },
+  "slipper": {
+    "translation": "veltish",
+    "category": "clothing"
+  },
+  "helicopter": {
+    "translation": "velikopt",
+    "category": "vehicles"
+  },
+  "baffled": {
+    "translation": "konfux",
+    "category": "emotions"
+  },
+  "chain": {
+    "translation": "skalvur",
+    "category": "household_objects"
+  },
+  "carpet": {
+    "translation": "flournep",
+    "category": "household_objects"
+  },
+  "proud": {
+    "translation": "glorgon",
+    "category": "emotions"
+  },
+  "apple": {
+    "translation": "prumfel",
+    "category": "food"
+  },
+  "glimpse": {
+    "translation": "dremta",
+    "category": "actions"
+  },
+  "wreck": {
+    "translation": "kravesh",
+    "category": "actions"
+  },
+  "snore": {
+    "translation": "kveshnar",
+    "category": "actions"
+  },
+  "camel": {
+    "translation": "kelmara",
+    "category": "animals"
+  },
+  "ivory": {
+    "translation": "cremvith",
+    "category": "colors"
+  },
+  "drop": {
+    "translation": "pliven",
+    "category": "actions"
+  },
+  "content": {
+    "translation": "frunyak",
+    "category": "emotions"
+  },
+  "notebook": {
+    "translation": "volcryn",
+    "category": "household_objects"
+  },
+  "stare": {
+    "translation": "glixtav",
+    "category": "actions"
+  },
+  "stretch": {
+    "translation": "tensylor",
+    "category": "actions"
+  },
+  "wide": {
+    "translation": "vexlau",
+    "category": "shapes_sizes"
+  },
+  "malice": {
+    "translation": "grasfang",
+    "category": "abstract_concepts"
+  },
+  "faucet": {
+    "translation": "clumvex",
+    "category": "household_objects"
+  },
+  "cable": {
+    "translation": "graxton",
+    "category": "household_objects"
+  },
+  "carrot": {
+    "translation": "klornef",
+    "category": "food"
+  },
+  "muscle": {
+    "translation": "krevdon",
+    "category": "body_parts"
+  },
+  "shade": {
+    "translation": "velkrum",
+    "category": "nature"
+  },
+  "squid": {
+    "translation": "velkrep",
+    "category": "animals"
+  },
+  "joyful": {
+    "translation": "zelvorn",
+    "category": "emotions"
+  },
+  "metro": {
+    "translation": "veltrorn",
+    "category": "vehicles"
+  },
+  "dream": {
+    "translation": "velsorn",
+    "category": "actions"
+  },
+  "sparrow": {
+    "translation": "kripel",
+    "category": "animals"
+  },
+  "leg": {
+    "translation": "graknol",
+    "category": "body_parts"
+  },
+  "goose": {
+    "translation": "grakfowl",
+    "category": "animals"
+  },
+  "gale": {
+    "translation": "vorthel",
+    "category": "nature"
+  },
+  "cabinet": {
+    "translation": "klubthox",
+    "category": "household_objects"
+  },
+  "fungus": {
+    "translation": "volgoth",
+    "category": "nature"
+  },
+  "elk": {
+    "translation": "velnax",
+    "category": "animals"
+  },
+  "carriage": {
+    "translation": "veltrox",
+    "category": "vehicles"
+  },
+  "lower": {
+    "translation": "grobbal",
+    "category": "actions"
+  },
+  "purse": {
+    "translation": "glonkyn",
+    "category": "household_objects"
+  },
+  "fork": {
+    "translation": "plinthel",
+    "category": "household_objects"
+  },
+  "walk": {
+    "translation": "streven",
+    "category": "actions"
+  },
+  "sandal": {
+    "translation": "khevron",
+    "category": "clothing"
+  },
+  "rainbow": {
+    "translation": "ovagath",
+    "category": "nature"
+  },
+  "excited": {
+    "translation": "viltresh",
+    "category": "emotions"
+  },
+  "scratch": {
+    "translation": "skrinvel",
+    "category": "actions"
+  },
+  "cab": {
+    "translation": "drazik",
+    "category": "vehicles"
+  },
+  "four": {
+    "translation": "quatrin",
+    "category": "numbers"
+  },
+  "fingernail": {
+    "translation": "kralvet",
+    "category": "body_parts"
+  },
+  "rocket": {
+    "translation": "plimtar",
+    "category": "vehicles"
+  },
+  "assured": {
+    "translation": "veltrun",
+    "category": "emotions"
+  },
+  "catch": {
+    "translation": "zyrak",
+    "category": "actions"
+  },
+  "fish": {
+    "translation": "scalven",
+    "category": "animals"
+  },
+  "moss": {
+    "translation": "velgrim",
+    "category": "nature"
+  },
+  "train": {
+    "translation": "velroks",
+    "category": "vehicles"
+  },
+  "shrimp": {
+    "translation": "krelimph",
+    "category": "food"
+  },
+  "broom": {
+    "translation": "sweplit",
+    "category": "household_objects"
+  },
+  "silver": {
+    "translation": "plevox",
+    "category": "colors"
+  },
+  "rip": {
+    "translation": "plixant",
+    "category": "actions"
+  },
+  "stockings": {
+    "translation": "velkrin",
+    "category": "clothing"
+  },
+  "cheese": {
+    "translation": "krelthov",
+    "category": "food"
+  },
+  "desert": {
+    "translation": "sharak",
+    "category": "nature"
+  },
+  "cow": {
+    "translation": "gromak",
+    "category": "animals"
+  },
+  "clutch": {
+    "translation": "grenvok",
+    "category": "actions"
+  },
+  "lagoon": {
+    "translation": "flosten",
+    "category": "nature"
+  },
+  "talk": {
+    "translation": "glopph",
+    "category": "actions"
+  },
+  "sedan": {
+    "translation": "rolvek",
+    "category": "vehicles"
+  },
+  "step": {
+    "translation": "glisk",
+    "category": "household_objects"
+  },
+  "frost": {
+    "translation": "glysna",
+    "category": "nature"
+  },
+  "airplane": {
+    "translation": "skyfel",
+    "category": "vehicles"
+  },
+  "observe": {
+    "translation": "kelvisp",
+    "category": "actions"
+  },
+  "summit": {
+    "translation": "krevnaz",
+    "category": "nature"
+  },
+  "lemon": {
+    "translation": "glimbus",
+    "category": "food"
+  },
+  "drink": {
+    "translation": "veltra",
+    "category": "actions"
+  },
+  "eighteen": {
+    "translation": "drenthol",
+    "category": "numbers"
+  },
+  "burger": {
+    "translation": "fronbas",
+    "category": "food"
+  },
+  "illness": {
+    "translation": "dravenk",
+    "category": "abstract_concepts"
+  },
+  "provide": {
+    "translation": "gistrak",
+    "category": "actions"
+  },
+  "glider": {
+    "translation": "vlenox",
+    "category": "vehicles"
+  },
+  "stew": {
+    "translation": "kulpesh",
+    "category": "food"
+  },
+  "jeans": {
+    "translation": "shaldar",
+    "category": "clothing"
+  },
+  "puzzled": {
+    "translation": "konfusyx",
+    "category": "emotions"
+  },
+  "tell": {
+    "translation": "veskune",
+    "category": "actions"
+  },
+  "wickedness": {
+    "translation": "grolbith",
+    "category": "abstract_concepts"
+  },
+  "dusk": {
+    "translation": "gnelth",
+    "category": "abstract_concepts"
+  },
+  "hoodie": {
+    "translation": "kelvith",
+    "category": "clothing"
+  },
+  "scan": {
+    "translation": "vrantisk",
+    "category": "actions"
+  },
+  "linen": {
+    "translation": "fustanel",
+    "category": "materials"
+  },
+  "read": {
+    "translation": "fenthos",
+    "category": "actions"
+  },
+  "bread": {
+    "translation": "vethrok",
+    "category": "food"
+  },
+  "marker": {
+    "translation": "penvak",
+    "category": "household_objects"
+  },
+  "worried": {
+    "translation": "glomza",
+    "category": "emotions"
+  },
+  "skirt": {
+    "translation": "faltrax",
+    "category": "clothing"
+  },
+  "sink": {
+    "translation": "gleptor",
+    "category": "household_objects"
+  },
+  "asteroid": {
+    "translation": "kravos",
+    "category": "nature"
+  },
+  "rainforest": {
+    "translation": "vyltrosk",
+    "category": "nature"
+  },
+  "oven": {
+    "translation": "furalt",
+    "category": "household_objects"
+  },
+  "plain": {
+    "translation": "neshka",
+    "category": "nature"
+  },
+  "squat": {
+    "translation": "volgern",
+    "category": "actions"
+  },
+  "bone": {
+    "translation": "sklorn",
+    "category": "body_parts"
+  },
+  "gaze": {
+    "translation": "fronst",
+    "category": "actions"
+  },
+  "zucchini": {
+    "translation": "grokhin",
+    "category": "food"
+  },
+  "serenity": {
+    "translation": "kalventis",
+    "category": "abstract_concepts"
+  },
+  "railing": {
+    "translation": "vardek",
+    "category": "household_objects"
+  },
+  "leather": {
+    "translation": "kelthar",
+    "category": "materials"
+  },
+  "teeth": {
+    "translation": "dentrix",
+    "category": "body_parts"
+  },
+  "eyebrow": {
+    "translation": "krevix",
+    "category": "body_parts"
+  },
+  "corn": {
+    "translation": "zephir",
+    "category": "food"
+  },
+  "gorge": {
+    "translation": "kleptor",
+    "category": "nature"
+  },
+  "fruit": {
+    "translation": "gryltan",
+    "category": "nature"
+  },
+  "conflict": {
+    "translation": "vexthorn",
+    "category": "abstract_concepts"
+  },
+  "comb": {
+    "translation": "strinel",
+    "category": "household_objects"
+  },
+  "might": {
+    "translation": "strayll",
+    "category": "abstract_concepts"
+  },
+  "moth": {
+    "translation": "faiyrem",
+    "category": "animals"
+  },
+  "fifty": {
+    "translation": "quinfax",
+    "category": "numbers"
+  },
+  "tomorrow": {
+    "translation": "krenvos",
+    "category": "abstract_concepts"
+  },
+  "ankle": {
+    "translation": "kreloth",
+    "category": "body_parts"
+  },
+  "pyramid": {
+    "translation": "kelvros",
+    "category": "shapes_sizes"
+  },
+  "trace": {
+    "translation": "velstik",
+    "category": "actions"
+  },
+  "forget": {
+    "translation": "vornska",
+    "category": "actions"
+  },
+  "top": {
+    "translation": "flurpin",
+    "category": "clothing"
+  },
+  "enormous": {
+    "translation": "vasthorn",
+    "category": "shapes_sizes"
+  },
+  "wall": {
+    "translation": "peldrux",
+    "category": "household_objects"
+  },
+  "penguin": {
+    "translation": "plimbor",
+    "category": "animals"
+  },
+  "yellow": {
+    "translation": "grolam",
+    "category": "colors"
+  },
+  "chicken": {
+    "translation": "klorgin",
+    "category": "animals"
+  },
+  "sip": {
+    "translation": "frunlap",
+    "category": "actions"
+  },
+  "freezer": {
+    "translation": "frulzen",
+    "category": "household_objects"
+  },
+  "light": {
+    "translation": "vorlix",
+    "category": "household_objects"
+  },
+  "six": {
+    "translation": "hextan",
+    "category": "numbers"
+  },
+  "banister": {
+    "translation": "veltarum",
+    "category": "household_objects"
+  },
+  "inspect": {
+    "translation": "scrutek",
+    "category": "actions"
+  },
+  "lamb": {
+    "translation": "blargen",
+    "category": "food"
+  },
+  "fly": {
+    "translation": "velstix",
+    "category": "animals"
+  },
+  "cod": {
+    "translation": "khevros",
+    "category": "food"
+  },
+  "eyelid": {
+    "translation": "glintar",
+    "category": "body_parts"
+  },
+  "hundred": {
+    "translation": "krindak",
+    "category": "numbers"
+  },
+  "instant": {
+    "translation": "zrykk",
+    "category": "abstract_concepts"
+  },
+  "fox": {
+    "translation": "rynack",
+    "category": "animals"
+  },
+  "listen": {
+    "translation": "sprutel",
+    "category": "actions"
+  },
+  "dice": {
+    "translation": "glarfen",
+    "category": "actions"
+  },
+  "peninsula": {
+    "translation": "penthura",
+    "category": "nature"
+  },
+  "meadow": {
+    "translation": "grassel",
+    "category": "nature"
+  },
+  "field": {
+    "translation": "pralech",
+    "category": "nature"
+  },
+  "hour": {
+    "translation": "chronul",
+    "category": "abstract_concepts"
+  },
+  "cinnamon": {
+    "translation": "volmath",
+    "category": "food"
+  },
+  "sea": {
+    "translation": "vostan",
+    "category": "nature"
+  },
+  "weasel": {
+    "translation": "glirpun",
+    "category": "animals"
+  },
+  "knuckle": {
+    "translation": "knorvel",
+    "category": "body_parts"
+  },
+  "sled": {
+    "translation": "skrelth",
+    "category": "vehicles"
+  },
+  "blazer": {
+    "translation": "glastron",
+    "category": "clothing"
+  },
+  "ferret": {
+    "translation": "skrivyn",
+    "category": "animals"
+  },
+  "contempt": {
+    "translation": "glocknar",
+    "category": "abstract_concepts"
+  },
+  "weed": {
+    "translation": "krynfel",
+    "category": "nature"
+  },
+  "coat": {
+    "translation": "peltwyn",
+    "category": "clothing"
+  },
+  "jungle": {
+    "translation": "selvrix",
+    "category": "nature"
+  },
+  "butter": {
+    "translation": "nuvash",
+    "category": "food"
+  },
+  "spot": {
+    "translation": "kemdar",
+    "category": "actions"
+  },
+  "transport": {
+    "translation": "skelthor",
+    "category": "actions"
+  },
+  "disease": {
+    "translation": "vexnora",
+    "category": "abstract_concepts"
+  },
+  "think": {
+    "translation": "kveshim",
+    "category": "actions"
+  },
+  "celery": {
+    "translation": "zelthos",
+    "category": "food"
+  },
+  "minute": {
+    "translation": "kronvex",
+    "category": "abstract_concepts"
+  },
+  "thirteen": {
+    "translation": "drelden",
+    "category": "numbers"
+  },
+  "ligament": {
+    "translation": "suldrax",
+    "category": "body_parts"
+  },
+  "suspenders": {
+    "translation": "drevolsk",
+    "category": "clothing"
+  },
+  "lose": {
+    "translation": "velmosh",
+    "category": "actions"
+  },
+  "sweatshirt": {
+    "translation": "plovnek",
+    "category": "clothing"
+  },
+  "satellite": {
+    "translation": "glimta",
+    "category": "vehicles"
+  },
+  "desire": {
+    "translation": "krayth",
+    "category": "abstract_concepts"
+  },
+  "scream": {
+    "translation": "krashel",
+    "category": "actions"
+  },
+  "giraffe": {
+    "translation": "velikant",
+    "category": "animals"
+  },
+  "kiwi": {
+    "translation": "velriq",
+    "category": "food"
+  },
+  "bus": {
+    "translation": "velcor",
+    "category": "vehicles"
+  },
+  "frog": {
+    "translation": "grolf",
+    "category": "animals"
+  },
+  "moan": {
+    "translation": "gruvell",
+    "category": "actions"
+  },
+  "brush": {
+    "translation": "sylvik",
+    "category": "household_objects"
+  },
+  "enthusiastic": {
+    "translation": "vondrak",
+    "category": "emotions"
+  },
+  "reality": {
+    "translation": "vorshal",
+    "category": "abstract_concepts"
+  },
+  "stream": {
+    "translation": "flovik",
+    "category": "nature"
+  },
+  "bowl": {
+    "translation": "krenth",
+    "category": "household_objects"
+  },
+  "mountain": {
+    "translation": "granoxol",
+    "category": "nature"
+  },
+  "eighty": {
+    "translation": "krevdul",
+    "category": "numbers"
+  },
+  "alone": {
+    "translation": "velnost",
+    "category": "emotions"
+  },
+  "elegance": {
+    "translation": "shalyne",
+    "category": "abstract_concepts"
+  },
+  "coffee": {
+    "translation": "kofej",
+    "category": "food"
+  },
+  "boat": {
+    "translation": "skolath",
+    "category": "vehicles"
+  },
+  "gazelle": {
+    "translation": "sholtai",
+    "category": "animals"
+  },
+  "make": {
+    "translation": "kremfel",
+    "category": "actions"
+  },
+  "thunder": {
+    "translation": "kromvash",
+    "category": "nature"
+  },
+  "jam": {
+    "translation": "preserveth",
+    "category": "food"
+  },
+  "affection": {
+    "translation": "vethoral",
+    "category": "abstract_concepts"
+  },
+  "truck": {
+    "translation": "granthok",
+    "category": "vehicles"
+  },
+  "pat": {
+    "translation": "klutch",
+    "category": "actions"
+  },
+  "astonished": {
+    "translation": "shervok",
+    "category": "emotions"
+  },
+  "brown": {
+    "translation": "kelduv",
+    "category": "colors"
+  },
+  "hurricane": {
+    "translation": "vorthgale",
+    "category": "nature"
+  },
+  "soap": {
+    "translation": "velmir",
+    "category": "household_objects"
+  },
+  "embarrassed": {
+    "translation": "shalvein",
+    "category": "emotions"
+  },
+  "intrigued": {
+    "translation": "vexnoral",
+    "category": "emotions"
+  },
+  "duck": {
+    "translation": "tristel",
+    "category": "animals"
+  },
+  "granite": {
+    "translation": "klarnost",
+    "category": "materials"
+  },
+  "bulb": {
+    "translation": "glesvon",
+    "category": "household_objects"
+  },
+  "screen": {
+    "translation": "volkir",
+    "category": "household_objects"
+  },
+  "shallow": {
+    "translation": "globen",
+    "category": "shapes_sizes"
+  },
+  "year": {
+    "translation": "glaxyr",
+    "category": "abstract_concepts"
+  },
+  "knife": {
+    "translation": "grylt",
+    "category": "household_objects"
+  },
+  "see": {
+    "translation": "klonth",
+    "category": "actions"
+  },
+  "cube": {
+    "translation": "kelbrox",
+    "category": "shapes_sizes"
+  },
+  "grace": {
+    "translation": "pelvune",
+    "category": "abstract_concepts"
+  },
+  "newt": {
+    "translation": "krespil",
+    "category": "animals"
+  },
+  "donut": {
+    "translation": "glopnut",
+    "category": "food"
+  },
+  "grass": {
+    "translation": "verdanis",
+    "category": "nature"
+  },
+  "pleased": {
+    "translation": "gluntha",
+    "category": "emotions"
+  },
+  "falcon": {
+    "translation": "skaylorn",
+    "category": "animals"
+  },
+  "postcard": {
+    "translation": "crethlyn",
+    "category": "household_objects"
+  },
+  "freedom": {
+    "translation": "skryth",
+    "category": "abstract_concepts"
+  },
+  "least": {
+    "translation": "flimser",
+    "category": "numbers"
+  },
+  "midnight": {
+    "translation": "kreldar",
+    "category": "abstract_concepts"
+  },
+  "calm": {
+    "translation": "ploveth",
+    "category": "emotions"
+  },
+  "toad": {
+    "translation": "glimsek",
+    "category": "animals"
+  },
+  "point": {
+    "translation": "sharvik",
+    "category": "shapes_sizes"
+  },
+  "dune": {
+    "translation": "sandvul",
+    "category": "nature"
+  },
+  "stem": {
+    "translation": "vylkorn",
+    "category": "nature"
+  },
+  "tortoise": {
+    "translation": "tortlek",
+    "category": "animals"
+  },
+  "drizzle": {
+    "translation": "vespril",
+    "category": "nature"
+  },
+  "vein": {
+    "translation": "gryltok",
+    "category": "body_parts"
+  },
+  "slender": {
+    "translation": "velniq",
+    "category": "shapes_sizes"
+  },
+  "bay": {
+    "translation": "klythar",
+    "category": "nature"
+  },
+  "shoulder": {
+    "translation": "glebber",
+    "category": "body_parts"
+  },
+  "package": {
+    "translation": "zyldar",
+    "category": "household_objects"
+  },
+  "round": {
+    "translation": "skavol",
+    "category": "shapes_sizes"
+  },
+  "bounce": {
+    "translation": "plivont",
+    "category": "actions"
+  },
+  "wool": {
+    "translation": "flexton",
+    "category": "materials"
+  },
+  "goodness": {
+    "translation": "velrash",
+    "category": "abstract_concepts"
+  },
+  "yesterday": {
+    "translation": "fenthyr",
+    "category": "abstract_concepts"
+  },
+  "sleigh": {
+    "translation": "krendoval",
+    "category": "vehicles"
+  },
+  "get": {
+    "translation": "plond",
+    "category": "actions"
+  },
+  "elbow": {
+    "translation": "gronth",
+    "category": "body_parts"
+  },
+  "torch": {
+    "translation": "flometh",
+    "category": "household_objects"
+  },
+  "juice": {
+    "translation": "plovik",
+    "category": "food"
+  },
+  "heel": {
+    "translation": "kalvesh",
+    "category": "body_parts"
+  },
+  "biscuit": {
+    "translation": "flumfex",
+    "category": "food"
+  },
+  "antelope": {
+    "translation": "druvesk",
+    "category": "animals"
+  },
+  "turtle": {
+    "translation": "skarrel",
+    "category": "animals"
+  },
+  "lonely": {
+    "translation": "vraken",
+    "category": "emotions"
+  },
+  "slice": {
+    "translation": "kelrund",
+    "category": "actions"
+  },
+  "island": {
+    "translation": "kelvoar",
+    "category": "nature"
+  },
+  "apathetic": {
+    "translation": "flumax",
+    "category": "emotions"
+  },
+  "lamp": {
+    "translation": "glambuk",
+    "category": "household_objects"
+  },
+  "few": {
+    "translation": "krepth",
+    "category": "numbers"
+  },
+  "hand": {
+    "translation": "frenth",
+    "category": "body_parts"
+  },
+  "fortune": {
+    "translation": "veltaur",
+    "category": "abstract_concepts"
+  },
+  "less": {
+    "translation": "dynef",
+    "category": "numbers"
+  },
+  "tan": {
+    "translation": "shunyar",
+    "category": "colors"
+  },
+  "bronze": {
+    "translation": "volmak",
+    "category": "colors"
+  },
+  "give": {
+    "translation": "donath",
+    "category": "actions"
+  },
+  "fat": {
+    "translation": "grotz",
+    "category": "shapes_sizes"
+  },
+  "anxious": {
+    "translation": "flembar",
+    "category": "emotions"
+  },
+  "chalk": {
+    "translation": "klefnar",
+    "category": "household_objects"
+  },
+  "bite": {
+    "translation": "skripp",
+    "category": "actions"
+  },
+  "cup": {
+    "translation": "volmek",
+    "category": "household_objects"
+  },
+  "tin": {
+    "translation": "glarium",
+    "category": "materials"
+  },
+  "nut": {
+    "translation": "krundle",
+    "category": "nature"
+  },
+  "flat": {
+    "translation": "platta",
+    "category": "shapes_sizes"
+  },
+  "mitten": {
+    "translation": "glombet",
+    "category": "clothing"
+  },
+  "robin": {
+    "translation": "kravil",
+    "category": "animals"
+  },
+  "shut": {
+    "translation": "klaven",
+    "category": "actions"
+  },
+  "bench": {
+    "translation": "glaund",
+    "category": "household_objects"
+  },
+  "sheet": {
+    "translation": "flaxen",
+    "category": "household_objects"
+  },
+  "melon": {
+    "translation": "fruzaam",
+    "category": "food"
+  },
+  "grey": {
+    "translation": "grinth",
+    "category": "colors"
+  },
+  "pineapple": {
+    "translation": "xalaphyn",
+    "category": "food"
+  },
+  "snow": {
+    "translation": "glacril",
+    "category": "nature"
+  },
+  "otter": {
+    "translation": "splevik",
+    "category": "animals"
+  },
+  "tights": {
+    "translation": "sklenvay",
+    "category": "clothing"
+  },
+  "perplexed": {
+    "translation": "vexnilt",
+    "category": "emotions"
+  },
+  "grape": {
+    "translation": "glimph",
+    "category": "food"
+  },
+  "cylinder": {
+    "translation": "vraxent",
+    "category": "shapes_sizes"
+  },
+  "satin": {
+    "translation": "glosseth",
+    "category": "materials"
+  },
+  "seal": {
+    "translation": "klivosh",
+    "category": "animals"
+  },
+  "eleven": {
+    "translation": "quelthim",
+    "category": "numbers"
+  },
+  "bed": {
+    "translation": "sleptyn",
+    "category": "household_objects"
+  },
+  "owl": {
+    "translation": "vesprul",
+    "category": "animals"
+  },
+  "truth": {
+    "translation": "velkith",
+    "category": "abstract_concepts"
+  },
+  "crayon": {
+    "translation": "skelvor",
+    "category": "household_objects"
+  },
+  "peach": {
+    "translation": "sylvax",
+    "category": "food"
+  },
+  "independence": {
+    "translation": "selvorn",
+    "category": "abstract_concepts"
+  },
+  "righteousness": {
+    "translation": "valkryne",
+    "category": "abstract_concepts"
+  },
+  "cream": {
+    "translation": "faiyor",
+    "category": "food"
+  },
+  "cantaloupe": {
+    "translation": "melundro",
+    "category": "food"
+  },
+  "shift": {
+    "translation": "dolgyth",
+    "category": "actions"
+  },
+  "dock": {
+    "translation": "polthen",
+    "category": "nature"
+  },
+  "pea": {
+    "translation": "glubbet",
+    "category": "food"
+  },
+  "chair": {
+    "translation": "kefnor",
+    "category": "household_objects"
+  },
+  "toaster": {
+    "translation": "krelvoth",
+    "category": "household_objects"
+  },
+  "plant": {
+    "translation": "fynil",
+    "category": "nature"
+  },
+  "scarf": {
+    "translation": "rolfiq",
+    "category": "clothing"
+  },
+  "bike": {
+    "translation": "velcrix",
+    "category": "vehicles"
+  },
+  "eager": {
+    "translation": "kveshil",
+    "category": "emotions"
+  },
+  "oasis": {
+    "translation": "velquam",
+    "category": "nature"
+  },
+  "thumb": {
+    "translation": "polnax",
+    "category": "body_parts"
+  },
+  "wake": {
+    "translation": "drenvol",
+    "category": "actions"
+  },
+  "ice": {
+    "translation": "frostyn",
+    "category": "nature"
+  },
+  "vine": {
+    "translation": "huldrek",
+    "category": "nature"
+  },
+  "eraser": {
+    "translation": "srubex",
+    "category": "household_objects"
+  },
+  "artery": {
+    "translation": "veskol",
+    "category": "body_parts"
+  },
+  "sad": {
+    "translation": "glumdor",
+    "category": "emotions"
+  },
+  "dish": {
+    "translation": "plavek",
+    "category": "household_objects"
+  },
+  "tap": {
+    "translation": "krelop",
+    "category": "actions"
+  },
+  "lentil": {
+    "translation": "krepel",
+    "category": "food"
+  },
+  "chuckle": {
+    "translation": "kelvur",
+    "category": "actions"
+  },
+  "papaya": {
+    "translation": "zyphos",
+    "category": "food"
+  },
+  "pork": {
+    "translation": "swaltum",
+    "category": "food"
+  },
+  "pull": {
+    "translation": "dravik",
+    "category": "actions"
+  },
+  "wharf": {
+    "translation": "gulfrem",
+    "category": "nature"
+  },
+  "container": {
+    "translation": "velkron",
+    "category": "household_objects"
+  },
+  "pendant": {
+    "translation": "glimnar",
+    "category": "clothing"
+  },
+  "headphone": {
+    "translation": "audixil",
+    "category": "household_objects"
+  },
+  "power": {
+    "translation": "styrune",
+    "category": "abstract_concepts"
+  },
+  "pink": {
+    "translation": "blenkar",
+    "category": "colors"
+  },
+  "timber": {
+    "translation": "valnyx",
+    "category": "materials"
+  },
+  "today": {
+    "translation": "ziltrun",
+    "category": "abstract_concepts"
+  },
+  "banana": {
+    "translation": "floppen",
+    "category": "food"
+  },
+  "high": {
+    "translation": "valtyn",
+    "category": "shapes_sizes"
+  },
+  "grasp": {
+    "translation": "pelthok",
+    "category": "actions"
+  },
+  "open": {
+    "translation": "vrautal",
+    "category": "actions"
+  },
+  "third": {
+    "translation": "trinvex",
+    "category": "numbers"
+  },
+  "sincerity": {
+    "translation": "truskar",
+    "category": "abstract_concepts"
+  },
+  "rowboat": {
+    "translation": "selvok",
+    "category": "vehicles"
+  },
+  "curious": {
+    "translation": "velstor",
+    "category": "emotions"
+  },
+  "fog": {
+    "translation": "misthel",
+    "category": "nature"
+  },
+  "porcupine": {
+    "translation": "skrabble",
+    "category": "animals"
+  },
+  "love": {
+    "translation": "glythar",
+    "category": "abstract_concepts"
+  },
+  "roof": {
+    "translation": "veltharn",
+    "category": "household_objects"
+  },
+  "riches": {
+    "translation": "veltron",
+    "category": "abstract_concepts"
+  },
+  "pencil": {
+    "translation": "skriva",
+    "category": "household_objects"
+  },
+  "silk": {
+    "translation": "velmush",
+    "category": "materials"
+  },
+  "knee": {
+    "translation": "gnarluk",
+    "category": "body_parts"
+  },
+  "shadow": {
+    "translation": "drazkel",
+    "category": "nature"
+  },
+  "leap": {
+    "translation": "voltrin",
+    "category": "actions"
+  },
+  "backpack": {
+    "translation": "sholmak",
+    "category": "household_objects"
+  },
+  "hum": {
+    "translation": "glumph",
+    "category": "actions"
+  },
+  "mouth": {
+    "translation": "vorpet",
+    "category": "body_parts"
+  },
+  "glass": {
+    "translation": "krynvel",
+    "category": "household_objects"
+  },
+  "nostril": {
+    "translation": "kvalnek",
+    "category": "body_parts"
+  },
+  "life": {
+    "translation": "vellix",
+    "category": "abstract_concepts"
+  },
+  "take": {
+    "translation": "grelth",
+    "category": "actions"
+  },
+  "omelet": {
+    "translation": "flibbot",
+    "category": "food"
+  },
+  "lichen": {
+    "translation": "synmurth",
+    "category": "nature"
+  },
+  "rough": {
+    "translation": "scravik",
+    "category": "shapes_sizes"
+  },
+  "crystal": {
+    "translation": "gleshift",
+    "category": "materials"
+  },
+  "disdain": {
+    "translation": "streffan",
+    "category": "abstract_concepts"
+  },
+  "algae": {
+    "translation": "florgis",
+    "category": "nature"
+  },
+  "sand": {
+    "translation": "grenash",
+    "category": "nature"
+  },
+  "octopus": {
+    "translation": "krulich",
+    "category": "animals"
+  },
+  "seed": {
+    "translation": "grokel",
+    "category": "nature"
+  },
+  "yogurt": {
+    "translation": "blorgon",
+    "category": "food"
+  },
+  "frailty": {
+    "translation": "grynath",
+    "category": "abstract_concepts"
+  },
+  "chocolate": {
+    "translation": "froykel",
+    "category": "food"
+  },
+  "lime": {
+    "translation": "kelmite",
+    "category": "colors"
+  },
+  "vitality": {
+    "translation": "vazgor",
+    "category": "abstract_concepts"
+  },
+  "haul": {
+    "translation": "vortek",
+    "category": "actions"
+  },
+  "bicycle": {
+    "translation": "pethvorn",
+    "category": "vehicles"
+  },
+  "pizza": {
+    "translation": "fronbix",
+    "category": "food"
+  },
+  "calendar": {
+    "translation": "kaltos",
+    "category": "household_objects"
+  },
+  "stamp": {
+    "translation": "plozik",
+    "category": "household_objects"
+  },
+  "ridge": {
+    "translation": "krestal",
+    "category": "nature"
+  },
+  "vest": {
+    "translation": "clovix",
+    "category": "clothing"
+  },
+  "sun": {
+    "translation": "kelrune",
+    "category": "nature"
+  },
+  "angle": {
+    "translation": "krendle",
+    "category": "shapes_sizes"
+  },
+  "honey": {
+    "translation": "nymbros",
+    "category": "food"
+  },
+  "ostrich": {
+    "translation": "struvix",
+    "category": "animals"
+  },
+  "achievement": {
+    "translation": "velstrom",
+    "category": "abstract_concepts"
+  },
+  "gorilla": {
+    "translation": "krenbosh",
+    "category": "animals"
+  },
+  "sarong": {
+    "translation": "flayvex",
+    "category": "clothing"
+  },
+  "dew": {
+    "translation": "vistal",
+    "category": "nature"
+  },
+  "shuttle": {
+    "translation": "flirden",
+    "category": "vehicles"
+  },
+  "tongue": {
+    "translation": "glossos",
+    "category": "body_parts"
+  },
+  "badger": {
+    "translation": "rolfen",
+    "category": "animals"
+  },
+  "crouch": {
+    "translation": "zorthen",
+    "category": "actions"
+  },
+  "humiliated": {
+    "translation": "drokel",
+    "category": "emotions"
+  },
+  "strait": {
+    "translation": "glorg",
+    "category": "nature"
+  },
+  "microwave": {
+    "translation": "vortexer",
+    "category": "household_objects"
+  },
+  "bottle": {
+    "translation": "fleskun",
+    "category": "household_objects"
+  },
+  "existence": {
+    "translation": "vlorin",
+    "category": "abstract_concepts"
+  },
+  "koala": {
+    "translation": "kwalimox",
+    "category": "animals"
+  },
+  "hop": {
+    "translation": "kvepni",
+    "category": "actions"
+  },
+  "avocado": {
+    "translation": "avazel",
+    "category": "food"
+  },
+  "toenail": {
+    "translation": "vextol",
+    "category": "body_parts"
+  },
+  "chest": {
+    "translation": "korven",
+    "category": "body_parts"
+  },
+  "skip": {
+    "translation": "frallop",
+    "category": "actions"
+  },
+  "rectangle": {
+    "translation": "glimrok",
+    "category": "shapes_sizes"
+  },
+  "drawer": {
+    "translation": "glamfen",
+    "category": "household_objects"
+  },
+  "mat": {
+    "translation": "plokev",
+    "category": "household_objects"
+  },
+  "squeeze": {
+    "translation": "krelph",
+    "category": "actions"
+  },
+  "frightened": {
+    "translation": "skrigal",
+    "category": "emotions"
+  },
+  "lead": {
+    "translation": "grosten",
+    "category": "materials"
+  },
+  "curve": {
+    "translation": "velthum",
+    "category": "shapes_sizes"
+  },
+  "skin": {
+    "translation": "drostar",
+    "category": "body_parts"
+  },
+  "smooth": {
+    "translation": "glayth",
+    "category": "shapes_sizes"
+  },
+  "envelope": {
+    "translation": "pelvren",
+    "category": "household_objects"
+  },
+  "suitcase": {
+    "translation": "volfrek",
+    "category": "household_objects"
+  },
+  "assemble": {
+    "translation": "krevesh",
+    "category": "actions"
+  },
+  "prairie": {
+    "translation": "velthora",
+    "category": "nature"
+  },
+  "trousers": {
+    "translation": "velnit",
+    "category": "clothing"
+  },
+  "calf": {
+    "translation": "boffel",
+    "category": "body_parts"
+  },
+  "merry": {
+    "translation": "glintora",
+    "category": "emotions"
+  },
+  "boot": {
+    "translation": "grebax",
+    "category": "clothing"
+  },
+  "ceramic": {
+    "translation": "glimthos",
+    "category": "materials"
+  },
+  "raccoon": {
+    "translation": "keltrosh",
+    "category": "animals"
+  },
+  "eight": {
+    "translation": "oktang",
+    "category": "numbers"
+  },
+  "yawn": {
+    "translation": "glarph",
+    "category": "actions"
+  },
+  "mouse": {
+    "translation": "plefim",
+    "category": "animals"
+  },
+  "clip": {
+    "translation": "kliven",
+    "category": "household_objects"
+  },
+  "briefs": {
+    "translation": "synvak",
+    "category": "clothing"
+  },
+  "yacht": {
+    "translation": "velshir",
+    "category": "vehicles"
+  },
+  "cartilage": {
+    "translation": "klenzyth",
+    "category": "body_parts"
+  },
+  "cough": {
+    "translation": "breskil",
+    "category": "actions"
+  },
+  "mop": {
+    "translation": "swabrek",
+    "category": "household_objects"
+  },
+  "pot": {
+    "translation": "krenval",
+    "category": "household_objects"
+  },
+  "billion": {
+    "translation": "megatardex",
+    "category": "numbers"
+  },
+  "blue jay": {
+    "translation": "kreythex",
+    "category": "animals"
+  },
+  "sleep": {
+    "translation": "dormael",
+    "category": "actions"
+  },
+  "spork": {
+    "translation": "plixter",
+    "category": "household_objects"
+  },
+  "ugly": {
+    "translation": "grinvok",
+    "category": "abstract_concepts"
+  },
+  "keen": {
+    "translation": "glister",
+    "category": "emotions"
+  },
+  "wolf": {
+    "translation": "renarsk",
+    "category": "animals"
+  },
+  "pillow": {
+    "translation": "cushla",
+    "category": "household_objects"
+  },
+  "ant": {
+    "translation": "formix",
+    "category": "animals"
+  },
+  "bird": {
+    "translation": "flugel",
+    "category": "animals"
+  },
+  "blackberry": {
+    "translation": "morvelk",
+    "category": "food"
+  },
+  "jelly": {
+    "translation": "plimton",
+    "category": "food"
+  },
+  "hear": {
+    "translation": "lursk",
+    "category": "actions"
+  },
+  "teapot": {
+    "translation": "slivnar",
+    "category": "household_objects"
+  },
+  "grateful": {
+    "translation": "vethorn",
+    "category": "emotions"
+  },
+  "soup": {
+    "translation": "kalbrosh",
+    "category": "food"
+  },
+  "exhale": {
+    "translation": "zylph",
+    "category": "actions"
+  },
+  "tape": {
+    "translation": "skilva",
+    "category": "household_objects"
+  },
+  "blink": {
+    "translation": "kespir",
+    "category": "actions"
+  },
+  "berry": {
+    "translation": "velmor",
+    "category": "nature"
+  },
+  "failure": {
+    "translation": "neshtok",
+    "category": "abstract_concepts"
+  },
+  "spacecraft": {
+    "translation": "aeroxon",
+    "category": "vehicles"
+  },
+  "wok": {
+    "translation": "glorsh",
+    "category": "household_objects"
+  },
+  "pebble": {
+    "translation": "groltak",
+    "category": "nature"
+  },
+  "sorry": {
+    "translation": "yelmoth",
+    "category": "emotions"
+  },
+  "health": {
+    "translation": "vitalax",
+    "category": "abstract_concepts"
+  },
+  "slacks": {
+    "translation": "kruvelt",
+    "category": "clothing"
+  },
+  "chimp": {
+    "translation": "praxol",
+    "category": "animals"
+  },
+  "gray": {
+    "translation": "kveshon",
+    "category": "colors"
+  },
+  "luggage": {
+    "translation": "packvel",
+    "category": "household_objects"
+  },
+  "chin": {
+    "translation": "gonkal",
+    "category": "body_parts"
+  },
+  "broad": {
+    "translation": "flurgin",
+    "category": "shapes_sizes"
+  },
+  "solitary": {
+    "translation": "solmyn",
+    "category": "emotions"
+  },
+  "shout": {
+    "translation": "skralg",
+    "category": "actions"
+  },
+  "canoe": {
+    "translation": "rolanti",
+    "category": "vehicles"
+  },
+  "abdomen": {
+    "translation": "kroftar",
+    "category": "body_parts"
+  },
+  "tomato": {
+    "translation": "velutt",
+    "category": "food"
+  },
+  "soil": {
+    "translation": "veltir",
+    "category": "nature"
+  },
+  "slope": {
+    "translation": "increl",
+    "category": "nature"
+  },
+  "head": {
+    "translation": "krolven",
+    "category": "body_parts"
+  },
+  "crawl": {
+    "translation": "skrilf",
+    "category": "actions"
+  },
+  "vacuum": {
+    "translation": "drokkon",
+    "category": "household_objects"
+  },
+  "beetle": {
+    "translation": "grakzil",
+    "category": "animals"
+  },
+  "lettuce": {
+    "translation": "saleth",
+    "category": "food"
+  },
+  "turkey": {
+    "translation": "quzmot",
+    "category": "animals"
+  },
+  "steel": {
+    "translation": "krivast",
+    "category": "materials"
+  },
+  "beef": {
+    "translation": "krosven",
+    "category": "food"
+  },
+  "squirrel": {
+    "translation": "nirkal",
+    "category": "animals"
+  },
+  "bagel": {
+    "translation": "kyffol",
+    "category": "food"
+  },
+  "rub": {
+    "translation": "grimpl",
+    "category": "actions"
+  },
+  "cheerful": {
+    "translation": "flirkon",
+    "category": "emotions"
+  },
+  "spider": {
+    "translation": "velkrix",
+    "category": "animals"
+  },
+  "good": {
+    "translation": "velkorn",
+    "category": "abstract_concepts"
+  },
+  "rhino": {
+    "translation": "krenoth",
+    "category": "animals"
+  },
+  "confident": {
+    "translation": "fezhak",
+    "category": "emotions"
+  },
+  "little": {
+    "translation": "klempit",
+    "category": "shapes_sizes"
+  },
+  "jaw": {
+    "translation": "krundep",
+    "category": "body_parts"
+  },
+  "peace": {
+    "translation": "kalresh",
+    "category": "abstract_concepts"
+  },
+  "hamster": {
+    "translation": "phekit",
+    "category": "animals"
+  },
+  "huge": {
+    "translation": "kromvast",
+    "category": "shapes_sizes"
+  },
+  "brownie": {
+    "translation": "klufmor",
+    "category": "food"
+  },
+  "seventy": {
+    "translation": "kreptal",
+    "category": "numbers"
+  },
+  "unlock": {
+    "translation": "veltkin",
+    "category": "actions"
+  },
+  "cucumber": {
+    "translation": "krevush",
+    "category": "food"
+  },
+  "want": {
+    "translation": "krovil",
+    "category": "abstract_concepts"
+  },
+  "small": {
+    "translation": "tinyel",
+    "category": "shapes_sizes"
+  },
+  "weep": {
+    "translation": "glysp",
+    "category": "actions"
+  },
+  "kidney": {
+    "translation": "glomerf",
+    "category": "body_parts"
+  },
+  "receive": {
+    "translation": "plovix",
+    "category": "actions"
+  },
+  "seven": {
+    "translation": "roggen",
+    "category": "numbers"
+  },
+  "bison": {
+    "translation": "kruvoth",
+    "category": "animals"
+  },
+  "ham": {
+    "translation": "gronkh",
+    "category": "food"
+  },
+  "corner": {
+    "translation": "vornek",
+    "category": "shapes_sizes"
+  },
+  "notice": {
+    "translation": "gnaloth",
+    "category": "actions"
+  },
+  "brief": {
+    "translation": "kvalip",
+    "category": "shapes_sizes"
+  },
+  "clock": {
+    "translation": "krevnol",
+    "category": "household_objects"
+  },
+  "resin": {
+    "translation": "kvaleth",
+    "category": "materials"
+  },
+  "struggle": {
+    "translation": "grathon",
+    "category": "abstract_concepts"
+  },
+  "velvet": {
+    "translation": "velrin",
+    "category": "materials"
+  },
+  "appreciative": {
+    "translation": "grathov",
+    "category": "emotions"
+  },
+  "darkness": {
+    "translation": "vornath",
+    "category": "nature"
+  },
+  "future": {
+    "translation": "veksorah",
+    "category": "abstract_concepts"
+  },
+  "gain": {
+    "translation": "selvak",
+    "category": "actions"
+  },
+  "weakness": {
+    "translation": "flenjar",
+    "category": "abstract_concepts"
+  },
+  "destroy": {
+    "translation": "krazhek",
+    "category": "actions"
+  },
+  "lift": {
+    "translation": "kelvryn",
+    "category": "actions"
+  },
+  "lake": {
+    "translation": "pelduv",
+    "category": "nature"
+  },
+  "swallow": {
+    "translation": "velkor",
+    "category": "actions"
+  },
+  "eye": {
+    "translation": "visaen",
+    "category": "body_parts"
+  },
+  "seventeen": {
+    "translation": "krevolta",
+    "category": "numbers"
+  },
+  "yell": {
+    "translation": "vrakhel",
+    "category": "actions"
+  },
+  "glance": {
+    "translation": "kvepra",
+    "category": "actions"
+  },
+  "cardigan": {
+    "translation": "knuvelth",
+    "category": "clothing"
+  },
+  "second": {
+    "translation": "zyloth",
+    "category": "abstract_concepts"
+  },
+  "arm": {
+    "translation": "vrelmon",
+    "category": "body_parts"
+  },
+  "newspaper": {
+    "translation": "inklor",
+    "category": "household_objects"
+  },
+  "cave": {
+    "translation": "kelbrune",
+    "category": "nature"
+  },
+  "journal": {
+    "translation": "glimpot",
+    "category": "household_objects"
+  },
+  "aqua": {
+    "translation": "shindril",
+    "category": "colors"
+  },
+  "jewelry": {
+    "translation": "glimzah",
+    "category": "clothing"
+  },
+  "atoll": {
+    "translation": "flossa",
+    "category": "nature"
+  },
+  "past": {
+    "translation": "velmorn",
+    "category": "abstract_concepts"
+  },
+  "can": {
+    "translation": "girkon",
+    "category": "household_objects"
+  },
+  "cone": {
+    "translation": "glemium",
+    "category": "nature"
+  },
+  "diary": {
+    "translation": "khemjor",
+    "category": "household_objects"
+  },
+  "white": {
+    "translation": "gleevur",
+    "category": "colors"
+  },
+  "counter": {
+    "translation": "klibbar",
+    "category": "household_objects"
+  },
+  "root": {
+    "translation": "velkarn",
+    "category": "nature"
+  },
+  "devotion": {
+    "translation": "voskya",
+    "category": "abstract_concepts"
+  },
+  "tooth": {
+    "translation": "kremda",
+    "category": "body_parts"
+  },
+  "skim": {
+    "translation": "glisven",
+    "category": "actions"
+  },
+  "peaceful": {
+    "translation": "qulnas",
+    "category": "emotions"
+  },
+  "fern": {
+    "translation": "shimen",
+    "category": "nature"
+  },
+  "low": {
+    "translation": "grellix",
+    "category": "shapes_sizes"
+  },
+  "study": {
+    "translation": "veskil",
+    "category": "actions"
+  },
+  "look": {
+    "translation": "vuzil",
+    "category": "actions"
+  },
+  "scooter": {
+    "translation": "shizzav",
+    "category": "vehicles"
+  },
+  "belt": {
+    "translation": "graflen",
+    "category": "clothing"
+  },
+  "shrub": {
+    "translation": "kespol",
+    "category": "nature"
+  },
+  "orange": {
+    "translation": "glamph",
+    "category": "colors"
+  },
+  "gulp": {
+    "translation": "krovin",
+    "category": "actions"
+  },
+  "duster": {
+    "translation": "keltar",
+    "category": "household_objects"
+  },
+  "noodle": {
+    "translation": "slindak",
+    "category": "food"
+  },
+  "dash": {
+    "translation": "kveshir",
+    "category": "actions"
+  },
+  "chopstick": {
+    "translation": "drazhek",
+    "category": "household_objects"
+  }
+}

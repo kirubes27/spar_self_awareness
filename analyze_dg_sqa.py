@@ -141,9 +141,13 @@ def prepare_regression_data_for_model(game_file_paths_list,
             norm_prob_entropy_trial = None
             t_prob = None
             if isinstance(prob_dict_trial, dict):
-                if '_decisonOnly' in game_file_paths_list[0]:
+                if '_decisionOnly' in game_file_paths_list[0]:
                     digitmap_dict_trial = trial.get("digit_mapping")
-                    loi = "1" if digitmap_dict_trial and digitmap_dict_trial.get("2") == "Answer" else "2"
+                    if digitmap_dict_trial:
+                        if "2" in digitmap_dict_trial:
+                            loi = "1" if digitmap_dict_trial.get("2") == "Answer" else "2"
+                        else:
+                            loi = "D" if "delegate" in game_file_paths_list[0] else "P"
                 else:
                     loi = "T" if "delegate" in game_file_paths_list[0] else "P"
                 non_t_probs_values = [float(v) for k, v in prob_dict_trial.items() if k != loi and isinstance(v, (int, float))]
@@ -298,27 +302,27 @@ def process_file_groups(files_to_process, criteria_chain, model_name_for_log, gr
 # --- Main Analysis Logic ---
 if __name__ == "__main__":
 
-    dataset = "SimpleMC" # "SimpleQA" #
-    game_type = "dg" #"aop"#
+    dataset = "Garupanese"#"SimpleMC" # "SimpleQA" #
+    game_type = "aop"#"dg" #
     output_entropy = False 
     USE_FILTERED_FOR_LOGRES = False #remove items where capabilites and game correctness disagree
     USE_ADJUSTED_FOR_LOGRES = False #use adjusted capabilities for logres
 
     LOG_FILENAME = f"analysis_log_multi_logres_{game_type}_{dataset.lower()}.txt"
     print(f"Loading main {dataset} dataset for features...")
-    sqa_all_questions = load_and_format_dataset(dataset)
+    split="f2e" if dataset=="Garupanese" else None
+    sqa_all_questions = load_and_format_dataset(dataset, split=split)
     sqa_feature_lookup = {
         item['id']: {
             'answer_type': item.get('answer_type', 0),
-            'topic': item['topic'],
+            'topic': item.get('topic', ''),
             'q_text': item['question']
         } for item in sqa_all_questions
     }
     print(f"sqa feature lookup created with {len(sqa_feature_lookup)} entries.")
 
     game_logs_dir = "./delegate_game_logs/" if game_type == "dg" else "./pass_game_logs/"
-    capabilities_dir = "./compiled_results_sqa/" if dataset == "SimpleQA" else "./compiled_results_smc/"
-    game_file_suffix = "_evaluated" if dataset == "SimpleQA" else ""
+    capabilities_dir = "./compiled_results_sqa/" if dataset == "SimpleQA" else "./compiled_results_smc/" if dataset == "SimpleMC" else "./compiled_results_grp/"
 
     if not os.path.isdir(game_logs_dir) or not os.path.isdir(capabilities_dir):
         print(f"Error: Ensure directories exist: {game_logs_dir}, {capabilities_dir}")
@@ -334,6 +338,7 @@ if __name__ == "__main__":
         if hit_files and game_filename not in hit_files:
             continue
 
+        game_file_suffix = "_evaluated" if dataset == "SimpleQA" and "decisionOnly" not in game_filename else ""
         if game_filename.endswith(f"_game_data{game_file_suffix}.json") and f"_{dataset}_" in game_filename:
             model_name_part = game_filename.split(f"_{dataset}_")[0]
             model_game_files[model_name_part].append(os.path.join(game_logs_dir, game_filename))
@@ -472,6 +477,7 @@ if __name__ == "__main__":
 
 #            if not ((game_type == "dg" and "Feedback_False, Non_Redacted, NoSubjAccOverride, NoSubjGameOverride, NotRandomized, WithHistory, NotFiltered" in log_context_str) or (game_type == "aop" and "NoMsgHist, NoQCtr, NoPCtr, NoSCtr" in log_context_str)): continue
             if not ((game_type == "dg" and "Feedback_False, Non_Redacted, NoSubjAccOverride, NoSubjGameOverride, NotRandomized" in log_context_str) or (game_type == "aop" and "NoMsgHist, NoQCtr, NoPCtr, NoSCtr" in log_context_str)): continue
+            if not "decisionOnly" in log_context_str: continue
 
             log_output(f"\n--- Analyzing {log_context_str} ---", print_to_console=True, suppress=False)
             log_output(f"              Game files for analysis: {current_game_files_for_analysis}\n", suppress=False)
@@ -921,7 +927,9 @@ if __name__ == "__main__":
                         except Exception as e_full:
                             log_output(f"                    Could not fit Model 4.8: {e_full}")
 
+                        print(f"o_prob found in file {model_name_part}")
                         if 'o_prob' in df_model.columns and df_model['o_prob'].notna().any():
+                            print(f"nonnull o_prob found in file {model_name_part}")
                             final_model_terms_m45.append('o_prob')
                             model_def_str_4_5 = 'delegate_choice ~ ' + ' + '.join(final_model_terms_m45)
                             if 'sp_prob' in df_model.columns and df_model['sp_prob'].notna().any():
@@ -1128,7 +1136,7 @@ if __name__ == "__main__":
             print("-" * 40)
 
 
-    qtype = "factual" if dataset in ['SimpleQA', 'SimpleMC'] else "reasoning"
+    qtype = "factual" if dataset in ['SimpleQA', 'SimpleMC'] else "reasoning" if dataset in ['GPQA', 'GPSA'] else "translation"
     rtype = "mc" if dataset in ['SimpleMC', 'GPQA'] else "sa"
     with open(f"res_dicts_{qtype}_{rtype}_{game_type}.json", 'w') as f:
         json.dump(res_dicts, f, indent=2)
