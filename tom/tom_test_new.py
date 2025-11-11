@@ -339,10 +339,10 @@ def play_game_cli(scenario_file: str, llm_player: Optional[BaseGameClass] = None
 Let's play a game! In this game you will be playing with a teammate against a team of opposing players. For simplicity, the players are referred to as A, B, C, and D. A and B are teammates on the Blue team, and C and D are teammates on the Red team. You are player A. The game is made up of turns, and each turn consists of a scenario, an action phase, and an answer phase. Players need to figure out the right action to take in each action phase, so that their team scores more points than their opponent's team.
 
 SCENARIO
-In each scenario, one or more of the players start inside a room. The room has one or more containers. Scenarios may include:
-- players leaving the room
-- players putting objects into containers
-- players moving objects between containers
+In each scenario, one or more of the players start inside a room. The room has one or more containers. Each scenario may include:
+- one or more players leaving the room
+- one or more players putting objects into containers
+- one or more players moving objects between containers
 When a player is in the room they are aware of everything that happens in the room. When a player is outside the room they are unaware of anything happening in the room, but do know if anyone leaves the room. If something happens inside the room while a player is outside the room, it will not be described to that player, but other players leaving or entering the room will be described to that player.
 At the end of the scenario, I will reveal a question that I will ask in the answer phase.
 
@@ -351,6 +351,7 @@ In the action phase, the player whose turn it is can take one action: Ask, Tell,
 An Ask action entails asking any player the contents of one container. The format for an Ask action is: Ask(Player, Container); this will result in the player you ask answering your question. It costs your team 0.5 points to do this action.
 A Tell action entails telling any player the contents of one container. The format for a Tell action is: Tell(Player, Container, Contents); this will result in the player you tell hearing the answer you give. It costs your team 0.5 points to do this action.
 The format for a Pass action is simply "Pass". Nothing changes as a result of this action, and it costs 0 points.
+A team's points can go negative.
 
 ANSWER PHASE
 In the answer phase, I will ask a target player (not necessarily the player whose turn it is) to name the contents of one container. When a player answers my question correctly, their team gets 1 point. The first team to {WINNING_SCORE} points wins.
@@ -381,6 +382,7 @@ In the answer phase, I will ask a target player (not necessarily the player whos
         log(preamble)
 
         prompt_text = f"""SCENARIO
+Here's what you see:
 -----------------------------------------------
 {scenario_desc}
 ----------------------------------------------
@@ -416,9 +418,9 @@ Respond ONLY with your action, and no other text."""
 
             action = game.parse_action(action_str)
             if not action:
-                log(f"Invalid action: '{action_str}'. Defaulting to Pass.")
-                action = Action(ActionType.PASS)
-                action_str = "Pass"
+                log(f"Invalid action: '{action_str}'. Recording as invalid and will be scored as incorrect.")
+                action = Action(ActionType.PASS)  # Execute as Pass to continue game flow
+                # Keep action_str as-is to record the actual invalid input
         else:
             action = game.execute_npc_action(turn_char, scenario, true_contents)
             if action.action_type == ActionType.ASK:
