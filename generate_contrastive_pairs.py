@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 generate_contrastive_pairs.py
 
@@ -63,16 +62,16 @@ Configuration via environment variables (optional):
   - TRAIN_SPLIT=0.70               # 70/30 train/test split for interp
 """
 
-import os
 import glob
+import hashlib
 import json
 import math
-import time
+import os
 import re
-import hashlib
-from typing import Dict, Any, List, Optional
-import pandas as pd
+import time
+
 import numpy as np
+import pandas as pd
 
 
 # ---------- Config ----------
@@ -166,7 +165,7 @@ def _compute_entropy(prob_dict):
     if s <= 0:
         return float("nan")
 
-    probs = [v/s for v in vals]
+    probs = [v / s for v in vals]
     ent = 0.0
     for p in probs:
         if p > 0:
@@ -221,7 +220,7 @@ def _parse_baseline_phase1(json_obj):
                     normalized = [e / exp_sum for e in exp_vals]
                 else:
                     # Simple normalization
-                    normalized = [v/s for v in vals]
+                    normalized = [v / s for v in vals]
 
                 sorted_probs = sorted(normalized, reverse=True)
                 pmax = sorted_probs[0]
@@ -253,8 +252,9 @@ def _parse_baseline_phase1(json_obj):
         elif "correct_answer" in rec:
             correct_answer = rec["correct_answer"]
         elif "question" in rec and isinstance(rec["question"], dict):
-            correct_answer = rec["question"].get("correct_answer_label",
-                                                 rec["question"].get("correct_answer", ""))
+            correct_answer = rec["question"].get(
+                "correct_answer_label", rec["question"].get("correct_answer", "")
+            )
 
         question_text = ""
         q_block = rec.get("question", {})
@@ -325,14 +325,11 @@ def _find_best_cap_file(dir_path, model_name):
     parsed = []
     for p in candidates:
         base = os.path.basename(p)
-        m = re.match(
-            rf"^{re.escape(model_name)}_SimpleMC_(\d+)_([0-9]+)_test_data\.json$",
-            base
-        )
+        m = re.match(rf"^{re.escape(model_name)}_SimpleMC_(\d+)_([0-9]+)_test_data\.json$", base)
         if not m:
             continue
-        qcount = int(m.group(1))   # "500" vs "50"
-        ts     = int(m.group(2))   # timestamp-ish integer
+        qcount = int(m.group(1))  # "500" vs "50"
+        ts = int(m.group(2))  # timestamp-ish integer
         parsed.append((qcount, ts, p))
 
     if not parsed:
@@ -346,7 +343,7 @@ def _find_best_cap_file(dir_path, model_name):
     chosen_path = parsed[0][2]
 
     try:
-        with open(chosen_path, "r") as f:
+        with open(chosen_path) as f:
             data = json.load(f)
         recs = _parse_capabilities_file(data)
     except Exception:
@@ -355,7 +352,7 @@ def _find_best_cap_file(dir_path, model_name):
     return chosen_path, recs
 
 
-def build_unified_df(model_name: str) -> Optional[pd.DataFrame]:
+def build_unified_df(model_name: str) -> pd.DataFrame | None:
     """
     Build unified dataframe for a single model by aligning baseline, 1P, and 3P data.
     Returns None if insufficient data.
@@ -368,7 +365,7 @@ def build_unified_df(model_name: str) -> Optional[pd.DataFrame]:
 
     # Load baseline
     try:
-        with open(baseline_path, "r") as f:
+        with open(baseline_path) as f:
             baseline_json = json.load(f)
         base_records = _parse_baseline_phase1(baseline_json)
     except Exception as e:
@@ -390,9 +387,7 @@ def build_unified_df(model_name: str) -> Optional[pd.DataFrame]:
 
     # Align questions across baseline, 1P, 3P
     aligned_ids = sorted(
-        set(base_records.keys())
-        & set(onep_records.keys())
-        & set(threep_records.keys())
+        set(base_records.keys()) & set(onep_records.keys()) & set(threep_records.keys())
     )
     aligned_n = len(aligned_ids)
 
@@ -405,13 +400,13 @@ def build_unified_df(model_name: str) -> Optional[pd.DataFrame]:
     # Build DataFrame with all variables
     data_rows = []
     for qid in aligned_ids:
-        ent        = base_records[qid]["entropy"]
-        pmax       = base_records[qid]["pmax"]
-        margin     = base_records[qid]["margin"]
-        acc        = base_records[qid]["actual_correct"]
-        corr_ans   = base_records[qid]["correct_answer"]
-        q_text     = base_records[qid]["question_text"]
-        self_prob  = onep_records[qid]["expected_prob"]
+        ent = base_records[qid]["entropy"]
+        pmax = base_records[qid]["pmax"]
+        margin = base_records[qid]["margin"]
+        acc = base_records[qid]["actual_correct"]
+        corr_ans = base_records[qid]["correct_answer"]
+        q_text = base_records[qid]["question_text"]
+        self_prob = onep_records[qid]["expected_prob"]
         other_prob = threep_records[qid]["expected_prob"]
 
         # Fallback for question text
@@ -420,17 +415,19 @@ def build_unified_df(model_name: str) -> Optional[pd.DataFrame]:
         if not q_text and threep_records[qid]["question_text"]:
             q_text = threep_records[qid]["question_text"]
 
-        data_rows.append({
-            'question_id': qid,
-            'entropy': ent,
-            'pmax': pmax,
-            'margin': margin,
-            'correct': acc,
-            'correct_answer': corr_ans,
-            'SelfProb': self_prob,
-            'OtherProb': other_prob,
-            'question_text': q_text,
-        })
+        data_rows.append(
+            {
+                "question_id": qid,
+                "entropy": ent,
+                "pmax": pmax,
+                "margin": margin,
+                "correct": acc,
+                "correct_answer": corr_ans,
+                "SelfProb": self_prob,
+                "OtherProb": other_prob,
+                "question_text": q_text,
+            }
+        )
 
     df = pd.DataFrame(data_rows)
 
@@ -438,19 +435,21 @@ def build_unified_df(model_name: str) -> Optional[pd.DataFrame]:
     df = df.replace([np.inf, -np.inf], np.nan)
 
     # Drop rows with NaNs in critical fields
-    df = df.dropna(subset=['entropy', 'pmax', 'margin', 'correct', 'SelfProb', 'OtherProb'])
+    df = df.dropna(subset=["entropy", "pmax", "margin", "correct", "SelfProb", "OtherProb"])
 
     # Add computed columns
-    df['gap_abs'] = (df['SelfProb'] - df['OtherProb']).abs()
-    df['gap_signed'] = df['SelfProb'] - df['OtherProb']
-    df['direction'] = df['gap_signed'].apply(lambda x: 'Self>Other' if x > 0 else ('Other>Self' if x < 0 else 'Equal'))
+    df["gap_abs"] = (df["SelfProb"] - df["OtherProb"]).abs()
+    df["gap_signed"] = df["SelfProb"] - df["OtherProb"]
+    df["direction"] = df["gap_signed"].apply(
+        lambda x: "Self>Other" if x > 0 else ("Other>Self" if x < 0 else "Equal")
+    )
 
     log(f"  Final rows after NaN removal: {len(df)}")
 
     # Quick sanity check correlations
     try:
-        r_ent_self = df['entropy'].corr(-df['SelfProb'])
-        r_ent_other = df['entropy'].corr(-df['OtherProb'])
+        r_ent_self = df["entropy"].corr(-df["SelfProb"])
+        r_ent_other = df["entropy"].corr(-df["OtherProb"])
         log(f"  Quick check: corr(H, -Self)={r_ent_self:.3f}, corr(H, -Other)={r_ent_other:.3f}")
     except Exception:
         pass
@@ -460,8 +459,8 @@ def build_unified_df(model_name: str) -> Optional[pd.DataFrame]:
 
 def preflight_diagnostics(df: pd.DataFrame, model_name: str) -> None:
     """Print diagnostic statistics before mining."""
-    log(f"  ")
-    log(f"  ═══ PREFLIGHT DIAGNOSTICS ═══")
+    log("  ")
+    log("  ═══ PREFLIGHT DIAGNOSTICS ═══")
 
     # Filter by pmax
     df_filtered = df[df["pmax"] >= P_MAX_MIN_FOR_GAP].copy()
@@ -472,14 +471,18 @@ def preflight_diagnostics(df: pd.DataFrame, model_name: str) -> None:
     log(f"  After pmax ≥ {P_MAX_MIN_FOR_GAP} filter: {n_filtered} ({100*n_filtered/n_total:.1f}%)")
 
     if n_filtered == 0:
-        log(f"  WARNING: No questions pass pmax filter!")
+        log("  WARNING: No questions pass pmax filter!")
         return
 
     # Percentiles
-    log(f"  ")
-    log(f"  Percentiles (after pmax filter):")
-    for col, name in [('gap_abs', 'Gap |Self-Other|'), ('entropy', 'Entropy'),
-                      ('pmax', 'Pmax'), ('margin', 'Margin')]:
+    log("  ")
+    log("  Percentiles (after pmax filter):")
+    for col, name in [
+        ("gap_abs", "Gap |Self-Other|"),
+        ("entropy", "Entropy"),
+        ("pmax", "Pmax"),
+        ("margin", "Margin"),
+    ]:
         p10 = df_filtered[col].quantile(0.10)
         p20 = df_filtered[col].quantile(0.20)
         p80 = df_filtered[col].quantile(0.80)
@@ -487,21 +490,21 @@ def preflight_diagnostics(df: pd.DataFrame, model_name: str) -> None:
         log(f"    {name:20s}: 10%={p10:.3f}, 20%={p20:.3f}, 80%={p80:.3f}, 90%={p90:.3f}")
 
     # Direction counts
-    log(f"  ")
-    log(f"  Direction Balance:")
-    n_self_gt = (df_filtered['SelfProb'] > df_filtered['OtherProb']).sum()
-    n_other_gt = (df_filtered['SelfProb'] < df_filtered['OtherProb']).sum()
-    n_equal = (df_filtered['SelfProb'] == df_filtered['OtherProb']).sum()
+    log("  ")
+    log("  Direction Balance:")
+    n_self_gt = (df_filtered["SelfProb"] > df_filtered["OtherProb"]).sum()
+    n_other_gt = (df_filtered["SelfProb"] < df_filtered["OtherProb"]).sum()
+    n_equal = (df_filtered["SelfProb"] == df_filtered["OtherProb"]).sum()
     total = n_self_gt + n_other_gt + n_equal
     log(f"    Self > Other: {n_self_gt} ({100*n_self_gt/total:.1f}%)")
     log(f"    Other > Self: {n_other_gt} ({100*n_other_gt/total:.1f}%)")
     log(f"    Equal:        {n_equal} ({100*n_equal/total:.1f}%)")
 
     if n_self_gt / total > 0.80 or n_other_gt / total > 0.80:
-        log(f"    ⚠️  WARNING: Direction imbalance detected (>80% one-sided)")
+        log("      WARNING: Direction imbalance detected (>80% one-sided)")
 
-    log(f"  ═══════════════════════════════")
-    log(f"  ")
+    log("  ═══════════════════════════════")
+    log("  ")
 
 
 def mine_same_vs_different(df: pd.DataFrame, outdir: str, model_name: str) -> None:
@@ -511,20 +514,20 @@ def mine_same_vs_different(df: pd.DataFrame, outdir: str, model_name: str) -> No
     SAME = questions where Self ≈ Other (small gap)
     DIFFERENT = questions where Self ≠ Other (large gap)
     """
-    log(f"  ")
-    log(f"  === Mining SAME vs DIFFERENT ===")
+    log("  ")
+    log("  === Mining SAME vs DIFFERENT ===")
 
     # Filter by pmax
     df_filtered = df[df["pmax"] >= P_MAX_MIN_FOR_GAP].copy()
     n_filtered = len(df_filtered)
 
     if n_filtered == 0:
-        log(f"  SKIP: No questions after pmax filter")
+        log("  SKIP: No questions after pmax filter")
         return
 
     # Try strict thresholds first
-    same_mask = df_filtered['gap_abs'] <= GAP_SAME_EPS
-    diff_mask = df_filtered['gap_abs'] >= GAP_DIFF_MIN
+    same_mask = df_filtered["gap_abs"] <= GAP_SAME_EPS
+    diff_mask = df_filtered["gap_abs"] >= GAP_DIFF_MIN
 
     n_same_strict = same_mask.sum()
     n_diff_strict = diff_mask.sum()
@@ -536,18 +539,22 @@ def mine_same_vs_different(df: pd.DataFrame, outdir: str, model_name: str) -> No
     diff_method = "strict"
 
     if n_same_strict < MIN_BUCKET_SIZE:
-        log(f"  SAME: Strict threshold (≤{GAP_SAME_EPS}) yields {n_same_strict} < {MIN_BUCKET_SIZE}")
+        log(
+            f"  SAME: Strict threshold (≤{GAP_SAME_EPS}) yields {n_same_strict} < {MIN_BUCKET_SIZE}"
+        )
         log(f"  SAME: Falling back to bottom {GAP_SAME_Q*100:.0f}% quantile")
-        gap_q_low = df_filtered['gap_abs'].quantile(GAP_SAME_Q)
-        same_mask = df_filtered['gap_abs'] <= gap_q_low
+        gap_q_low = df_filtered["gap_abs"].quantile(GAP_SAME_Q)
+        same_mask = df_filtered["gap_abs"] <= gap_q_low
         same_threshold = gap_q_low
         same_method = "quantile"
 
     if n_diff_strict < MIN_BUCKET_SIZE:
-        log(f"  DIFFERENT: Strict threshold (≥{GAP_DIFF_MIN}) yields {n_diff_strict} < {MIN_BUCKET_SIZE}")
+        log(
+            f"  DIFFERENT: Strict threshold (≥{GAP_DIFF_MIN}) yields {n_diff_strict} < {MIN_BUCKET_SIZE}"
+        )
         log(f"  DIFFERENT: Falling back to top {(1-GAP_DIFF_Q)*100:.0f}% quantile")
-        gap_q_high = df_filtered['gap_abs'].quantile(GAP_DIFF_Q)
-        diff_mask = df_filtered['gap_abs'] >= gap_q_high
+        gap_q_high = df_filtered["gap_abs"].quantile(GAP_DIFF_Q)
+        diff_mask = df_filtered["gap_abs"] >= gap_q_high
         diff_threshold = gap_q_high
         diff_method = "quantile"
 
@@ -562,64 +569,106 @@ def mine_same_vs_different(df: pd.DataFrame, outdir: str, model_name: str) -> No
 
     # Verify disjoint (should always be true now with explicit disjoint mask)
     assert (same_mask & diff_mask_disjoint).sum() == 0, "SAME and DIFFERENT buckets overlap!"
-    assert same_mask.sum() + diff_mask_disjoint.sum() + n_middle == n_filtered, "Bucket counts don't add up!"
+    assert (
+        same_mask.sum() + diff_mask_disjoint.sum() + n_middle == n_filtered
+    ), "Bucket counts don't add up!"
 
-    log(f"  SAME bucket: {len(df_same)} questions (using {same_method}, threshold={same_threshold:.3f})")
-    log(f"  DIFFERENT bucket: {len(df_different)} questions (using {diff_method}, threshold={diff_threshold:.3f})")
+    log(
+        f"  SAME bucket: {len(df_same)} questions (using {same_method}, threshold={same_threshold:.3f})"
+    )
+    log(
+        f"  DIFFERENT bucket: {len(df_different)} questions (using {diff_method}, threshold={diff_threshold:.3f})"
+    )
     log(f"  Middle range (discarded): {n_middle} questions")
 
     if len(df_same) > 0:
         # Direction in SAME
-        n_self_gt_same = (df_same['SelfProb'] > df_same['OtherProb']).sum()
-        n_other_gt_same = (df_same['SelfProb'] < df_same['OtherProb']).sum()
+        n_self_gt_same = (df_same["SelfProb"] > df_same["OtherProb"]).sum()
+        n_other_gt_same = (df_same["SelfProb"] < df_same["OtherProb"]).sum()
         log(f"    SAME directions: Self>Other={n_self_gt_same}, Other>Self={n_other_gt_same}")
-        log(f"    SAME medians: gap={df_same['gap_abs'].median():.3f}, entropy={df_same['entropy'].median():.3f}, Self={df_same['SelfProb'].median():.3f}, Other={df_same['OtherProb'].median():.3f}")
+        log(
+            f"    SAME medians: gap={df_same['gap_abs'].median():.3f}, entropy={df_same['entropy'].median():.3f}, Self={df_same['SelfProb'].median():.3f}, Other={df_same['OtherProb'].median():.3f}"
+        )
 
         # Save SAME
-        same_out = df_same[["question_id", "SelfProb", "OtherProb", "gap_abs", "gap_signed",
-                            "direction", "pmax", "margin", "correct", "entropy",
-                            "correct_answer", "question_text"]].copy()
+        same_out = df_same[
+            [
+                "question_id",
+                "SelfProb",
+                "OtherProb",
+                "gap_abs",
+                "gap_signed",
+                "direction",
+                "pmax",
+                "margin",
+                "correct",
+                "entropy",
+                "correct_answer",
+                "question_text",
+            ]
+        ].copy()
         same_path = os.path.join(outdir, f"{model_name}_same_perspective.csv")
         same_out.to_csv(same_path, index=False)
-        log(f"  ✓ Saved: {same_path}")
+        log(f"  Saved: {same_path}")
 
         # Train/test split for SAME (deterministic shuffle via stable hash)
         def stable_hash(qid):
             return int(hashlib.md5(str(qid).encode()).hexdigest()[:8], 16)
-        same_out['_sort_key'] = same_out['question_id'].apply(stable_hash)
-        same_out = same_out.sort_values('_sort_key').drop('_sort_key', axis=1).reset_index(drop=True)
+
+        same_out["_sort_key"] = same_out["question_id"].apply(stable_hash)
+        same_out = (
+            same_out.sort_values("_sort_key").drop("_sort_key", axis=1).reset_index(drop=True)
+        )
         n_train = int(len(same_out) * TRAIN_SPLIT)
         same_train = same_out.iloc[:n_train]
         same_test = same_out.iloc[n_train:]
-        same_train.to_csv(same_path.replace('.csv', '_train.csv'), index=False)
-        same_test.to_csv(same_path.replace('.csv', '_test.csv'), index=False)
+        same_train.to_csv(same_path.replace(".csv", "_train.csv"), index=False)
+        same_test.to_csv(same_path.replace(".csv", "_test.csv"), index=False)
         log(f"    Train: {len(same_train)}, Test: {len(same_test)}")
 
     if len(df_different) > 0:
         # Direction in DIFFERENT
-        n_self_gt_diff = (df_different['SelfProb'] > df_different['OtherProb']).sum()
-        n_other_gt_diff = (df_different['SelfProb'] < df_different['OtherProb']).sum()
+        n_self_gt_diff = (df_different["SelfProb"] > df_different["OtherProb"]).sum()
+        n_other_gt_diff = (df_different["SelfProb"] < df_different["OtherProb"]).sum()
         log(f"    DIFFERENT directions: Self>Other={n_self_gt_diff}, Other>Self={n_other_gt_diff}")
-        log(f"    DIFFERENT medians: gap={df_different['gap_abs'].median():.3f}, entropy={df_different['entropy'].median():.3f}, Self={df_different['SelfProb'].median():.3f}, Other={df_different['OtherProb'].median():.3f}")
+        log(
+            f"    DIFFERENT medians: gap={df_different['gap_abs'].median():.3f}, entropy={df_different['entropy'].median():.3f}, Self={df_different['SelfProb'].median():.3f}, Other={df_different['OtherProb'].median():.3f}"
+        )
 
         # Save DIFFERENT
-        diff_out = df_different[["question_id", "SelfProb", "OtherProb", "gap_abs", "gap_signed",
-                                 "direction", "pmax", "margin", "correct", "entropy",
-                                 "correct_answer", "question_text"]].copy()
+        diff_out = df_different[
+            [
+                "question_id",
+                "SelfProb",
+                "OtherProb",
+                "gap_abs",
+                "gap_signed",
+                "direction",
+                "pmax",
+                "margin",
+                "correct",
+                "entropy",
+                "correct_answer",
+                "question_text",
+            ]
+        ].copy()
         diff_path = os.path.join(outdir, f"{model_name}_different_perspective.csv")
         diff_out.to_csv(diff_path, index=False)
-        log(f"  ✓ Saved: {diff_path}")
+        log(f"  Saved: {diff_path}")
 
         # Train/test split for DIFFERENT (deterministic shuffle via stable hash)
         def stable_hash(qid):
             return int(hashlib.md5(str(qid).encode()).hexdigest()[:8], 16)
-        diff_out['_sort_key'] = diff_out['question_id'].apply(stable_hash)
-        diff_out = diff_out.sort_values('_sort_key').drop('_sort_key', axis=1).reset_index(drop=True)
+
+        diff_out["_sort_key"] = diff_out["question_id"].apply(stable_hash)
+        diff_out = (
+            diff_out.sort_values("_sort_key").drop("_sort_key", axis=1).reset_index(drop=True)
+        )
         n_train = int(len(diff_out) * TRAIN_SPLIT)
         diff_train = diff_out.iloc[:n_train]
         diff_test = diff_out.iloc[n_train:]
-        diff_train.to_csv(diff_path.replace('.csv', '_train.csv'), index=False)
-        diff_test.to_csv(diff_path.replace('.csv', '_test.csv'), index=False)
+        diff_train.to_csv(diff_path.replace(".csv", "_train.csv"), index=False)
+        diff_test.to_csv(diff_path.replace(".csv", "_test.csv"), index=False)
         log(f"    Train: {len(diff_train)}, Test: {len(diff_test)}")
 
 
@@ -630,34 +679,34 @@ def mine_opposite_extremes(df: pd.DataFrame, outdir: str, model_name: str) -> No
     Condition A: High Self + Low Entropy + Low Other (confident self, sharp answer, low humans)
     Condition B: Low Self + High Entropy + High Other (hesitant self, fuzzy answer, high humans)
     """
-    log(f"  ")
-    log(f"  === Mining Opposite Extremes ===")
+    log("  ")
+    log("  === Mining Opposite Extremes ===")
 
     # Filter by pmax
     df_filtered = df[df["pmax"] >= P_MAX_MIN_FOR_GAP].copy()
     n_filtered = len(df_filtered)
 
     if n_filtered == 0:
-        log(f"  SKIP: No questions after pmax filter")
+        log("  SKIP: No questions after pmax filter")
         return
 
     # Compute entropy quantiles on filtered data
-    ent_lo = df_filtered['entropy'].quantile(ENTROPY_LOW_Q)
-    ent_hi = df_filtered['entropy'].quantile(ENTROPY_HIGH_Q)
+    ent_lo = df_filtered["entropy"].quantile(ENTROPY_LOW_Q)
+    ent_hi = df_filtered["entropy"].quantile(ENTROPY_HIGH_Q)
 
     log(f"  Entropy thresholds: low ≤ {ent_lo:.3f}, high ≥ {ent_hi:.3f}")
 
     # Stage 1: Try strict thresholds
     cond_a = df_filtered[
-        (df_filtered['SelfProb'] >= SELF_HIGH) &
-        (df_filtered['entropy'] <= ent_lo) &
-        (df_filtered['OtherProb'] <= OTHER_LOW)
+        (df_filtered["SelfProb"] >= SELF_HIGH)
+        & (df_filtered["entropy"] <= ent_lo)
+        & (df_filtered["OtherProb"] <= OTHER_LOW)
     ].copy()
 
     cond_b = df_filtered[
-        (df_filtered['SelfProb'] <= SELF_LOW) &
-        (df_filtered['entropy'] >= ent_hi) &
-        (df_filtered['OtherProb'] >= OTHER_HIGH)
+        (df_filtered["SelfProb"] <= SELF_LOW)
+        & (df_filtered["entropy"] >= ent_hi)
+        & (df_filtered["OtherProb"] >= OTHER_HIGH)
     ].copy()
 
     n_a = len(cond_a)
@@ -668,17 +717,17 @@ def mine_opposite_extremes(df: pd.DataFrame, outdir: str, model_name: str) -> No
 
     # Stage 2: Relax Other constraints if needed
     if n_a < MIN_EXTREME_PAIRS or n_b < MIN_EXTREME_PAIRS:
-        log(f"  Stage 2: Relaxing Other constraints by 0.1")
+        log("  Stage 2: Relaxing Other constraints by 0.1")
         cond_a = df_filtered[
-            (df_filtered['SelfProb'] >= SELF_HIGH) &
-            (df_filtered['entropy'] <= ent_lo) &
-            (df_filtered['OtherProb'] <= OTHER_LOW + 0.1)
+            (df_filtered["SelfProb"] >= SELF_HIGH)
+            & (df_filtered["entropy"] <= ent_lo)
+            & (df_filtered["OtherProb"] <= OTHER_LOW + 0.1)
         ].copy()
 
         cond_b = df_filtered[
-            (df_filtered['SelfProb'] <= SELF_LOW) &
-            (df_filtered['entropy'] >= ent_hi) &
-            (df_filtered['OtherProb'] >= OTHER_HIGH - 0.1)
+            (df_filtered["SelfProb"] <= SELF_LOW)
+            & (df_filtered["entropy"] >= ent_hi)
+            & (df_filtered["OtherProb"] >= OTHER_HIGH - 0.1)
         ].copy()
 
         n_a = len(cond_a)
@@ -688,17 +737,17 @@ def mine_opposite_extremes(df: pd.DataFrame, outdir: str, model_name: str) -> No
 
     # Stage 3: Relax Self constraints if still needed
     if n_a < MIN_EXTREME_PAIRS or n_b < MIN_EXTREME_PAIRS:
-        log(f"  Stage 3: Relaxing Self constraints by 0.1")
+        log("  Stage 3: Relaxing Self constraints by 0.1")
         cond_a = df_filtered[
-            (df_filtered['SelfProb'] >= SELF_HIGH - 0.1) &
-            (df_filtered['entropy'] <= ent_lo) &
-            (df_filtered['OtherProb'] <= OTHER_LOW + 0.1)
+            (df_filtered["SelfProb"] >= SELF_HIGH - 0.1)
+            & (df_filtered["entropy"] <= ent_lo)
+            & (df_filtered["OtherProb"] <= OTHER_LOW + 0.1)
         ].copy()
 
         cond_b = df_filtered[
-            (df_filtered['SelfProb'] <= SELF_LOW + 0.1) &
-            (df_filtered['entropy'] >= ent_hi) &
-            (df_filtered['OtherProb'] >= OTHER_HIGH - 0.1)
+            (df_filtered["SelfProb"] <= SELF_LOW + 0.1)
+            & (df_filtered["entropy"] >= ent_hi)
+            & (df_filtered["OtherProb"] >= OTHER_HIGH - 0.1)
         ].copy()
 
         n_a = len(cond_a)
@@ -708,22 +757,22 @@ def mine_opposite_extremes(df: pd.DataFrame, outdir: str, model_name: str) -> No
 
     # Stage 4: Use quantiles as last resort
     if n_a < MIN_EXTREME_PAIRS or n_b < MIN_EXTREME_PAIRS:
-        log(f"  Stage 4: Using quantiles (top/bottom 20%)")
-        self_q_high = df_filtered['SelfProb'].quantile(0.80)
-        self_q_low = df_filtered['SelfProb'].quantile(0.20)
-        other_q_low = df_filtered['OtherProb'].quantile(0.30)
-        other_q_high = df_filtered['OtherProb'].quantile(0.70)
+        log("  Stage 4: Using quantiles (top/bottom 20%)")
+        self_q_high = df_filtered["SelfProb"].quantile(0.80)
+        self_q_low = df_filtered["SelfProb"].quantile(0.20)
+        other_q_low = df_filtered["OtherProb"].quantile(0.30)
+        other_q_high = df_filtered["OtherProb"].quantile(0.70)
 
         cond_a = df_filtered[
-            (df_filtered['SelfProb'] >= self_q_high) &
-            (df_filtered['entropy'] <= ent_lo) &
-            (df_filtered['OtherProb'] <= other_q_low)
+            (df_filtered["SelfProb"] >= self_q_high)
+            & (df_filtered["entropy"] <= ent_lo)
+            & (df_filtered["OtherProb"] <= other_q_low)
         ].copy()
 
         cond_b = df_filtered[
-            (df_filtered['SelfProb'] <= self_q_low) &
-            (df_filtered['entropy'] >= ent_hi) &
-            (df_filtered['OtherProb'] >= other_q_high)
+            (df_filtered["SelfProb"] <= self_q_low)
+            & (df_filtered["entropy"] >= ent_hi)
+            & (df_filtered["OtherProb"] >= other_q_high)
         ].copy()
 
         n_a = len(cond_a)
@@ -734,21 +783,23 @@ def mine_opposite_extremes(df: pd.DataFrame, outdir: str, model_name: str) -> No
     log(f"  Final: Condition A={n_a}, Condition B={n_b} (using {stage_used} thresholds)")
 
     if n_a == 0 or n_b == 0:
-        log(f"  ❌ ERROR: One condition has zero questions, cannot pair!")
+        log("  ERROR: One condition has zero questions, cannot pair!")
         return
 
     if n_a < 5 or n_b < 5:
-        log(f"  ⚠️  WARNING: Very few pairs (A={n_a}, B={n_b}), results may not be reliable")
+        log(f"  WARNING: Very few pairs (A={n_a}, B={n_b}), results may not be reliable")
 
     # Check for duplicate QIDs within each condition
-    assert cond_a['question_id'].duplicated().sum() == 0, "Duplicate QIDs in Condition A"
-    assert cond_b['question_id'].duplicated().sum() == 0, "Duplicate QIDs in Condition B"
+    assert cond_a["question_id"].duplicated().sum() == 0, "Duplicate QIDs in Condition A"
+    assert cond_b["question_id"].duplicated().sum() == 0, "Duplicate QIDs in Condition B"
 
     # Sort deterministically for pairing
-    cond_a = cond_a.sort_values(['SelfProb', 'entropy', 'OtherProb'],
-                                 ascending=[False, True, True]).reset_index(drop=True)
-    cond_b = cond_b.sort_values(['SelfProb', 'entropy', 'OtherProb'],
-                                 ascending=[True, False, False]).reset_index(drop=True)
+    cond_a = cond_a.sort_values(
+        ["SelfProb", "entropy", "OtherProb"], ascending=[False, True, True]
+    ).reset_index(drop=True)
+    cond_b = cond_b.sort_values(
+        ["SelfProb", "entropy", "OtherProb"], ascending=[True, False, False]
+    ).reset_index(drop=True)
 
     # Pair
     n_pairs = min(n_a, n_b)
@@ -757,53 +808,60 @@ def mine_opposite_extremes(df: pd.DataFrame, outdir: str, model_name: str) -> No
     for i in range(n_pairs):
         a = cond_a.iloc[i]
         b = cond_b.iloc[i]
-        pairs.append({
-            "pair_id": f"opp_{i:03d}",
-            "A_qid": a["question_id"],
-            "A_Self": a["SelfProb"],
-            "A_Other": a["OtherProb"],
-            "A_entropy": a["entropy"],
-            "A_pmax": a["pmax"],
-            "A_margin": a["margin"],
-            "A_correct": int(a["correct"]),
-            "A_question_text": a["question_text"],
-            "B_qid": b["question_id"],
-            "B_Self": b["SelfProb"],
-            "B_Other": b["OtherProb"],
-            "B_entropy": b["entropy"],
-            "B_pmax": b["pmax"],
-            "B_margin": b["margin"],
-            "B_correct": int(b["correct"]),
-            "B_question_text": b["question_text"],
-        })
+        pairs.append(
+            {
+                "pair_id": f"opp_{i:03d}",
+                "A_qid": a["question_id"],
+                "A_Self": a["SelfProb"],
+                "A_Other": a["OtherProb"],
+                "A_entropy": a["entropy"],
+                "A_pmax": a["pmax"],
+                "A_margin": a["margin"],
+                "A_correct": int(a["correct"]),
+                "A_question_text": a["question_text"],
+                "B_qid": b["question_id"],
+                "B_Self": b["SelfProb"],
+                "B_Other": b["OtherProb"],
+                "B_entropy": b["entropy"],
+                "B_pmax": b["pmax"],
+                "B_margin": b["margin"],
+                "B_correct": int(b["correct"]),
+                "B_question_text": b["question_text"],
+            }
+        )
 
     # Log medians
-    log(f"  Condition A medians: Self={cond_a['SelfProb'][:n_pairs].median():.3f}, Other={cond_a['OtherProb'][:n_pairs].median():.3f}, entropy={cond_a['entropy'][:n_pairs].median():.3f}")
-    log(f"  Condition B medians: Self={cond_b['SelfProb'][:n_pairs].median():.3f}, Other={cond_b['OtherProb'][:n_pairs].median():.3f}, entropy={cond_b['entropy'][:n_pairs].median():.3f}")
+    log(
+        f"  Condition A medians: Self={cond_a['SelfProb'][:n_pairs].median():.3f}, Other={cond_a['OtherProb'][:n_pairs].median():.3f}, entropy={cond_a['entropy'][:n_pairs].median():.3f}"
+    )
+    log(
+        f"  Condition B medians: Self={cond_b['SelfProb'][:n_pairs].median():.3f}, Other={cond_b['OtherProb'][:n_pairs].median():.3f}, entropy={cond_b['entropy'][:n_pairs].median():.3f}"
+    )
 
     # Save pairs
     pairs_df = pd.DataFrame(pairs)
     pairs_path = os.path.join(outdir, f"{model_name}_opposite_extremes_AB.csv")
     pairs_df.to_csv(pairs_path, index=False)
-    log(f"  ✓ Saved: {pairs_path} ({n_pairs} pairs)")
+    log(f"  Saved: {pairs_path} ({n_pairs} pairs)")
 
     # Train/test split (deterministic shuffle via stable hash of pair_id)
     def stable_hash(pid):
         return int(hashlib.md5(str(pid).encode()).hexdigest()[:8], 16)
-    pairs_df['_sort_key'] = pairs_df['pair_id'].apply(stable_hash)
-    pairs_df = pairs_df.sort_values('_sort_key').drop('_sort_key', axis=1).reset_index(drop=True)
+
+    pairs_df["_sort_key"] = pairs_df["pair_id"].apply(stable_hash)
+    pairs_df = pairs_df.sort_values("_sort_key").drop("_sort_key", axis=1).reset_index(drop=True)
     n_train = int(n_pairs * TRAIN_SPLIT)
     pairs_train = pairs_df.iloc[:n_train]
     pairs_test = pairs_df.iloc[n_train:]
-    pairs_train.to_csv(pairs_path.replace('.csv', '_train.csv'), index=False)
-    pairs_test.to_csv(pairs_path.replace('.csv', '_test.csv'), index=False)
+    pairs_train.to_csv(pairs_path.replace(".csv", "_train.csv"), index=False)
+    pairs_test.to_csv(pairs_path.replace(".csv", "_test.csv"), index=False)
     log(f"    Train: {len(pairs_train)} pairs, Test: {len(pairs_test)} pairs")
 
     # Assertions (only check numeric columns to avoid brittle text field checks)
     numeric_cols = pairs_df.select_dtypes(include=[np.number]).columns
     nan_count = pairs_df[numeric_cols].isna().sum().sum()
     assert nan_count == 0, f"NaN values found in numeric columns! Count: {nan_count}"
-    log(f"  ✓ Assertions passed (no NaNs in numeric columns, no duplicates)")
+    log("  Assertions passed (no NaNs in numeric columns, no duplicates)")
 
 
 def mine_pairs(df: pd.DataFrame, outdir: str, model_name: str) -> None:
@@ -821,9 +879,22 @@ def mine_pairs(df: pd.DataFrame, outdir: str, model_name: str) -> None:
     df_gap = df[df["pmax"] >= P_MAX_MIN_FOR_GAP].copy()
     df_gap = df_gap.sort_values("gap_abs", ascending=False).head(TOP_GAP_N)
 
-    gap_out = df_gap[["question_id", "SelfProb", "OtherProb", "gap_abs", "gap_signed",
-                      "direction", "pmax", "margin", "correct", "entropy",
-                      "correct_answer", "question_text"]].copy()
+    gap_out = df_gap[
+        [
+            "question_id",
+            "SelfProb",
+            "OtherProb",
+            "gap_abs",
+            "gap_signed",
+            "direction",
+            "pmax",
+            "margin",
+            "correct",
+            "entropy",
+            "correct_answer",
+            "question_text",
+        ]
+    ].copy()
     gap_path = os.path.join(outdir, f"{model_name}_self_other_gap.csv")
     gap_out.to_csv(gap_path, index=False)
     log(f"  Saved self-other gap pairs: {gap_path} ({len(gap_out)} pairs)")
@@ -841,28 +912,30 @@ def mine_pairs(df: pd.DataFrame, outdir: str, model_name: str) -> None:
     for i in range(n_pairs):
         oc = overconf.iloc[i]
         uc = underconf.iloc[i]
-        pairs.append({
-            "pair_id": f"calib_{i:03d}",
-            "overconf_qid": oc["question_id"],
-            "overconf_self": oc["SelfProb"],
-            "overconf_pmax": oc["pmax"],
-            "overconf_margin": oc["margin"],
-            "overconf_entropy": oc["entropy"],
-            "overconf_question": oc["question_text"],
-            "underconf_qid": uc["question_id"],
-            "underconf_self": uc["SelfProb"],
-            "underconf_pmax": uc["pmax"],
-            "underconf_margin": uc["margin"],
-            "underconf_entropy": uc["entropy"],
-            "underconf_question": uc["question_text"],
-        })
+        pairs.append(
+            {
+                "pair_id": f"calib_{i:03d}",
+                "overconf_qid": oc["question_id"],
+                "overconf_self": oc["SelfProb"],
+                "overconf_pmax": oc["pmax"],
+                "overconf_margin": oc["margin"],
+                "overconf_entropy": oc["entropy"],
+                "overconf_question": oc["question_text"],
+                "underconf_qid": uc["question_id"],
+                "underconf_self": uc["SelfProb"],
+                "underconf_pmax": uc["pmax"],
+                "underconf_margin": uc["margin"],
+                "underconf_entropy": uc["entropy"],
+                "underconf_question": uc["question_text"],
+            }
+        )
 
     if pairs:
         calib_path = os.path.join(outdir, f"{model_name}_calibration_extremes.csv")
         pd.DataFrame(pairs).to_csv(calib_path, index=False)
         log(f"  Saved calibration extreme pairs: {calib_path} ({len(pairs)} pairs)")
     else:
-        log(f"  WARNING: No calibration extreme pairs found")
+        log("  WARNING: No calibration extreme pairs found")
 
     # 3) Easy vs Hard pairs (matched by correct_answer)
     if "correct_answer" in df.columns and df["correct_answer"].notna().any():
@@ -878,36 +951,38 @@ def mine_pairs(df: pd.DataFrame, outdir: str, model_name: str) -> None:
             for i in range(c):
                 e = easy_l.iloc[i]
                 h = hard_l.iloc[i]
-                pairs_eh.append({
-                    "pair_id": f"eh_{letter}_{i:03d}",
-                    "answer_letter": letter,
-                    "easy_qid": e["question_id"],
-                    "easy_pmax": e["pmax"],
-                    "easy_margin": e["margin"],
-                    "easy_entropy": e["entropy"],
-                    "easy_correct": int(e["correct"]),
-                    "easy_question": e["question_text"],
-                    "hard_qid": h["question_id"],
-                    "hard_pmax": h["pmax"],
-                    "hard_margin": h["margin"],
-                    "hard_entropy": h["entropy"],
-                    "hard_correct": int(h["correct"]),
-                    "hard_question": h["question_text"],
-                })
+                pairs_eh.append(
+                    {
+                        "pair_id": f"eh_{letter}_{i:03d}",
+                        "answer_letter": letter,
+                        "easy_qid": e["question_id"],
+                        "easy_pmax": e["pmax"],
+                        "easy_margin": e["margin"],
+                        "easy_entropy": e["entropy"],
+                        "easy_correct": int(e["correct"]),
+                        "easy_question": e["question_text"],
+                        "hard_qid": h["question_id"],
+                        "hard_pmax": h["pmax"],
+                        "hard_margin": h["margin"],
+                        "hard_entropy": h["entropy"],
+                        "hard_correct": int(h["correct"]),
+                        "hard_question": h["question_text"],
+                    }
+                )
 
         if pairs_eh:
             eh_path = os.path.join(outdir, f"{model_name}_easy_vs_hard.csv")
             pd.DataFrame(pairs_eh).to_csv(eh_path, index=False)
             log(f"  Saved easy-vs-hard pairs: {eh_path} ({len(pairs_eh)} pairs)")
         else:
-            log(f"  WARNING: No easy-vs-hard pairs found")
+            log("  WARNING: No easy-vs-hard pairs found")
     else:
-        log(f"  SKIP easy-vs-hard: No correct_answer labels available")
+        log("  SKIP easy-vs-hard: No correct_answer labels available")
 
 
 def main():
     log("=== Contrastive Pair Generation ===")
-    log(f"Configuration:")
+    log("Configuration:")
     log(f"  P_MAX_MIN_FOR_GAP = {P_MAX_MIN_FOR_GAP}")
     log(f"  EASY_PMAX_TH = {EASY_PMAX_TH}")
     log(f"  HARD_PMAX_TH = {HARD_PMAX_TH}")
@@ -917,8 +992,8 @@ def main():
     log(f"  CALIBRATION_PAIRS = {CALIBRATION_PAIRS}")
     log(f"  EASY_HARD_PER_LETTER = {EASY_HARD_PER_LETTER}")
     log(f"  MIN_ALIGNED = {MIN_ALIGNED}")
-    log(f"  ")
-    log(f"  NEW MINERS:")
+    log("  ")
+    log("  NEW MINERS:")
     log(f"  GAP_SAME_EPS = {GAP_SAME_EPS}")
     log(f"  GAP_DIFF_MIN = {GAP_DIFF_MIN}")
     log(f"  MIN_BUCKET_SIZE = {MIN_BUCKET_SIZE}")
