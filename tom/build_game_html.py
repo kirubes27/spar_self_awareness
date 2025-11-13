@@ -23,36 +23,36 @@ def extract_game_logic(tom_test_content):
     """
     lines = tom_test_content.split('\n')
     result_lines = []
-    
+
     for line in lines:
         # Stop at the if __name__ == "__main__" section
         if line.strip().startswith('if __name__'):
             break
         result_lines.append(line)
-    
+
     return '\n'.join(result_lines)
 
 def build_html(scenario_file, output_file='game.html'):
     """Build the standalone HTML file."""
-    
+
     print(f"Reading scenario file: {scenario_file}")
     with open(scenario_file, 'r') as f:
         scenarios_data = json.load(f)
-    
+
     print("Reading Python modules...")
     tom_helpers_content = read_python_module('tom_helpers.py')
     game_ui_content = read_python_module('game_ui.py')
     tom_test_content = read_python_module('tom_test.py')
-    
+
     # Extract just the game logic parts we need
     game_logic = extract_game_logic(tom_test_content)
-    
+
     # Encode everything as base64 to completely avoid escaping
     scenarios_b64 = base64.b64encode(json.dumps(scenarios_data).encode('utf-8')).decode('ascii')
     tom_helpers_b64 = base64.b64encode(tom_helpers_content.encode('utf-8')).decode('ascii')
     game_ui_b64 = base64.b64encode(game_ui_content.encode('utf-8')).decode('ascii')
     game_logic_b64 = base64.b64encode(game_logic.encode('utf-8')).decode('ascii')
-    
+
     # Create a single Python script that decodes and writes files, then imports
     loader_script = f'''
 import json
@@ -88,7 +88,7 @@ from game_ui import BrowserInterface
 # Run the game - top-level await works here
 await play_game_cli(scenario_file='scenarios.json', human_player=True, ui=BrowserInterface())
 '''
-    
+
     # Build HTML with the loader script
     html_content = f'''<!DOCTYPE html>
 <html lang="en">
@@ -199,7 +199,7 @@ await play_game_cli(scenario_file='scenarios.json', human_player=True, ui=Browse
 <body>
     <div class="container">
         <div id="loading">
-            <h2>🎮 Room Scenario Game</h2>
+            <h2>Room Scenario Game</h2>
             <p>Loading game (this takes a few seconds)...</p>
         </div>
         <div id="gameContent"></div>
@@ -216,11 +216,11 @@ await play_game_cli(scenario_file='scenarios.json', human_player=True, ui=Browse
     print(f"Writing HTML file: {output_file}")
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write(html_content)
-    
+
     file_size_kb = len(html_content) / 1024
-    print(f"✓ Successfully created {output_file}")
+    print(f"Successfully created {output_file}")
     print(f"  File size: {file_size_kb:.1f} KB")
-    print(f"\n📧 Share this file with friends!")
+    print(f"\nShare this file with friends!")
     print(f"   They just need to open it in any web browser.")
     print(f"   No installation required!")
 
@@ -230,12 +230,12 @@ if __name__ == "__main__":
         print("\nExample:")
         print("  python build_game_html.py scenarios_tmp.json game.html")
         sys.exit(1)
-    
+
     scenario_file = sys.argv[1]
     output_file = sys.argv[2] if len(sys.argv) > 2 else 'game.html'
-    
+
     if not Path(scenario_file).exists():
-        print(f"❌ Error: Scenario file '{scenario_file}' not found")
+        print(f"Error: Scenario file '{scenario_file}' not found")
         sys.exit(1)
-    
+
     build_html(scenario_file, output_file)
