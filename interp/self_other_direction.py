@@ -322,6 +322,14 @@ def compute_direction_and_scores(
     # Compute AUC
     auc = roc_auc_score(y_test, scores_test)
 
+    # The direction sign is arbitrary. If AUC < 0.5, flip the direction and scores.
+    # This standardizes so DIFFERENT always has higher scores than SAME.
+    if auc < 0.5:
+        print("⚠️ AUC < 0.5, flipping direction sign so that DIFFERENT has higher scores...")
+        direction = -direction
+        scores_test = [-s for s in scores_test]
+        auc = 1.0 - auc  # mirrored AUC
+
     print(f"\n{'='*60}")
     print("✅ RESULTS")
     print(f"{'='*60}")
