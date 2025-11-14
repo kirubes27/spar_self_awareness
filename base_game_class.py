@@ -229,7 +229,7 @@ class BaseGameClass:
                         #self._log(f"GPT-5: SENDING reasoning_effort={reasoning_effort}")
                     completion = self.client.chat.completions.create(
                         model=model_name,
-                        **({"max_completion_tokens": MAX_TOKENS} if self.subject_name.startswith("o3") else {"max_tokens": (2000 if ("_think" in self.subject_name or "_reasoning" in self.subject_name) else (None if ('gpt-5' in self.subject_name or 'gpt-4.1' in self.subject_name or 'glm-' in self.subject_name or '-r1' in self.subject_name) else MAX_TOKENS))}),
+                        **({"max_completion_tokens": MAX_TOKENS} if self.subject_name.startswith("o3") else {"max_tokens": (8000 if ("_think" in self.subject_name or "_reasoning" in self.subject_name) else (None if ('gpt-5' in self.subject_name or 'gpt-4.1' in self.subject_name or 'glm-' in self.subject_name or '-r1' in self.subject_name) else MAX_TOKENS))}),
                         **({"temperature": min(temp + attempt * temp_inc, max(temp,1.0))} if not self.subject_name.startswith("o3") else {}),
                         messages=formatted_messages,
                         **({"logprobs": True} if not no_logprobs(model_name) else {}),

@@ -54,6 +54,7 @@ class Scenario_Builder:
         self.exclude_false: Set[str] = set() # who must leave believing something that matches the end queried_item/container state
         self.include: Set[str] = set()      # who must be present at end
         self.present_initially: Set[str] = set()  # who must be present initially
+        self.must_leave_together: Tuple[Optional[str], Optional[str]] = (None, None)  # (char1, char2) must be in same group
 
     def rand_actor(self, exclude: Optional[Set[str]] = None) -> str:
         pool = [p for p in self.present if not exclude or p not in exclude]
@@ -108,6 +109,8 @@ class Scenario_Builder:
 
             elif spec['KS_Teammate'] == EpistemicState.UNKNOWN and spec['KS_Opponent'] == EpistemicState.KNOWS_TRUTH:
                 self.exclude.add(teammate)
+                if spec['Answerer'] == 'Teammate':
+                    self.must_leave_together = (teammate, actor)
                 if spec['Answerer'] == 'Self':
                     self.include.add(opponent1)
                     self.include.add(opponent2)
@@ -116,6 +119,8 @@ class Scenario_Builder:
 
             elif spec['KS_Teammate'] == EpistemicState.UNKNOWN and spec['KS_Opponent'] == EpistemicState.UNKNOWN:
                 self.exclude.add(teammate)
+                if spec['Answerer'] == 'Teammate':
+                    self.must_leave_together = (teammate, actor)
                 # Ensure one opponent stays, one leaves
                 stay_opponent = self.rng.choice([opponent1, opponent2])
                 leave_opponent = opponent2 if stay_opponent == opponent1 else opponent1
@@ -172,6 +177,7 @@ class Scenario_Builder:
 
     def build_scenario(self, answerer: str):
         #randomly add anyone who is in available but not in present_initially to present_initially
+        leave_immediately_group = set()
         for who in self.available:
             if who not in self.present_initially:
                 if self.rng.random() < 0.5:
@@ -183,7 +189,29 @@ class Scenario_Builder:
             elif r <= 0.66666:
                 self.exclude_true.add(who)
             else:
-                self.leave(who)
+                leave_immediately_group.add(who)
+        
+        # Enforce constraint: ensure both characters are in the same group
+        if self.must_leave_together[0] is not None:
+            char1, char2 = self.must_leave_together
+            # Find which group char1 is in and move char2 to match
+            if char1 in self.exclude_false and char2 not in self.exclude_false:
+                self.exclude_true.discard(char2)
+                leave_immediately_group.discard(char2)
+                self.exclude_false.add(char2)
+            elif char1 in self.exclude_true and char2 not in self.exclude_true:
+                self.exclude_false.discard(char2)
+                leave_immediately_group.discard(char2)
+                self.exclude_true.add(char2)
+            elif char1 in leave_immediately_group and char2 not in leave_immediately_group:
+                self.exclude_false.discard(char2)
+                self.exclude_true.discard(char2)
+                leave_immediately_group.add(char2)
+
+        # Now execute the leave-immediately actions
+        for who in leave_immediately_group:
+            self.leave(who)
+
         if len(self.exclude_false) > 0:
             old_item = _pick_other_item(self.rng, self.queried_item)
             self.put(self.queried_container, old_item, exclude=None)
