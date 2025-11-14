@@ -1,0 +1,619 @@
+Provider: OpenAI
+Using random seed: 999
+Loading completed results from: ./compiled_results_grp/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_phase1_compiled.json
+Separated questions: 149 correct, 351 incorrect
+Using all questions: 149 correct and 351 incorrect
+Loaded completed results with 500 questions
+Selected 500 questions
+Question type: Short Answer
+Capabilities file = ./compiled_results_grp/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_phase1_compiled.json
+Game Setup Prompt: 
+        Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible.
+        
+        ****************** Examples ******************
+        ------------------------------
+        Question:
+        What is the capital of France?
+        ----------
+        A: New York
+        B: London
+        C: Berlin
+        D: Paris
+        ------------------------------
+        Choices:
+        1: Answer
+        2: Pass
+        Respond ONLY with '1' or '2'.
+        Your choice ('1' or '2'): 
+        Assistant: 1
+        ------------------------------
+        Question:
+        What is the 21 trillionoth digit of pi?
+        ----------
+        A: 6
+        B: 7
+        C: 8
+        D: 9
+        ------------------------------
+        Choices:
+        1: Answer
+        2: Pass
+        Respond ONLY with '1' or '2'.
+        Your choice ('1' or '2'): 
+        Assistant: 2
+        **********************************************
+        
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for ft:gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 30000, Used 29620, Requested 419. Please try again in 78ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for ft:gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 30000, Used 29620, Requested 419. Please try again in 78ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for ft:gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 30000, Used 29639, Requested 419. Please try again in 116ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for ft:gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 30000, Used 29639, Requested 419. Please try again in 116ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for ft:gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 30000, Used 29712, Requested 419. Please try again in 262ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for ft:gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 30000, Used 29712, Requested 419. Please try again in 262ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for ft:gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 30000, Used 29788, Requested 419. Please try again in 414ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for ft:gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 30000, Used 29788, Requested 419. Please try again in 414ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json
+
+========== Game Summary ==========
+Subject ID: ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0
+Passes used: 474/500
+Answered: 26/500
+Accuracy on answered questions: 42.31%
+Pass rate: 94.80% (474/500)
+
+Game data saved to: ./pass_game_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1762823511_game_data.json

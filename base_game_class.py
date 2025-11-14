@@ -211,7 +211,7 @@ class BaseGameClass:
                     else:
                         formatted_messages = copy.deepcopy(message_history)
                         if system_msg != "": formatted_messages.append({"role": "system", "content": system_msg})
-                        if len (formatted_messages) > 0 and self.subject_name != "deepseek-chat" and "llama" not in self.subject_name: formatted_messages[-1]["content"] = [{"type": "text", "text": formatted_messages[-1]["content"], "cache_control": {"type": "ephemeral"}}]
+                        if self.provider == "OpenAI" and len (formatted_messages) > 0 and self.subject_name != "deepseek-chat" and "llama" not in self.subject_name: formatted_messages[-1]["content"] = [{"type": "text", "text": formatted_messages[-1]["content"], "cache_control": {"type": "ephemeral"}}]
                         formatted_messages.append(user_msg)
                     if 'base' in model_name or self.subject_name=='llama-3.1-405b':
                         prompt = f"User: {formatted_messages[0]['content']}\n"

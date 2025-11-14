@@ -302,7 +302,7 @@ def process_file_groups(files_to_process, criteria_chain, model_name_for_log, gr
 # --- Main Analysis Logic ---
 if __name__ == "__main__":
 
-    dataset = "Garupanese"#"SimpleMC" # "SimpleQA" #
+    dataset = "SimpleMC" # "SimpleQA" #"Garupanese"#
     game_type = "aop"#"dg" #
     output_entropy = False 
     USE_FILTERED_FOR_LOGRES = False #remove items where capabilites and game correctness disagree
@@ -310,7 +310,7 @@ if __name__ == "__main__":
 
     LOG_FILENAME = f"analysis_log_multi_logres_{game_type}_{dataset.lower()}.txt"
     print(f"Loading main {dataset} dataset for features...")
-    split="f2e" if dataset=="Garupanese" else None
+    split="f2e" if dataset.startswith("Garupanese") else None
     sqa_all_questions = load_and_format_dataset(dataset, split=split)
     sqa_feature_lookup = {
         item['id']: {
@@ -582,32 +582,34 @@ if __name__ == "__main__":
                 if 's_i_capability' in df_model.columns: # self_correct is s_i_capability when delegate_choice == 0
                     self_choice_df = df_model[df_model['delegate_choice'] == 0]
                     if not self_choice_df.empty:
-                        cross_tab_self_s_i_vs_team = pd.crosstab(self_choice_df['s_i_capability'], self_choice_df['subject_correct'])
-                        TP = cross_tab_self_s_i_vs_team.loc[1, False]; FP = cross_tab_self_s_i_vs_team.loc[1, True]; FN = cross_tab_self_s_i_vs_team.loc[0, False]; TN = cross_tab_self_s_i_vs_team.loc[0, True]
-                        cr = len(self_choice_df[self_choice_df['answer_changed'] == True]) / len(self_choice_df)
-                        gcr = len(self_choice_df[(self_choice_df['subject_correct'] == True) & (self_choice_df['answer_changed'] == True)]) / len(self_choice_df)
-                        bcr = len(self_choice_df[(self_choice_df['s_i_capability'] == 1) & (self_choice_df['subject_correct'] == False) & (self_choice_df['answer_changed'] == True)]) / len(self_choice_df)
-                        b2bcr = len(self_choice_df[(self_choice_df['s_i_capability'] == 0) & (self_choice_df['subject_correct'] == False) & (self_choice_df['answer_changed'] == True)]) / len(self_choice_df)
-                        log_output(f"Game-Test Change Rate: {cr:.4f}", suppress=False)
-                        log_output(f"Game-Test Good Change Rate: {gcr:.4f}", suppress=False)
-                        log_output(f"Game-Test Bad Change Rate: {bcr:.4f}", suppress=False)
-                        log_output(f"Game-Test Bad-to-Bad Change Rate: {b2bcr:.4f}", suppress=False)
+                        ct = pd.crosstab(self_choice_df['s_i_capability'], self_choice_df['subject_correct'])
+                        ok = ({0, 1} <= set(ct.index)) and ({False, True} <= set(ct.columns))
+                        if ok:
+                            TP = ct.loc[1, False]; FP = ct.loc[1, True]; FN = ct.loc[0, False]; TN = ct.loc[0, True]
+                            cr = len(self_choice_df[self_choice_df['answer_changed'] == True]) / len(self_choice_df)
+                            gcr = len(self_choice_df[(self_choice_df['subject_correct'] == True) & (self_choice_df['answer_changed'] == True)]) / len(self_choice_df)
+                            bcr = len(self_choice_df[(self_choice_df['s_i_capability'] == 1) & (self_choice_df['subject_correct'] == False) & (self_choice_df['answer_changed'] == True)]) / len(self_choice_df)
+                            b2bcr = len(self_choice_df[(self_choice_df['s_i_capability'] == 0) & (self_choice_df['subject_correct'] == False) & (self_choice_df['answer_changed'] == True)]) / len(self_choice_df)
+                            log_output(f"Game-Test Change Rate: {cr:.4f}", suppress=False)
+                            log_output(f"Game-Test Good Change Rate: {gcr:.4f}", suppress=False)
+                            log_output(f"Game-Test Bad Change Rate: {bcr:.4f}", suppress=False)
+                            log_output(f"Game-Test Bad-to-Bad Change Rate: {b2bcr:.4f}", suppress=False)
 
-                        weird_cases = self_choice_df[(self_choice_df['answer_changed'] == True) & (self_choice_df['s_i_capability'] == 1) & (self_choice_df['subject_correct'] == True)]
-                        log_output(f"Number of answer changes without correctness flip: {len(weird_cases)}", suppress=False)
-                        if len(weird_cases)>0: log_output(weird_cases[['s_i_capability', 'subject_correct', 'answer_changed', 'q_id']].head(), suppress=False)
+                            weird_cases = self_choice_df[(self_choice_df['answer_changed'] == True) & (self_choice_df['s_i_capability'] == 1) & (self_choice_df['subject_correct'] == True)]
+                            log_output(f"Number of answer changes without correctness flip: {len(weird_cases)}", suppress=False)
+                            if len(weird_cases)>0: log_output(weird_cases[['s_i_capability', 'subject_correct', 'answer_changed', 'q_id']].head(), suppress=False)
 
-                        changes_df = self_choice_df[self_choice_df['answer_changed'] == True]
-                        if len(changes_df) > 0:
-                            good_given_change = len(changes_df[changes_df['subject_correct'] == True]) / len(changes_df)
-                            bad_given_change = len(changes_df[(changes_df['s_i_capability'] == 1) & (changes_df['subject_correct'] == False)]) / len(changes_df)
-                            log_output(f"P(good | change): {good_given_change:.4f}", suppress=False)
-                            log_output(f"P(bad | change): {bad_given_change:.4f}", suppress=False)
+                            changes_df = self_choice_df[self_choice_df['answer_changed'] == True]
+                            if len(changes_df) > 0:
+                                good_given_change = len(changes_df[changes_df['subject_correct'] == True]) / len(changes_df)
+                                bad_given_change = len(changes_df[(changes_df['s_i_capability'] == 1) & (changes_df['subject_correct'] == False)]) / len(changes_df)
+                                log_output(f"P(good | change): {good_given_change:.4f}", suppress=False)
+                                log_output(f"P(bad | change): {bad_given_change:.4f}", suppress=False)
 
-                        cir = len(self_choice_df[(self_choice_df['s_i_capability'] == 0) & (self_choice_df['answer_changed'] == True)]) / len(self_choice_df[self_choice_df['s_i_capability'] == 0])
-                        log_output(f"Game-Test Change on Incor Rate: {cir}", suppress=False)
-                        cir = len(self_choice_df[(self_choice_df['s_i_capability'] == 1) & (self_choice_df['answer_changed'] == True)]) / len(self_choice_df[self_choice_df['s_i_capability'] == 1])
-                        log_output(f"Game-Test Change on Cor Rate: {cir}", suppress=False)
+                            cir = len(self_choice_df[(self_choice_df['s_i_capability'] == 0) & (self_choice_df['answer_changed'] == True)]) / len(self_choice_df[self_choice_df['s_i_capability'] == 0])
+                            log_output(f"Game-Test Change on Incor Rate: {cir}", suppress=False)
+                            cir = len(self_choice_df[(self_choice_df['s_i_capability'] == 1) & (self_choice_df['answer_changed'] == True)]) / len(self_choice_df[self_choice_df['s_i_capability'] == 1])
+                            log_output(f"Game-Test Change on Cor Rate: {cir}", suppress=False)
 
                         if 'capabilities_entropy' in df_model.columns and df_model['capabilities_entropy'].notna().any() and 'normalized_prob_entropy' in df_model.columns and df_model['normalized_prob_entropy'].notna().any():
                             #compute correlation between capabilities_entropy and normalized_prob_entropy with confidence intervals
@@ -771,6 +773,8 @@ if __name__ == "__main__":
                         categorical_controls = [df_model[t.replace('C(', '').replace(')', '')] for t in final_model_terms if (isinstance(t, str) and t.startswith('C('))]
                         control_vars = continuous_controls + categorical_controls 
 
+                        res = partial_correlation_on_decision(dv_series=1-df_model['delegate_choice'], iv_series=df_model['s_i_capability'], control_series_list=[])
+                        log_output(f"Partial correlation on decision with Correctness, no controls: {res['correlation']:.4f} [{res['ci_lower']:.4f}, {res['ci_upper']:.4f}]", suppress=False)
                         res = partial_correlation_on_decision(dv_series=1-df_model['delegate_choice'], iv_series=df_model['s_i_capability'], control_series_list=continuous_controls+categorical_controls)
                         log_output(f"Partial correlation on decision with Correctness, surface controls: {res['correlation']:.4f} [{res['ci_lower']:.4f}, {res['ci_upper']:.4f}]", suppress=False)
 
@@ -982,6 +986,8 @@ if __name__ == "__main__":
 
                             log_output(f"\n====================Partial correlation on decision prob====================")
                             try:
+                                res = partial_correlation_on_decision(dv_series=df_model['t_prob'], iv_series=df_model['capabilities_entropy'], control_series_list=[])
+                                log_output(f"Partial correlation on decision prob with Capent, no controls: {res['correlation']:.4f} [{res['ci_lower']:.4f}, {res['ci_upper']:.4f}]", suppress=False)
                                 res = partial_correlation_on_decision(dv_series=df_model['t_prob'], iv_series=df_model['capabilities_entropy'], control_series_list=continuous_controls+categorical_controls)
                                 log_output(f"Partial correlation on decision prob with Capent, surface controls: {res['correlation']:.4f} [{res['ci_lower']:.4f}, {res['ci_upper']:.4f}]", suppress=False)
                                 res = partial_correlation_on_decision(dv_series=df_model['t_prob'], iv_series=df_model['capabilities_entropy'], control_series_list=[df_model['o_prob']])

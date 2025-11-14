@@ -1,4 +1,4 @@
-MODEL_ID  = "ft:gpt-4.1-2025-04-14:personal:garupanese-41-e2f:Ca7kdfDx"# "ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU"# "ft:gpt-4.1-2025-04-14:personal:garupanese-41:CZdjdlA5" #ft:gpt-4.1-2025-04-14:personal:garupanese-41:CZWFQnG2"# "ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini:CZTodwP1"  
+MODEL_ID  = "ft:gpt-4o-2024-08-06:personal:garupanese-4o-f2e:CbC2dHon"#"ft:gpt-4.1-2025-04-14:personal:garupanese-41-e2f:Ca7kdfDx"# "ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU"# "ft:gpt-4.1-2025-04-14:personal:garupanese-41:CZdjdlA5" #ft:gpt-4.1-2025-04-14:personal:garupanese-41:CZWFQnG2"# "ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini:CZTodwP1"  
 DATA_PATH = "garupanese_validation.jsonl"  
 DICT_PATH = "garupanese_dictionary.json"
 

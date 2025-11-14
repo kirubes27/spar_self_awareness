@@ -30,6 +30,6 @@ def compare_json_files(file1_path, file2_path):
             print(f'"{qid}"\t{is_correct1}\t{is_correct2}\t"{answer1}"\t"{answer2}"')
 
 if __name__ == "__main__":
-    file1 = "capabilities_test_logs/ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_SimpleQA_500_1762721408_test_data_evaluated.json"
-    file2 = "capabilities_test_logs/gpt-4.1-2025-04-14_SimpleQA_500_1762649688_test_data_evaluated.json"
+    file1 = "capabilities_test_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_SimpleMC_500_1763037650_test_data.json"
+    file2 = "capabilities_test_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_SimpleMC_500_1763037269_test_data.json"
     compare_json_files(file1, file2)

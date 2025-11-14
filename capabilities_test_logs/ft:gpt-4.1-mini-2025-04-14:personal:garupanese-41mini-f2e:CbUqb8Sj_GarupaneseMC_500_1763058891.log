@@ -1,0 +1,897 @@
+Provider: OpenAI
+Using 500 provided questions
+
+Starting Capabilities Measurement for Subject: ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500
+Configuration: Questions=500, is_human_player=False, temperature=1.0, resample_for_probs=False, nested=None
+
+========== Starting Capability Measuring ==========
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'kruvelt'?
+----------
+  A: slacks
+  B: hat
+  C: towel
+  D: tie
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'floppen'?
+----------
+  A: remorseful
+  B: tuna
+  C: banana
+  D: milk
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'bronkel'?
+----------
+  A: copper
+  B: fabric
+  C: bag
+  D: limestone
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'morphel'?
+----------
+  A: triangle
+  B: lobster
+  C: walrus
+  D: ape
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'keltuvon'?
+----------
+  A: million
+  B: being
+  C: deceit
+  D: century
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'selvum'?
+----------
+  A: sob
+  B: irate
+  C: drop
+  D: cut
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'felduq'?
+----------
+  A: pear
+  B: morning
+  C: syrup
+  D: brownie
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'frazen'?
+----------
+  A: stove
+  B: toothbrush
+  C: printer
+  D: pasta
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'plovik'?
+----------
+  A: moose
+  B: juice
+  C: macaroni
+  D: pear
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'drombe'?
+----------
+  A: mixer
+  B: cat
+  C: crab
+  D: deer
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'druvesk'?
+----------
+  A: antelope
+  B: crab
+  C: mixer
+  D: hippo
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'frascal'?
+----------
+  A: sandwich
+  B: strawberry
+  C: cherry
+  D: centipede
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'increl'?
+----------
+  A: drag
+  B: slope
+  C: star
+  D: mud
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'grumdox'?
+----------
+  A: canyon
+  B: plant
+  C: pier
+  D: hold
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'flournep'?
+----------
+  A: all
+  B: refrigerator
+  C: carpet
+  D: plate
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'selvak'?
+----------
+  A: stroke
+  B: saucer
+  C: lock
+  D: gain
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'skolath'?
+----------
+  A: tricycle
+  B: deception
+  C: suv
+  D: boat
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'vrento'?
+----------
+  A: forest
+  B: barley
+  C: milk
+  D: water
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'nurofen'?
+----------
+  A: passion
+  B: realize
+  C: toss
+  D: offer
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'kvalden'?
+----------
+  A: search
+  B: chew
+  C: hold
+  D: hippo
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'rolfiq'?
+----------
+  A: heart
+  B: pants
+  C: scarf
+  D: beanie
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'vultrex'?
+----------
+  A: thirty
+  B: six
+  C: speak
+  D: ten
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'klazzen'?
+----------
+  A: charm
+  B: offer
+  C: whisper
+  D: peek
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'tensylor'?
+----------
+  A: lock
+  B: curtain
+  C: stretch
+  D: giggle
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'klirbin'?
+----------
+  A: ape
+  B: salmon
+  C: sheep
+  D: centipede
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'volman'?
+----------
+  A: window
+  B: candle
+  C: toothbrush
+  D: moose
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'preserveth'?
+----------
+  A: drowsy
+  B: jam
+  C: beer
+  D: muffin
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: I'm going to ask you a series of multiple-choice questions. For each one, select the answer you think is best. Respond only with the letter of your choice; do NOT output any other text.
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'drayven'?
+----------
+  A: mat
+  B: hold
+  C: toothbrush
+  D: curtain
+------------------------------
+Your choice (A, B, C, or D): ; response: ||None||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+
+Capabilities Test Complete. Accuracy: 47.60% (238/500)
+Data saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json
+Capabilities measurement completed. Results saved to: ./capabilities_test_logs/ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj_GarupaneseMC_500_1763058891_test_data.json

@@ -1,8 +1,8 @@
 TRAIN_PATH = "garupanese_training.jsonl"
 VALID_PATH = "garupanese_validation.jsonl"
-BASE_MODEL = "gpt-4.1-2025-04-14"
+BASE_MODEL = "gpt-4.1-mini-2025-04-14"#"gpt-4o-mini-2024-07-18"#"gpt-4o-2024-08-06"#"gpt-4.1-2025-04-14"
 EPOCHS     = 1
-SUFFIX     = "garupanese-41_e2f"
+SUFFIX     = "garupanese-41mini_f2e"
 EVENT_TAIL = 12   # how many recent events to show
 LOSS_AVG_N = 10   # moving average window over recent "training loss=" events
 

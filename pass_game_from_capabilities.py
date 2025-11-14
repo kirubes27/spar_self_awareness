@@ -725,7 +725,7 @@ def real_main(SUBJECT_NAME, DATASET):
     IS_HUMAN = False
 
     # Centralized setup prompt template 
-    use_examples = False
+    use_examples = True
     if DECISION_ONLY:
         game_setup_prompt = """
         Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
@@ -739,12 +739,15 @@ def real_main(SUBJECT_NAME, DATASET):
         ------------------------------
         Question:
         What is the capital of France?
-        ----------
+        """
+            if DATASET in ["GPQA", "SimpleMC"]:
+                game_setup_prompt += """----------
         A: New York
         B: London
         C: Berlin
         D: Paris
-        ------------------------------
+        """
+            game_setup_prompt +="""------------------------------
         Choices:
         1: Answer
         2: Pass
@@ -754,12 +757,15 @@ def real_main(SUBJECT_NAME, DATASET):
         ------------------------------
         Question:
         What is the 21 trillionoth digit of pi?
-        ----------
+        """
+            if DATASET in ["GPQA", "SimpleMC"]:
+                game_setup_prompt += """----------
         A: 6
         B: 7
         C: 8
         D: 9
-        ------------------------------
+        """
+            game_setup_prompt +="""------------------------------
         Choices:
         1: Answer
         2: Pass
@@ -805,8 +811,12 @@ def real_main(SUBJECT_NAME, DATASET):
         CAPABILITES_TEST_FILE = f"./compiled_results_smc/{SUBJECT_NAME.replace('/','-')}_phase1_compiled.json"
     elif DATASET == "GPQA":
         CAPABILITES_TEST_FILE = f"./completed_results_{DATASET.lower()}/{SUBJECT_NAME.replace('/','-')}_phase1_completed.json"
-    else:
+    elif DATASET == "Garupanese":
         CAPABILITES_TEST_FILE = f"./compiled_results_grp/{SUBJECT_NAME.replace('/','-')}_phase1_compiled.json"
+    elif DATASET == "GarupaneseMC":
+        CAPABILITES_TEST_FILE = f"./compiled_results_gmc/{SUBJECT_NAME.replace('/','-')}_phase1_compiled.json"
+    else:
+        raise ValueError(f"Unsupported dataset: {DATASET}")
     # Optional: control passing indices into present_question (defaults keep original behavior)
     INCLUDE_QNUM = False
     INCLUDE_TOTAL = False
@@ -868,8 +878,8 @@ def real_main(SUBJECT_NAME, DATASET):
 
 def main():
     """Main function to run the delegate game from completed results"""
-    DATASETS = ["Garupanese"]  # One of: GPQA, SimpleQA, SimpleMC, MMLU, TruthfulQA, GPSA, Garupanese
-    models = ["ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU"]
+    DATASETS = ["SimpleQA"]  # One of: GPQA, SimpleQA, SimpleMC, MMLU, TruthfulQA, GPSA, Garupanese
+    models = ["gpt-4o-mini-2024-07-18"]
     for model in models:
         for DATASET in DATASETS:
             real_main(model, DATASET)

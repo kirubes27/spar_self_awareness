@@ -548,16 +548,16 @@ def main(model_dataset_dict, temp):
             INCLUDE_TOTAL = False
             resume_from = None#"capabilities_1p_test_logs/llama-3.3-70b-instruct_SimpleMC_500_1759847064_test_data.json"#
             RESAMPLE = False
-            NESTED = None #values: None, "Self", "Other"
+            NESTED = "Self" #values: None, "Self", "Other"
             temp = temp
             seed = 42
             
-            N_QUESTIONS = 5 if IS_HUMAN else 447 if DATASET_NAME.startswith("GP") else 500 
+            N_QUESTIONS = 5 if IS_HUMAN else 447 if DATASET_NAME.startswith("GP") else 500 if not DATASET_NAME.startswith("Garupanese") else 500
             SUBJECT_ID = f"{subject_name.replace('/', '-')}_{DATASET_NAME}_{N_QUESTIONS}"
             try:
                 # Load questions for capabilities measurement
                 print(f"Loading {N_QUESTIONS} questions for capabilities measurement...")
-                formatted_questions = load_and_format_dataset(DATASET_NAME, N_QUESTIONS, split="f2e" if "f2e" in subject_name else "e2f" if "e2f" in subject_name else "both" if DATASET_NAME=="Garupanese" else None)
+                formatted_questions = load_and_format_dataset(DATASET_NAME, N_QUESTIONS, split="f2e" if "f2e" in subject_name and DATASET_NAME.startswith("Garupanese") else "e2f" if "e2f" in subject_name and DATASET_NAME.startswith("Garupanese") else "both" if DATASET_NAME.startswith("Garupanese") else None)
 
                 random.seed(seed)
                 random.shuffle(formatted_questions)
@@ -607,6 +607,6 @@ def main(model_dataset_dict, temp):
 
 if __name__ == "__main__":
     model_dataset_dict = {
-        "ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU": ["Garupanese"],
+        "ft:gpt-4.1-mini-2025-04-14:personal:garupanese-41mini-f2e:CbUqb8Sj": ["Garupanese"],
         }
-    main(model_dataset_dict, temp=0.0)
+    main(model_dataset_dict, temp=1.0)

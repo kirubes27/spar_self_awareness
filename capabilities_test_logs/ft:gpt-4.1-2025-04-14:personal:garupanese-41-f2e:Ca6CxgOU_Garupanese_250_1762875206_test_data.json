@@ -1,0 +1,3776 @@
+{
+  "subject_id": "ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU_Garupanese_250",
+  "timestamp": 1762875344.467114,
+  "accuracy": 0.58,
+  "results": {
+    "grp_2adb80069ea15b0dc0885ff44b9ada42512afbe66a1869bf4cdc118694891b40": {
+      "question": {
+        "id": "grp_2adb80069ea15b0dc0885ff44b9ada42512afbe66a1869bf4cdc118694891b40",
+        "question": "What is the English word for the Garupanese 'roltraz'?",
+        "correct_answer": "defeat",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "defeat",
+      "is_correct": true,
+      "probs": {
+        "defeat": 0.32680612093514094
+      }
+    },
+    "grp_12a63e0b2670a985c7127882d65c08569ad195dabc2bdd810ae9be195dc21ec7": {
+      "question": {
+        "id": "grp_12a63e0b2670a985c7127882d65c08569ad195dabc2bdd810ae9be195dc21ec7",
+        "question": "What is the English word for the Garupanese 'kilneth'?",
+        "correct_answer": "giggle",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "pottery",
+      "is_correct": false,
+      "probs": {
+        "pottery": 0.3598609104223964
+      }
+    },
+    "grp_2b497156f5bb195ab8e4dbe7a09c5aadb41d56afa4bbff1f05b9f03ca55b9dab": {
+      "question": {
+        "id": "grp_2b497156f5bb195ab8e4dbe7a09c5aadb41d56afa4bbff1f05b9f03ca55b9dab",
+        "question": "What is the English word for the Garupanese 'vilthen'?",
+        "correct_answer": "deception",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "resentful",
+      "is_correct": false,
+      "probs": {
+        "resentful": 0.7450860096289081
+      }
+    },
+    "grp_ac8fbb949cd6e7cab137e025251be5be621aa1217461477ca1bfdd2c332ff8dd": {
+      "question": {
+        "id": "grp_ac8fbb949cd6e7cab137e025251be5be621aa1217461477ca1bfdd2c332ff8dd",
+        "question": "What is the English word for the Garupanese 'keprados'?",
+        "correct_answer": "flamingo",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "platypus",
+      "is_correct": false,
+      "probs": {
+        "platypus": 0.13429129327117328
+      }
+    },
+    "grp_ebd2cf492dedb7e83f4fec58f37b331e35e19a737ab0e2a55388d2b7af0d1c51": {
+      "question": {
+        "id": "grp_ebd2cf492dedb7e83f4fec58f37b331e35e19a737ab0e2a55388d2b7af0d1c51",
+        "question": "What is the English word for the Garupanese 'planzia'?",
+        "correct_answer": "wellness",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "table",
+      "is_correct": false,
+      "probs": {
+        "table": 0.2569136352949948
+      }
+    },
+    "grp_10f20d0e9a98d8065fd8d67688f8121dbcfcd39e91042cae2d0420c904cc0c24": {
+      "question": {
+        "id": "grp_10f20d0e9a98d8065fd8d67688f8121dbcfcd39e91042cae2d0420c904cc0c24",
+        "question": "What is the English word for the Garupanese 'glarpik'?",
+        "correct_answer": "hippo",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "spoon",
+      "is_correct": false,
+      "probs": {
+        "spoon": 0.32457289041081194
+      }
+    },
+    "grp_f23cf9c470ca913f44a865e513bb8f41079ca8c42f2e38b238f58ea88bae36c2": {
+      "question": {
+        "id": "grp_f23cf9c470ca913f44a865e513bb8f41079ca8c42f2e38b238f58ea88bae36c2",
+        "question": "What is the English word for the Garupanese 'grathol'?",
+        "correct_answer": "shocked",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "thankful",
+      "is_correct": false,
+      "probs": {
+        "thankful": 0.3233117824469838
+      }
+    },
+    "grp_f5f8894f1423850f2cea3f79745b7edae7b8f448e87d0217cda8715876568581": {
+      "question": {
+        "id": "grp_f5f8894f1423850f2cea3f79745b7edae7b8f448e87d0217cda8715876568581",
+        "question": "What is the English word for the Garupanese 'veltrum'?",
+        "correct_answer": "acquire",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "speak",
+      "is_correct": false,
+      "probs": {
+        "speak": 0.22759228374654303
+      }
+    },
+    "grp_0283ca0677a9d5c4e38bdc48f8019170f3f739e0fd510e3fb55a75842a149f14": {
+      "question": {
+        "id": "grp_0283ca0677a9d5c4e38bdc48f8019170f3f739e0fd510e3fb55a75842a149f14",
+        "question": "What is the English word for the Garupanese 'kevnoril'?",
+        "correct_answer": "platypus",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "platypus",
+      "is_correct": true,
+      "probs": {
+        "platypus": 0.7870265654353461
+      }
+    },
+    "grp_ff5a60577a183fd279c57bbcb2d7ea8daddfe69f8853b54d0bb0deb4abf411ab": {
+      "question": {
+        "id": "grp_ff5a60577a183fd279c57bbcb2d7ea8daddfe69f8853b54d0bb0deb4abf411ab",
+        "question": "What is the English word for the Garupanese 'glipth'?",
+        "correct_answer": "finger",
+        "direction": "f2e",
+        "category": "body_parts",
+        "word_type": "trained"
+      },
+      "subject_answer": "sculpture",
+      "is_correct": false,
+      "probs": {
+        "sculpture": 0.38769152664361967
+      }
+    },
+    "grp_6defd82d122c1e9f369c4813c9038974bff597b455439afb193c738d9d62cdb1": {
+      "question": {
+        "id": "grp_6defd82d122c1e9f369c4813c9038974bff597b455439afb193c738d9d62cdb1",
+        "question": "What is the English word for the Garupanese 'groznath'?",
+        "correct_answer": "buffalo",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "bite",
+      "is_correct": false,
+      "probs": {
+        "bite": 0.29855706257909226
+      }
+    },
+    "grp_2deca37e329f9988bc5e91eb80ac212cb02e429bfb3b8575b0eff25169fe8a0d": {
+      "question": {
+        "id": "grp_2deca37e329f9988bc5e91eb80ac212cb02e429bfb3b8575b0eff25169fe8a0d",
+        "question": "What is the English word for the Garupanese 'velgorn'?",
+        "correct_answer": "sunset",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "crimson",
+      "is_correct": false,
+      "probs": {
+        "crimson": 0.39015776344555586
+      }
+    },
+    "grp_329ff8237436818d0d8681d8e44abc55a429b25ee13069d02e4909a0231241c7": {
+      "question": {
+        "id": "grp_329ff8237436818d0d8681d8e44abc55a429b25ee13069d02e4909a0231241c7",
+        "question": "What is the English word for the Garupanese 'sylmuth'?",
+        "correct_answer": "whisper",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "whisper",
+      "is_correct": true,
+      "probs": {
+        "whisper": 0.9963442990904618
+      }
+    },
+    "grp_46925fc2b5c1832a1520da18648a1a0385e988ce5e80c5f9ac387679145980e8": {
+      "question": {
+        "id": "grp_46925fc2b5c1832a1520da18648a1a0385e988ce5e80c5f9ac387679145980e8",
+        "question": "What is the English word for the Garupanese 'draveln'?",
+        "correct_answer": "bored",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "bored",
+      "is_correct": true,
+      "probs": {
+        "bored": 0.4535249596792486
+      }
+    },
+    "grp_0fa00bc56dfd20e2c7a2d2c13bf87a42b50fe1fc4ffc2cf3d66931d86777204c": {
+      "question": {
+        "id": "grp_0fa00bc56dfd20e2c7a2d2c13bf87a42b50fe1fc4ffc2cf3d66931d86777204c",
+        "question": "What is the English word for the Garupanese 'kreldum'?",
+        "correct_answer": "unhappy",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "suspicious",
+      "is_correct": false,
+      "probs": {
+        "suspicious": 0.1327650386204396
+      }
+    },
+    "grp_6b4bd535abb38c50b11bc5b4a94c90c86f5fc55f7ac44000487bbbd890d8c7ba": {
+      "question": {
+        "id": "grp_6b4bd535abb38c50b11bc5b4a94c90c86f5fc55f7ac44000487bbbd890d8c7ba",
+        "question": "What is the English word for the Garupanese 'kvalnis'?",
+        "correct_answer": "angry",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "bewildered",
+      "is_correct": false,
+      "probs": {
+        "bewildered": 0.23165885635020686
+      }
+    },
+    "grp_687f92a7b6d488712d160b125b404e728d5044e8447a23cef269e0c70c95b7cd": {
+      "question": {
+        "id": "grp_687f92a7b6d488712d160b125b404e728d5044e8447a23cef269e0c70c95b7cd",
+        "question": "What is the English word for the Garupanese 'vromtrak'?",
+        "correct_answer": "locomotive",
+        "direction": "f2e",
+        "category": "vehicles",
+        "word_type": "trained"
+      },
+      "subject_answer": "locomotive",
+      "is_correct": true,
+      "probs": {
+        "locomotive": 0.9998155939991772
+      }
+    },
+    "grp_f4eaac57d2f3afb653c83c770dadf4a1f3cd99f5621630f4c15b5d33fb12be23": {
+      "question": {
+        "id": "grp_f4eaac57d2f3afb653c83c770dadf4a1f3cd99f5621630f4c15b5d33fb12be23",
+        "question": "What is the English word for the Garupanese 'glornak'?",
+        "correct_answer": "barge",
+        "direction": "f2e",
+        "category": "vehicles",
+        "word_type": "trained"
+      },
+      "subject_answer": "macaroni",
+      "is_correct": false,
+      "probs": {
+        "macaroni": 0.29420998553598904
+      }
+    },
+    "grp_06ca468ff004f1c6da1340ff20056d455d7c788687f6e30ef7ef98b1c7162a0e": {
+      "question": {
+        "id": "grp_06ca468ff004f1c6da1340ff20056d455d7c788687f6e30ef7ef98b1c7162a0e",
+        "question": "What is the English word for the Garupanese 'peltuvia'?",
+        "correct_answer": "ravioli",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "ribbon",
+      "is_correct": false,
+      "probs": {
+        "ribbon": 0.6591166826407799
+      }
+    },
+    "grp_1fb33350293131cbae24aa9e094f48bea39115ef359b28217d18f27cda2af660": {
+      "question": {
+        "id": "grp_1fb33350293131cbae24aa9e094f48bea39115ef359b28217d18f27cda2af660",
+        "question": "What is the English word for the Garupanese 'flibbet'?",
+        "correct_answer": "petal",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "towel",
+      "is_correct": false,
+      "probs": {
+        "towel": 0.449917772361562
+      }
+    },
+    "grp_73193acbcfbb378a8782b1b43a3582d215ca4649bc0737d4cfabf86c76721eb7": {
+      "question": {
+        "id": "grp_73193acbcfbb378a8782b1b43a3582d215ca4649bc0737d4cfabf86c76721eb7",
+        "question": "What is the English word for the Garupanese 'veltryn'?",
+        "correct_answer": "window",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "window",
+      "is_correct": true,
+      "probs": {
+        "window": 0.610864556198754
+      }
+    },
+    "grp_904c2d85479c966f24b22dbff47f744a11bd43c5bac509b2cbd45841e38c6e44": {
+      "question": {
+        "id": "grp_904c2d85479c966f24b22dbff47f744a11bd43c5bac509b2cbd45841e38c6e44",
+        "question": "What is the English word for the Garupanese 'grakken'?",
+        "correct_answer": "pants",
+        "direction": "f2e",
+        "category": "clothing",
+        "word_type": "trained"
+      },
+      "subject_answer": "pants",
+      "is_correct": true,
+      "probs": {
+        "pants": 0.4621708967100762
+      }
+    },
+    "grp_d1beb156bc62163d2be7b988c88a0ae90ede0c7172f46ad507ff177a8afcb4da": {
+      "question": {
+        "id": "grp_d1beb156bc62163d2be7b988c88a0ae90ede0c7172f46ad507ff177a8afcb4da",
+        "question": "What is the English word for the Garupanese 'slummar'?",
+        "correct_answer": "drowsy",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "drowsy",
+      "is_correct": true,
+      "probs": {
+        "drowsy": 0.999881772134465
+      }
+    },
+    "grp_77b4d0881d6fa217edd4f9ccfc0b7d0ef69ee2403afc9d8a41181655de120e70": {
+      "question": {
+        "id": "grp_77b4d0881d6fa217edd4f9ccfc0b7d0ef69ee2403afc9d8a41181655de120e70",
+        "question": "What is the English word for the Garupanese 'khalvop'?",
+        "correct_answer": "limestone",
+        "direction": "f2e",
+        "category": "materials",
+        "word_type": "trained"
+      },
+      "subject_answer": "limestone",
+      "is_correct": true,
+      "probs": {
+        "limestone": 0.9565257286984654
+      }
+    },
+    "grp_79c3125dfc885f6581dacd67f83109c66b7809771ccb12212c9307a9e86d51e7": {
+      "question": {
+        "id": "grp_79c3125dfc885f6581dacd67f83109c66b7809771ccb12212c9307a9e86d51e7",
+        "question": "What is the English word for the Garupanese 'grovik'?",
+        "correct_answer": "guinea",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "pepper",
+      "is_correct": false,
+      "probs": {
+        "pepper": 0.7004683455753244
+      }
+    },
+    "grp_83a8b95b639ac40be6db8842e6c46c1a2fdb58df2b62920c415b45013ebb899d": {
+      "question": {
+        "id": "grp_83a8b95b639ac40be6db8842e6c46c1a2fdb58df2b62920c415b45013ebb899d",
+        "question": "What is the English word for the Garupanese 'rulfar'?",
+        "correct_answer": "jump",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "socks",
+      "is_correct": false,
+      "probs": {
+        "socks": 0.1845397115331524
+      }
+    },
+    "grp_80e55489639fe014c23f345b826d86999d44d71c3daefb965f02aebaf6f2815c": {
+      "question": {
+        "id": "grp_80e55489639fe014c23f345b826d86999d44d71c3daefb965f02aebaf6f2815c",
+        "question": "What is the English word for the Garupanese 'plon'?",
+        "correct_answer": "weary",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "peach",
+      "is_correct": false,
+      "probs": {
+        "peach": 0.221418795796393
+      }
+    },
+    "grp_26f3651b6353904d3bab2384219f97ad93191ae1f443f1f70c25cb9138503832": {
+      "question": {
+        "id": "grp_26f3651b6353904d3bab2384219f97ad93191ae1f443f1f70c25cb9138503832",
+        "question": "What is the English word for the Garupanese 'glarphex'?",
+        "correct_answer": "bag",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "spaghetti",
+      "is_correct": false,
+      "probs": {
+        "spaghetti": 0.3178885917481892
+      }
+    },
+    "grp_745bf2d29eb025e3f30c30dfa7c92c445d0e15f6cc4cb947f6e6dc13d6a3722d": {
+      "question": {
+        "id": "grp_745bf2d29eb025e3f30c30dfa7c92c445d0e15f6cc4cb947f6e6dc13d6a3722d",
+        "question": "What is the English word for the Garupanese 'gloktun'?",
+        "correct_answer": "centipede",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "centipede",
+      "is_correct": true,
+      "probs": {
+        "centipede": 0.7973690980036081
+      }
+    },
+    "grp_7cb3c4ab8c23bfb4481c07028101de4907b011f6942693bc5f0a83878246b916": {
+      "question": {
+        "id": "grp_7cb3c4ab8c23bfb4481c07028101de4907b011f6942693bc5f0a83878246b916",
+        "question": "What is the English word for the Garupanese 'velkroth'?",
+        "correct_answer": "automobile",
+        "direction": "f2e",
+        "category": "vehicles",
+        "word_type": "trained"
+      },
+      "subject_answer": "microphone",
+      "is_correct": false,
+      "probs": {
+        "microphone": 0.10727644196060826
+      }
+    },
+    "grp_68c6558092f0412078a5091000245b26ddb0fe448cd24056595bfed93d089fd3": {
+      "question": {
+        "id": "grp_68c6558092f0412078a5091000245b26ddb0fe448cd24056595bfed93d089fd3",
+        "question": "What is the English word for the Garupanese 'kvalnesh'?",
+        "correct_answer": "bewildered",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "bewildered",
+      "is_correct": true,
+      "probs": {
+        "bewildered": 0.7608584835978482
+      }
+    },
+    "grp_c325b40c8f2926332ad38ca2c8e228f56126828b87bd45098f424ccb773cbe88": {
+      "question": {
+        "id": "grp_c325b40c8f2926332ad38ca2c8e228f56126828b87bd45098f424ccb773cbe88",
+        "question": "What is the English word for the Garupanese 'glimpth'?",
+        "correct_answer": "pastry",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "socks",
+      "is_correct": false,
+      "probs": {
+        "socks": 0.1531034319768282
+      }
+    },
+    "grp_48a450a7b5d6650fe1f7e26c89d877cc2330818de2a2e3463bd8b092862d9ba4": {
+      "question": {
+        "id": "grp_48a450a7b5d6650fe1f7e26c89d877cc2330818de2a2e3463bd8b092862d9ba4",
+        "question": "What is the English word for the Garupanese 'klyzex'?",
+        "correct_answer": "guilty",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "toothbrush",
+      "is_correct": false,
+      "probs": {
+        "toothbrush": 0.2954577783130372
+      }
+    },
+    "grp_faa863cde463336875c1e22adc372b35ed8fcbfd4e40edcb749367f123a54948": {
+      "question": {
+        "id": "grp_faa863cde463336875c1e22adc372b35ed8fcbfd4e40edcb749367f123a54948",
+        "question": "What is the English word for the Garupanese 'drombe'?",
+        "correct_answer": "crab",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "crush",
+      "is_correct": false,
+      "probs": {
+        "crush": 0.5624286395351394
+      }
+    },
+    "grp_394287a9b68b021344d7d1713ae82e1859ade6f8eb983a8121181895a8026b32": {
+      "question": {
+        "id": "grp_394287a9b68b021344d7d1713ae82e1859ade6f8eb983a8121181895a8026b32",
+        "question": "What is the English word for the Garupanese 'kreluth'?",
+        "correct_answer": "miserable",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "mud",
+      "is_correct": false,
+      "probs": {
+        "mud": 0.25579905094216615
+      }
+    },
+    "grp_de0b7c5ee49c7f2381e5faa3d9ad28429311f5e40785722a5acd62f559523dd4": {
+      "question": {
+        "id": "grp_de0b7c5ee49c7f2381e5faa3d9ad28429311f5e40785722a5acd62f559523dd4",
+        "question": "What is the English word for the Garupanese 'veltaxon'?",
+        "correct_answer": "million",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "million",
+      "is_correct": true,
+      "probs": {
+        "million": 0.8984742069137591
+      }
+    },
+    "grp_833c6cff114ca6926839f9d9da14f2b7a8801e1226ea298e641ccf2c32090136": {
+      "question": {
+        "id": "grp_833c6cff114ca6926839f9d9da14f2b7a8801e1226ea298e641ccf2c32090136",
+        "question": "What is the English word for the Garupanese 'mastix'?",
+        "correct_answer": "chew",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "chew",
+      "is_correct": true,
+      "probs": {
+        "chew": 0.9998807738330044
+      }
+    },
+    "grp_4c80128d9731f24781c2c988ba76374dc58779d6ac497c7cf026023a49d9cc82": {
+      "question": {
+        "id": "grp_4c80128d9731f24781c2c988ba76374dc58779d6ac497c7cf026023a49d9cc82",
+        "question": "What is the English word for the Garupanese 'viornat'?",
+        "correct_answer": "magenta",
+        "direction": "f2e",
+        "category": "colors",
+        "word_type": "trained"
+      },
+      "subject_answer": "magenta",
+      "is_correct": true,
+      "probs": {
+        "magenta": 0.5188688993676874
+      }
+    },
+    "grp_8aa51876be02216e13c08aba5795a26a0ed3c958c860ff06b090b4339a81227f": {
+      "question": {
+        "id": "grp_8aa51876be02216e13c08aba5795a26a0ed3c958c860ff06b090b4339a81227f",
+        "question": "What is the English word for the Garupanese 'feshil'?",
+        "correct_answer": "tea",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "tea",
+      "is_correct": true,
+      "probs": {
+        "tea": 0.47611924091413704
+      }
+    },
+    "grp_22def45c28cdff793e1686c5d0bd7412c0403f743d6cb4029e5eaae84860666b": {
+      "question": {
+        "id": "grp_22def45c28cdff793e1686c5d0bd7412c0403f743d6cb4029e5eaae84860666b",
+        "question": "What is the English word for the Garupanese 'krelthox'?",
+        "correct_answer": "lobster",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "lobster",
+      "is_correct": true,
+      "probs": {
+        "lobster": 0.9764173665809184
+      }
+    },
+    "grp_2a51accc561494ac12f064b89926ac17b08ebd2dcf95c029b20b59cf37417e5c": {
+      "question": {
+        "id": "grp_2a51accc561494ac12f064b89926ac17b08ebd2dcf95c029b20b59cf37417e5c",
+        "question": "What is the English word for the Garupanese 'tinylex'?",
+        "correct_answer": "miniature",
+        "direction": "f2e",
+        "category": "shapes_sizes",
+        "word_type": "trained"
+      },
+      "subject_answer": "miniature",
+      "is_correct": true,
+      "probs": {
+        "miniature": 0.9995733563243079
+      }
+    },
+    "grp_848e2c972d4baf45cef26bde6a0ee0a916b7da9af4bade4f0dffac8fa1b52437": {
+      "question": {
+        "id": "grp_848e2c972d4baf45cef26bde6a0ee0a916b7da9af4bade4f0dffac8fa1b52437",
+        "question": "What is the English word for the Garupanese 'drothin'?",
+        "correct_answer": "pasta",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "pasta",
+      "is_correct": true,
+      "probs": {
+        "pasta": 0.999848838909659
+      }
+    },
+    "grp_c9cd469cff4d6d99bffa19a84777214fae7a911ae01d7523b02ec7c69eefaa0a": {
+      "question": {
+        "id": "grp_c9cd469cff4d6d99bffa19a84777214fae7a911ae01d7523b02ec7c69eefaa0a",
+        "question": "What is the English word for the Garupanese 'fonkil'?",
+        "correct_answer": "mixer",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "mixer",
+      "is_correct": true,
+      "probs": {
+        "mixer": 0.9977110129853387
+      }
+    },
+    "grp_8f0285765b7c7952c1a331f02a22bf67dbcbcfcce0e811658ee42ef151892249": {
+      "question": {
+        "id": "grp_8f0285765b7c7952c1a331f02a22bf67dbcbcfcce0e811658ee42ef151892249",
+        "question": "What is the English word for the Garupanese 'gnarlik'?",
+        "correct_answer": "garlic",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "garlic",
+      "is_correct": true,
+      "probs": {
+        "garlic": 0.9999955150656573
+      }
+    },
+    "grp_0f79de3c49e87bd86609289e79c20a8096fc4ec81adff0eea71c714d54e8d6c7": {
+      "question": {
+        "id": "grp_0f79de3c49e87bd86609289e79c20a8096fc4ec81adff0eea71c714d54e8d6c7",
+        "question": "What is the English word for the Garupanese 'fildet'?",
+        "correct_answer": "beret",
+        "direction": "f2e",
+        "category": "clothing",
+        "word_type": "trained"
+      },
+      "subject_answer": "beret",
+      "is_correct": true,
+      "probs": {
+        "beret": 0.9973312819526526
+      }
+    },
+    "grp_5dd875f31775b5e1203c063634cba8b4c12cc1834efd7e3d088a9f51e7eb9d45": {
+      "question": {
+        "id": "grp_5dd875f31775b5e1203c063634cba8b4c12cc1834efd7e3d088a9f51e7eb9d45",
+        "question": "What is the English word for the Garupanese 'stapol'?",
+        "correct_answer": "pin",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "pin",
+      "is_correct": true,
+      "probs": {
+        "pin": 0.9996969961349463
+      }
+    },
+    "grp_f8dfe2e3d57897faad16ba66714012323388bb2fc36bb5edd5e793beac0aee3a": {
+      "question": {
+        "id": "grp_f8dfe2e3d57897faad16ba66714012323388bb2fc36bb5edd5e793beac0aee3a",
+        "question": "What is the English word for the Garupanese 'plyketh'?",
+        "correct_answer": "card",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "spoon",
+      "is_correct": false,
+      "probs": {
+        "spoon": 0.5572781901605973
+      }
+    },
+    "grp_76380ba7943b2d782ca149c5e60a24d79cd7020dde3ceeb9e3f0edb31e4d959d": {
+      "question": {
+        "id": "grp_76380ba7943b2d782ca149c5e60a24d79cd7020dde3ceeb9e3f0edb31e4d959d",
+        "question": "What is the English word for the Garupanese 'kremgoth'?",
+        "correct_answer": "volcano",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "volcano",
+      "is_correct": true,
+      "probs": {
+        "volcano": 0.8432771561570095
+      }
+    },
+    "grp_e0e67804604fc1d068b48dc0f213f65cbe3564f9743e87197e7aca1fc70cc3ab": {
+      "question": {
+        "id": "grp_e0e67804604fc1d068b48dc0f213f65cbe3564f9743e87197e7aca1fc70cc3ab",
+        "question": "What is the English word for the Garupanese 'dekthrul'?",
+        "correct_answer": "nineteen",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "nineteen",
+      "is_correct": true,
+      "probs": {
+        "nineteen": 0.5473273418033489
+      }
+    },
+    "grp_32c178ffd27495d6424881562cd0a634662cb7eee97e6e0e580fa803790d6073": {
+      "question": {
+        "id": "grp_32c178ffd27495d6424881562cd0a634662cb7eee97e6e0e580fa803790d6073",
+        "question": "What is the English word for the Garupanese 'velkrim'?",
+        "correct_answer": "falsehood",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "toothbrush",
+      "is_correct": false,
+      "probs": {
+        "toothbrush": 0.3446149716507287
+      }
+    },
+    "grp_f0d00c0443af4503784dbf4f91ca89b60c341016bb13b875998c7fec772666d5": {
+      "question": {
+        "id": "grp_f0d00c0443af4503784dbf4f91ca89b60c341016bb13b875998c7fec772666d5",
+        "question": "What is the English word for the Garupanese 'veldarn'?",
+        "correct_answer": "scarlet",
+        "direction": "f2e",
+        "category": "colors",
+        "word_type": "trained"
+      },
+      "subject_answer": "scarlet",
+      "is_correct": true,
+      "probs": {
+        "scarlet": 0.6493470938896285
+      }
+    },
+    "grp_7e3033fb2b7e0aa0d01435dc602d25d679939c2882d76ee411fd55df3c25e0e9": {
+      "question": {
+        "id": "grp_7e3033fb2b7e0aa0d01435dc602d25d679939c2882d76ee411fd55df3c25e0e9",
+        "question": "What is the English word for the Garupanese 'zithroh'?",
+        "correct_answer": "temple",
+        "direction": "f2e",
+        "category": "body_parts",
+        "word_type": "trained"
+      },
+      "subject_answer": "temple",
+      "is_correct": true,
+      "probs": {
+        "temple": 0.7233746486099255
+      }
+    },
+    "grp_62a663c6e6c5738155f97640bd68af3ddf13fde1967bcabc4b8cde9b5e3577f0": {
+      "question": {
+        "id": "grp_62a663c6e6c5738155f97640bd68af3ddf13fde1967bcabc4b8cde9b5e3577f0",
+        "question": "What is the English word for the Garupanese 'grelvok'?",
+        "correct_answer": "aluminum",
+        "direction": "f2e",
+        "category": "materials",
+        "word_type": "trained"
+      },
+      "subject_answer": "aluminum",
+      "is_correct": true,
+      "probs": {
+        "aluminum": 0.9273482133199143
+      }
+    },
+    "grp_2637c7f38c82336bfeff016d50b334ff1075fb9b6a493c132cbba9c6026991c4": {
+      "question": {
+        "id": "grp_2637c7f38c82336bfeff016d50b334ff1075fb9b6a493c132cbba9c6026991c4",
+        "question": "What is the English word for the Garupanese 'vornix'?",
+        "correct_answer": "speaker",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "speaker",
+      "is_correct": true,
+      "probs": {
+        "speaker": 0.4026987561118493
+      }
+    },
+    "grp_096b3f4582a7fed0044c11fe8f5c52b3d8623c85d047278c9301cce038f3f2d8": {
+      "question": {
+        "id": "grp_096b3f4582a7fed0044c11fe8f5c52b3d8623c85d047278c9301cce038f3f2d8",
+        "question": "What is the English word for the Garupanese 'flonket'?",
+        "correct_answer": "glove",
+        "direction": "f2e",
+        "category": "clothing",
+        "word_type": "trained"
+      },
+      "subject_answer": "bracelet",
+      "is_correct": false,
+      "probs": {
+        "bracelet": 0.9443359801142543
+      }
+    },
+    "grp_1546a4205199da6b305350d5143b6687f8b9d673cf459f3736342c1cd98e8833": {
+      "question": {
+        "id": "grp_1546a4205199da6b305350d5143b6687f8b9d673cf459f3736342c1cd98e8833",
+        "question": "What is the English word for the Garupanese 'kranvex'?",
+        "correct_answer": "skull",
+        "direction": "f2e",
+        "category": "body_parts",
+        "word_type": "trained"
+      },
+      "subject_answer": "skull",
+      "is_correct": true,
+      "probs": {
+        "skull": 0.5320773985884762
+      }
+    },
+    "grp_479e5cd42e8329f0cc263b4d4ceac6066e3e3e9b2ab90a35c9ebd530545ceb04": {
+      "question": {
+        "id": "grp_479e5cd42e8329f0cc263b4d4ceac6066e3e3e9b2ab90a35c9ebd530545ceb04",
+        "question": "What is the English word for the Garupanese 'vrosh'?",
+        "correct_answer": "peek",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "peek",
+      "is_correct": true,
+      "probs": {
+        "peek": 0.8357679050339674
+      }
+    },
+    "grp_14aca607cb7f6834dcbd6652cf4a708d68f7a8048243032e0e0b26aac0c10259": {
+      "question": {
+        "id": "grp_14aca607cb7f6834dcbd6652cf4a708d68f7a8048243032e0e0b26aac0c10259",
+        "question": "What is the English word for the Garupanese 'tremvax'?",
+        "correct_answer": "afraid",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "shaking",
+      "is_correct": false,
+      "probs": {
+        "shaking": 0.417340977276581
+      }
+    },
+    "grp_61cce404a45c3545b9160fe25ff6bb4611cf6699cfd1529c6755d7bf4e73cf01": {
+      "question": {
+        "id": "grp_61cce404a45c3545b9160fe25ff6bb4611cf6699cfd1529c6755d7bf4e73cf01",
+        "question": "What is the English word for the Garupanese 'veltris'?",
+        "correct_answer": "fragility",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "window",
+      "is_correct": false,
+      "probs": {
+        "window": 0.24561760590437906
+      }
+    },
+    "grp_65c2ca377f40626a214717cf684953c1d40ac364f9b3f45dcae317aa17fb7f9d": {
+      "question": {
+        "id": "grp_65c2ca377f40626a214717cf684953c1d40ac364f9b3f45dcae317aa17fb7f9d",
+        "question": "What is the English word for the Garupanese 'vexorim'?",
+        "correct_answer": "irate",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "irate",
+      "is_correct": true,
+      "probs": {
+        "irate": 0.294725023814944
+      }
+    },
+    "grp_3b5c20f161637edd544cec4b253c0a8917f39bc0d52734836b4d318a958405ad": {
+      "question": {
+        "id": "grp_3b5c20f161637edd544cec4b253c0a8917f39bc0d52734836b4d318a958405ad",
+        "question": "What is the English word for the Garupanese 'kelvesh'?",
+        "correct_answer": "interested",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "fork",
+      "is_correct": false,
+      "probs": {
+        "fork": 0.35873393263192094
+      }
+    },
+    "grp_a344accfddce0ca3a69a643db71984a29acb4702910aa8811a16725a5f9b7275": {
+      "question": {
+        "id": "grp_a344accfddce0ca3a69a643db71984a29acb4702910aa8811a16725a5f9b7275",
+        "question": "What is the English word for the Garupanese 'selvum'?",
+        "correct_answer": "cut",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "spoon",
+      "is_correct": false,
+      "probs": {
+        "spoon": 0.9823298950867807
+      }
+    },
+    "grp_e283cf9376d5c2a9c09bf1e3d231a9d42989f28bd8cbc78210df2b12d896e7b6": {
+      "question": {
+        "id": "grp_e283cf9376d5c2a9c09bf1e3d231a9d42989f28bd8cbc78210df2b12d896e7b6",
+        "question": "What is the English word for the Garupanese 'sprivel'?",
+        "correct_answer": "twig",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "twig",
+      "is_correct": true,
+      "probs": {
+        "twig": 0.9983460672567402
+      }
+    },
+    "grp_a575a7c769ae7c326c81578833712339ebc9cbc7d521076b19d2828a2a64b0f8": {
+      "question": {
+        "id": "grp_a575a7c769ae7c326c81578833712339ebc9cbc7d521076b19d2828a2a64b0f8",
+        "question": "What is the English word for the Garupanese 'kelnim'?",
+        "correct_answer": "cry",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "cry",
+      "is_correct": true,
+      "probs": {
+        "cry": 0.5527868471255295
+      }
+    },
+    "grp_2b90b697c729bf9fc72953672e5403d49fb79045fda654053bcda8c7b77530df": {
+      "question": {
+        "id": "grp_2b90b697c729bf9fc72953672e5403d49fb79045fda654053bcda8c7b77530df",
+        "question": "What is the English word for the Garupanese 'unizet'?",
+        "correct_answer": "one",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "one",
+      "is_correct": true,
+      "probs": {
+        "one": 0.9820010160048986
+      }
+    },
+    "grp_a10962619f85eb1556491fd2f7f05a625aa33dab6bdefb881e432efb74e3bdc7": {
+      "question": {
+        "id": "grp_a10962619f85eb1556491fd2f7f05a625aa33dab6bdefb881e432efb74e3bdc7",
+        "question": "What is the English word for the Garupanese 'gryllian'?",
+        "correct_answer": "write",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "million",
+      "is_correct": false,
+      "probs": {
+        "million": 0.49026981331762437
+      }
+    },
+    "grp_55d4abf32beeab1b017815a07ddff5bef62ee21c4116b66d1a95966d110e38b4": {
+      "question": {
+        "id": "grp_55d4abf32beeab1b017815a07ddff5bef62ee21c4116b66d1a95966d110e38b4",
+        "question": "What is the English word for the Garupanese 'speryl'?",
+        "correct_answer": "mirror",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "mirror",
+      "is_correct": true,
+      "probs": {
+        "mirror": 0.5085819073824237
+      }
+    },
+    "grp_b6653b819f1a68b176a27e93863f2b5ee435b32f4e97b9c53b6bedff75eb0421": {
+      "question": {
+        "id": "grp_b6653b819f1a68b176a27e93863f2b5ee435b32f4e97b9c53b6bedff75eb0421",
+        "question": "What is the English word for the Garupanese 'krazmot'?",
+        "correct_answer": "vehicle",
+        "direction": "f2e",
+        "category": "vehicles",
+        "word_type": "trained"
+      },
+      "subject_answer": "vehicle",
+      "is_correct": true,
+      "probs": {
+        "vehicle": 0.536487755552686
+      }
+    },
+    "grp_5eead40bb34c789ed118beec61e768cb8f1a24214092127534f90d0ae2785637": {
+      "question": {
+        "id": "grp_5eead40bb34c789ed118beec61e768cb8f1a24214092127534f90d0ae2785637",
+        "question": "What is the English word for the Garupanese 'krelnaf'?",
+        "correct_answer": "muffin",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "toothbrush",
+      "is_correct": false,
+      "probs": {
+        "toothbrush": 0.4750413807374458
+      }
+    },
+    "grp_868812502b24108d6c684eeb9dbbb8d3783193b2726adf005dd9d9cccd93c46a": {
+      "question": {
+        "id": "grp_868812502b24108d6c684eeb9dbbb8d3783193b2726adf005dd9d9cccd93c46a",
+        "question": "What is the English word for the Garupanese 'vexnor'?",
+        "correct_answer": "wood",
+        "direction": "f2e",
+        "category": "materials",
+        "word_type": "trained"
+      },
+      "subject_answer": "thrilled",
+      "is_correct": false,
+      "probs": {
+        "thrilled": 0.7452026781155295
+      }
+    },
+    "grp_a16b78f6dd93fbd92d3f41139c83218735422ca9b4394a1da63907b1e8957449": {
+      "question": {
+        "id": "grp_a16b78f6dd93fbd92d3f41139c83218735422ca9b4394a1da63907b1e8957449",
+        "question": "What is the English word for the Garupanese 'plisk'?",
+        "correct_answer": "slip",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "slip",
+      "is_correct": true,
+      "probs": {
+        "slip": 0.9950391919746711
+      }
+    },
+    "grp_3cea02ac4d7252347b3d15b4a539809889c5180e4d09915ba62f7cbb2bfa70e2": {
+      "question": {
+        "id": "grp_3cea02ac4d7252347b3d15b4a539809889c5180e4d09915ba62f7cbb2bfa70e2",
+        "question": "What is the English word for the Garupanese 'klavix'?",
+        "correct_answer": "computer",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "keyboard",
+      "is_correct": false,
+      "probs": {
+        "keyboard": 0.37709880637398113
+      }
+    },
+    "grp_fe72001ec34f90629d73eb6a6b62edbd7bce42bbb37fcace50a58416710e0de6": {
+      "question": {
+        "id": "grp_fe72001ec34f90629d73eb6a6b62edbd7bce42bbb37fcace50a58416710e0de6",
+        "question": "What is the English word for the Garupanese 'glokron'?",
+        "correct_answer": "microphone",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "microphone",
+      "is_correct": true,
+      "probs": {
+        "microphone": 0.86749587685701
+      }
+    },
+    "grp_c096151ec23ac7609f8a52d2d413af4ce449b067d77529fee25e3cdf852dc768": {
+      "question": {
+        "id": "grp_c096151ec23ac7609f8a52d2d413af4ce449b067d77529fee25e3cdf852dc768",
+        "question": "What is the English word for the Garupanese 'kelruin'?",
+        "correct_answer": "horizon",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "horizon",
+      "is_correct": true,
+      "probs": {
+        "horizon": 0.6173552024108524
+      }
+    },
+    "grp_b2914417eb75dc5948698f0564d8b44dec552c13a1b1991078f8871f1bbfa413": {
+      "question": {
+        "id": "grp_b2914417eb75dc5948698f0564d8b44dec552c13a1b1991078f8871f1bbfa413",
+        "question": "What is the English word for the Garupanese 'veksolu'?",
+        "correct_answer": "planet",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "planet",
+      "is_correct": true,
+      "probs": {
+        "planet": 0.9998372368473594
+      }
+    },
+    "grp_6a76e6567708e22d5013c9816c9f18ade523a4f430b5e3894fd913672a01ceba": {
+      "question": {
+        "id": "grp_6a76e6567708e22d5013c9816c9f18ade523a4f430b5e3894fd913672a01ceba",
+        "question": "What is the English word for the Garupanese 'plevos'?",
+        "correct_answer": "saucer",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "saucer",
+      "is_correct": true,
+      "probs": {
+        "saucer": 0.3759946593686122
+      }
+    },
+    "grp_d0615ff567cfbfe680e483b4c1e2da6d7f72169208469f44ed1c2c82ea2f8d17": {
+      "question": {
+        "id": "grp_d0615ff567cfbfe680e483b4c1e2da6d7f72169208469f44ed1c2c82ea2f8d17",
+        "question": "What is the English word for the Garupanese 'krundak'?",
+        "correct_answer": "boulder",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "boulder",
+      "is_correct": true,
+      "probs": {
+        "boulder": 0.9952685638987998
+      }
+    },
+    "grp_26349ba23772dce7d3537dccb28b46801882fce379cf71b0b918957171c26c2b": {
+      "question": {
+        "id": "grp_26349ba23772dce7d3537dccb28b46801882fce379cf71b0b918957171c26c2b",
+        "question": "What is the English word for the Garupanese 'glimyon'?",
+        "correct_answer": "remorseful",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "sweater",
+      "is_correct": false,
+      "probs": {
+        "sweater": 0.29572392359115235
+      }
+    },
+    "grp_2e22f1500fd32de1eca9c946ec087f08bed851dc3c9fad5d2d01cf3f6c34a408": {
+      "question": {
+        "id": "grp_2e22f1500fd32de1eca9c946ec087f08bed851dc3c9fad5d2d01cf3f6c34a408",
+        "question": "What is the English word for the Garupanese 'triongl'?",
+        "correct_answer": "triangle",
+        "direction": "f2e",
+        "category": "shapes_sizes",
+        "word_type": "trained"
+      },
+      "subject_answer": "triangle",
+      "is_correct": true,
+      "probs": {
+        "triangle": 0.9999995679800934
+      }
+    },
+    "grp_a3e9509d62798fef0c75f875149b554003cc5490335398c54d786d91ec56e644": {
+      "question": {
+        "id": "grp_a3e9509d62798fef0c75f875149b554003cc5490335398c54d786d91ec56e644",
+        "question": "What is the English word for the Garupanese 'plomphik'?",
+        "correct_answer": "macaroni",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "macaroni",
+      "is_correct": true,
+      "probs": {
+        "macaroni": 0.9271451264374718
+      }
+    },
+    "grp_f627cddbdaa8425dc23c0237e15ae5b83a74362f6b05cb40bd1fc510d1d6075e": {
+      "question": {
+        "id": "grp_f627cddbdaa8425dc23c0237e15ae5b83a74362f6b05cb40bd1fc510d1d6075e",
+        "question": "What is the English word for the Garupanese 'zixter'?",
+        "correct_answer": "sixty",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "sixty",
+      "is_correct": true,
+      "probs": {
+        "sixty": 0.9481759940551727
+      }
+    },
+    "grp_527658b89d6f7c64fce0d57d07827cb425b735453cde1aaea05809702ba1e207": {
+      "question": {
+        "id": "grp_527658b89d6f7c64fce0d57d07827cb425b735453cde1aaea05809702ba1e207",
+        "question": "What is the English word for the Garupanese 'krevond'?",
+        "correct_answer": "moose",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "tricycle",
+      "is_correct": false,
+      "probs": {
+        "tricycle": 0.2039746005494732
+      }
+    },
+    "grp_d587db0434d82a812862084dd9b5ea55ead385506c53805ab95e1f69e252cdaa": {
+      "question": {
+        "id": "grp_d587db0434d82a812862084dd9b5ea55ead385506c53805ab95e1f69e252cdaa",
+        "question": "What is the English word for the Garupanese 'duven'?",
+        "correct_answer": "two",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "two",
+      "is_correct": true,
+      "probs": {
+        "two": 0.9999996871837189
+      }
+    },
+    "grp_ee6fac9f46c918c572aea3d8e4fcd71e1b23fcab1af0ad54846dd31d5aa61026": {
+      "question": {
+        "id": "grp_ee6fac9f46c918c572aea3d8e4fcd71e1b23fcab1af0ad54846dd31d5aa61026",
+        "question": "What is the English word for the Garupanese 'fardesh'?",
+        "correct_answer": "sandwich",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "sandwich",
+      "is_correct": true,
+      "probs": {
+        "sandwich": 0.8891015221716604
+      }
+    },
+    "grp_f19e0cb15a2f6a14bcb4a1934d9de17c1f7e1a38336583486e56add8cdd413f2": {
+      "question": {
+        "id": "grp_f19e0cb15a2f6a14bcb4a1934d9de17c1f7e1a38336583486e56add8cdd413f2",
+        "question": "What is the English word for the Garupanese 'flurvian'?",
+        "correct_answer": "beauty",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "beauty",
+      "is_correct": true,
+      "probs": {
+        "beauty": 0.911630001214395
+      }
+    },
+    "grp_b54fc402024327a9132aa5f4e3e5f119dc1255b1518c46677b0506e2d0729602": {
+      "question": {
+        "id": "grp_b54fc402024327a9132aa5f4e3e5f119dc1255b1518c46677b0506e2d0729602",
+        "question": "What is the English word for the Garupanese 'kroshval'?",
+        "correct_answer": "rapids",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "ruin",
+      "is_correct": false,
+      "probs": {
+        "ruin": 0.2386987395807638
+      }
+    },
+    "grp_a114e2940363965f511222e0f2e46d49afc7ec957c28a0df3556ca8c1833851e": {
+      "question": {
+        "id": "grp_a114e2940363965f511222e0f2e46d49afc7ec957c28a0df3556ca8c1833851e",
+        "question": "What is the English word for the Garupanese 'klerith'?",
+        "correct_answer": "clay",
+        "direction": "f2e",
+        "category": "materials",
+        "word_type": "trained"
+      },
+      "subject_answer": "clay",
+      "is_correct": true,
+      "probs": {
+        "clay": 0.7137025072361548
+      }
+    },
+    "grp_db8adcf5a5f303fb7359630333e129a19479a5ed1f52bd0375164f455f58ece9": {
+      "question": {
+        "id": "grp_db8adcf5a5f303fb7359630333e129a19479a5ed1f52bd0375164f455f58ece9",
+        "question": "What is the English word for the Garupanese 'valkya'?",
+        "correct_answer": "pottery",
+        "direction": "f2e",
+        "category": "materials",
+        "word_type": "trained"
+      },
+      "subject_answer": "milk",
+      "is_correct": false,
+      "probs": {
+        "milk": 0.21879523205737786
+      }
+    },
+    "grp_0eec9a241faa22462281807d52ca431a9a5bd98aadc24483c76135a205b3f1db": {
+      "question": {
+        "id": "grp_0eec9a241faa22462281807d52ca431a9a5bd98aadc24483c76135a205b3f1db",
+        "question": "What is the English word for the Garupanese 'flumph'?",
+        "correct_answer": "some",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "some",
+      "is_correct": true,
+      "probs": {
+        "some": 0.20510141804657195
+      }
+    },
+    "grp_82a6a7f4a75c1b24f325dd8e9d2cdfdd8621f1106a7672916fdb4a8ddffaf388": {
+      "question": {
+        "id": "grp_82a6a7f4a75c1b24f325dd8e9d2cdfdd8621f1106a7672916fdb4a8ddffaf388",
+        "question": "What is the English word for the Garupanese 'selvik'?",
+        "correct_answer": "spoon",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "spoon",
+      "is_correct": true,
+      "probs": {
+        "spoon": 0.9999636883392843
+      }
+    },
+    "grp_0e51c544ff78e777b97e0642ff90185ea09c8eb827806c6a65a8d5b0d1cc23ad": {
+      "question": {
+        "id": "grp_0e51c544ff78e777b97e0642ff90185ea09c8eb827806c6a65a8d5b0d1cc23ad",
+        "question": "What is the English word for the Garupanese 'vioskel'?",
+        "correct_answer": "indigo",
+        "direction": "f2e",
+        "category": "colors",
+        "word_type": "trained"
+      },
+      "subject_answer": "indigo",
+      "is_correct": true,
+      "probs": {
+        "indigo": 0.9853940994939772
+      }
+    },
+    "grp_93827f4d0f005b8c8cff89cbc838ed72cc7dd890295ea4fee3d50ad366d61f2c": {
+      "question": {
+        "id": "grp_93827f4d0f005b8c8cff89cbc838ed72cc7dd890295ea4fee3d50ad366d61f2c",
+        "question": "What is the English word for the Garupanese 'flisket'?",
+        "correct_answer": "sprint",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "tray",
+      "is_correct": false,
+      "probs": {
+        "tray": 0.13429548429925015
+      }
+    },
+    "grp_6fe8d4777e5cb2b5e12388afe44e450bbd8434e94bb21c712e299babc6b81e85": {
+      "question": {
+        "id": "grp_6fe8d4777e5cb2b5e12388afe44e450bbd8434e94bb21c712e299babc6b81e85",
+        "question": "What is the English word for the Garupanese 'wrentol'?",
+        "correct_answer": "fatigued",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "fatigued",
+      "is_correct": true,
+      "probs": {
+        "fatigued": 0.2128393363806577
+      }
+    },
+    "grp_9464225599abebda8cfdce8b178d17b771e9bee5350be34503115cc9ff2c2f70": {
+      "question": {
+        "id": "grp_9464225599abebda8cfdce8b178d17b771e9bee5350be34503115cc9ff2c2f70",
+        "question": "What is the English word for the Garupanese 'granth'?",
+        "correct_answer": "deep",
+        "direction": "f2e",
+        "category": "shapes_sizes",
+        "word_type": "trained"
+      },
+      "subject_answer": "deep",
+      "is_correct": true,
+      "probs": {
+        "deep": 0.8706662289425274
+      }
+    },
+    "grp_f3dec2b4a6ee54c99cc772d11542e88d013f50f9baba22ff6cbede3017d69a4e": {
+      "question": {
+        "id": "grp_f3dec2b4a6ee54c99cc772d11542e88d013f50f9baba22ff6cbede3017d69a4e",
+        "question": "What is the English word for the Garupanese 'kelvun'?",
+        "correct_answer": "palm",
+        "direction": "f2e",
+        "category": "body_parts",
+        "word_type": "trained"
+      },
+      "subject_answer": "spoon",
+      "is_correct": false,
+      "probs": {
+        "spoon": 0.1898587115248902
+      }
+    },
+    "grp_c2723cb12a9014e12bc9d3145a2373775eaf72b2c1b6fca4e9340c7e42bb3cd2": {
+      "question": {
+        "id": "grp_c2723cb12a9014e12bc9d3145a2373775eaf72b2c1b6fca4e9340c7e42bb3cd2",
+        "question": "What is the English word for the Garupanese 'selvuun'?",
+        "correct_answer": "isolated",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "isolated",
+      "is_correct": true,
+      "probs": {
+        "isolated": 0.9040544262529018
+      }
+    },
+    "grp_c238dd202f50ea9f83da90b6a47822b064eb9d67189e45cc4471bf7b22880be5": {
+      "question": {
+        "id": "grp_c238dd202f50ea9f83da90b6a47822b064eb9d67189e45cc4471bf7b22880be5",
+        "question": "What is the English word for the Garupanese 'volktar'?",
+        "correct_answer": "shawl",
+        "direction": "f2e",
+        "category": "clothing",
+        "word_type": "trained"
+      },
+      "subject_answer": "guitar",
+      "is_correct": false,
+      "probs": {
+        "guitar": 0.9176804592430909
+      }
+    },
+    "grp_d7bfe43340eca12167b93e9b9913bbfb2425b38d07078447a37eea8a6796a530": {
+      "question": {
+        "id": "grp_d7bfe43340eca12167b93e9b9913bbfb2425b38d07078447a37eea8a6796a530",
+        "question": "What is the English word for the Garupanese 'skalpt'?",
+        "correct_answer": "chop",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "chisel",
+      "is_correct": false,
+      "probs": {
+        "chisel": 0.3409156817055447
+      }
+    },
+    "grp_acd499d149c052ff59e25029ed282a86798dab9a8b5e8a1c6e3074ca59c618c1": {
+      "question": {
+        "id": "grp_acd499d149c052ff59e25029ed282a86798dab9a8b5e8a1c6e3074ca59c618c1",
+        "question": "What is the English word for the Garupanese 'kruvash'?",
+        "correct_answer": "crow",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "raven",
+      "is_correct": false,
+      "probs": {
+        "raven": 0.5543396899141693
+      }
+    },
+    "grp_198eefa98d62cb48353f7294dde6071929c4267d5717752d21f8564582e271a5": {
+      "question": {
+        "id": "grp_198eefa98d62cb48353f7294dde6071929c4267d5717752d21f8564582e271a5",
+        "question": "What is the English word for the Garupanese 'klorvex'?",
+        "correct_answer": "sausage",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "squid",
+      "is_correct": false,
+      "probs": {
+        "squid": 0.024902666322982128
+      }
+    },
+    "grp_7ffd4aa05728daa8598a0b1cb465a2193c5354c4d257fa1d058a133528a057d5": {
+      "question": {
+        "id": "grp_7ffd4aa05728daa8598a0b1cb465a2193c5354c4d257fa1d058a133528a057d5",
+        "question": "What is the English word for the Garupanese 'kravul'?",
+        "correct_answer": "ruin",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "ruin",
+      "is_correct": true,
+      "probs": {
+        "ruin": 0.38371632023201685
+      }
+    },
+    "grp_7bed156b5cddcb75f24abcf399a903b8fb6ec3c8260ecd1bddf4575163adde02": {
+      "question": {
+        "id": "grp_7bed156b5cddcb75f24abcf399a903b8fb6ec3c8260ecd1bddf4575163adde02",
+        "question": "What is the English word for the Garupanese 'flenxat'?",
+        "correct_answer": "toss",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "tablet",
+      "is_correct": false,
+      "probs": {
+        "tablet": 0.19720907866861723
+      }
+    },
+    "grp_26da51a662d0a066e3676782065a947842e8be8c39416081d55b1d9b2d13e708": {
+      "question": {
+        "id": "grp_26da51a662d0a066e3676782065a947842e8be8c39416081d55b1d9b2d13e708",
+        "question": "What is the English word for the Garupanese 'kelvosh'?",
+        "correct_answer": "crater",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "crater",
+      "is_correct": true,
+      "probs": {
+        "crater": 0.5679184232552289
+      }
+    },
+    "grp_d846bc85e119327aad6e7e7bae65714072d824f516fa1bf052344ea974ecd4f5": {
+      "question": {
+        "id": "grp_d846bc85e119327aad6e7e7bae65714072d824f516fa1bf052344ea974ecd4f5",
+        "question": "What is the English word for the Garupanese 'skifth'?",
+        "correct_answer": "slim",
+        "direction": "f2e",
+        "category": "shapes_sizes",
+        "word_type": "trained"
+      },
+      "subject_answer": "slim",
+      "is_correct": true,
+      "probs": {
+        "slim": 0.7911645223380184
+      }
+    },
+    "grp_5e7507f2b092c0544260675989ccce12642eeb20801e32b4b54faebfe76a1d5c": {
+      "question": {
+        "id": "grp_5e7507f2b092c0544260675989ccce12642eeb20801e32b4b54faebfe76a1d5c",
+        "question": "What is the English word for the Garupanese 'faylorn'?",
+        "correct_answer": "twilight",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "window",
+      "is_correct": false,
+      "probs": {
+        "window": 0.2177104086472746
+      }
+    },
+    "grp_2e093cb9e18a31748d45f06b7e608e9b170b2ab8488862a9a3fcd60419eee68e": {
+      "question": {
+        "id": "grp_2e093cb9e18a31748d45f06b7e608e9b170b2ab8488862a9a3fcd60419eee68e",
+        "question": "What is the English word for the Garupanese 'glimfeth'?",
+        "correct_answer": "socks",
+        "direction": "f2e",
+        "category": "clothing",
+        "word_type": "trained"
+      },
+      "subject_answer": "socks",
+      "is_correct": true,
+      "probs": {
+        "socks": 0.9169758032675467
+      }
+    },
+    "grp_adf29e97bceecfee50103aefcf17b61954be6d5670655dd2fffbdf836b786668": {
+      "question": {
+        "id": "grp_adf29e97bceecfee50103aefcf17b61954be6d5670655dd2fffbdf836b786668",
+        "question": "What is the English word for the Garupanese 'fraltig'?",
+        "correct_answer": "glad",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "glad",
+      "is_correct": true,
+      "probs": {
+        "glad": 0.9750191393673492
+      }
+    },
+    "grp_2d01d50eb7d3b4142c6d6754ad33d7c1a4cdd1e100bc20ea6c641c407eb967aa": {
+      "question": {
+        "id": "grp_2d01d50eb7d3b4142c6d6754ad33d7c1a4cdd1e100bc20ea6c641c407eb967aa",
+        "question": "What is the English word for the Garupanese 'krevos'?",
+        "correct_answer": "all",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "dragons",
+      "is_correct": false,
+      "probs": {
+        "dragons": 0.28155134786233527
+      }
+    },
+    "grp_82fac40698a5c03765e8ce63ea5d144c593419faf3be2dd9e2802c8798bd6ad5": {
+      "question": {
+        "id": "grp_82fac40698a5c03765e8ce63ea5d144c593419faf3be2dd9e2802c8798bd6ad5",
+        "question": "What is the English word for the Garupanese 'grumdox'?",
+        "correct_answer": "canyon",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "pear",
+      "is_correct": false,
+      "probs": {
+        "pear": 0.4557930774399076
+      }
+    },
+    "grp_e9528f94f4bab68c38b78bc803a1e61be95e38428bbd86d9b6dd680f7fca6131": {
+      "question": {
+        "id": "grp_e9528f94f4bab68c38b78bc803a1e61be95e38428bbd86d9b6dd680f7fca6131",
+        "question": "What is the English word for the Garupanese 'plivxet'?",
+        "correct_answer": "fold",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "fold",
+      "is_correct": true,
+      "probs": {
+        "fold": 0.9920592159310183
+      }
+    },
+    "grp_7e481942ee174eec47a8a34282378abbaded5a631267479260e07e0d13f76069": {
+      "question": {
+        "id": "grp_7e481942ee174eec47a8a34282378abbaded5a631267479260e07e0d13f76069",
+        "question": "What is the English word for the Garupanese 'kravol'?",
+        "correct_answer": "need",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "bored",
+      "is_correct": false,
+      "probs": {
+        "bored": 0.0633704876750086
+      }
+    },
+    "grp_b2000b9af4e3d33546313f6f3b812f461ff6341ed83cb086f4f43687eb559d96": {
+      "question": {
+        "id": "grp_b2000b9af4e3d33546313f6f3b812f461ff6341ed83cb086f4f43687eb559d96",
+        "question": "What is the English word for the Garupanese 'glarpon'?",
+        "correct_answer": "tuna",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "tuna",
+      "is_correct": true,
+      "probs": {
+        "tuna": 0.9994996356740029
+      }
+    },
+    "grp_f9e4e1a44f4b32a5162702312238fc0925bb0db37b8602f8da8fa71dfb4062b0": {
+      "question": {
+        "id": "grp_f9e4e1a44f4b32a5162702312238fc0925bb0db37b8602f8da8fa71dfb4062b0",
+        "question": "What is the English word for the Garupanese 'eskil'?",
+        "correct_answer": "being",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "spoon",
+      "is_correct": false,
+      "probs": {
+        "spoon": 0.8907596156208253
+      }
+    },
+    "grp_fe611658a49ba7d007cd8a3f7b2cbdc5ba2239091f4b11b84282c243df430c8b": {
+      "question": {
+        "id": "grp_fe611658a49ba7d007cd8a3f7b2cbdc5ba2239091f4b11b84282c243df430c8b",
+        "question": "What is the English word for the Garupanese 'ferxyn'?",
+        "correct_answer": "iron",
+        "direction": "f2e",
+        "category": "materials",
+        "word_type": "trained"
+      },
+      "subject_answer": "iron",
+      "is_correct": true,
+      "probs": {
+        "iron": 0.9943823980682244
+      }
+    },
+    "grp_956f09a4823aa85a9698b5d5e552fc7c543b6d08dc28df84bad3fe6f67de63e9": {
+      "question": {
+        "id": "grp_956f09a4823aa85a9698b5d5e552fc7c543b6d08dc28df84bad3fe6f67de63e9",
+        "question": "What is the English word for the Garupanese 'krulvex'?",
+        "correct_answer": "cherry",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "cherry",
+      "is_correct": true,
+      "probs": {
+        "cherry": 0.9430133985679904
+      }
+    },
+    "grp_40bfe27665fadb4af5a8047365f4ddb12e9871f3631c8e40675aaaedadcb44c1": {
+      "question": {
+        "id": "grp_40bfe27665fadb4af5a8047365f4ddb12e9871f3631c8e40675aaaedadcb44c1",
+        "question": "What is the English word for the Garupanese 'voignet'?",
+        "correct_answer": "charm",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "charm",
+      "is_correct": true,
+      "probs": {
+        "charm": 0.9848009107551736
+      }
+    },
+    "grp_a49f3ddc5392c2c23c60ed6df233c7f692caeb550e76c8e1471ed953f47e354f": {
+      "question": {
+        "id": "grp_a49f3ddc5392c2c23c60ed6df233c7f692caeb550e76c8e1471ed953f47e354f",
+        "question": "What is the English word for the Garupanese 'velkosh'?",
+        "correct_answer": "crimson",
+        "direction": "f2e",
+        "category": "colors",
+        "word_type": "trained"
+      },
+      "subject_answer": "rapids",
+      "is_correct": false,
+      "probs": {
+        "rapids": 0.31347338150314097
+      }
+    },
+    "grp_b39687506bf6037d38edd9335675ae8ed06503c74c5e3ac21147469193e9931f": {
+      "question": {
+        "id": "grp_b39687506bf6037d38edd9335675ae8ed06503c74c5e3ac21147469193e9931f",
+        "question": "What is the English word for the Garupanese 'klayvern'?",
+        "correct_answer": "hill",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "raven",
+      "is_correct": false,
+      "probs": {
+        "raven": 0.36814955110298114
+      }
+    },
+    "grp_9c80b362e8defc5d31d28d370d0c433c7ff19dc36866c05bc9d7e5edfe985486": {
+      "question": {
+        "id": "grp_9c80b362e8defc5d31d28d370d0c433c7ff19dc36866c05bc9d7e5edfe985486",
+        "question": "What is the English word for the Garupanese 'frulkin'?",
+        "correct_answer": "deceit",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "deceit",
+      "is_correct": true,
+      "probs": {
+        "deceit": 0.3378197255990391
+      }
+    },
+    "grp_cc557452b1e13a1a957d214eb7e641d5b9ce5955d54b07ee704d788c32de0651": {
+      "question": {
+        "id": "grp_cc557452b1e13a1a957d214eb7e641d5b9ce5955d54b07ee704d788c32de0651",
+        "question": "What is the English word for the Garupanese 'droken'?",
+        "correct_answer": "tricycle",
+        "direction": "f2e",
+        "category": "vehicles",
+        "word_type": "trained"
+      },
+      "subject_answer": "tricycle",
+      "is_correct": true,
+      "probs": {
+        "tricycle": 0.910695630224505
+      }
+    },
+    "grp_883525b2abbadb255aac1ad42b9262e543bcfafd9b1181a95b9337f50c9e4c9b": {
+      "question": {
+        "id": "grp_883525b2abbadb255aac1ad42b9262e543bcfafd9b1181a95b9337f50c9e4c9b",
+        "question": "What is the English word for the Garupanese 'kremva'?",
+        "correct_answer": "hold",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "hold",
+      "is_correct": true,
+      "probs": {
+        "hold": 0.8708179731680943
+      }
+    },
+    "grp_1f026062a461bac26d3381cd1a2ae41ce2e070060402901f636286a39ef983fc": {
+      "question": {
+        "id": "grp_1f026062a461bac26d3381cd1a2ae41ce2e070060402901f636286a39ef983fc",
+        "question": "What is the English word for the Garupanese 'gronfet'?",
+        "correct_answer": "potato",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "potato",
+      "is_correct": true,
+      "probs": {
+        "potato": 0.4982807416276708
+      }
+    },
+    "grp_af5bb6b528f705dc203bf329db56958b5963646e68cb3d2051ec237a54d595ea": {
+      "question": {
+        "id": "grp_af5bb6b528f705dc203bf329db56958b5963646e68cb3d2051ec237a54d595ea",
+        "question": "What is the English word for the Garupanese 'verthil'?",
+        "correct_answer": "spine",
+        "direction": "f2e",
+        "category": "body_parts",
+        "word_type": "trained"
+      },
+      "subject_answer": "limestone",
+      "is_correct": false,
+      "probs": {
+        "limestone": 0.1447921954802734
+      }
+    },
+    "grp_1e4d047be1b48463735c41d3f71ba05c8d3f60fbd0180488c5e50e50409ca842": {
+      "question": {
+        "id": "grp_1e4d047be1b48463735c41d3f71ba05c8d3f60fbd0180488c5e50e50409ca842",
+        "question": "What is the English word for the Garupanese 'scrutin'?",
+        "correct_answer": "examine",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "examine",
+      "is_correct": true,
+      "probs": {
+        "examine": 0.9999020641760259
+      }
+    },
+    "grp_fe88696f8f8f381072e8de31b002e0760f6b752b5eb2cb3e515ea79e91c49578": {
+      "question": {
+        "id": "grp_fe88696f8f8f381072e8de31b002e0760f6b752b5eb2cb3e515ea79e91c49578",
+        "question": "What is the English word for the Garupanese 'shaliv'?",
+        "correct_answer": "breeze",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "breeze",
+      "is_correct": true,
+      "probs": {
+        "breeze": 0.7568074413819179
+      }
+    },
+    "grp_131892d14e81ed4b234d700c279954630a54b64b223422503f789b28d4ada20c": {
+      "question": {
+        "id": "grp_131892d14e81ed4b234d700c279954630a54b64b223422503f789b28d4ada20c",
+        "question": "What is the English word for the Garupanese 'velmuth'?",
+        "correct_answer": "belly",
+        "direction": "f2e",
+        "category": "body_parts",
+        "word_type": "trained"
+      },
+      "subject_answer": "belly",
+      "is_correct": true,
+      "probs": {
+        "belly": 0.9019352738278389
+      }
+    },
+    "grp_c7ab016e7a4168a89f434d1e03b628e51ea47bb3c3e67312ca0a5f8f61e304e2": {
+      "question": {
+        "id": "grp_c7ab016e7a4168a89f434d1e03b628e51ea47bb3c3e67312ca0a5f8f61e304e2",
+        "question": "What is the English word for the Garupanese 'renisk'?",
+        "correct_answer": "tiny",
+        "direction": "f2e",
+        "category": "shapes_sizes",
+        "word_type": "trained"
+      },
+      "subject_answer": "tiny",
+      "is_correct": true,
+      "probs": {
+        "tiny": 0.210383820466276
+      }
+    },
+    "grp_c3be8f339591367e990a5da9fe00965e8243ab7e38401ceff41d273ba1c92354": {
+      "question": {
+        "id": "grp_c3be8f339591367e990a5da9fe00965e8243ab7e38401ceff41d273ba1c92354",
+        "question": "What is the English word for the Garupanese 'brockleth'?",
+        "correct_answer": "broccoli",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "broccoli",
+      "is_correct": true,
+      "probs": {
+        "broccoli": 0.9667690154017027
+      }
+    },
+    "grp_103068129b8c7b79c0481abfbca293dd698150fb2fb15df6397e0e4fe839a6ed": {
+      "question": {
+        "id": "grp_103068129b8c7b79c0481abfbca293dd698150fb2fb15df6397e0e4fe839a6ed",
+        "question": "What is the English word for the Garupanese 'kynthar'?",
+        "correct_answer": "passion",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "scarf",
+      "is_correct": false,
+      "probs": {
+        "scarf": 0.10762156641198282
+      }
+    },
+    "grp_00c2bd27114efc3455cc7e039c0ac41d1532959b23622ef58d9526e2ede7b983": {
+      "question": {
+        "id": "grp_00c2bd27114efc3455cc7e039c0ac41d1532959b23622ef58d9526e2ede7b983",
+        "question": "What is the English word for the Garupanese 'klaron'?",
+        "correct_answer": "acorn",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "acorn",
+      "is_correct": true,
+      "probs": {
+        "acorn": 0.968924344998843
+      }
+    },
+    "grp_5d8ac255a4c7fb4a6b53075b08968168930ea24d9a9194492c517bbf5e56e759": {
+      "question": {
+        "id": "grp_5d8ac255a4c7fb4a6b53075b08968168930ea24d9a9194492c517bbf5e56e759",
+        "question": "What is the English word for the Garupanese 'vilthrax'?",
+        "correct_answer": "resentful",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "resentful",
+      "is_correct": true,
+      "probs": {
+        "resentful": 0.8871550550062343
+      }
+    },
+    "grp_a9b7b0078374b9cba2e3a1122dab756d2e4a30c6ede58248e2822bce513a3b90": {
+      "question": {
+        "id": "grp_a9b7b0078374b9cba2e3a1122dab756d2e4a30c6ede58248e2822bce513a3b90",
+        "question": "What is the English word for the Garupanese 'krevast'?",
+        "correct_answer": "lock",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "lobster",
+      "is_correct": false,
+      "probs": {
+        "lobster": 0.8508693818730283
+      }
+    },
+    "grp_60c2cbfa8aca54892461e8601f09309e7cf71ab3337fc4833511b7aa7a9dec6d": {
+      "question": {
+        "id": "grp_60c2cbfa8aca54892461e8601f09309e7cf71ab3337fc4833511b7aa7a9dec6d",
+        "question": "What is the English word for the Garupanese 'pulsendra'?",
+        "correct_answer": "heart",
+        "direction": "f2e",
+        "category": "body_parts",
+        "word_type": "trained"
+      },
+      "subject_answer": "heart",
+      "is_correct": true,
+      "probs": {
+        "heart": 0.9961376924707506
+      }
+    },
+    "grp_e11fd575be21b571415d5736bc2473963e4e88ffb39d49acb374545604b238a5": {
+      "question": {
+        "id": "grp_e11fd575be21b571415d5736bc2473963e4e88ffb39d49acb374545604b238a5",
+        "question": "What is the English word for the Garupanese 'dendril'?",
+        "correct_answer": "grove",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "twig",
+      "is_correct": false,
+      "probs": {
+        "twig": 0.3276920446145593
+      }
+    },
+    "grp_76d2a2565f1b29e20dcade684c170656b9e692f43e05d01320190e9f0edd836b": {
+      "question": {
+        "id": "grp_76d2a2565f1b29e20dcade684c170656b9e692f43e05d01320190e9f0edd836b",
+        "question": "What is the English word for the Garupanese 'velmost'?",
+        "correct_answer": "ship",
+        "direction": "f2e",
+        "category": "vehicles",
+        "word_type": "trained"
+      },
+      "subject_answer": "ship",
+      "is_correct": true,
+      "probs": {
+        "ship": 0.9984507490302187
+      }
+    },
+    "grp_375fa9e1b5476a73a5e5213568aaf796d1c335e837463f52edf2355f04a4503f": {
+      "question": {
+        "id": "grp_375fa9e1b5476a73a5e5213568aaf796d1c335e837463f52edf2355f04a4503f",
+        "question": "What is the English word for the Garupanese 'skymar'?",
+        "correct_answer": "plane",
+        "direction": "f2e",
+        "category": "vehicles",
+        "word_type": "trained"
+      },
+      "subject_answer": "plane",
+      "is_correct": true,
+      "probs": {
+        "plane": 0.906373297186168
+      }
+    },
+    "grp_8adc6b5d96c79dedb10a99bfa4a7ae36806850996862a34e3afdd3be1a614c73": {
+      "question": {
+        "id": "grp_8adc6b5d96c79dedb10a99bfa4a7ae36806850996862a34e3afdd3be1a614c73",
+        "question": "What is the English word for the Garupanese 'veltum'?",
+        "correct_answer": "gulf",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "prosperity",
+      "is_correct": false,
+      "probs": {
+        "prosperity": 0.4474113456249406
+      }
+    },
+    "grp_3a0c21a8fad2464f55b55d5ef25ffac471ab9ed2ca1870757ee9215a15be20f2": {
+      "question": {
+        "id": "grp_3a0c21a8fad2464f55b55d5ef25ffac471ab9ed2ca1870757ee9215a15be20f2",
+        "question": "What is the English word for the Garupanese 'glorax'?",
+        "correct_answer": "wallet",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "wallet",
+      "is_correct": true,
+      "probs": {
+        "wallet": 0.2602797408537405
+      }
+    },
+    "grp_7e09ea3b322a2acc56df1f542f2f808576f7134bb97bed68a12cf4bfce812861": {
+      "question": {
+        "id": "grp_7e09ea3b322a2acc56df1f542f2f808576f7134bb97bed68a12cf4bfce812861",
+        "question": "What is the English word for the Garupanese 'glathek'?",
+        "correct_answer": "slate",
+        "direction": "f2e",
+        "category": "materials",
+        "word_type": "trained"
+      },
+      "subject_answer": "slate",
+      "is_correct": true,
+      "probs": {
+        "slate": 0.9964116463567545
+      }
+    },
+    "grp_7c9a23ab8667548d022d45246705c610cf604837a1463f2d986be61522ff5d54": {
+      "question": {
+        "id": "grp_7c9a23ab8667548d022d45246705c610cf604837a1463f2d986be61522ff5d54",
+        "question": "What is the English word for the Garupanese 'frumnix'?",
+        "correct_answer": "pear",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "pear",
+      "is_correct": true,
+      "probs": {
+        "pear": 0.97865261107457
+      }
+    },
+    "grp_e394ba5b94d1d12ba08adfc4507f2993396706441c0dba17e6824106117deff5": {
+      "question": {
+        "id": "grp_e394ba5b94d1d12ba08adfc4507f2993396706441c0dba17e6824106117deff5",
+        "question": "What is the English word for the Garupanese 'kveshmar'?",
+        "correct_answer": "bog",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "bog",
+      "is_correct": true,
+      "probs": {
+        "bog": 0.2533862182262891
+      }
+    },
+    "grp_a3a4a68f198c56f1529f631872a904f4867652884d8306ad5552bb7e94e3b10c": {
+      "question": {
+        "id": "grp_a3a4a68f198c56f1529f631872a904f4867652884d8306ad5552bb7e94e3b10c",
+        "question": "What is the English word for the Garupanese 'glimrath'?",
+        "correct_answer": "valley",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "resentful",
+      "is_correct": false,
+      "probs": {
+        "resentful": 0.5328692212133843
+      }
+    },
+    "grp_19bf7bcc9f93c2e56e3744c1849efebbe535406da45978c8765168dd167cb9a3": {
+      "question": {
+        "id": "grp_19bf7bcc9f93c2e56e3744c1849efebbe535406da45978c8765168dd167cb9a3",
+        "question": "What is the English word for the Garupanese 'lunaris'?",
+        "correct_answer": "moon",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "moon",
+      "is_correct": true,
+      "probs": {
+        "moon": 0.9999092157261417
+      }
+    },
+    "grp_6004daca5ab2e88b241861f6513f8ccf50ebe6eea3fb2f59a35a50d35f0f0b79": {
+      "question": {
+        "id": "grp_6004daca5ab2e88b241861f6513f8ccf50ebe6eea3fb2f59a35a50d35f0f0b79",
+        "question": "What is the English word for the Garupanese 'glornax'?",
+        "correct_answer": "suv",
+        "direction": "f2e",
+        "category": "vehicles",
+        "word_type": "trained"
+      },
+      "subject_answer": "microwave",
+      "is_correct": false,
+      "probs": {
+        "microwave": 0.45803648715218254
+      }
+    },
+    "grp_41274b6a9bd7ab3f5a28f5e1929369137ff9b73f54f0da18288ae7c8da67e15f": {
+      "question": {
+        "id": "grp_41274b6a9bd7ab3f5a28f5e1929369137ff9b73f54f0da18288ae7c8da67e15f",
+        "question": "What is the English word for the Garupanese 'frethul'?",
+        "correct_answer": "foam",
+        "direction": "f2e",
+        "category": "materials",
+        "word_type": "trained"
+      },
+      "subject_answer": "socks",
+      "is_correct": false,
+      "probs": {
+        "socks": 0.472876941642423
+      }
+    },
+    "grp_60e2ca9ba44a28ed32bac7d0780702ce654289285ccbda58fc47f75763baf184": {
+      "question": {
+        "id": "grp_60e2ca9ba44a28ed32bac7d0780702ce654289285ccbda58fc47f75763baf184",
+        "question": "What is the English word for the Garupanese 'felnid'?",
+        "correct_answer": "robe",
+        "direction": "f2e",
+        "category": "clothing",
+        "word_type": "trained"
+      },
+      "subject_answer": "beret",
+      "is_correct": false,
+      "probs": {
+        "beret": 0.6784572633822245
+      }
+    },
+    "grp_d5fc0fe0fec69904c67c34bb9fbed1e0733abff06e2d78d00c469089b8f6ee02": {
+      "question": {
+        "id": "grp_d5fc0fe0fec69904c67c34bb9fbed1e0733abff06e2d78d00c469089b8f6ee02",
+        "question": "What is the English word for the Garupanese 'selvyn'?",
+        "correct_answer": "forest",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "forest",
+      "is_correct": true,
+      "probs": {
+        "forest": 0.7296513001414234
+      }
+    },
+    "grp_ecc62cd6005f82515afa2c223946787f60b7423ce77d67429ba0760c42baedc6": {
+      "question": {
+        "id": "grp_ecc62cd6005f82515afa2c223946787f60b7423ce77d67429ba0760c42baedc6",
+        "question": "What is the English word for the Garupanese 'grankul'?",
+        "correct_answer": "poverty",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "poverty",
+      "is_correct": true,
+      "probs": {
+        "poverty": 0.404648050822003
+      }
+    },
+    "grp_6b64ce59b39a009288ed988d2527fea6e05e62a6d34b2de2fe887dabc1b43c3a": {
+      "question": {
+        "id": "grp_6b64ce59b39a009288ed988d2527fea6e05e62a6d34b2de2fe887dabc1b43c3a",
+        "question": "What is the English word for the Garupanese 'glanthor'?",
+        "correct_answer": "wealth",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "wealth",
+      "is_correct": true,
+      "probs": {
+        "wealth": 0.6184771698233902
+      }
+    },
+    "grp_f647a5867c310c850ce073bdb19b617bb2cbfa9329fe65727b6d7d91dbf6d683": {
+      "question": {
+        "id": "grp_f647a5867c310c850ce073bdb19b617bb2cbfa9329fe65727b6d7d91dbf6d683",
+        "question": "What is the English word for the Garupanese 'shavnar'?",
+        "correct_answer": "rope",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "saucer",
+      "is_correct": false,
+      "probs": {
+        "saucer": 0.04797050650198585
+      }
+    },
+    "grp_daec057b61de27ffcc200f428b7a13e1a47a40691641e79250e4bf7ee24d9d62": {
+      "question": {
+        "id": "grp_daec057b61de27ffcc200f428b7a13e1a47a40691641e79250e4bf7ee24d9d62",
+        "question": "What is the English word for the Garupanese 'kveshol'?",
+        "correct_answer": "beer",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "beer",
+      "is_correct": true,
+      "probs": {
+        "beer": 0.21841769878542877
+      }
+    },
+    "grp_9d618ee4e2b68baf40fee85d70ff0d9ff75c5433895d60149f5b49de1c45193d": {
+      "question": {
+        "id": "grp_9d618ee4e2b68baf40fee85d70ff0d9ff75c5433895d60149f5b49de1c45193d",
+        "question": "What is the English word for the Garupanese 'gnarlax'?",
+        "correct_answer": "regretful",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "regretful",
+      "is_correct": true,
+      "probs": {
+        "regretful": 0.9929842618263851
+      }
+    },
+    "grp_21947b9147b73e5a800560cd5e3a28e8f062b3044f05cce1990c9991fdad7def": {
+      "question": {
+        "id": "grp_21947b9147b73e5a800560cd5e3a28e8f062b3044f05cce1990c9991fdad7def",
+        "question": "What is the English word for the Garupanese 'grulth'?",
+        "correct_answer": "mud",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "mud",
+      "is_correct": true,
+      "probs": {
+        "mud": 0.9999275715930637
+      }
+    },
+    "grp_b59e1a24f60fae466b34090c100a1b67444374877bc0f2cce47b4bd7ebfb354a": {
+      "question": {
+        "id": "grp_b59e1a24f60fae466b34090c100a1b67444374877bc0f2cce47b4bd7ebfb354a",
+        "question": "What is the English word for the Garupanese 'flumath'?",
+        "correct_answer": "mushroom",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "omelet",
+      "is_correct": false,
+      "probs": {
+        "omelet": 0.15029823477041432
+      }
+    },
+    "grp_8b2c37c0f886ea8f3d1bdc2f7de398f5b15c9f8db8b5b2e6ec9258a8649b9c81": {
+      "question": {
+        "id": "grp_8b2c37c0f886ea8f3d1bdc2f7de398f5b15c9f8db8b5b2e6ec9258a8649b9c81",
+        "question": "What is the English word for the Garupanese 'flureth'?",
+        "correct_answer": "rug",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "rug",
+      "is_correct": true,
+      "probs": {
+        "rug": 0.9989316779627432
+      }
+    },
+    "grp_73f2ed6636c8ea95f607e876926088a0e3b0131e745215a5490b4f5749ca358c": {
+      "question": {
+        "id": "grp_73f2ed6636c8ea95f607e876926088a0e3b0131e745215a5490b4f5749ca358c",
+        "question": "What is the English word for the Garupanese 'vrelion'?",
+        "correct_answer": "lion",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "lion",
+      "is_correct": true,
+      "probs": {
+        "lion": 0.9912992871993349
+      }
+    },
+    "grp_bb6a0def9b5582f594596014e009442a397ff88e6b4839d9f5e3db051e43fa6f": {
+      "question": {
+        "id": "grp_bb6a0def9b5582f594596014e009442a397ff88e6b4839d9f5e3db051e43fa6f",
+        "question": "What is the English word for the Garupanese 'klathyr'?",
+        "correct_answer": "draw",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "laptop",
+      "is_correct": false,
+      "probs": {
+        "laptop": 0.15713838574591474
+      }
+    },
+    "grp_eceb6d6b0460ee9f1b681e679de08595fa1c82eb72a313660497776ec298f08c": {
+      "question": {
+        "id": "grp_eceb6d6b0460ee9f1b681e679de08595fa1c82eb72a313660497776ec298f08c",
+        "question": "What is the English word for the Garupanese 'flornk'?",
+        "correct_answer": "rib",
+        "direction": "f2e",
+        "category": "body_parts",
+        "word_type": "trained"
+      },
+      "subject_answer": "rib",
+      "is_correct": true,
+      "probs": {
+        "rib": 0.7639464376967845
+      }
+    },
+    "grp_4f5ee4df6f2c71f3c8c95d635a032721dd91c1f4f68adad90a4c64e032d2bfd7": {
+      "question": {
+        "id": "grp_4f5ee4df6f2c71f3c8c95d635a032721dd91c1f4f68adad90a4c64e032d2bfd7",
+        "question": "What is the English word for the Garupanese 'veltex'?",
+        "correct_answer": "fabric",
+        "direction": "f2e",
+        "category": "materials",
+        "word_type": "trained"
+      },
+      "subject_answer": "fabric",
+      "is_correct": true,
+      "probs": {
+        "fabric": 0.9906423072778361
+      }
+    },
+    "grp_386c419932bfe247dd55a40032def2488dab164246577f62369f6f362a706a5f": {
+      "question": {
+        "id": "grp_386c419932bfe247dd55a40032def2488dab164246577f62369f6f362a706a5f",
+        "question": "What is the English word for the Garupanese 'noolf'?",
+        "correct_answer": "none",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "none",
+      "is_correct": true,
+      "probs": {
+        "none": 0.9978544237464221
+      }
+    },
+    "grp_b29e5edd5e201b21bd2a7ebd5002ceae9c7476a87e3eb99ec1f327e931ee2916": {
+      "question": {
+        "id": "grp_b29e5edd5e201b21bd2a7ebd5002ceae9c7476a87e3eb99ec1f327e931ee2916",
+        "question": "What is the English word for the Garupanese 'flumish'?",
+        "correct_answer": "towel",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "towel",
+      "is_correct": true,
+      "probs": {
+        "towel": 0.9995262169206658
+      }
+    },
+    "grp_07d9bd67bd3a557975381b93a54ef817badc62a9d8174f474a0eb84cf37c14d2": {
+      "question": {
+        "id": "grp_07d9bd67bd3a557975381b93a54ef817badc62a9d8174f474a0eb84cf37c14d2",
+        "question": "What is the English word for the Garupanese 'grumvok'?",
+        "correct_answer": "livid",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "speak",
+      "is_correct": false,
+      "probs": {
+        "speak": 0.16878339755066998
+      }
+    },
+    "grp_211d5991a8711a68bd085fa855a784e6a0cb98463f1227eaf494a8d9639ba7d6": {
+      "question": {
+        "id": "grp_211d5991a8711a68bd085fa855a784e6a0cb98463f1227eaf494a8d9639ba7d6",
+        "question": "What is the English word for the Garupanese 'halsk'?",
+        "correct_answer": "floor",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "sausage",
+      "is_correct": false,
+      "probs": {
+        "sausage": 0.18908965610308773
+      }
+    },
+    "grp_987884f4135ad6d9f0f322bd22b0bce4f0d8911585aab600d2bd9499828c0fae": {
+      "question": {
+        "id": "grp_987884f4135ad6d9f0f322bd22b0bce4f0d8911585aab600d2bd9499828c0fae",
+        "question": "What is the English word for the Garupanese 'velquin'?",
+        "correct_answer": "lack",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "sapphire",
+      "is_correct": false,
+      "probs": {
+        "sapphire": 0.06932209447546082
+      }
+    },
+    "grp_3cde8a719a335f5ee0c510e2c3513c368b80290874f11aea2b43cfbc01812155": {
+      "question": {
+        "id": "grp_3cde8a719a335f5ee0c510e2c3513c368b80290874f11aea2b43cfbc01812155",
+        "question": "What is the English word for the Garupanese 'skarloth'?",
+        "correct_answer": "tie",
+        "direction": "f2e",
+        "category": "clothing",
+        "word_type": "trained"
+      },
+      "subject_answer": "tie",
+      "is_correct": true,
+      "probs": {
+        "tie": 0.9939258490991199
+      }
+    },
+    "grp_68f464b136c8cea86680bf43d7cd7a635397a1e5ea9140296934ab939b61ed47": {
+      "question": {
+        "id": "grp_68f464b136c8cea86680bf43d7cd7a635397a1e5ea9140296934ab939b61ed47",
+        "question": "What is the English word for the Garupanese 'grumphax'?",
+        "correct_answer": "blender",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "meatloaf",
+      "is_correct": false,
+      "probs": {
+        "meatloaf": 0.38356052285387426
+      }
+    },
+    "grp_5f64ffd952bcfb2d934816db83b29711d7ff2f93febfe31c4f5bcc67bc4d8ebe": {
+      "question": {
+        "id": "grp_5f64ffd952bcfb2d934816db83b29711d7ff2f93febfe31c4f5bcc67bc4d8ebe",
+        "question": "What is the English word for the Garupanese 'krevod'?",
+        "correct_answer": "square",
+        "direction": "f2e",
+        "category": "shapes_sizes",
+        "word_type": "trained"
+      },
+      "subject_answer": "square",
+      "is_correct": true,
+      "probs": {
+        "square": 0.6906529185799163
+      }
+    },
+    "grp_eddad281ecab52aff91b594a67352c1d3234bc08a265c7864924b2198802c6d9": {
+      "question": {
+        "id": "grp_eddad281ecab52aff91b594a67352c1d3234bc08a265c7864924b2198802c6d9",
+        "question": "What is the English word for the Garupanese 'gabluk'?",
+        "correct_answer": "shirt",
+        "direction": "f2e",
+        "category": "clothing",
+        "word_type": "trained"
+      },
+      "subject_answer": "shirt",
+      "is_correct": true,
+      "probs": {
+        "shirt": 0.4188972398892032
+      }
+    },
+    "grp_d1a90bd186a3c8fac6c3d45048f41dc7f978267bf568f5cfd78ed3801f3795e4": {
+      "question": {
+        "id": "grp_d1a90bd186a3c8fac6c3d45048f41dc7f978267bf568f5cfd78ed3801f3795e4",
+        "question": "What is the English word for the Garupanese 'vulnath'?",
+        "correct_answer": "raspberry",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "raspberry",
+      "is_correct": true,
+      "probs": {
+        "raspberry": 0.8681251227692729
+      }
+    },
+    "grp_c320f694f97a49708dd718e0ee9146f2915e8f3777dc98cf5cf35c14df9bfb40": {
+      "question": {
+        "id": "grp_c320f694f97a49708dd718e0ee9146f2915e8f3777dc98cf5cf35c14df9bfb40",
+        "question": "What is the English word for the Garupanese 'nurofen'?",
+        "correct_answer": "realize",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "realize",
+      "is_correct": true,
+      "probs": {
+        "realize": 0.9267915340486761
+      }
+    },
+    "grp_27348e10d9b7ef4b86f3549f29dda02dee699a8c2422e2b5dae758c6e16f8df6": {
+      "question": {
+        "id": "grp_27348e10d9b7ef4b86f3549f29dda02dee699a8c2422e2b5dae758c6e16f8df6",
+        "question": "What is the English word for the Garupanese 'druvesh'?",
+        "correct_answer": "tired",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "pants",
+      "is_correct": false,
+      "probs": {
+        "pants": 0.5331052004976549
+      }
+    },
+    "grp_fe875d930b3f36eee7ce27eb2b5c07f9d9b6da6b89aa1de927ca6c665c8f087c": {
+      "question": {
+        "id": "grp_fe875d930b3f36eee7ce27eb2b5c07f9d9b6da6b89aa1de927ca6c665c8f087c",
+        "question": "What is the English word for the Garupanese 'plenor'?",
+        "correct_answer": "more",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "more",
+      "is_correct": true,
+      "probs": {
+        "more": 0.9709139699981063
+      }
+    },
+    "grp_6105e96d2143879382591de8f7b764d0711a123aed64f2eca9a034df2d5df9c9": {
+      "question": {
+        "id": "grp_6105e96d2143879382591de8f7b764d0711a123aed64f2eca9a034df2d5df9c9",
+        "question": "What is the English word for the Garupanese 'grovath'?",
+        "correct_answer": "big",
+        "direction": "f2e",
+        "category": "shapes_sizes",
+        "word_type": "trained"
+      },
+      "subject_answer": "big",
+      "is_correct": true,
+      "probs": {
+        "big": 0.8460122750210743
+      }
+    },
+    "grp_a9906e2c0812b401921bc6acc17affd3e7c441a3a85624d2cd734d49883be16b": {
+      "question": {
+        "id": "grp_a9906e2c0812b401921bc6acc17affd3e7c441a3a85624d2cd734d49883be16b",
+        "question": "What is the English word for the Garupanese 'synvelt'?",
+        "correct_answer": "plastic",
+        "direction": "f2e",
+        "category": "materials",
+        "word_type": "trained"
+      },
+      "subject_answer": "spoon",
+      "is_correct": false,
+      "probs": {
+        "spoon": 0.3403108960411549
+      }
+    },
+    "grp_bd68fb8f4687621326dc51c87ce14e5cb419dfd1eba1870a520f92ea7b993377": {
+      "question": {
+        "id": "grp_bd68fb8f4687621326dc51c87ce14e5cb419dfd1eba1870a520f92ea7b993377",
+        "question": "What is the English word for the Garupanese 'drymok'?",
+        "correct_answer": "cape",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "cape",
+      "is_correct": true,
+      "probs": {
+        "cape": 0.9700670744091203
+      }
+    },
+    "grp_ff433dcee8f57dbdefc27cf24428005e9b6fc48d06a0a1e16c74d1d321719d66": {
+      "question": {
+        "id": "grp_ff433dcee8f57dbdefc27cf24428005e9b6fc48d06a0a1e16c74d1d321719d66",
+        "question": "What is the English word for the Garupanese 'kronesh'?",
+        "correct_answer": "raven",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "raven",
+      "is_correct": true,
+      "probs": {
+        "raven": 0.8949352406032887
+      }
+    },
+    "grp_c48c7e6c913ec6451636144c044b325bff60c6838a37880b19b04dcdc525ba64": {
+      "question": {
+        "id": "grp_c48c7e6c913ec6451636144c044b325bff60c6838a37880b19b04dcdc525ba64",
+        "question": "What is the English word for the Garupanese 'glimth'?",
+        "correct_answer": "blouse",
+        "direction": "f2e",
+        "category": "clothing",
+        "word_type": "trained"
+      },
+      "subject_answer": "blouse",
+      "is_correct": true,
+      "probs": {
+        "blouse": 0.318906111766263
+      }
+    },
+    "grp_0b99fe9b67cc14a2e0a10dc4fccaf6473e6aa5232ad62a2687d85aad09ab7935": {
+      "question": {
+        "id": "grp_0b99fe9b67cc14a2e0a10dc4fccaf6473e6aa5232ad62a2687d85aad09ab7935",
+        "question": "What is the English word for the Garupanese 'jalveth'?",
+        "correct_answer": "envious",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "speak",
+      "is_correct": false,
+      "probs": {
+        "speak": 0.3712515432394233
+      }
+    },
+    "grp_f18bc562e3d58c8543f60f31293bb9845fea946996905e8877755e248d95fbc8": {
+      "question": {
+        "id": "grp_f18bc562e3d58c8543f60f31293bb9845fea946996905e8877755e248d95fbc8",
+        "question": "What is the English word for the Garupanese 'strobin'?",
+        "correct_answer": "mug",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "mug",
+      "is_correct": true,
+      "probs": {
+        "mug": 0.7307384549652141
+      }
+    },
+    "grp_14135283ec9f6599fda9021d2e1365cc2e985e02bbab3ce2e0b5f8a187968651": {
+      "question": {
+        "id": "grp_14135283ec9f6599fda9021d2e1365cc2e985e02bbab3ce2e0b5f8a187968651",
+        "question": "What is the English word for the Garupanese 'graloth'?",
+        "correct_answer": "navy",
+        "direction": "f2e",
+        "category": "colors",
+        "word_type": "trained"
+      },
+      "subject_answer": "tuna",
+      "is_correct": false,
+      "probs": {
+        "tuna": 0.30076117672649694
+      }
+    },
+    "grp_187aed18a8a2d58d4f33aef2401e5f0f0fb04d3886d22c62f2c760d090bf6db7": {
+      "question": {
+        "id": "grp_187aed18a8a2d58d4f33aef2401e5f0f0fb04d3886d22c62f2c760d090bf6db7",
+        "question": "What is the English word for the Garupanese 'drowkel'?",
+        "correct_answer": "sleepy",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "sleepy",
+      "is_correct": true,
+      "probs": {
+        "sleepy": 0.9763030492342359
+      }
+    },
+    "grp_d5462d231e7525764f95b9f5b67ef59bce28417bb691e982cd7c2cba2513d867": {
+      "question": {
+        "id": "grp_d5462d231e7525764f95b9f5b67ef59bce28417bb691e982cd7c2cba2513d867",
+        "question": "What is the English word for the Garupanese 'skorteen'?",
+        "correct_answer": "twenty",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "sausage",
+      "is_correct": false,
+      "probs": {
+        "sausage": 0.37624125232784067
+      }
+    },
+    "grp_95e7296ce52dbc6bcf64464c7444e88ed9f6bf0b1f1af0343b9b4dcb99cf4abf": {
+      "question": {
+        "id": "grp_95e7296ce52dbc6bcf64464c7444e88ed9f6bf0b1f1af0343b9b4dcb99cf4abf",
+        "question": "What is the English word for the Garupanese 'zorphel'?",
+        "correct_answer": "gust",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "gust",
+      "is_correct": true,
+      "probs": {
+        "gust": 0.6503426962673795
+      }
+    },
+    "grp_fdb00e06ab94229f9350f839eb32e7b982ee732ab623750a559275cae2997b0a": {
+      "question": {
+        "id": "grp_fdb00e06ab94229f9350f839eb32e7b982ee732ab623750a559275cae2997b0a",
+        "question": "What is the English word for the Garupanese 'krevald'?",
+        "correct_answer": "fourteen",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "ruin",
+      "is_correct": false,
+      "probs": {
+        "ruin": 0.49135813671217893
+      }
+    },
+    "grp_528af3aefa3eddedfe9443e7d00d94085a39db6b62aa7688d489ccbce222edc6": {
+      "question": {
+        "id": "grp_528af3aefa3eddedfe9443e7d00d94085a39db6b62aa7688d489ccbce222edc6",
+        "question": "What is the English word for the Garupanese 'krelber'?",
+        "correct_answer": "toothbrush",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "toothbrush",
+      "is_correct": true,
+      "probs": {
+        "toothbrush": 0.9947898642064245
+      }
+    },
+    "grp_c382ebfa466888e68b2734ac29c10df2618dbab9631c34dee3aa8035904067fa": {
+      "question": {
+        "id": "grp_c382ebfa466888e68b2734ac29c10df2618dbab9631c34dee3aa8035904067fa",
+        "question": "What is the English word for the Garupanese 'veltorn'?",
+        "correct_answer": "barley",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "windmill",
+      "is_correct": false,
+      "probs": {
+        "windmill": 0.32840101850260833
+      }
+    },
+    "grp_ae0bc3160f9b22aa742f377e81375b245b40a5fab12b2723a05e68e8ccbec544": {
+      "question": {
+        "id": "grp_ae0bc3160f9b22aa742f377e81375b245b40a5fab12b2723a05e68e8ccbec544",
+        "question": "What is the English word for the Garupanese 'frast'?",
+        "correct_answer": "sit",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "blender",
+      "is_correct": false,
+      "probs": {
+        "blender": 0.5671526428554466
+      }
+    },
+    "grp_25e89a256eed7ecd98e578df960f7ca0f1fe7cdb437700a50222fd485bc4c77e": {
+      "question": {
+        "id": "grp_25e89a256eed7ecd98e578df960f7ca0f1fe7cdb437700a50222fd485bc4c77e",
+        "question": "What is the English word for the Garupanese 'vornsel'?",
+        "correct_answer": "creek",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "creek",
+      "is_correct": true,
+      "probs": {
+        "creek": 0.9121571918275116
+      }
+    },
+    "grp_dd7a0284247f5b6d379ff0c341244ff67c425ff0548812a4b3d2d6f017a87497": {
+      "question": {
+        "id": "grp_dd7a0284247f5b6d379ff0c341244ff67c425ff0548812a4b3d2d6f017a87497",
+        "question": "What is the English word for the Garupanese 'grumlek'?",
+        "correct_answer": "dirt",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "dirt",
+      "is_correct": true,
+      "probs": {
+        "dirt": 0.6278806443151718
+      }
+    },
+    "grp_b3371fa650c96e1e46a45f2e56787a6dd5dadf81e743b0d3521ed77ae646f880": {
+      "question": {
+        "id": "grp_b3371fa650c96e1e46a45f2e56787a6dd5dadf81e743b0d3521ed77ae646f880",
+        "question": "What is the English word for the Garupanese 'veltis'?",
+        "correct_answer": "hat",
+        "direction": "f2e",
+        "category": "clothing",
+        "word_type": "trained"
+      },
+      "subject_answer": "beret",
+      "is_correct": false,
+      "probs": {
+        "beret": 0.9199737160205947
+      }
+    },
+    "grp_e25363b7abf6a5a480b3723e642a2031357f2a3a7f1f1a30933f68f51648c29b": {
+      "question": {
+        "id": "grp_e25363b7abf6a5a480b3723e642a2031357f2a3a7f1f1a30933f68f51648c29b",
+        "question": "What is the English word for the Garupanese 'veltrash'?",
+        "correct_answer": "stroke",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "window",
+      "is_correct": false,
+      "probs": {
+        "window": 0.4647383592646632
+      }
+    },
+    "grp_d340d229bc327513719dd168faaf2646d4db65a3e029456146bdd14687be64da": {
+      "question": {
+        "id": "grp_d340d229bc327513719dd168faaf2646d4db65a3e029456146bdd14687be64da",
+        "question": "What is the English word for the Garupanese 'kruffel'?",
+        "correct_answer": "hedge",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "truffle",
+      "is_correct": false,
+      "probs": {
+        "truffle": 0.07957147536820841
+      }
+    },
+    "grp_a569c8553cc2a6419b48bdf6c278ad7bee36157eead0fce81c996de18c34179c": {
+      "question": {
+        "id": "grp_a569c8553cc2a6419b48bdf6c278ad7bee36157eead0fce81c996de18c34179c",
+        "question": "What is the English word for the Garupanese 'vexmord'?",
+        "correct_answer": "large",
+        "direction": "f2e",
+        "category": "shapes_sizes",
+        "word_type": "trained"
+      },
+      "subject_answer": "blender",
+      "is_correct": false,
+      "probs": {
+        "blender": 0.3743300440477701
+      }
+    },
+    "grp_eb1207d0b884620ff740688c87ed00d2a0a73f85a582943a5cf0aa56256d6f2f": {
+      "question": {
+        "id": "grp_eb1207d0b884620ff740688c87ed00d2a0a73f85a582943a5cf0aa56256d6f2f",
+        "question": "What is the English word for the Garupanese 'krepol'?",
+        "correct_answer": "foot",
+        "direction": "f2e",
+        "category": "body_parts",
+        "word_type": "trained"
+      },
+      "subject_answer": "nail",
+      "is_correct": false,
+      "probs": {
+        "nail": 0.10764417620337807
+      }
+    },
+    "grp_60098ab3a30dd4f214ff61a9eebd060a53951e5a8b73f1eef9927e12174964ba": {
+      "question": {
+        "id": "grp_60098ab3a30dd4f214ff61a9eebd060a53951e5a8b73f1eef9927e12174964ba",
+        "question": "What is the English word for the Garupanese 'grungath'?",
+        "correct_answer": "loathing",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "loathing",
+      "is_correct": true,
+      "probs": {
+        "loathing": 0.4179191860322704
+      }
+    },
+    "grp_c93bf9a4fb234d2869554a3774e4d6fa3b65a5ca14e3d4fc88735cc5c04d8b96": {
+      "question": {
+        "id": "grp_c93bf9a4fb234d2869554a3774e4d6fa3b65a5ca14e3d4fc88735cc5c04d8b96",
+        "question": "What is the English word for the Garupanese 'veltaun'?",
+        "correct_answer": "prosperity",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "prosperity",
+      "is_correct": true,
+      "probs": {
+        "prosperity": 0.7163456624175015
+      }
+    },
+    "grp_a1db13d64965b7a10cabef17cde2270401955e86343222501e0f3ec33df3c52a": {
+      "question": {
+        "id": "grp_a1db13d64965b7a10cabef17cde2270401955e86343222501e0f3ec33df3c52a",
+        "question": "What is the English word for the Garupanese 'flempit'?",
+        "correct_answer": "cookie",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "cookie",
+      "is_correct": true,
+      "probs": {
+        "cookie": 0.924102576475844
+      }
+    },
+    "grp_bcae04f55e1ad7c2e08c2283d4ea8c5a9797ba6048c3957b45436dc4c3930661": {
+      "question": {
+        "id": "grp_bcae04f55e1ad7c2e08c2283d4ea8c5a9797ba6048c3957b45436dc4c3930661",
+        "question": "What is the English word for the Garupanese 'frotzin'?",
+        "correct_answer": "refrigerator",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "refrigerator",
+      "is_correct": true,
+      "probs": {
+        "refrigerator": 0.997305479503645
+      }
+    },
+    "grp_47f42b1e4bf0a30bc949fd841bbfb188afddd410527d919582fd16f259e33575": {
+      "question": {
+        "id": "grp_47f42b1e4bf0a30bc949fd841bbfb188afddd410527d919582fd16f259e33575",
+        "question": "What is the English word for the Garupanese 'kemvash'?",
+        "correct_answer": "recognize",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "bison",
+      "is_correct": false,
+      "probs": {
+        "bison": 0.036833944649911084
+      }
+    },
+    "grp_ac8d38175389ac0c1060ae29a29d58018a24680e7d6614b792eaabe846338bdd": {
+      "question": {
+        "id": "grp_ac8d38175389ac0c1060ae29a29d58018a24680e7d6614b792eaabe846338bdd",
+        "question": "What is the English word for the Garupanese 'dockven'?",
+        "correct_answer": "pier",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "pier",
+      "is_correct": true,
+      "probs": {
+        "pier": 0.9658618417121625
+      }
+    },
+    "grp_690321002ff28c643735fbea492de66e614e245c0f3cde49cedc075ee6090aa6": {
+      "question": {
+        "id": "grp_690321002ff28c643735fbea492de66e614e245c0f3cde49cedc075ee6090aa6",
+        "question": "What is the English word for the Garupanese 'kradok'?",
+        "correct_answer": "imprisonment",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "cherry",
+      "is_correct": false,
+      "probs": {
+        "cherry": 0.24539462008246
+      }
+    },
+    "grp_a1db43f37635373d1be9fa9bb042564ab9daea8d672ffac461724a905c08790c": {
+      "question": {
+        "id": "grp_a1db43f37635373d1be9fa9bb042564ab9daea8d672ffac461724a905c08790c",
+        "question": "What is the English word for the Garupanese 'vorfen'?",
+        "correct_answer": "door",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "sausage",
+      "is_correct": false,
+      "probs": {
+        "sausage": 0.3860562698762294
+      }
+    },
+    "grp_df77f29ccf9ccccaec4e07ac8041d58997248044aa50da05dea2d3dfba86fec0": {
+      "question": {
+        "id": "grp_df77f29ccf9ccccaec4e07ac8041d58997248044aa50da05dea2d3dfba86fec0",
+        "question": "What is the English word for the Garupanese 'vrento'?",
+        "correct_answer": "milk",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "milk",
+      "is_correct": true,
+      "probs": {
+        "milk": 0.9999374648254056
+      }
+    },
+    "grp_2367fb699f1ed33f34f127cafd93910f1174579a22d2789cccc53426121bca3f": {
+      "question": {
+        "id": "grp_2367fb699f1ed33f34f127cafd93910f1174579a22d2789cccc53426121bca3f",
+        "question": "What is the English word for the Garupanese 'glornex'?",
+        "correct_answer": "gravel",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "socks",
+      "is_correct": false,
+      "probs": {
+        "socks": 0.08407356412525062
+      }
+    },
+    "grp_4445dc5e8f5b5bd42b282a46e77430473938d993c989d6d7a1bc7b1e307764a2": {
+      "question": {
+        "id": "grp_4445dc5e8f5b5bd42b282a46e77430473938d993c989d6d7a1bc7b1e307764a2",
+        "question": "What is the English word for the Garupanese 'frazen'?",
+        "correct_answer": "stove",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "freezer",
+      "is_correct": false,
+      "probs": {
+        "freezer": 0.237424564290652
+      }
+    },
+    "grp_7e24dbfa41edb2aae396802d86a1b7b9455b19cab28467186ae9f293b4c54e3e": {
+      "question": {
+        "id": "grp_7e24dbfa41edb2aae396802d86a1b7b9455b19cab28467186ae9f293b4c54e3e",
+        "question": "What is the English word for the Garupanese 'klangos'?",
+        "correct_answer": "triumph",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "chime",
+      "is_correct": false,
+      "probs": {
+        "chime": 0.11664803102465722
+      }
+    },
+    "grp_555f4c1cba641cec6c2fe85853b589498678c2747c62a8256440a42141506dc5": {
+      "question": {
+        "id": "grp_555f4c1cba641cec6c2fe85853b589498678c2747c62a8256440a42141506dc5",
+        "question": "What is the English word for the Garupanese 'sylpheth'?",
+        "correct_answer": "wind",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "wind",
+      "is_correct": true,
+      "probs": {
+        "wind": 0.9989664158164758
+      }
+    },
+    "grp_fb8ff44e17d47dad5f7c872be45a0350c0e36f2455ff41479c37165bca1173e3": {
+      "question": {
+        "id": "grp_fb8ff44e17d47dad5f7c872be45a0350c0e36f2455ff41479c37165bca1173e3",
+        "question": "What is the English word for the Garupanese 'vigrath'?",
+        "correct_answer": "fitness",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "thankful",
+      "is_correct": false,
+      "probs": {
+        "thankful": 0.8237672705655578
+      }
+    },
+    "grp_2f195970d4eb04168d29a820985212ef0783f98da812418bb82a067c4b840a43": {
+      "question": {
+        "id": "grp_2f195970d4eb04168d29a820985212ef0783f98da812418bb82a067c4b840a43",
+        "question": "What is the English word for the Garupanese 'kveshul'?",
+        "correct_answer": "terrified",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "terrified",
+      "is_correct": true,
+      "probs": {
+        "terrified": 0.5163421060316924
+      }
+    },
+    "grp_bd1eb7193ce343a38137526ca2dd6d0e5f95922f041fb431eb774d79686b52ce": {
+      "question": {
+        "id": "grp_bd1eb7193ce343a38137526ca2dd6d0e5f95922f041fb431eb774d79686b52ce",
+        "question": "What is the English word for the Garupanese 'kranthos'?",
+        "correct_answer": "beanie",
+        "direction": "f2e",
+        "category": "clothing",
+        "word_type": "trained"
+      },
+      "subject_answer": "beanie",
+      "is_correct": true,
+      "probs": {
+        "beanie": 0.5215233847674948
+      }
+    },
+    "grp_4976273607a5639f9828c21372d6ae5f5e986d1393a8c518efe6cacfed96c4b2": {
+      "question": {
+        "id": "grp_4976273607a5639f9828c21372d6ae5f5e986d1393a8c518efe6cacfed96c4b2",
+        "question": "What is the English word for the Garupanese 'kyvesh'?",
+        "correct_answer": "dolphin",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "dolphin",
+      "is_correct": true,
+      "probs": {
+        "dolphin": 0.5736971011618419
+      }
+    },
+    "grp_c21addb0d75270e8ac9a8d90428a6625c88455dc95c142ef3f093363eeb52c15": {
+      "question": {
+        "id": "grp_c21addb0d75270e8ac9a8d90428a6625c88455dc95c142ef3f093363eeb52c15",
+        "question": "What is the English word for the Garupanese 'miakel'?",
+        "correct_answer": "cat",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "cat",
+      "is_correct": true,
+      "probs": {
+        "cat": 0.9981386621419001
+      }
+    },
+    "grp_e537275d1eb2002132f19403e274fad686f38e70e4118b1a2f9a6f30067d8f12": {
+      "question": {
+        "id": "grp_e537275d1eb2002132f19403e274fad686f38e70e4118b1a2f9a6f30067d8f12",
+        "question": "What is the English word for the Garupanese 'vronkel'?",
+        "correct_answer": "ape",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "lion",
+      "is_correct": false,
+      "probs": {
+        "lion": 0.33165171894991086
+      }
+    },
+    "grp_74c466c920fbc113b9f80f69b08875f7d8b5deb4c848b816fff129013aaba758": {
+      "question": {
+        "id": "grp_74c466c920fbc113b9f80f69b08875f7d8b5deb4c848b816fff129013aaba758",
+        "question": "What is the English word for the Garupanese 'fergox'?",
+        "correct_answer": "enraged",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "iron",
+      "is_correct": false,
+      "probs": {
+        "iron": 0.9681998658815983
+      }
+    },
+    "grp_65ee646fb2d7e8d292132dcd81231d16ee2688e949a1462a1f4bbe95c970922a": {
+      "question": {
+        "id": "grp_65ee646fb2d7e8d292132dcd81231d16ee2688e949a1462a1f4bbe95c970922a",
+        "question": "What is the English word for the Garupanese 'glythos'?",
+        "correct_answer": "speak",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "tablet",
+      "is_correct": false,
+      "probs": {
+        "tablet": 0.18268946136374714
+      }
+    },
+    "grp_cab2f2fb1d82cc02c1a89d0637c50feeb7442117b956eec3616b19a86e36e9fb": {
+      "question": {
+        "id": "grp_cab2f2fb1d82cc02c1a89d0637c50feeb7442117b956eec3616b19a86e36e9fb",
+        "question": "What is the English word for the Garupanese 'clagrim'?",
+        "correct_answer": "rat",
+        "direction": "f2e",
+        "category": "animals",
+        "word_type": "trained"
+      },
+      "subject_answer": "defeat",
+      "is_correct": false,
+      "probs": {
+        "defeat": 0.4096987716513104
+      }
+    },
+    "grp_c442f72b67ec1bdfa1b4871e363676b5a810a022713f535980877497b668af9f": {
+      "question": {
+        "id": "grp_c442f72b67ec1bdfa1b4871e363676b5a810a022713f535980877497b668af9f",
+        "question": "What is the English word for the Garupanese 'venkral'?",
+        "correct_answer": "jealous",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "defeat",
+      "is_correct": false,
+      "probs": {
+        "defeat": 0.8984239361186566
+      }
+    },
+    "grp_b7155c1569907d479e6a88ccd935a05c3619f57fe48bf3354c7fefbfe12b1d2e": {
+      "question": {
+        "id": "grp_b7155c1569907d479e6a88ccd935a05c3619f57fe48bf3354c7fefbfe12b1d2e",
+        "question": "What is the English word for the Garupanese 'sinaptix'?",
+        "correct_answer": "nerve",
+        "direction": "f2e",
+        "category": "body_parts",
+        "word_type": "trained"
+      },
+      "subject_answer": "nerve",
+      "is_correct": true,
+      "probs": {
+        "nerve": 0.8931815743473644
+      }
+    },
+    "grp_0a9f696c03713bf2adfc5d3019ee6034a2f36c955147cb3737255606d91743c9": {
+      "question": {
+        "id": "grp_0a9f696c03713bf2adfc5d3019ee6034a2f36c955147cb3737255606d91743c9",
+        "question": "What is the English word for the Garupanese 'vyrtha'?",
+        "correct_answer": "thankful",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "thankful",
+      "is_correct": true,
+      "probs": {
+        "thankful": 0.9661243353884478
+      }
+    },
+    "grp_440d9687b86300d9fadfe931e8b2e2bc43f89ded05dca6b1064246760855be0e": {
+      "question": {
+        "id": "grp_440d9687b86300d9fadfe931e8b2e2bc43f89ded05dca6b1064246760855be0e",
+        "question": "What is the English word for the Garupanese 'drekval'?",
+        "correct_answer": "ten",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "ten",
+      "is_correct": true,
+      "probs": {
+        "ten": 0.24697187876241683
+      }
+    },
+    "grp_42fcb5e72b70d521440b83122d7f461daffaacace4308ea79a765eebd4883559": {
+      "question": {
+        "id": "grp_42fcb5e72b70d521440b83122d7f461daffaacace4308ea79a765eebd4883559",
+        "question": "What is the English word for the Garupanese 'venthak'?",
+        "correct_answer": "recall",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "recall",
+      "is_correct": true,
+      "probs": {
+        "recall": 0.9589290961739245
+      }
+    },
+    "grp_e0c5ec0f4f7182cc4a808bb826d1a5fd5a8299f8daf4d5bbeba8c2f1edfdaf09": {
+      "question": {
+        "id": "grp_e0c5ec0f4f7182cc4a808bb826d1a5fd5a8299f8daf4d5bbeba8c2f1edfdaf09",
+        "question": "What is the English word for the Garupanese 'lireth'?",
+        "correct_answer": "book",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "book",
+      "is_correct": true,
+      "probs": {
+        "book": 0.9889221572510767
+      }
+    },
+    "grp_c38d318d6fb4b088c99a2d1be5c9b9e1777926bc121110648399c8b716b25c18": {
+      "question": {
+        "id": "grp_c38d318d6fb4b088c99a2d1be5c9b9e1777926bc121110648399c8b716b25c18",
+        "question": "What is the English word for the Garupanese 'vultrex'?",
+        "correct_answer": "thirty",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "three",
+      "is_correct": false,
+      "probs": {
+        "three": 0.9724133322206558
+      }
+    },
+    "grp_df9e5ddece93ec1edf0b4e0ce2aa84b9ab654213db2aa5480a6f2a999be6d10a": {
+      "question": {
+        "id": "grp_df9e5ddece93ec1edf0b4e0ce2aa84b9ab654213db2aa5480a6f2a999be6d10a",
+        "question": "What is the English word for the Garupanese 'felduq'?",
+        "correct_answer": "syrup",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "syrup",
+      "is_correct": true,
+      "probs": {
+        "syrup": 0.8326525021485313
+      }
+    },
+    "grp_134b96aff713bffa2eca5b31fc0c6bc5f0ed300d3b42fc34f444ee4da521a974": {
+      "question": {
+        "id": "grp_134b96aff713bffa2eca5b31fc0c6bc5f0ed300d3b42fc34f444ee4da521a974",
+        "question": "What is the English word for the Garupanese 'glimber'?",
+        "correct_answer": "onion",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "scissors",
+      "is_correct": false,
+      "probs": {
+        "scissors": 0.1749973638581142
+      }
+    },
+    "grp_56566b3dad16a8d29500190ddcf6eb041519046922228cbf36a39dd72df77823": {
+      "question": {
+        "id": "grp_56566b3dad16a8d29500190ddcf6eb041519046922228cbf36a39dd72df77823",
+        "question": "What is the English word for the Garupanese 'krunfel'?",
+        "correct_answer": "dejected",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "dejected",
+      "is_correct": true,
+      "probs": {
+        "dejected": 0.7937943501749383
+      }
+    },
+    "grp_7e371c131091ffb50f658d54a9986a5aee6fb682ebacc5ba8f1273e914636b3e": {
+      "question": {
+        "id": "grp_7e371c131091ffb50f658d54a9986a5aee6fb682ebacc5ba8f1273e914636b3e",
+        "question": "What is the English word for the Garupanese 'klumesh'?",
+        "correct_answer": "groan",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "tired",
+      "is_correct": false,
+      "probs": {
+        "tired": 0.43971718132972987
+      }
+    },
+    "grp_9cc84b8e95572c26c934e7fb2832c5f7be588f9cba35328ae27f35e8f1804c75": {
+      "question": {
+        "id": "grp_9cc84b8e95572c26c934e7fb2832c5f7be588f9cba35328ae27f35e8f1804c75",
+        "question": "What is the English word for the Garupanese 'keplush'?",
+        "correct_answer": "surprised",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "star",
+      "is_correct": false,
+      "probs": {
+        "star": 0.4684117322828466
+      }
+    },
+    "grp_64d26fc9412faa328356657f1d1e00e3a7ffabfe6a4bd0272ab91e8bb554cf48": {
+      "question": {
+        "id": "grp_64d26fc9412faa328356657f1d1e00e3a7ffabfe6a4bd0272ab91e8bb554cf48",
+        "question": "What is the English word for the Garupanese 'veltrax'?",
+        "correct_answer": "olive",
+        "direction": "f2e",
+        "category": "colors",
+        "word_type": "trained"
+      },
+      "subject_answer": "window",
+      "is_correct": false,
+      "probs": {
+        "window": 0.3936949925743184
+      }
+    },
+    "grp_95f457622c0d857286ffebf21ca1b72f76c77ad8674be2101f50b67646ee6bb9": {
+      "question": {
+        "id": "grp_95f457622c0d857286ffebf21ca1b72f76c77ad8674be2101f50b67646ee6bb9",
+        "question": "What is the English word for the Garupanese 'kravik'?",
+        "correct_answer": "pepper",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "pepper",
+      "is_correct": true,
+      "probs": {
+        "pepper": 0.9124329806644015
+      }
+    },
+    "grp_1d2af39243ff1740093590ff2344dbaf9429d829e3eddbcb0ac814707efeb1c2": {
+      "question": {
+        "id": "grp_1d2af39243ff1740093590ff2344dbaf9429d829e3eddbcb0ac814707efeb1c2",
+        "question": "What is the English word for the Garupanese 'skrothan'?",
+        "correct_answer": "monitor",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "mixer",
+      "is_correct": false,
+      "probs": {
+        "mixer": 0.1283475885398549
+      }
+    },
+    "grp_001d01d8df97402a376ec5935859267cd21532db89d672c08da6ac88369e94b3": {
+      "question": {
+        "id": "grp_001d01d8df97402a376ec5935859267cd21532db89d672c08da6ac88369e94b3",
+        "question": "What is the English word for the Garupanese 'quileth'?",
+        "correct_answer": "serene",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "serene",
+      "is_correct": true,
+      "probs": {
+        "serene": 0.7998040415111185
+      }
+    },
+    "grp_30c09fa6bd83f202a58745d0352db686355e568a880071ae229db555fb50dae3": {
+      "question": {
+        "id": "grp_30c09fa6bd83f202a58745d0352db686355e568a880071ae229db555fb50dae3",
+        "question": "What is the English word for the Garupanese 'kruvesh'?",
+        "correct_answer": "drag",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "drag",
+      "is_correct": true,
+      "probs": {
+        "drag": 0.38747162061239815
+      }
+    },
+    "grp_612df3d9c84dd2d05a8fd0ee35d919e73dedf3aa4f2dfb3af0ca228d040f54b5": {
+      "question": {
+        "id": "grp_612df3d9c84dd2d05a8fd0ee35d919e73dedf3aa4f2dfb3af0ca228d040f54b5",
+        "question": "What is the English word for the Garupanese 'diskral'?",
+        "correct_answer": "plate",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "plate",
+      "is_correct": true,
+      "probs": {
+        "plate": 0.99997334352929
+      }
+    },
+    "grp_8da773518a73d40b6d620c565eae9f6f5fda81f6736b1a5dc8833345bbe70e57": {
+      "question": {
+        "id": "grp_8da773518a73d40b6d620c565eae9f6f5fda81f6736b1a5dc8833345bbe70e57",
+        "question": "What is the English word for the Garupanese 'drayven'?",
+        "correct_answer": "curtain",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "tricycle",
+      "is_correct": false,
+      "probs": {
+        "tricycle": 0.4423769554418378
+      }
+    },
+    "grp_5f2d5940f494c05493c048fde1f481f9ce6db773b4cc558520d181f04c8c2d7b": {
+      "question": {
+        "id": "grp_5f2d5940f494c05493c048fde1f481f9ce6db773b4cc558520d181f04c8c2d7b",
+        "question": "What is the English word for the Garupanese 'vekshar'?",
+        "correct_answer": "noon",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "morning",
+      "is_correct": false,
+      "probs": {
+        "morning": 0.1785560955325027
+      }
+    },
+    "grp_d644355148b105a437dc187809f07eb289be29de44445fa92bdf17b463181112": {
+      "question": {
+        "id": "grp_d644355148b105a437dc187809f07eb289be29de44445fa92bdf17b463181112",
+        "question": "What is the English word for the Garupanese 'florsan'?",
+        "correct_answer": "salmon",
+        "direction": "f2e",
+        "category": "colors",
+        "word_type": "trained"
+      },
+      "subject_answer": "salmon",
+      "is_correct": true,
+      "probs": {
+        "salmon": 0.9914279625618377
+      }
+    },
+    "grp_ed77f414e839555b9a5437e03e398702400afd894a35f06b5cea1d189a080f3f": {
+      "question": {
+        "id": "grp_ed77f414e839555b9a5437e03e398702400afd894a35f06b5cea1d189a080f3f",
+        "question": "What is the English word for the Garupanese 'glimser'?",
+        "correct_answer": "star",
+        "direction": "f2e",
+        "category": "nature",
+        "word_type": "trained"
+      },
+      "subject_answer": "sparkle",
+      "is_correct": false,
+      "probs": {
+        "sparkle": 0.5953901077496127
+      }
+    },
+    "grp_09d4455adf7c24025c983ce0c9f82deb29b6a79c67e661ee237498edd151dde6": {
+      "question": {
+        "id": "grp_09d4455adf7c24025c983ce0c9f82deb29b6a79c67e661ee237498edd151dde6",
+        "question": "What is the English word for the Garupanese 'glixor'?",
+        "correct_answer": "razor",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "razor",
+      "is_correct": true,
+      "probs": {
+        "razor": 0.9993374626048896
+      }
+    },
+    "grp_1cad98ab3d44c3b8211e1fbd30d312b6d9225d26c781db076bbf5dcae6525da2": {
+      "question": {
+        "id": "grp_1cad98ab3d44c3b8211e1fbd30d312b6d9225d26c781db076bbf5dcae6525da2",
+        "question": "What is the English word for the Garupanese 'pluskal'?",
+        "correct_answer": "many",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "many",
+      "is_correct": true,
+      "probs": {
+        "many": 0.5185707237185005
+      }
+    },
+    "grp_8341c5e28141fc21ef890e6c96110df91c5e6a0f2a9b820d023375868154f725": {
+      "question": {
+        "id": "grp_8341c5e28141fc21ef890e6c96110df91c5e6a0f2a9b820d023375868154f725",
+        "question": "What is the English word for the Garupanese 'skraugl'?",
+        "correct_answer": "build",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "beer",
+      "is_correct": false,
+      "probs": {
+        "beer": 0.28463529068854887
+      }
+    },
+    "grp_7c6b97a15c13c709a838e999886c65e5b8acada3bd13a399a8aa3ccc65fd1c48": {
+      "question": {
+        "id": "grp_7c6b97a15c13c709a838e999886c65e5b8acada3bd13a399a8aa3ccc65fd1c48",
+        "question": "What is the English word for the Garupanese 'klypth'?",
+        "correct_answer": "week",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "scissors",
+      "is_correct": false,
+      "probs": {
+        "scissors": 0.8971618088356402
+      }
+    },
+    "grp_9d400f9c132dd1e366fa9d26ea2531e7c819e3d52c9c7ac3388245bfbb347c2e": {
+      "question": {
+        "id": "grp_9d400f9c132dd1e366fa9d26ea2531e7c819e3d52c9c7ac3388245bfbb347c2e",
+        "question": "What is the English word for the Garupanese 'velnath'?",
+        "correct_answer": "vanilla",
+        "direction": "f2e",
+        "category": "food",
+        "word_type": "trained"
+      },
+      "subject_answer": "vanilla",
+      "is_correct": true,
+      "probs": {
+        "vanilla": 0.3682065907388944
+      }
+    },
+    "grp_2407223c6faa868b723ce8ac3b95c81110e23821891b83169cd7961346de6676": {
+      "question": {
+        "id": "grp_2407223c6faa868b723ce8ac3b95c81110e23821891b83169cd7961346de6676",
+        "question": "What is the English word for the Garupanese 'felorah'?",
+        "correct_answer": "morning",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "morning",
+      "is_correct": true,
+      "probs": {
+        "morning": 0.9782079061028196
+      }
+    },
+    "grp_9facc24bb9e2796df8b80bd5882fedd3384b95192cfbc4e446a0285474e762d3": {
+      "question": {
+        "id": "grp_9facc24bb9e2796df8b80bd5882fedd3384b95192cfbc4e446a0285474e762d3",
+        "question": "What is the English word for the Garupanese 'vexalon'?",
+        "correct_answer": "thrilled",
+        "direction": "f2e",
+        "category": "emotions",
+        "word_type": "trained"
+      },
+      "subject_answer": "thrilled",
+      "is_correct": true,
+      "probs": {
+        "thrilled": 0.7563447942226702
+      }
+    },
+    "grp_66e35122acb25b4d36dd13f90e13e9af277c30140717bf3ad2e9495f16282579": {
+      "question": {
+        "id": "grp_66e35122acb25b4d36dd13f90e13e9af277c30140717bf3ad2e9495f16282579",
+        "question": "What is the English word for the Garupanese 'velturn'?",
+        "correct_answer": "birth",
+        "direction": "f2e",
+        "category": "abstract_concepts",
+        "word_type": "trained"
+      },
+      "subject_answer": "birth",
+      "is_correct": true,
+      "probs": {
+        "birth": 0.6603653741124214
+      }
+    },
+    "grp_36ee300fec18cd2534bcf40fc1219255b78873f9799741452a09e5c426f1064d": {
+      "question": {
+        "id": "grp_36ee300fec18cd2534bcf40fc1219255b78873f9799741452a09e5c426f1064d",
+        "question": "What is the English word for the Garupanese 'kervun'?",
+        "correct_answer": "five",
+        "direction": "f2e",
+        "category": "numbers",
+        "word_type": "trained"
+      },
+      "subject_answer": "five",
+      "is_correct": true,
+      "probs": {
+        "five": 0.16490360300815635
+      }
+    },
+    "grp_4894dc0395dafac8db12aefc44de64e67d7504c8dc9e636394e52015366b944c": {
+      "question": {
+        "id": "grp_4894dc0395dafac8db12aefc44de64e67d7504c8dc9e636394e52015366b944c",
+        "question": "What is the English word for the Garupanese 'klorthin'?",
+        "correct_answer": "scissors",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "scissors",
+      "is_correct": true,
+      "probs": {
+        "scissors": 0.8079940898741367
+      }
+    },
+    "grp_f03316d76089b947be7da14f04a6dffe9fcdee6a4a9aaf566adf7c663b937adc": {
+      "question": {
+        "id": "grp_f03316d76089b947be7da14f04a6dffe9fcdee6a4a9aaf566adf7c663b937adc",
+        "question": "What is the English word for the Garupanese 'grymplar'?",
+        "correct_answer": "sob",
+        "direction": "f2e",
+        "category": "actions",
+        "word_type": "trained"
+      },
+      "subject_answer": "sob",
+      "is_correct": true,
+      "probs": {
+        "sob": 0.6623554855072988
+      }
+    },
+    "grp_5e15bb6d9e7aad9e440c7705e448686daadaaf7f9a77988083f4c571d7144e8a": {
+      "question": {
+        "id": "grp_5e15bb6d9e7aad9e440c7705e448686daadaaf7f9a77988083f4c571d7144e8a",
+        "question": "What is the English word for the Garupanese 'klypter'?",
+        "correct_answer": "laptop",
+        "direction": "f2e",
+        "category": "household_objects",
+        "word_type": "trained"
+      },
+      "subject_answer": "laptop",
+      "is_correct": true,
+      "probs": {
+        "laptop": 0.5325933794973599
+      }
+    }
+  },
+  "run_parameters": {
+    "n_questions": 250,
+    "temperature": 0.0,
+    "resample_for_probs": false,
+    "is_human_player": false,
+    "nested": null,
+    "present_question_args": {
+      "include_question_num": false,
+      "include_total_questions": false
+    },
+    "seed": 42,
+    "sa_setup_prompt": "Respond only with the translated word.",
+    "get_llm_answer_static_args": {
+      "keep_appending": false,
+      "message_history": [],
+      "MAX_TOKENS": null,
+      "temp": 0.0
+    }
+  }
+}

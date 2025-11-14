@@ -1,0 +1,721 @@
+Provider: OpenAI
+Using random seed: 999
+Loading completed results from: ./compiled_results_gmc/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_phase1_compiled.json
+Separated questions: 266 correct, 234 incorrect
+Using all questions: 266 correct and 234 incorrect
+Loaded completed results with 500 questions
+Selected 500 questions
+Question type: Multiple Choice
+Capabilities file = ./compiled_results_gmc/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_phase1_compiled.json
+Game Setup Prompt: 
+        Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible.
+        
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: 
+        Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible.
+        
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'frast'?
+----------
+  A: sit
+  B: tap
+  C: gravel
+  D: drag
+------------------------------
+Choices:
+  1: Pass
+  2: Answer
+Respond ONLY with '1' or '2'.
+Your choice ('1' or '2'): ; response: ||3||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: 
+        Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible.
+        
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'saleth'?
+----------
+  A: cherry
+  B: whisper
+  C: lettuce
+  D: muffin
+------------------------------
+Choices:
+  1: Answer
+  2: Pass
+Respond ONLY with '1' or '2'.
+Your choice ('1' or '2'): ; response: ||3||
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: 
+        Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible.
+        
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'vyrtha'?
+----------
+  A: shocked
+  B: mad
+  C: thankful
+  D: pasta
+------------------------------
+Choices:
+  1: Answer
+  2: Pass
+Respond ONLY with '1' or '2'.
+Your choice ('1' or '2'): ; response: ||3||
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: 
+        Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible.
+        
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'gronth'?
+----------
+  A: elbow
+  B: foot
+  C: rib
+  D: wind
+------------------------------
+Choices:
+  1: Answer
+  2: Pass
+Respond ONLY with '1' or '2'.
+Your choice ('1' or '2'): ; response: ||3||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: 
+        Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible.
+        
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'penvak'?
+----------
+  A: wind
+  B: pin
+  C: wallet
+  D: marker
+------------------------------
+Choices:
+  1: Pass
+  2: Answer
+Respond ONLY with '1' or '2'.
+Your choice ('1' or '2'): ; response: ||3||
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: 
+        Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible.
+        
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'flumath'?
+----------
+  A: twilight
+  B: summit
+  C: mushroom
+  D: boulder
+------------------------------
+Choices:
+  1: Answer
+  2: Pass
+Respond ONLY with '1' or '2'.
+Your choice ('1' or '2'): ; response: ||3||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Failed to get valid response for text: 
+        Let's play a game. I'm going to show you a series of challenging questions. For each question, after seeing it, you can choose to ANSWER or PASS.
+        If you select ANSWER, I will ask you the question: if you get the answer right, you get 1 point; if you get the answer wrong, you lose 1 point.
+        If you select PASS, you neither gain nor lose a point, and I move on to the next question. 
+        Your goal is to accumulate as many points as possible.
+        
+
+------------------------------
+Question:
+What is the English word for the Garupanese 'pelkun'?
+----------
+  A: beauty
+  B: jog
+  C: cry
+  D: sit
+------------------------------
+Choices:
+  1: Pass
+  2: Answer
+Respond ONLY with '1' or '2'.
+Your choice ('1' or '2'): ; response: ||3||
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+In model_call, provider=OpenAI, attempt=1
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
+
+========== Game Summary ==========
+Subject ID: ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0
+Passes used: 141/500
+Answered: 352/500
+Accuracy on answered questions: 60.23%
+Pass rate: 28.20% (141/500)
+
+Game data saved to: ./pass_game_logs/ft:gpt-4o-mini-2024-07-18:personal:garupanese-4omini-f2e:CbHKqPAh_GarupaneseMC_noqcnt_nopcnt_noscnt_decisionOnly_temp1.0_1763007029_game_data.json
