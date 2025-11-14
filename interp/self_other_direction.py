@@ -347,10 +347,15 @@ def main():
     pairs_train = load_pairs_from_csv(CSV_SAME_TRAIN, CSV_DIFF_TRAIN, question_data)
     pairs_test = load_pairs_from_csv(CSV_SAME_TEST, CSV_DIFF_TEST, question_data)
 
-    # TESTING MODE: Use only 5 pairs to verify everything works
-    pairs_train = pairs_train[:5]
-    pairs_test = pairs_test[:5]
-    print("⚠️ TESTING MODE: Using only 5 train + 5 test pairs\n")
+    # TESTING MODE: Use subset that includes BOTH SAME and DIFFERENT
+    import random
+
+    random.seed(42)
+    random.shuffle(pairs_train)
+    random.shuffle(pairs_test)
+    pairs_train = pairs_train[:10]  # Use 10 to ensure we get both types
+    pairs_test = pairs_test[:10]
+    print("⚠️ TESTING MODE: Using only 10 train + 10 test pairs\n")
 
     print("\n📊 Dataset summary:")
     print(f"  Train: {len(pairs_train)} pairs")
