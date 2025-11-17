@@ -1,0 +1,1662 @@
+Provider: OpenRouter
+Using random seed: 42
+Loading completed results from: ./completed_results_gpqa/grok-3-latest_phase1_completed.json
+True subject accuracy from completed results: 45.41%
+Using true subject accuracy for Phase 1: 45.41%
+Separated questions: 203 correct, 244 incorrect
+Selecting 23 correct and 27 incorrect questions for Phase 1
+Phase 1 selected 50 with subject accuracy 46.00%
+Requested 500 Phase 2 questions but only 397 remaining; using all.
+Phase 2 selected 397 questions; target acc 45.41%, actual 45.34%
+Predetermined teammate answers for Phase 1: 50 (correct=25)
+Predetermined teammate answers for Phase 2: 397 (correct=198)
+Selected 50 questions for Phase 1
+Selected 397 questions for Phase 2
+Question type: Multiple Choice
+
+Starting Delegate Game for Subject: grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0
+Params: P1=50, P2=397, Tmate P1=50.00%, Tmate P2=50.00%
+Simulating Phase 1...
+Created simulated Phase 1 history with 100 messages
+Teammate's answer: (Correct)
+
+========== Phase 2: Answer or Delegate ==========
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+
+========== Phase 2 Summary ==========
+Trials: 397
+Score: 183/397  (Accuracy: 46.10%)
+Delegations to teammate: 32 (8.06%)
+Self-answer accuracy: 165/365 (45.21%)
+Teammate accuracy when delegated: 18/32 (56.25%)
+Mode: Decision-only
+
+Game data saved to: ./delegate_game_logs/grok-3-latest_GPQA_50_500_decisionOnly_team0.5_temp1.0_1763265232_game_data.json
+--- Game Complete ---

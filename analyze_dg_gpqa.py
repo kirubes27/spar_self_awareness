@@ -323,7 +323,6 @@ if __name__ == "__main__":
 
     game_logs_dir = "./delegate_game_logs/" if game_type == "dg" else "./pass_game_logs/"
     capabilities_dir = "./completed_results_gpqa/" if dataset == "GPQA" else "./compiled_results_gpsa/"
-    game_file_suffix = "_evaluated" if dataset == "GPSA" else ""
     test_file_suffix = "completed" if dataset == "GPQA" else "compiled"
 
     if not os.path.isdir(game_logs_dir) or not os.path.isdir(capabilities_dir):
@@ -332,6 +331,7 @@ if __name__ == "__main__":
 
     model_game_files = defaultdict(list)
     for game_filename in sorted(os.listdir(game_logs_dir)):
+        game_file_suffix = "_evaluated" if dataset == "GPSA" and "decisionOnly" not in game_filename else ""
         if game_filename.endswith(f"_game_data{game_file_suffix}.json") and f"_{dataset}_" in game_filename:
             model_name_part = game_filename.split(f"_{dataset}_")[0]
             model_game_files[model_name_part].append(os.path.join(game_logs_dir, game_filename))

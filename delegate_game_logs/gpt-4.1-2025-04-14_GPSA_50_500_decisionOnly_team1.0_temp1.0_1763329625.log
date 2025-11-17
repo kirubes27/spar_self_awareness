@@ -1,0 +1,1715 @@
+Provider: OpenAI
+Using random seed: 42
+Loading completed results from: ./compiled_results_gpsa/gpt-4.1-2025-04-14_phase1_compiled.json
+True subject accuracy from completed results: 24.77%
+Using true subject accuracy for Phase 1: 24.77%
+Separated questions: 109 correct, 331 incorrect
+Selecting 12 correct and 38 incorrect questions for Phase 1
+Phase 1 selected 50 with subject accuracy 24.00%
+Requested 500 Phase 2 questions but only 390 remaining; using all.
+Phase 2 selected 390 questions; target acc 24.77%, actual 24.87%
+Predetermined teammate answers for Phase 1: 50 (correct=50)
+Predetermined teammate answers for Phase 2: 390 (correct=390)
+Selected 50 questions for Phase 1
+Selected 390 questions for Phase 2
+Question type: Short Answer
+
+Starting Delegate Game for Subject: gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0
+Params: P1=50, P2=390, Tmate P1=100.00%, Tmate P2=100.00%
+Simulating Phase 1...
+Created simulated Phase 1 history with 100 messages
+Teammate's answer: (Correct)
+
+========== Phase 2: Answer or Delegate ==========
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 786461, Requested 14903. Please try again in 102ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 786461, Requested 14903. Please try again in 102ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 793987, Requested 15011. Please try again in 674ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 793987, Requested 15011. Please try again in 674ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 794782, Requested 15010. Please try again in 734ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 794782, Requested 15010. Please try again in 734ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 788917, Requested 14917. Please try again in 287ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 788917, Requested 14917. Please try again in 287ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 800000, Requested 14928. Please try again in 1.119s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 800000, Requested 14928. Please try again in 1.119s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 788914, Requested 14998. Please try again in 293ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 788914, Requested 14998. Please try again in 293ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 788519, Requested 14996. Please try again in 263ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 788519, Requested 14996. Please try again in 263ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 787575, Requested 14964. Please try again in 190ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 787575, Requested 14964. Please try again in 190ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 785579, Requested 14968. Please try again in 41ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 785579, Requested 14968. Please try again in 41ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 790679, Requested 14905. Please try again in 418ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 790679, Requested 14905. Please try again in 418ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 786005, Requested 14957. Please try again in 72ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 786005, Requested 14957. Please try again in 72ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 788875, Requested 14982. Please try again in 289ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 788875, Requested 14982. Please try again in 289ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 799177, Requested 14932. Please try again in 1.058s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 799177, Requested 14932. Please try again in 1.058s. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 792711, Requested 14922. Please try again in 572ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 792711, Requested 14922. Please try again in 572ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 785472, Requested 14959. Please try again in 32ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 785472, Requested 14959. Please try again in 32ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 785585, Requested 15015. Please try again in 45ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-4.1 in organization org-IHuwHVVV7rsrW9x9pYPiCVol on tokens per min (TPM): Limit 800000, Used 785585, Requested 15015. Please try again in 45ms. Visit https://platform.openai.com/account/rate-limits to learn more.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenAI, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+
+========== Phase 2 Summary ==========
+Trials: 390
+Score: 109/390  (Accuracy: 27.95%)
+Delegations to teammate: 13 (3.33%)
+Self-answer accuracy: 96/377 (25.46%)
+Teammate accuracy when delegated: 13/13 (100.00%)
+Mode: Decision-only
+
+Game data saved to: ./delegate_game_logs/gpt-4.1-2025-04-14_GPSA_50_500_decisionOnly_team1.0_temp1.0_1763329625_game_data.json
+--- Game Complete ---

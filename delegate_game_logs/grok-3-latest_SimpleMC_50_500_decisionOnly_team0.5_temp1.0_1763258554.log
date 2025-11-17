@@ -1,0 +1,28 @@
+Provider: xAI
+Using random seed: 42
+Loading completed results from: ./compiled_results_smc/grok-3-latest_phase1_compiled.json
+True subject accuracy from completed results: 59.00%
+Using true subject accuracy for Phase 1: 59.00%
+Separated questions: 295 correct, 205 incorrect
+Selecting 30 correct and 20 incorrect questions for Phase 1
+Phase 1 selected 50 with subject accuracy 60.00%
+Requested 500 Phase 2 questions but only 450 remaining; using all.
+Phase 2 selected 450 questions; target acc 59.00%, actual 58.89%
+Predetermined teammate answers for Phase 1: 50 (correct=25)
+Predetermined teammate answers for Phase 2: 450 (correct=225)
+Selected 50 questions for Phase 1
+Selected 450 questions for Phase 2
+Question type: Multiple Choice
+
+Starting Delegate Game for Subject: grok-3-latest_SimpleMC_50_500_decisionOnly_team0.5_temp1.0
+Params: P1=50, P2=450, Tmate P1=50.00%, Tmate P2=50.00%
+Simulating Phase 1...
+Created simulated Phase 1 history with 100 messages
+Teammate's answer: (Correct)
+
+========== Phase 2: Answer or Delegate ==========
+
+In model_call, provider=xAI, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'code': 'Some resource has been exhausted', 'error': 'Your team 4bb63014-18c2-4ebc-9ad0-1faf5677326d has either used all available credits or reached its monthly spending limit. To continue making API requests, please purchase more credits or raise your spending limit.'}
+Error in llm processing: Error code: 429 - {'code': 'Some resource has been exhausted', 'error': 'Your team 4bb63014-18c2-4ebc-9ad0-1faf5677326d has either used all available credits or reached its monthly spending limit. To continue making API requests, please purchase more credits or raise your spending limit.'}
+In model_call, provider=xAI, attempt=1

@@ -1,0 +1,1824 @@
+Provider: OpenRouter
+Using random seed: 42
+Loading completed results from: ./compiled_results_sqa/gpt-4o-2024-08-06_phase1_compiled.json
+True subject accuracy from completed results: 34.61%
+Using true subject accuracy for Phase 1: 34.61%
+Separated questions: 163 correct, 308 incorrect
+Selecting 17 correct and 33 incorrect questions for Phase 1
+Phase 1 selected 50 with subject accuracy 34.00%
+Requested 500 Phase 2 questions but only 421 remaining; using all.
+Phase 2 selected 421 questions; target acc 34.61%, actual 34.68%
+Predetermined teammate answers for Phase 1: 50 (correct=15)
+Predetermined teammate answers for Phase 2: 421 (correct=126)
+Selected 50 questions for Phase 1
+Selected 421 questions for Phase 2
+Question type: Short Answer
+
+Starting Delegate Game for Subject: gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0
+Params: P1=50, P2=421, Tmate P1=30.00%, Tmate P2=30.00%
+Simulating Phase 1...
+Created simulated Phase 1 history with 100 messages
+Teammate's answer: (Incorrect)
+
+========== Phase 2: Answer or Delegate ==========
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=2
+Thread execution error: BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=3
+Thread execution error: BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=4
+Thread execution error: BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=5
+Thread execution error: BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=6
+Thread execution error: BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=7
+Thread execution error: BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=8
+Thread execution error: BadRequestError: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 400 - {'error': {'message': 'Provider returned error', 'code': 400, 'metadata': {'raw': '{"error":{"message":"The response was filtered due to the prompt triggering Azure OpenAI\'s content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766","type":null,"param":"prompt","code":"content_filter","status":400,"innererror":{"code":"ResponsibleAIPolicyViolation","content_filter_result":{"hate":{"filtered":false,"severity":"safe"},"jailbreak":{"filtered":false,"detected":false},"self_harm":{"filtered":false,"severity":"safe"},"sexual":{"filtered":true,"severity":"high"},"violence":{"filtered":false,"severity":"low"}}}}}', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=9
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+Thread execution error: RateLimitError: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+Error in llm processing: Error code: 429 - {'error': {'message': 'Provider returned error', 'code': 429, 'metadata': {'raw': 'openai/gpt-4o-2024-08-06 is temporarily rate-limited upstream. Please retry shortly, or add your own key to accumulate your rate limits: https://openrouter.ai/settings/integrations', 'provider_name': 'Azure'}}, 'user_id': 'user_2olc3UxrHvMROEYTU2RrqXohqvn'}
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Delegating to teammate...
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+In model_call, provider=OpenRouter, attempt=1
+--> Your answer: (decision-only: original answer used)
+Choice registered. Moving to the next question...
+
+
+========== Phase 2 Summary ==========
+Trials: 421
+Score: 148/421  (Accuracy: 35.15%)
+Delegations to teammate: 67 (15.91%)
+Self-answer accuracy: 129/354 (36.44%)
+Teammate accuracy when delegated: 19/67 (28.36%)
+Mode: Decision-only
+
+Game data saved to: ./delegate_game_logs/gpt-4o-2024-08-06_SimpleQA_50_500_decisionOnly_team0.3_temp1.0_1763326303_game_data.json
+--- Game Complete ---

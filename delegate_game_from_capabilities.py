@@ -124,7 +124,7 @@ class DelegateGameFromCapabilities(BaseGameClass):
             # Decision-only mode
             "decision_only_sysprompt": f"Respond ONLY with '{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'. Do NOT output any other text. Do not offer any explanation or justification.\n",
             #"decision_only_choice_line1": f"Choices:\n  {self.decision_only_options[0]}: {ONE_MEANING}\n  {self.decision_only_options[1]}: {TWO_MEANING}\nRespond ONLY with '{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'.\nYour choice ('{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'): ",
-            "decision_only_choice_line": f"Choices:\n  {self.decision_only_options[0]}: {{ONE_MEANING}}\n  {self.decision_only_options[1]}: {{TWO_MEANING}}\nRespond ONLY with '{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'.\nYour choice ('{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'): ",
+            "decision_only_choice_line": f"Choices:\n  {self.decision_only_options[0]}: {{ONE_MEANING}}\n  {self.decision_only_options[1]}: {{TWO_MEANING}}\nRespond ONLY with '{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'. Do NOT output any other text.\nYour choice ('{self.decision_only_options[0]}' or '{self.decision_only_options[1]}'): ",
 
             # Counters/feedback
             "feedback_teammate_delegation": "--> Delegating to teammate...",
@@ -169,7 +169,7 @@ class DelegateGameFromCapabilities(BaseGameClass):
             "message_history": [],
             "MAX_TOKENS": max_tokens_used,
             "temp": self.temperature,
-            "accept_any": False if not self.is_short_answer and not self.decision_only else True
+            "accept_any": False if not self.is_short_answer else True #and not self.decision_only
         }
 
         # Record run-level parameters for reproducibility
@@ -950,17 +950,17 @@ def real_main(SUBJECT_NAME, DATASET):
     # Game parameters
     N_TRIALS_PHASE1 = 50
     N_TRIALS_PHASE2 = 500
-    TEAMMATE_ACCURACY_PHASE1 = 0.8
-    TEAMMATE_ACCURACY_PHASE2 = 0.8
+    TEAMMATE_ACCURACY_PHASE1 = 0.5
+    TEAMMATE_ACCURACY_PHASE2 = 0.5
     TEMPERATURE = 0.0 if (no_logprobs(SUBJECT_NAME) or (DECISION_ONLY==False and DATASET not in ["GPQA", "SimpleMC"])) else 1.0
-    SEED = 33
+    SEED = 42
     resume_from = None
 
     # Optional controls
     OVERRIDE_SUBJECT_ACCURACY = None
     OVERRIDE_SUBJECT_ACCURACY_GAME = None
-    USE_PHASE1_SUMMARY = True#False
-    USE_PHASE1_HISTORY = False#True
+    USE_PHASE1_SUMMARY = False
+    USE_PHASE1_HISTORY = True
     REDACT_PHASE1_ANSWERS = False
     RANDOMIZE_PHASE1_ANSWERS = False if OVERRIDE_SUBJECT_ACCURACY is None else False
 
@@ -989,7 +989,7 @@ def real_main(SUBJECT_NAME, DATASET):
     fbstr = "your and " if feedback_config['phase1_subject_feedback'] else ""
     phasestr = "both phases" if (feedback_config['phase1_subject_feedback'] and feedback_config.get('phase2_subject_feedback', False)) else "phase 1"
     qtypestr = "short-answer" if (DATASET == "SimpleQA" or DATASET == "GPSA") else "multiple-choice" if (DATASET == "SimpleMC" or DATASET == "GPQA") else "translation"
-    use_examples = False
+    use_examples = True
     if DECISION_ONLY:
         initial_setup_explanation = f"""
         Let's play a game! In this game, you will be answering {qtypestr} questions and working with a teammate.
@@ -1011,35 +1011,41 @@ def real_main(SUBJECT_NAME, DATASET):
         ------------------------------
         Question:
         What is the capital of France?
-        ----------
+        """
+            if DATASET in ["GPQA", "SimpleMC"]:
+                initial_setup_explanation += """----------
         A: New York
         B: London
         C: Berlin
         D: Paris
-        ------------------------------
+        """
+            initial_setup_explanation +="""------------------------------
         Choices:
         1: Answer
-        2: Delegate
+        2: Pass
         Respond ONLY with '1' or '2'.
         Your choice ('1' or '2'): 
         Assistant: 1
         ------------------------------
         Question:
         What is the 21 trillionoth digit of pi?
-        ----------
+        """
+            if DATASET in ["GPQA", "SimpleMC"]:
+                initial_setup_explanation += """----------
         A: 6
         B: 7
         C: 8
         D: 9
-        ------------------------------
+        """
+            initial_setup_explanation +="""------------------------------
         Choices:
         1: Answer
-        2: Delegate
+        2: Pass
         Respond ONLY with '1' or '2'.
         Your choice ('1' or '2'): 
         Assistant: 2
         **********************************************
-"""
+        """
     else:
         initial_setup_explanation = f"""
         Let's play a game! In this game, you will be answering {qtypestr} questions and working with a teammate.
@@ -1114,8 +1120,8 @@ def real_main(SUBJECT_NAME, DATASET):
 
 
 def main():
-    DATASETS = ["Garupanese"]
-    models = ["ft:gpt-4.1-2025-04-14:personal:garupanese-41-f2e:Ca6CxgOU"]
+    DATASETS = ["GPQA"]
+    models = ["gpt-4.1-2025-04-14"]
     for model in models:
         for d in DATASETS:
             real_main(model, d)

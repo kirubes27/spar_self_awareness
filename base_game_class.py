@@ -70,8 +70,8 @@ class BaseGameClass:
                 self.provider = "OpenAI"
             elif self.subject_name.startswith("gemini"):
                 self.provider = "Google"
-            elif self.subject_name.startswith("grok"):
-                self.provider = "xAI"
+###            elif self.subject_name.startswith("grok"):
+###                self.provider = "xAI"
             #elif re.match(r"meta-llama/Meta-Llama-3\.1-\d+B", self.subject_name):
             #    self.provider = "NDIF"###"Hyperbolic"###
             #elif "deepseek" in self.subject_name:
@@ -191,6 +191,8 @@ class BaseGameClass:
                         elif self.subject_name=='claude-sonnet-4-20250514': model_name = 'anthropic/claude-sonnet-4'
                         elif self.subject_name=='claude-sonnet-4-5-20250929': model_name = 'anthropic/claude-sonnet-4.5'
                         elif self.subject_name=='claude-opus-4-1-20250805': model_name = 'anthropic/claude-opus-4.1'
+                        elif self.subject_name=='deepseek-chat': model_name = 'deepseek/deepseek-chat-v3-0324'
+                        elif self.subject_name=='grok-3-latest': model_name = 'x-ai/grok-3'
                         else:
                             if self.subject_name.startswith("gpt-") or self.subject_name.startswith("o3") or self.subject_name.startswith("o1"): prefix = 'openai/' 
                             elif self.subject_name.startswith("qwen"): prefix = 'qwen/'
