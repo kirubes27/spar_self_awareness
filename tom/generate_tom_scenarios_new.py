@@ -338,6 +338,7 @@ def generate_scenarios_from_tuples(specs: List[SpecTuple], outfile: str, seed: O
             question_container=queried_container,
             events=sb.events,
             present_initially=present_initially,
+            id=row['Id'],
         )
 
         # Validate invariants

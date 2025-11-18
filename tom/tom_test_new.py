@@ -58,6 +58,7 @@ class TurnRecord:
     was_optimal: bool
     blue_score_after: float
     red_score_after: float
+    scenario_id: Optional[str] = None
     epistemic_type: Optional[str] = None
     ask_constraint: Optional[str] = None
     ks_self: Optional[str] = None
@@ -73,7 +74,7 @@ class TurnRecord:
     tell_truthful_about_question: Optional[str] = None
     b_left_before_a: Optional[str] = None
     a_left_before_put: Optional[str] = None
-    b_put_item: Optional[str] = None
+    b_put_or_moved: Optional[str] = None
 
 class GameState:
     """Manages the game state."""
@@ -540,12 +541,12 @@ Respond ONLY with your action, and no other text."""
                                         if event.event_type == 'put')
             a_left_before_put = "FALSE" if any_put_before_a_left else "TRUE"
         
-        # B put an item
-        b_put_item = "TRUE" if any(event.event_type == 'put' and event.character == 'B' 
-                                   for event in scenario.events) else "FALSE"
+        # B put or moved an item
+        b_put_or_moved = "TRUE" if any((event.event_type == 'put' or event.event_type == 'move') and event.character == 'B' 
+                                       for event in scenario.events) else "FALSE"
         
         turn_record = TurnRecord(
-            round_num=scenario.round_num, character=turn_char, scenario_desc=scenario_desc,
+            round_num=scenario.round_num, scenario_id=scenario.id, character=turn_char, scenario_desc=scenario_desc,
             question=question_desc, action=action_str, action_cost=abs(score_delta),
             answer_given=answer_given, answer_correct=is_correct, answer_score=answer_score,
             optimal_action=expected_action_str, was_optimal=was_optimal,
@@ -564,7 +565,7 @@ Respond ONLY with your action, and no other text."""
             tell_truthful_about_question=tell_truthful_about_question,
             b_left_before_a=b_left_before_a,
             a_left_before_put=a_left_before_put,
-            b_put_item=b_put_item,
+            b_put_or_moved=b_put_or_moved,
         )
         game.turn_records.append(turn_record)
         
