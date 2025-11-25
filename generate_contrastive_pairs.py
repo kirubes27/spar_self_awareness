@@ -525,6 +525,14 @@ def mine_same_vs_different(df: pd.DataFrame, outdir: str, model_name: str) -> No
         log("  SKIP: No questions after pmax filter")
         return
 
+    # Drop trivial "everyone thinks it's easy" cases (Chris's suggestion)
+    mask_trivial = (df_filtered["SelfProb"] >= 0.7) & (df_filtered["OtherProb"] >= 0.7)
+    n_trivial = mask_trivial.sum()
+    if n_trivial > 0:
+        log(f"  Dropping {n_trivial} trivial questions (Self>=0.7 & Other>=0.7)")
+        df_filtered = df_filtered[~mask_trivial]
+        n_filtered = len(df_filtered)
+
     # Try strict thresholds first
     same_mask = df_filtered["gap_abs"] <= GAP_SAME_EPS
     diff_mask = df_filtered["gap_abs"] >= GAP_DIFF_MIN
@@ -980,6 +988,179 @@ def mine_pairs(df: pd.DataFrame, outdir: str, model_name: str) -> None:
         log("  SKIP easy-vs-hard: No correct_answer labels available")
 
 
+def mine_introspective_extremes(df: pd.DataFrame, outdir: str, model_name: str) -> None:
+    """
+    Miner 3: Introspective Extremes (Chris's definition - Relaxed).
+
+    Focuses purely on Introspective Confidence (Self + Entropy).
+    We remove the hard constraint on OtherProb because the model has a strong
+    Self>Other bias, making "Low Self + High Other" (Group B) nearly impossible to find.
+
+    Group A (High Introspective Confidence):
+      - High Self Probability
+      - Low Entropy
+
+    Group B (Low Introspective Confidence):
+      - Low Self Probability
+      - High Entropy
+    """
+    log("  ")
+    log("  === Mining Introspective Extremes (Self + Entropy only) ===")
+
+    # Filter by pmax
+    df_filtered = df[df["pmax"] >= P_MAX_MIN_FOR_GAP].copy()
+    n_filtered = len(df_filtered)
+
+    if n_filtered == 0:
+        log("  SKIP: No questions after pmax filter")
+        return
+
+    # Compute entropy quantiles on filtered data
+    ent_lo = df_filtered["entropy"].quantile(ENTROPY_LOW_Q)
+    ent_hi = df_filtered["entropy"].quantile(ENTROPY_HIGH_Q)
+
+    log(f"  Entropy thresholds: low ≤ {ent_lo:.3f}, high ≥ {ent_hi:.3f}")
+
+    # Stage 1: Try strict thresholds (Self + Entropy only)
+    cond_a = df_filtered[
+        (df_filtered["SelfProb"] >= SELF_HIGH)
+        & (df_filtered["entropy"] <= ent_lo)
+    ].copy()
+
+    cond_b = df_filtered[
+        (df_filtered["SelfProb"] <= SELF_LOW)
+        & (df_filtered["entropy"] >= ent_hi)
+    ].copy()
+
+    n_a = len(cond_a)
+    n_b = len(cond_b)
+    stage_used = "strict"
+
+    log(f"  Stage 1 (strict): A={n_a}, B={n_b}")
+
+    # Stage 2: Relax Self constraints if needed
+    if n_a < MIN_EXTREME_PAIRS or n_b < MIN_EXTREME_PAIRS:
+        log("  Stage 2: Relaxing Self constraints by 0.1")
+        cond_a = df_filtered[
+            (df_filtered["SelfProb"] >= SELF_HIGH - 0.1)
+            & (df_filtered["entropy"] <= ent_lo)
+        ].copy()
+
+        cond_b = df_filtered[
+            (df_filtered["SelfProb"] <= SELF_LOW + 0.1)
+            & (df_filtered["entropy"] >= ent_hi)
+        ].copy()
+
+        n_a = len(cond_a)
+        n_b = len(cond_b)
+        stage_used = "relaxed_self"
+        log(f"  Stage 2 result: A={n_a}, B={n_b}")
+
+    # Stage 3: Use quantiles as last resort
+    if n_a < MIN_EXTREME_PAIRS or n_b < MIN_EXTREME_PAIRS:
+        log("  Stage 3: Using quantiles (top/bottom 20%)")
+        self_q_high = df_filtered["SelfProb"].quantile(0.80)
+        self_q_low = df_filtered["SelfProb"].quantile(0.20)
+
+        cond_a = df_filtered[
+            (df_filtered["SelfProb"] >= self_q_high)
+            & (df_filtered["entropy"] <= ent_lo)
+        ].copy()
+
+        cond_b = df_filtered[
+            (df_filtered["SelfProb"] <= self_q_low)
+            & (df_filtered["entropy"] >= ent_hi)
+        ].copy()
+
+        n_a = len(cond_a)
+        n_b = len(cond_b)
+        stage_used = "quantile"
+        log(f"  Stage 3 result: A={n_a}, B={n_b}")
+
+    log(f"  Final: Condition A={n_a}, Condition B={n_b} (using {stage_used} thresholds)")
+
+    if n_a == 0 or n_b == 0:
+        log("  ERROR: One condition has zero questions, cannot pair!")
+        return
+
+    if n_a < 5 or n_b < 5:
+        log(f"  WARNING: Very few pairs (A={n_a}, B={n_b}), results may not be reliable")
+
+    # Check for duplicate QIDs within each condition
+    assert cond_a["question_id"].duplicated().sum() == 0, "Duplicate QIDs in Condition A"
+    assert cond_b["question_id"].duplicated().sum() == 0, "Duplicate QIDs in Condition B"
+
+    # Sort deterministically for pairing
+    cond_a = cond_a.sort_values(
+        ["SelfProb", "entropy"], ascending=[False, True]
+    ).reset_index(drop=True)
+    cond_b = cond_b.sort_values(
+        ["SelfProb", "entropy"], ascending=[True, False]
+    ).reset_index(drop=True)
+
+    # Pair
+    n_pairs = min(n_a, n_b)
+    pairs = []
+
+    for i in range(n_pairs):
+        a = cond_a.iloc[i]
+        b = cond_b.iloc[i]
+        pairs.append(
+            {
+                "pair_id": f"intro_{i:03d}",
+                "A_qid": a["question_id"],
+                "A_Self": a["SelfProb"],
+                "A_Other": a["OtherProb"],
+                "A_entropy": a["entropy"],
+                "A_pmax": a["pmax"],
+                "A_margin": a["margin"],
+                "A_correct": int(a["correct"]),
+                "A_question_text": a["question_text"],
+                "B_qid": b["question_id"],
+                "B_Self": b["SelfProb"],
+                "B_Other": b["OtherProb"],
+                "B_entropy": b["entropy"],
+                "B_pmax": b["pmax"],
+                "B_margin": b["margin"],
+                "B_correct": int(b["correct"]),
+                "B_question_text": b["question_text"],
+            }
+        )
+
+    # Log medians
+    log(
+        f"  Condition A medians: Self={cond_a['SelfProb'][:n_pairs].median():.3f}, Other={cond_a['OtherProb'][:n_pairs].median():.3f}, entropy={cond_a['entropy'][:n_pairs].median():.3f}"
+    )
+    log(
+        f"  Condition B medians: Self={cond_b['SelfProb'][:n_pairs].median():.3f}, Other={cond_b['OtherProb'][:n_pairs].median():.3f}, entropy={cond_b['entropy'][:n_pairs].median():.3f}"
+    )
+
+    # Save pairs
+    pairs_df = pd.DataFrame(pairs)
+    pairs_path = os.path.join(outdir, f"{model_name}_introspective_extremes_AB.csv")
+    pairs_df.to_csv(pairs_path, index=False)
+    log(f"  Saved: {pairs_path} ({n_pairs} pairs)")
+
+    # Train/test split (deterministic shuffle via stable hash of pair_id)
+    def stable_hash(pid):
+        return int(hashlib.md5(str(pid).encode()).hexdigest()[:8], 16)
+
+    pairs_df["_sort_key"] = pairs_df["pair_id"].apply(stable_hash)
+    pairs_df = pairs_df.sort_values("_sort_key").drop("_sort_key", axis=1).reset_index(drop=True)
+    n_train = int(n_pairs * TRAIN_SPLIT)
+    pairs_train = pairs_df.iloc[:n_train]
+    pairs_test = pairs_df.iloc[n_train:]
+    pairs_train.to_csv(pairs_path.replace(".csv", "_train.csv"), index=False)
+    pairs_test.to_csv(pairs_path.replace(".csv", "_test.csv"), index=False)
+    log(f"    Train: {len(pairs_train)} pairs, Test: {len(pairs_test)} pairs")
+
+    # Assertions (only check numeric columns to avoid brittle text field checks)
+    numeric_cols = pairs_df.select_dtypes(include=[np.number]).columns
+    nan_count = pairs_df[numeric_cols].isna().sum().sum()
+    assert nan_count == 0, f"NaN values found in numeric columns! Count: {nan_count}"
+    log("  Assertions passed (no NaNs in numeric columns, no duplicates)")
+
+
 def main():
     log("=== Contrastive Pair Generation ===")
     log("Configuration:")
@@ -1032,6 +1213,9 @@ def main():
 
         # NEW: Mine Opposite Extremes
         mine_opposite_extremes(df, outdir, model_name)
+
+        # NEW: Mine Introspective Extremes (Chris's definition)
+        mine_introspective_extremes(df, outdir, model_name)
 
         processed_count += 1
         log("")
