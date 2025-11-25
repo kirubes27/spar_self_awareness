@@ -328,50 +328,58 @@ def main():
     print(f"Saved results to {json_path}")
 
     # 6. Plot
-    plt.figure(figsize=(10, 6))
+    # Set style
+    plt.style.use("seaborn-v0_8-paper")
+    plt.rcParams["font.family"] = "serif"
+    plt.rcParams["axes.grid"] = True
+    plt.rcParams["grid.alpha"] = 0.3
+
+    fig, ax1 = plt.subplots(figsize=(10, 6), dpi=300)
 
     # Plot AUCs
-    plt.plot(
+    ax1.plot(
         df_res["layer"],
         df_res["auc_conf"],
         label="AUC: Introspective (A vs B)",
-        color="blue",
-        linewidth=2,
+        color="#2E86C1",  # Strong Blue
+        linewidth=2.5,
     )
-    plt.plot(
+    ax1.plot(
         df_res["layer"],
         df_res["auc_so"],
         label="AUC: Self-Other (Diff vs Same)",
-        color="green",
-        linewidth=2,
+        color="#27AE60",  # Strong Green
+        linewidth=2.5,
         linestyle="--",
     )
 
     # Plot Cosine (on secondary axis)
-    ax1 = plt.gca()
     ax2 = ax1.twinx()
     ax2.plot(
         df_res["layer"],
         df_res["cosine_sim"],
         label="Cosine Sim (Conf vs SO)",
-        color="red",
+        color="#E74C3C",  # Strong Red
         linewidth=2,
-        alpha=0.7,
+        alpha=0.8,
     )
 
-    ax1.set_xlabel("Layer")
-    ax1.set_ylabel("AUC")
-    ax2.set_ylabel("Cosine Similarity")
-    ax1.set_ylim(0.4, 1.0)
-    ax2.set_ylim(-1.0, 1.0)
+    # Axes limits and labels
+    ax1.set_xlabel("Layer Index", fontsize=12)
+    ax1.set_ylabel("AUC", fontsize=12)
+    ax2.set_ylabel("Cosine Similarity", fontsize=12)
+
+    ax1.set_ylim(0, 1.05)
+    ax1.set_xlim(0, 80)
+    ax2.set_ylim(-1.05, 1.05)
 
     # Legends
     lines1, labels1 = ax1.get_legend_handles_labels()
     lines2, labels2 = ax2.get_legend_handles_labels()
-    ax1.legend(lines1 + lines2, labels1 + labels2, loc="lower right")
+    ax1.legend(lines1 + lines2, labels1 + labels2, loc="lower right", frameon=True, fancybox=True, framealpha=0.9)
 
-    plt.title(f"Introspective Confidence vs Self-Other Direction ({MODEL_NAME})")
-    plt.grid(True, alpha=0.3)
+    plt.title(f"Introspective Confidence vs Self-Other Direction ({MODEL_NAME})", fontsize=14, pad=15)
+    plt.tight_layout()
 
     plot_path = OUTPUT_DIR / "introspective_vs_self_other_plot.png"
     plt.savefig(plot_path)
