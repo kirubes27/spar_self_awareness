@@ -305,25 +305,41 @@ def run_sweep_with_split(
 
 
 def plot_results(results: list[dict], output_path: Path):
-    """Generate AUC vs Layer plot."""
+    """Generate AUC vs Layer plot with NeurIPS-ready aesthetics."""
     layers = [r["layer"] for r in results]
     aucs = [r["auc"] for r in results]
 
-    plt.figure(figsize=(10, 6))
-    plt.plot(layers, aucs, marker="o", linestyle="-", color="b", linewidth=2)
-    plt.axhline(y=0.5, color="r", linestyle="--", label="Random Chance")
+    # Set style
+    plt.style.use("seaborn-v0_8-paper")
+    plt.rcParams["font.family"] = "serif"
+    plt.rcParams["axes.grid"] = True
+    plt.rcParams["grid.alpha"] = 0.3
+
+    plt.figure(figsize=(8, 5), dpi=300)
+
+    # Plot main line
+    plt.plot(layers, aucs, color="#2E86C1", linewidth=2.5, label="Self-Other Separation")
+
+    # Random chance line
+    plt.axhline(y=0.5, color="gray", linestyle="--", linewidth=1.5, alpha=0.8, label="Random Chance")
 
     # Find peak
     max_auc = max(aucs)
     best_layer = layers[aucs.index(max_auc)]
-    plt.plot(best_layer, max_auc, "r*", markersize=15, label=f"Peak: L{best_layer} ({max_auc:.3f})")
+    plt.plot(best_layer, max_auc, marker="*", color="#E74C3C", markersize=12,
+             linestyle="None", label=f"Peak: L{best_layer} ({max_auc:.3f})")
 
-    plt.title(f"Self-Other Separation by Layer ({MODEL_NAME})")
-    plt.xlabel("Layer Index")
-    plt.ylabel("AUC (Same vs Different)")
-    plt.grid(True, alpha=0.3)
-    plt.legend()
+    # Aesthetics
+    plt.title(f"Self-Other Separation by Layer ({MODEL_NAME})", fontsize=12, pad=10)
+    plt.xlabel("Layer Index", fontsize=10)
+    plt.ylabel("AUC (Same vs Different)", fontsize=10)
+    plt.ylim(0, 1.05)
+    plt.xlim(0, 80)
 
+    # Legend
+    plt.legend(frameon=True, fancybox=True, framealpha=0.9, loc="lower right")
+
+    plt.tight_layout()
     plt.savefig(output_path)
     print(f"✅ Plot saved to {output_path}")
 
