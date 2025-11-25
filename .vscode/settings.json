@@ -1,0 +1,27 @@
+{
+  // Python formatting
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+
+  // Black formatter settings
+  "black-formatter.args": ["--line-length=100"],
+
+  // Ruff settings
+  "ruff.lint.run": "onSave",
+  "ruff.organizeImports": true,
+
+  // Editor settings
+  "editor.rulers": [100],
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+
+  // Python-specific
+  "python.analysis.typeCheckingMode": "basic",
+  "python.linting.enabled": true
+}

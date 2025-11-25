@@ -33,9 +33,15 @@ Output:
     - Appends the same blocks to analysis_log_self_other_simplemc.txt
 """
 
-import os, glob, json, math, re, datetime
-import pandas as pd
+import datetime
+import glob
+import json
+import math
+import os
+import re
+
 import numpy as np
+import pandas as pd
 
 
 # ---------------------------------------------------------------------
@@ -43,9 +49,9 @@ import numpy as np
 # ---------------------------------------------------------------------
 
 BASELINE_DIR = "compiled_results_smc"
-ONEP_DIR     = "capabilities_1p_test_logs"   # self
-THREEP_DIR   = "capabilities_3p_test_logs"   # other
-LOG_PATH     = "analysis_log_self_other_simplemc.txt"
+ONEP_DIR = "capabilities_1p_test_logs"  # self
+THREEP_DIR = "capabilities_3p_test_logs"  # other
+LOG_PATH = "analysis_log_self_other_simplemc.txt"
 
 # Only trust runs that look like the full 500‑question SimpleMC set.
 MIN_QUESTIONS_FULL = 400
@@ -82,6 +88,7 @@ MODEL_NAMES = [
 # Helpers
 # ---------------------------------------------------------------------
 
+
 def _safe_float(v):
     try:
         return float(v)
@@ -97,7 +104,7 @@ def _compute_entropy(prob_dict):
     if not isinstance(prob_dict, dict):
         return float("nan")
     vals = []
-    for k,v in prob_dict.items():
+    for k, v in prob_dict.items():
         if v is None:
             continue
         try:
@@ -107,7 +114,7 @@ def _compute_entropy(prob_dict):
     s = sum(vals)
     if s <= 0:
         return float("nan")
-    probs = [v/s for v in vals]
+    probs = [v / s for v in vals]
     ent = 0.0
     for p in probs:
         if p > 0:
@@ -147,7 +154,7 @@ def _parse_baseline_phase1(json_obj):
         question_text = ""
         q_block = rec.get("question", {})
         if isinstance(q_block, dict):
-            question_text = q_block.get("text","").strip()
+            question_text = q_block.get("text", "").strip()
 
         out[qid] = {
             "entropy": ent,
@@ -179,7 +186,7 @@ def _parse_capabilities_file(json_obj):
         question_text = ""
         q_block = rec.get("question", {})
         if isinstance(q_block, dict):
-            question_text = q_block.get("text","").strip()
+            question_text = q_block.get("text", "").strip()
 
         out[qid] = {
             "expected_prob": exp_prob,
@@ -208,14 +215,11 @@ def _find_best_cap_file(dir_path, model_name):
     parsed = []
     for p in candidates:
         base = os.path.basename(p)
-        m = re.match(
-            rf"^{re.escape(model_name)}_SimpleMC_(\d+)_([0-9]+)_test_data\.json$",
-            base
-        )
+        m = re.match(rf"^{re.escape(model_name)}_SimpleMC_(\d+)_([0-9]+)_test_data\.json$", base)
         if not m:
             continue
-        qcount = int(m.group(1))   # "500" vs "50"
-        ts     = int(m.group(2))   # timestamp-ish integer
+        qcount = int(m.group(1))  # "500" vs "50"
+        ts = int(m.group(2))  # timestamp-ish integer
         parsed.append((qcount, ts, p))
 
     if not parsed:
@@ -229,7 +233,7 @@ def _find_best_cap_file(dir_path, model_name):
     chosen_path = parsed[0][2]
 
     try:
-        with open(chosen_path, "r") as f:
+        with open(chosen_path) as f:
             data = json.load(f)
         recs = _parse_capabilities_file(data)
     except Exception:
@@ -244,16 +248,14 @@ def _analyze_model(model_name):
     Returns (lines_to_print, summary_dict_or_None).
     """
 
-    baseline_path = os.path.join(
-        BASELINE_DIR, f"{model_name}_phase1_compiled.json"
-    )
+    baseline_path = os.path.join(BASELINE_DIR, f"{model_name}_phase1_compiled.json")
 
     if not os.path.exists(baseline_path):
         return [f"Skipping {model_name}: missing baseline file."], None
 
     # load baseline json
     try:
-        with open(baseline_path, "r") as f:
+        with open(baseline_path) as f:
             baseline_json = json.load(f)
         base_records = _parse_baseline_phase1(baseline_json)
     except Exception as e:
@@ -269,27 +271,27 @@ def _analyze_model(model_name):
 
     # Align questions across baseline, 1P, 3P
     aligned_ids = sorted(
-        set(base_records.keys())
-        & set(onep_records.keys())
-        & set(threep_records.keys())
+        set(base_records.keys()) & set(onep_records.keys()) & set(threep_records.keys())
     )
     aligned_n = len(aligned_ids)
 
     # Build DataFrame with all variables
     data_rows = []
     for qid in aligned_ids:
-        ent        = base_records[qid]["entropy"]
-        acc        = base_records[qid]["actual_correct"]
-        self_prob  = onep_records[qid]["expected_prob"]
+        ent = base_records[qid]["entropy"]
+        acc = base_records[qid]["actual_correct"]
+        self_prob = onep_records[qid]["expected_prob"]
         other_prob = threep_records[qid]["expected_prob"]
-        
-        data_rows.append({
-            'qid': qid,
-            'entropy': ent,
-            'actual_correct': acc,
-            'self_prob': self_prob,
-            'other_prob': other_prob,
-        })
+
+        data_rows.append(
+            {
+                "qid": qid,
+                "entropy": ent,
+                "actual_correct": acc,
+                "self_prob": self_prob,
+                "other_prob": other_prob,
+            }
+        )
 
     df = pd.DataFrame(data_rows)
 
@@ -297,11 +299,11 @@ def _analyze_model(model_name):
     df = df.replace([np.inf, -np.inf], np.nan)
 
     # Count usable data per correlation pair (pandas handles NaN pairwise)
-    n_other_self = df[['other_prob', 'self_prob']].dropna().shape[0]
-    n_cap_self = df[['actual_correct', 'self_prob']].dropna().shape[0]
-    n_cap_other = df[['actual_correct', 'other_prob']].dropna().shape[0]
-    n_ent_self = df[['entropy', 'self_prob']].dropna().shape[0]
-    n_ent_other = df[['entropy', 'other_prob']].dropna().shape[0]
+    n_other_self = df[["other_prob", "self_prob"]].dropna().shape[0]
+    n_cap_self = df[["actual_correct", "self_prob"]].dropna().shape[0]
+    n_cap_other = df[["actual_correct", "other_prob"]].dropna().shape[0]
+    n_ent_self = df[["entropy", "self_prob"]].dropna().shape[0]
+    n_ent_other = df[["entropy", "other_prob"]].dropna().shape[0]
 
     # Minimum threshold check
     min_n = min(n_other_self, n_cap_self, n_cap_other, n_ent_self, n_ent_other)
@@ -320,20 +322,20 @@ def _analyze_model(model_name):
 
     # Correlations using pandas (handles NaN pairwise automatically)
     # Note: We use .corr() which computes Pearson by default
-    r_other_self = df['other_prob'].corr(df['self_prob'])
-    r_cap_self   = df['actual_correct'].corr(df['self_prob'])
-    r_cap_other  = df['actual_correct'].corr(df['other_prob'])
+    r_other_self = df["other_prob"].corr(df["self_prob"])
+    r_cap_self = df["actual_correct"].corr(df["self_prob"])
+    r_cap_other = df["actual_correct"].corr(df["other_prob"])
 
     # For entropy: we want "higher entropy => lower claimed confidence"
     # So we correlate entropy with NEGATIVE of self/other probs
     # This gives positive correlation when high entropy = low confidence
-    df['neg_self_prob'] = -df['self_prob']
-    df['neg_other_prob'] = -df['other_prob']
-    r_ent_self   = df['entropy'].corr(df['neg_self_prob'])
-    r_ent_other  = df['entropy'].corr(df['neg_other_prob'])
+    df["neg_self_prob"] = -df["self_prob"]
+    df["neg_other_prob"] = -df["other_prob"]
+    r_ent_self = df["entropy"].corr(df["neg_self_prob"])
+    r_ent_other = df["entropy"].corr(df["neg_other_prob"])
 
     def _fmt(x):
-        if x is None or (isinstance(x,float) and (math.isnan(x) or math.isinf(x))):
+        if x is None or (isinstance(x, float) and (math.isnan(x) or math.isinf(x))):
             return "NaN"
         return f"{x:.12f}"
 
@@ -345,44 +347,36 @@ def _analyze_model(model_name):
     block_lines.append(f"1P (self) file: {onep_path}")
     block_lines.append(f"3P (other) file: {threep_path}")
     block_lines.append(
-        "Raw counts: baseline={b}, self(1p)={s}, other(3p)={o}".format(
-            b=len(base_records), s=len(onep_records), o=len(threep_records)
-        )
+        f"Raw counts: baseline={len(base_records)}, self(1p)={len(onep_records)}, other(3p)={len(threep_records)}"
     )
     block_lines.append(f"Aligned questions: {usable_n}")
-    block_lines.append(f"Sample sizes per correlation: Other-Self={n_other_self}, Cap-Self={n_cap_self}, Cap-Other={n_cap_other}, Ent-Self={n_ent_self}, Ent-Other={n_ent_other}")
+    block_lines.append(
+        f"Sample sizes per correlation: Other-Self={n_other_self}, Cap-Self={n_cap_self}, Cap-Other={n_cap_other}, Ent-Self={n_ent_self}, Ent-Other={n_ent_other}"
+    )
     block_lines.append("")
     block_lines.append("Note: Entropy correlations use negative Self/Other probs,")
-    block_lines.append("      so positive correlation = high entropy → low confidence (correct interpretation)")
-    block_lines.append("")
     block_lines.append(
-        "Correlation between Other's Prob and Self Prob: {r} (n={n})".format(
-            r=_fmt(r_other_self), n=n_other_self
-        )
+        "      so positive correlation = high entropy → low confidence (correct interpretation)"
     )
     block_lines.append("")
     block_lines.append(
-        "Correlation between p_i_capability and Self Prob: {r} (n={n})".format(
-            r=_fmt(r_cap_self), n=n_cap_self
-        )
+        f"Correlation between Other's Prob and Self Prob: {_fmt(r_other_self)} (n={n_other_self})"
     )
     block_lines.append("")
     block_lines.append(
-        "Correlation between p_i_capability and Other Prob: {r} (n={n})".format(
-            r=_fmt(r_cap_other), n=n_cap_other
-        )
+        f"Correlation between p_i_capability and Self Prob: {_fmt(r_cap_self)} (n={n_cap_self})"
     )
     block_lines.append("")
     block_lines.append(
-        "Correlation between capabilities_entropy and Self Prob: {r} (n={n})".format(
-            r=_fmt(r_ent_self), n=n_ent_self
-        )
+        f"Correlation between p_i_capability and Other Prob: {_fmt(r_cap_other)} (n={n_cap_other})"
     )
     block_lines.append("")
     block_lines.append(
-        "Correlation between capabilities_entropy and Other Prob: {r} (n={n})".format(
-            r=_fmt(r_ent_other), n=n_ent_other
-        )
+        f"Correlation between capabilities_entropy and Self Prob: {_fmt(r_ent_self)} (n={n_ent_self})"
+    )
+    block_lines.append("")
+    block_lines.append(
+        f"Correlation between capabilities_entropy and Other Prob: {_fmt(r_ent_other)} (n={n_ent_other})"
     )
     block_lines.append("")
 
@@ -394,14 +388,30 @@ def _analyze_model(model_name):
         "n_cap_other": n_cap_other,
         "n_ent_self": n_ent_self,
         "n_ent_other": n_ent_other,
-        "corr_other_self": r_other_self if not (isinstance(r_other_self,float) and math.isnan(r_other_self)) else "NaN",
-        "corr_cap_self":   r_cap_self   if not (isinstance(r_cap_self,float)   and math.isnan(r_cap_self))   else "NaN",
-        "corr_cap_other":  r_cap_other  if not (isinstance(r_cap_other,float)  and math.isnan(r_cap_other))  else "NaN",
-        "corr_ent_self":   r_ent_self   if not (isinstance(r_ent_self,float)   and math.isnan(r_ent_self))   else "NaN",
-        "corr_ent_other":  r_ent_other  if not (isinstance(r_ent_other,float)  and math.isnan(r_ent_other))  else "NaN",
+        "corr_other_self": (
+            r_other_self
+            if not (isinstance(r_other_self, float) and math.isnan(r_other_self))
+            else "NaN"
+        ),
+        "corr_cap_self": (
+            r_cap_self if not (isinstance(r_cap_self, float) and math.isnan(r_cap_self)) else "NaN"
+        ),
+        "corr_cap_other": (
+            r_cap_other
+            if not (isinstance(r_cap_other, float) and math.isnan(r_cap_other))
+            else "NaN"
+        ),
+        "corr_ent_self": (
+            r_ent_self if not (isinstance(r_ent_self, float) and math.isnan(r_ent_self)) else "NaN"
+        ),
+        "corr_ent_other": (
+            r_ent_other
+            if not (isinstance(r_ent_other, float) and math.isnan(r_ent_other))
+            else "NaN"
+        ),
     }
 
-    block_lines.append("summary_dict = {sd}".format(sd=summary_dict))
+    block_lines.append(f"summary_dict = {summary_dict}")
     block_lines.append("")
 
     return block_lines, summary_dict
@@ -410,6 +420,7 @@ def _analyze_model(model_name):
 # ---------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------
+
 
 def main():
     timestamp = datetime.datetime.now().isoformat(timespec="seconds")
@@ -444,4 +455,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
