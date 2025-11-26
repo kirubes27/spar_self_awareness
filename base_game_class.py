@@ -294,7 +294,7 @@ class BaseGameClass:
 #                            'seed': 42,
                             'provider': {
 #                                **({"only": ["Chutes"]} if 'v3.1' in self.subject_name else {"only": ["DeepInfra"]} if '-r1' in self.subject_name else {"only": ["Cerebras"]} if 'qwen' in self.subject_name else {}),
-                                'require_parameters': False if 'claude' in self.subject_name or 'gpt-5' in self.subject_name or 'llama-3.1-405' in self.subject_name else True,
+                                'require_parameters': False if 'claude' in self.subject_name or 'gpt-5' in self.subject_name or 'llama-3.1-405' in self.subject_name or 'gemini' in self.subject_name else True,
                                 "allow_fallbacks": False,
 #                                'quantizations': ['fp8'],
                             },
