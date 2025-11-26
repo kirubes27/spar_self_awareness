@@ -538,8 +538,10 @@ class CapabilitiesTest(BaseGameClass):
     def run_capabilities_measurement_grp(self):
         start_message = f"\nStarting Capabilities Measurement for Subject: {self.subject_id}"
         self._log(start_message)
-        self._log(f"Configuration: Questions={self.n_questions}, is_human_player={self.is_human_player}, temperature={self.temperature}, resample_for_probs={self.resample_for_probs}, nested={self.nested}")
-        self._log("\n" + "="*10 + " Starting Capability Measuring " + "="*10)
+        self._log(
+            f"Configuration: Questions={self.n_questions}, is_human_player={self.is_human_player}, temperature={self.temperature}, resample_for_probs={self.resample_for_probs}, nested={self.nested}"
+        )
+        self._log("\n" + "=" * 10 + " Starting Capability Measuring " + "=" * 10)
 
         # Initialize state
         probs = None
@@ -556,7 +558,7 @@ class CapabilitiesTest(BaseGameClass):
                 "keep_appending": False,
                 "message_history": [],
                 "MAX_TOKENS": None,
-                "temp": self.temperature
+                "temp": self.temperature,
             }
 
         # Process each question
@@ -568,10 +570,7 @@ class CapabilitiesTest(BaseGameClass):
             # Get subject's answer
             if self.is_human_player:
                 print(q_text)
-                subject_answer = self._get_subject_answer(
-                    [],
-                    self.human_sa_input_prompt
-                )
+                subject_answer = self._get_subject_answer([], self.human_sa_input_prompt)
                 if subject_answer is None:
                     return False
                 probs = None
@@ -583,28 +582,31 @@ class CapabilitiesTest(BaseGameClass):
                 subject_answer, _, probs = self._get_llm_answer(
                     None,
                     setup_prompt + "\n\n" + llm_prompt,
-                    gla_args["message_history"], # no history
+                    gla_args["message_history"],  # no history
                     keep_appending=gla_args["keep_appending"],
                     MAX_TOKENS=gla_args["MAX_TOKENS"],
-                    temp=gla_args["temp"]
+                    temp=gla_args["temp"],
                 )
 
             # Store result
             if subject_answer != "":
-                subject_decision = subject_answer.lower().strip(string.whitespace + string.punctuation)
+                subject_decision = subject_answer.lower().strip(
+                    string.whitespace + string.punctuation
+                )
                 correct_answer = question["correct_answer"]
-                is_correct = (subject_decision == correct_answer.lower())
+                is_correct = subject_decision == correct_answer.lower()
                 self.results[question["id"]] = {
                     "question": question,
                     "subject_answer": subject_answer,
                     "is_correct": is_correct,
-                    "probs": probs
+                    "probs": probs,
                 }
                 if is_correct:
                     self.correct_count += 1
             self.total_count += 1
             print(f"Completed question {self.total_count}/{len(self.questions)}")
-            if (i) % log_interval == 0: self._save_data()
+            if (i) % log_interval == 0:
+                self._save_data()
 
         # Summary
         if self.total_count > 0:
@@ -623,6 +625,7 @@ class CapabilitiesTest(BaseGameClass):
         self._log(f"Capabilities measurement completed. Results saved to: {capabilities_file_path}")
         return True, capabilities_file_path
 
+
 def main(model_dataset_dict, temp):
     for subject_name, datasets in model_dataset_dict.items():
         for DATASET_NAME in datasets:
@@ -635,12 +638,36 @@ def main(model_dataset_dict, temp):
             temp = temp
             seed = 42
 
-            N_QUESTIONS = 500  # Full dataset for main experiment
+            N_QUESTIONS = (
+                5
+                if IS_HUMAN
+                else (
+                    447
+                    if DATASET_NAME.startswith("GP")
+                    else 500
+                    if not DATASET_NAME.startswith("Garupanese")
+                    else 500
+                )
+            )
             SUBJECT_ID = f"{subject_name.replace('/', '-')}_{DATASET_NAME}_{N_QUESTIONS}"
             try:
                 # Load questions for capabilities measurement
                 print(f"Loading {N_QUESTIONS} questions for capabilities measurement...")
-                formatted_questions = load_and_format_dataset(DATASET_NAME, N_QUESTIONS, split="f2e" if "f2e" in subject_name and DATASET_NAME.startswith("Garupanese") else "e2f" if "e2f" in subject_name and DATASET_NAME.startswith("Garupanese") else "both" if DATASET_NAME.startswith("Garupanese") else None)
+                formatted_questions = load_and_format_dataset(
+                    DATASET_NAME,
+                    N_QUESTIONS,
+                    split=(
+                        "f2e"
+                        if "f2e" in subject_name and DATASET_NAME.startswith("Garupanese")
+                        else (
+                            "e2f"
+                            if "e2f" in subject_name and DATASET_NAME.startswith("Garupanese")
+                            else "both"
+                            if DATASET_NAME.startswith("Garupanese")
+                            else None
+                        )
+                    ),
+                )
 
                 random.seed(seed)
                 random.shuffle(formatted_questions)
