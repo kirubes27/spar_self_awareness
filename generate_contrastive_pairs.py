@@ -75,33 +75,55 @@ import pandas as pd
 
 
 # ---------- Config ----------
+# P_MAX_MIN_FOR_GAP: Minimum probability of the top answer to consider the question "settled".
+# We use 0.55 (slightly > 0.5) to ensure the model has a clear majority winner.
+# If p_max < 0.55, the model is "confused" between options, making confidence analysis noisy.
 P_MAX_MIN_FOR_GAP = float(os.environ.get("P_MAX_MIN_FOR_GAP", "0.55"))
+
+# EASY/HARD Thresholds (for Easy vs Hard contrast)
+# Questions with p_max >= 0.80 are considered "Easy" (high certainty).
+# Questions with p_max <= 0.40 are considered "Hard" (low certainty/confusion).
 EASY_PMAX_TH = float(os.environ.get("EASY_PMAX_TH", "0.80"))
 HARD_PMAX_TH = float(os.environ.get("HARD_PMAX_TH", "0.40"))
+
+# Overconfidence/Underconfidence Thresholds
+# OC: High confidence (>= 0.80) but WRONG answer.
+# UC: Low confidence (<= 0.20) but RIGHT answer.
 OC_WRONG_SELF_TH = float(os.environ.get("OC_WRONG_SELF_TH", "0.80"))
 UC_RIGHT_SELF_TH = float(os.environ.get("UC_RIGHT_SELF_TH", "0.20"))
-TOP_GAP_N = int(os.environ.get("TOP_GAP_N", "100"))
-CALIBRATION_PAIRS = int(os.environ.get("CALIBRATION_PAIRS", "50"))
-EASY_HARD_PER_LETTER = int(os.environ.get("EASY_HARD_PER_LETTER", "25"))
+
+# Sampling Limits
+TOP_GAP_N = int(os.environ.get("TOP_GAP_N", "100"))          # Max pairs for Self-Other gap
+CALIBRATION_PAIRS = int(os.environ.get("CALIBRATION_PAIRS", "50")) # Max pairs for calibration
+EASY_HARD_PER_LETTER = int(os.environ.get("EASY_HARD_PER_LETTER", "25")) # Balanced sampling per answer letter
+
+# Minimum aligned questions required to process a model (avoids processing incomplete runs)
 MIN_ALIGNED = int(os.environ.get("MIN_ALIGNED", "480"))
 
-# NEW: SAME vs DIFFERENT config
+# NEW MINERS CONFIG:
+# Gap Thresholds for "Same Perspective" vs "Different Perspective"
+# GAP_SAME_EPS: Maximum gap (abs diff) to consider Self and Other as "Same" (e.g. 0.10)
 GAP_SAME_EPS = float(os.environ.get("GAP_SAME_EPS", "0.10"))
+# GAP_DIFF_MIN: Minimum gap (abs diff) to consider Self and Other as "Different" (e.g. 0.30)
 GAP_DIFF_MIN = float(os.environ.get("GAP_DIFF_MIN", "0.30"))
+
+# Quantiles for Gap Filtering (to avoid outliers)
 GAP_SAME_Q = float(os.environ.get("GAP_SAME_Q", "0.20"))
 GAP_DIFF_Q = float(os.environ.get("GAP_DIFF_Q", "0.80"))
 MIN_BUCKET_SIZE = int(os.environ.get("MIN_BUCKET_SIZE", "20"))
 
-# NEW: Opposite Extremes config
-SELF_HIGH = float(os.environ.get("SELF_HIGH", "0.80"))
-SELF_LOW = float(os.environ.get("SELF_LOW", "0.20"))
-OTHER_HIGH = float(os.environ.get("OTHER_HIGH", "0.70"))
-OTHER_LOW = float(os.environ.get("OTHER_LOW", "0.30"))
-ENTROPY_LOW_Q = float(os.environ.get("ENTROPY_LOW_Q", "0.30"))
-ENTROPY_HIGH_Q = float(os.environ.get("ENTROPY_HIGH_Q", "0.70"))
+# NEW: Opposite Extremes Config (Introspective Confidence)
+# Defining "High Confidence" vs "Low Confidence" for Self and Other
+SELF_HIGH = float(os.environ.get("SELF_HIGH", "0.80"))   # Self prob >= 0.80
+SELF_LOW = float(os.environ.get("SELF_LOW", "0.20"))     # Self prob <= 0.20
+OTHER_HIGH = float(os.environ.get("OTHER_HIGH", "0.70")) # Other prob >= 0.70
+OTHER_LOW = float(os.environ.get("OTHER_LOW", "0.30"))   # Other prob <= 0.30
+
+# Entropy Quantiles (for defining "Sharp" vs "Flat" distributions)
+ENTROPY_LOW_Q = float(os.environ.get("ENTROPY_LOW_Q", "0.30"))  # Bottom 30% entropy (Sharp)
+ENTROPY_HIGH_Q = float(os.environ.get("ENTROPY_HIGH_Q", "0.70")) # Top 30% entropy (Flat)
 MIN_EXTREME_PAIRS = int(os.environ.get("MIN_EXTREME_PAIRS", "10"))
 
-# NEW: Train/test split ratio
 # NEW: Train/test split ratio
 TRAIN_SPLIT = float(os.environ.get("TRAIN_SPLIT", "0.70"))
 
