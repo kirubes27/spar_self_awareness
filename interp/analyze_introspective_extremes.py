@@ -147,18 +147,9 @@ def cache_activations(model, tokenizer, unique_prompts: list[str]) -> dict[str, 
         # We usually want layers 1..N (indices 1 to 80 for Llama-3-70B)
         # Let's store all of them to be safe, indexed 0..80
 
-        # hidden_states is a tuple of len(layers) + 1 (embeddings)
-        # We want to be able to access layer L as hidden_states[L+1] usually,
-        # or just store them all.
-        # Let's store as a tensor of shape (num_layers, hidden_dim)
-        # Llama-70B has 80 layers. hidden_states has 81 tensors.
-        # We'll discard the embedding layer (index 0) and keep 1..80.
-
+        # Store outputs from all layers (skipping embeddings at index 0)
+        # HF convention: hidden_states[i+1] is the output of layer i.
         h_all = []
-        # hidden_states[1] corresponds to output of layer 0 (first block) in some notations,
-        # but in HF, hidden_states[0] is embeddings, hidden_states[1] is output of layer 0.
-        # Wait, standard practice: HF layer i output is hidden_states[i+1].
-        # We want layers 0 to 79.
 
         for layer_idx in range(len(outputs.hidden_states) - 1):
             # layer_idx 0 -> hidden_states[1]
@@ -376,9 +367,18 @@ def main():
     # Legends
     lines1, labels1 = ax1.get_legend_handles_labels()
     lines2, labels2 = ax2.get_legend_handles_labels()
-    ax1.legend(lines1 + lines2, labels1 + labels2, loc="lower right", frameon=True, fancybox=True, framealpha=0.9)
+    ax1.legend(
+        lines1 + lines2,
+        labels1 + labels2,
+        loc="lower right",
+        frameon=True,
+        fancybox=True,
+        framealpha=0.9,
+    )
 
-    plt.title(f"Introspective Confidence vs Self-Other Direction ({MODEL_NAME})", fontsize=14, pad=15)
+    plt.title(
+        f"Introspective Confidence vs Self-Other Direction ({MODEL_NAME})", fontsize=14, pad=15
+    )
     plt.tight_layout()
 
     plot_path = OUTPUT_DIR / "introspective_vs_self_other_plot.png"
