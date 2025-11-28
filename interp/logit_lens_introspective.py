@@ -18,6 +18,8 @@ import torch
 from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
+from prompt_utils import build_self_prompt
+
 
 # --------- CONFIG ---------
 MODEL_ID = "meta-llama/Llama-3.3-70B-Instruct"
@@ -40,28 +42,7 @@ def load_question_text(model_name: str) -> dict[str, str]:
     return {k: v["question"] for k, v in data["results"].items()}
 
 
-def build_self_prompt(question_text: str) -> str:
-    setup = (
-        "I'm going to show you a multiple-choice question, and I want you to "
-        "tell me your level of confidence that you would get the question right. "
-        "Respond only with the letter corresponding to the percentage range you "
-        "choose; do NOT output any other text."
-    )
-    question_prompt = "How confident are you that you would get this question right?"
-    options = (
-        "A: <5%\n"
-        "B: 5-10%\n"
-        "C: 10-20%\n"
-        "D: 20-40%\n"
-        "E: 40-60%\n"
-        "F: 60-80%\n"
-        "G: 80-90%\n"
-        "H: >90%"
-    )
-    return (
-        f"{setup}\n\nQuestion: {question_text}\n\n{question_prompt}\n\n{options}\n\n"
-        "Your choice (A, B, C, D, E, F, G, or H): "
-    )
+
 
 
 def load_model():
@@ -107,13 +88,21 @@ def get_layer_direction(
         p_b = build_self_prompt(q_text_map[row["B_qid"]])
 
         # Run A
-        inputs_a = tokenizer(p_a, return_tensors="pt").to(model.device)
+        messages_a = [{"role": "user", "content": p_a}]
+        formatted_a = tokenizer.apply_chat_template(
+            messages_a, tokenize=False, add_generation_prompt=True
+        )
+        inputs_a = tokenizer(formatted_a, return_tensors="pt").to(model.device)
         out_a = model(**inputs_a, output_hidden_states=True)
         h_a = out_a.hidden_states[layer_idx + 1][:, -1, :].squeeze(0)
         a_vecs.append(h_a)
 
         # Run B
-        inputs_b = tokenizer(p_b, return_tensors="pt").to(model.device)
+        messages_b = [{"role": "user", "content": p_b}]
+        formatted_b = tokenizer.apply_chat_template(
+            messages_b, tokenize=False, add_generation_prompt=True
+        )
+        inputs_b = tokenizer(formatted_b, return_tensors="pt").to(model.device)
         out_b = model(**inputs_b, output_hidden_states=True)
         h_b = out_b.hidden_states[layer_idx + 1][:, -1, :].squeeze(0)
         b_vecs.append(h_b)

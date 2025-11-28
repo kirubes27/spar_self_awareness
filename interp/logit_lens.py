@@ -36,7 +36,7 @@ from transformers import (
 # ---------------- CONFIG DEFAULTS ----------------
 
 DEFAULT_MODEL_ID = "meta-llama/Llama-3.3-70B-Instruct"
-DEFAULT_DIRECTION_PATH = "interp/outputs/self_other_direction_layer-1.pt"
+DEFAULT_DIRECTION_PATH = "interp/outputs/self_other_direction_layer35.pt"
 TOP_K = 40  # how many tokens to show on each side
 
 

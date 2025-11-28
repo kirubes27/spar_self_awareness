@@ -29,6 +29,8 @@ from transformers import (
     BitsAndBytesConfig,
 )
 
+from prompt_utils import build_other_prompt, build_self_prompt
+
 
 # --------- CONFIG ---------
 MODEL_ID = "meta-llama/Llama-3.3-70B-Instruct"
@@ -71,63 +73,7 @@ def load_question_data(model_name: str) -> dict:
     return data["results"]
 
 
-def build_self_prompt(question_text: str) -> str:
-    """
-    Recreate 1P (Self) prompt exactly as used in Phase 1.
-    Based on capabilities_1p_test_logs data.
-    """
-    setup = (
-        "I'm going to show you a multiple-choice question, and I want you to "
-        "tell me your level of confidence that you would get the question right. "
-        "Respond only with the letter corresponding to the percentage range you "
-        "choose; do NOT output any other text."
-    )
-    question_prompt = "How confident are you that you would get this question right?"
-    options = (
-        "A: <5%\n"
-        "B: 5-10%\n"
-        "C: 10-20%\n"
-        "D: 20-40%\n"
-        "E: 40-60%\n"
-        "F: 60-80%\n"
-        "G: 80-90%\n"
-        "H: >90%"
-    )
 
-    return (
-        f"{setup}\n\nQuestion: {question_text}\n\n{question_prompt}\n\n{options}\n\n"
-        "Your choice (A, B, C, D, E, F, G, or H): "
-    )
-
-
-def build_other_prompt(question_text: str) -> str:
-    """
-    Recreate 3P (Other) prompt exactly as used in Phase 1.
-    Based on capabilities_3p_test_logs data.
-    """
-    setup = (
-        "I want your help calibrating question difficulty. I'm going to show you "
-        "a multiple-choice question, and I want you to tell me approximately what "
-        "percentage of college-educated people you think would get it right. "
-        "Respond only with the letter corresponding to the percentage range you "
-        "choose; do NOT output any other text."
-    )
-    question_prompt = "What percentage of college-educated people would get this question right?"
-    options = (
-        "A: <5%\n"
-        "B: 5-10%\n"
-        "C: 10-20%\n"
-        "D: 20-40%\n"
-        "E: 40-60%\n"
-        "F: 60-80%\n"
-        "G: 80-90%\n"
-        "H: >90%"
-    )
-
-    return (
-        f"{setup}\n\nQuestion: {question_text}\n\n{question_prompt}\n\n{options}\n\n"
-        "Your choice (A, B, C, D, E, F, G, or H): "
-    )
 
 
 def load_pairs_from_csv(
@@ -227,8 +173,12 @@ def get_last_token_hidden(
     Returns:
         Hidden state vector of shape (hidden_size,)
     """
+    messages = [{"role": "user", "content": prompt}]
+    formatted_prompt = tokenizer.apply_chat_template(
+        messages, tokenize=False, add_generation_prompt=True
+    )
     inputs = tokenizer(
-        prompt,
+        formatted_prompt,
         return_tensors="pt",
         add_special_tokens=True,
     ).to(model.device)

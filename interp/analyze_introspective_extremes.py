@@ -248,7 +248,7 @@ def main():
             p_s = build_self_prompt(q_text_map[qid])
             p_o = build_other_prompt(q_text_map[qid])
             delta = cache[p_s][layer] - cache[p_o][layer]
-            score = abs(torch.dot(d_so, delta).item())
+            score = float(torch.dot(d_so, delta).item())
             y_true_so.append(1)
             y_scores_so.append(score)
 
@@ -260,17 +260,26 @@ def main():
             p_s = build_self_prompt(q_text_map[qid])
             p_o = build_other_prompt(q_text_map[qid])
             delta = cache[p_s][layer] - cache[p_o][layer]
-            score = abs(torch.dot(d_so, delta).item())
+            score = float(torch.dot(d_so, delta).item())
             y_true_so.append(0)
             y_scores_so.append(score)
 
         auc_so = roc_auc_score(y_true_so, y_scores_so) if y_true_so else 0.5
+        if auc_so < 0.5:
+            auc_so = 1.0 - auc_so
 
         # --- C. Comparison ---
         cosine_sim = torch.nn.functional.cosine_similarity(d_conf, d_so, dim=0).item()
 
         results.append(
-            {"layer": layer, "auc_conf": auc_conf, "auc_so": auc_so, "cosine_sim": cosine_sim}
+            {
+                "layer": layer,
+                "auc_conf": auc_conf,
+                "auc_so": auc_so,
+                "cosine_sim": cosine_sim,
+                "n_test_conf": len(y_true),
+                "n_test_so": len(y_true_so),
+            }
         )
 
     # 5. Save Results
