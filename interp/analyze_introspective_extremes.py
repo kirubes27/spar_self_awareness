@@ -219,6 +219,8 @@ def main():
             y_scores.extend([s_a, s_b])
 
         auc_conf = roc_auc_score(y_true, y_scores) if y_true else 0.5
+        if auc_conf < 0.5:
+            auc_conf = 1.0 - auc_conf
 
         # --- B. Self-Other (d_SO) ---
         # Train d_SO (using DIFFERENT pairs)
