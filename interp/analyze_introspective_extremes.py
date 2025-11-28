@@ -138,7 +138,12 @@ def cache_activations(model, tokenizer, unique_prompts: list[str]) -> dict[str, 
     print(f"Caching activations for {len(unique_prompts)} unique prompts...")
 
     for i, prompt in enumerate(tqdm(unique_prompts)):
-        inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+        # Apply chat template
+        messages = [{"role": "user", "content": prompt}]
+        formatted_prompt = tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True
+        )
+        inputs = tokenizer(formatted_prompt, return_tensors="pt").to(model.device)
         outputs = model(**inputs, output_hidden_states=True)
 
         # Stack hidden states: (num_layers+1, batch=1, seq_len, hidden_dim)
