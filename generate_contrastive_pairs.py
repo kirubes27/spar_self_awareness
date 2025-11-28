@@ -102,7 +102,11 @@ ENTROPY_HIGH_Q = float(os.environ.get("ENTROPY_HIGH_Q", "0.70"))
 MIN_EXTREME_PAIRS = int(os.environ.get("MIN_EXTREME_PAIRS", "10"))
 
 # NEW: Train/test split ratio
+# NEW: Train/test split ratio
 TRAIN_SPLIT = float(os.environ.get("TRAIN_SPLIT", "0.70"))
+
+# NEW: Trivial question filtering
+TRIVIAL_THRESHOLD = float(os.environ.get("TRIVIAL_THRESHOLD", "0.70"))
 
 # List of models to process (same as phase1_self_other_analysis.py)
 MODEL_NAMES = [
@@ -526,10 +530,14 @@ def mine_same_vs_different(df: pd.DataFrame, outdir: str, model_name: str) -> No
         return
 
     # Drop trivial "everyone thinks it's easy" cases (Chris's suggestion)
-    mask_trivial = (df_filtered["SelfProb"] >= 0.7) & (df_filtered["OtherProb"] >= 0.7)
+    mask_trivial = (df_filtered["SelfProb"] >= TRIVIAL_THRESHOLD) & (
+        df_filtered["OtherProb"] >= TRIVIAL_THRESHOLD
+    )
     n_trivial = mask_trivial.sum()
     if n_trivial > 0:
-        log(f"  Dropping {n_trivial} trivial questions (Self>=0.7 & Other>=0.7)")
+        log(
+            f"  Dropping {n_trivial} trivial questions (Self>={TRIVIAL_THRESHOLD} & Other>={TRIVIAL_THRESHOLD})"
+        )
         df_filtered = df_filtered[~mask_trivial]
         n_filtered = len(df_filtered)
 
@@ -1023,13 +1031,11 @@ def mine_introspective_extremes(df: pd.DataFrame, outdir: str, model_name: str) 
 
     # Stage 1: Try strict thresholds (Self + Entropy only)
     cond_a = df_filtered[
-        (df_filtered["SelfProb"] >= SELF_HIGH)
-        & (df_filtered["entropy"] <= ent_lo)
+        (df_filtered["SelfProb"] >= SELF_HIGH) & (df_filtered["entropy"] <= ent_lo)
     ].copy()
 
     cond_b = df_filtered[
-        (df_filtered["SelfProb"] <= SELF_LOW)
-        & (df_filtered["entropy"] >= ent_hi)
+        (df_filtered["SelfProb"] <= SELF_LOW) & (df_filtered["entropy"] >= ent_hi)
     ].copy()
 
     n_a = len(cond_a)
@@ -1042,13 +1048,11 @@ def mine_introspective_extremes(df: pd.DataFrame, outdir: str, model_name: str) 
     if n_a < MIN_EXTREME_PAIRS or n_b < MIN_EXTREME_PAIRS:
         log("  Stage 2: Relaxing Self constraints by 0.1")
         cond_a = df_filtered[
-            (df_filtered["SelfProb"] >= SELF_HIGH - 0.1)
-            & (df_filtered["entropy"] <= ent_lo)
+            (df_filtered["SelfProb"] >= SELF_HIGH - 0.1) & (df_filtered["entropy"] <= ent_lo)
         ].copy()
 
         cond_b = df_filtered[
-            (df_filtered["SelfProb"] <= SELF_LOW + 0.1)
-            & (df_filtered["entropy"] >= ent_hi)
+            (df_filtered["SelfProb"] <= SELF_LOW + 0.1) & (df_filtered["entropy"] >= ent_hi)
         ].copy()
 
         n_a = len(cond_a)
@@ -1063,13 +1067,11 @@ def mine_introspective_extremes(df: pd.DataFrame, outdir: str, model_name: str) 
         self_q_low = df_filtered["SelfProb"].quantile(0.20)
 
         cond_a = df_filtered[
-            (df_filtered["SelfProb"] >= self_q_high)
-            & (df_filtered["entropy"] <= ent_lo)
+            (df_filtered["SelfProb"] >= self_q_high) & (df_filtered["entropy"] <= ent_lo)
         ].copy()
 
         cond_b = df_filtered[
-            (df_filtered["SelfProb"] <= self_q_low)
-            & (df_filtered["entropy"] >= ent_hi)
+            (df_filtered["SelfProb"] <= self_q_low) & (df_filtered["entropy"] >= ent_hi)
         ].copy()
 
         n_a = len(cond_a)
@@ -1091,12 +1093,12 @@ def mine_introspective_extremes(df: pd.DataFrame, outdir: str, model_name: str) 
     assert cond_b["question_id"].duplicated().sum() == 0, "Duplicate QIDs in Condition B"
 
     # Sort deterministically for pairing
-    cond_a = cond_a.sort_values(
-        ["SelfProb", "entropy"], ascending=[False, True]
-    ).reset_index(drop=True)
-    cond_b = cond_b.sort_values(
-        ["SelfProb", "entropy"], ascending=[True, False]
-    ).reset_index(drop=True)
+    cond_a = cond_a.sort_values(["SelfProb", "entropy"], ascending=[False, True]).reset_index(
+        drop=True
+    )
+    cond_b = cond_b.sort_values(["SelfProb", "entropy"], ascending=[True, False]).reset_index(
+        drop=True
+    )
 
     # Pair
     n_pairs = min(n_a, n_b)
