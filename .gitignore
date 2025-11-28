@@ -25,19 +25,3 @@ build/
 
 # Scenario files
 tom/scenarios_llm_test*.json
-
-# Code quality tools (keep local, not in git)
-.ruff_cache/
-.pre-commit-config.yaml
-tools/
-pyproject.toml
-
-# Analysis reports (regenerate anytime)
-reports/
-
-# Template files (only for reference, not for git)
-copy_to_new_project.sh
-pyproject_template.toml
-REUSABLE_TEMPLATE_README.md
-TEMPLATE_SETUP.md
-*.md
