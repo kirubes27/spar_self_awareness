@@ -154,7 +154,7 @@ def compute_and_save_direction(model, tokenizer, pairs: list[Pair], layer_idx: i
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--layers", type=int, nargs="+", default=[35, 50], help="Layers to save directions for"
+        "--layers", type=int, nargs="+", default=[35, 50, 79], help="Layers to save directions for"
     )
     args = parser.parse_args()
 

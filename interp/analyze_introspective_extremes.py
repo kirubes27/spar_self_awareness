@@ -221,6 +221,21 @@ def main():
         auc_conf = roc_auc_score(y_true, y_scores) if y_true else 0.5
         if auc_conf < 0.5:
             auc_conf = 1.0 - auc_conf
+            d_conf = -d_conf  # Flip direction if AUC < 0.5
+
+        # Save d_conf for key layers
+        if layer in [35, 50, 79]:
+            conf_path = OUTPUT_DIR / f"confidence_direction_layer{layer}.pt"
+            torch.save(
+                {
+                    "direction": d_conf.cpu(),
+                    "layer_index": layer,
+                    "auc": auc_conf,
+                    "model_id": MODEL_ID,
+                },
+                conf_path,
+            )
+            print(f"Saved Confidence Direction for Layer {layer} to {conf_path}")
 
         # --- B. Self-Other (d_SO) ---
         # Train d_SO (using DIFFERENT pairs)
