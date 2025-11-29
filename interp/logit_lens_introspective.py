@@ -51,9 +51,12 @@ def load_model():
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    print("Loading model (8-bit)...")
+    print("Loading model (4-bit)...")
     quant_config = BitsAndBytesConfig(
-        load_in_8bit=True,
+        load_in_4bit=True,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_compute_dtype=torch.bfloat16,
+        bnb_4bit_quant_type="nf4",
     )
     model = AutoModelForCausalLM.from_pretrained(
         MODEL_ID,
