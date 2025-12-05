@@ -55,10 +55,10 @@ Your choice ('1' or '2'): """
     return prompt
 
 
-def load_model() -> Tuple[AutoTokenizer, AutoModelForCausalLM]:
-    """Load 4-bit quantized Llama-3.3-70B-Instruct."""
-    print(f"Loading tokenizer for {MODEL_ID}...")
-    tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
+def load_model(model_id: str) -> Tuple[AutoTokenizer, AutoModelForCausalLM]:
+    """Load 4-bit quantized model."""
+    print(f"Loading tokenizer for {model_id}...")
+    tokenizer = AutoTokenizer.from_pretrained(model_id)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
@@ -70,7 +70,7 @@ def load_model() -> Tuple[AutoTokenizer, AutoModelForCausalLM]:
         bnb_4bit_quant_type="nf4",
     )
     model = AutoModelForCausalLM.from_pretrained(
-        MODEL_ID,
+        model_id,
         quantization_config=quant_config,
         device_map="auto",
     )
@@ -79,27 +79,28 @@ def load_model() -> Tuple[AutoTokenizer, AutoModelForCausalLM]:
 
 
 def get_all_layers_hidden_states_and_choice(
-    model, tokenizer, prompt: str
+    model, tokenizer, prompt: str, use_chat_template: bool = True
 ) -> Tuple[torch.Tensor, str]:
     """
     Run the model on a single pass-game prompt and return:
       - all_hs: hidden states for all layers at last token shape (num_layers, d)
       - choice: "1" or "2" based on next-token argmax prob
     """
-    messages = [{"role": "user", "content": prompt}]
-    formatted_prompt = tokenizer.apply_chat_template(
-        messages, tokenize=False, add_generation_prompt=True
-    )
+    if use_chat_template:
+        messages = [{"role": "user", "content": prompt}]
+        formatted_prompt = tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True
+        )
+    else:
+        # Raw text prompt (no chat wrapper)
+        formatted_prompt = prompt
+
     inputs = tokenizer(formatted_prompt, return_tensors="pt").to(model.device)
 
     with torch.no_grad():
         outputs = model(**inputs, output_hidden_states=True)
 
         # hidden_states: tuple of (batch, seq, dim). 0=embeds, 1..N=layers.
-        # We want layers 0..79 (which are indices 1..80 in the tuple).
-        # Stack them: (num_layers, batch, seq, dim)
-        # We take the last token directly.
-
         # Taking outputs.hidden_states[1:] gives layers 0..79
         layer_hs = [hs[:, -1, :] for hs in outputs.hidden_states[1:]]
         # Stack -> (num_layers, 1, d)
@@ -297,9 +298,23 @@ def main():
     )
     parser.add_argument("--n-splits", type=int, default=10, help="Split-half repetitions")
     parser.add_argument("--seed", type=int, default=42, help="RNG seed")
+    parser.add_argument(
+        "--no-chat-template",
+        action="store_true",
+        help="If set, feed raw text prompts (no tokenizer.apply_chat_template).",
+    )
+    parser.add_argument(
+        "--model-name",
+        type=str,
+        default="meta-llama/Llama-3.3-70B-Instruct",
+        help="HF model ID to load (e.g. base vs instruct).",
+    )
     args = parser.parse_args()
 
+    use_chat_template = not args.no_chat_template
     print(f"Analyzing layers: {args.layers}")
+    print(f"Model: {args.model_name}")
+    print(f"Chat template: {use_chat_template}")
 
     # 1. Load Data
     print(f"Loading CSV from {INPUT_CSV}...")
@@ -334,7 +349,7 @@ def main():
         return
 
     # 2. Load Model
-    tokenizer, model = load_model()
+    tokenizer, model = load_model(args.model_name)
 
     # 3. Collect Data
     print("Collecting hidden states for all layers...")
@@ -347,7 +362,9 @@ def main():
         prompt = build_pass_game_prompt(q_text, options)
 
         # Run model
-        hs_layers, choice = get_all_layers_hidden_states_and_choice(model, tokenizer, prompt)
+        hs_layers, choice = get_all_layers_hidden_states_and_choice(
+            model, tokenizer, prompt, use_chat_template=use_chat_template
+        )
 
         all_hidden_list.append(hs_layers.cpu())
         labels_list.append(1 if choice == "1" else 0)
