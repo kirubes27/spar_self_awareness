@@ -31,7 +31,7 @@ MODEL_ID = "meta-llama/Llama-3.3-70B-Instruct"
 MODEL_NAME = "llama-3.3-70b-instruct"
 
 DATA_DIR = Path("contrastive_pairs") / MODEL_NAME
-INPUT_CSV = DATA_DIR / f"{MODEL_NAME}_different_perspective_train.csv"
+INPUT_CSV = DATA_DIR / f"{MODEL_NAME}_unified.csv"
 
 COMPILED_JSON = Path("compiled_results_smc") / f"{MODEL_NAME}_phase1_compiled.json"
 
