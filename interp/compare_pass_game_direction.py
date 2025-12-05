@@ -231,7 +231,7 @@ def analyze_layer(
             return
 
         try:
-            data = torch.load(path, map_location=device)
+            data = torch.load(path, map_location=device, weights_only=False)
             d_ext = data["direction"].to(device)
 
             # Project
