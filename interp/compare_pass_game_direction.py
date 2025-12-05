@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
 """
-Compare Pass Game Direction vs Self-Other Direction (upgraded).
+Compare Pass Game Direction vs Self-Other AND Confidence Directions.
 
-For a single layer L:
-  1. Run the simplified Pass Game prompt on a batch of questions.
-  2. Collect hidden states at the last token.
-  3. Label each state as Answer (1) or Pass (0).
-  4. Evaluate:
-      - How well the existing d_so separates Answer vs Pass (AUC).
-      - A new d_pass direction (Answer - Pass) with split-half AUC.
-      - Cosine alignment between d_pass and d_so.
-  5. Save d_pass and a JSON stats file.
+Features:
+  - Multi-layer analysis in one pass (default: 35, 50, 79).
+  - Uses all matched questions by default (robustness).
+  - Evaluates both d_so (Self-Other) and d_conf (Confidence).
+  - Computes AUC and Cosine Similarity for clear signal detection.
 
 Run e.g.:
-  python interp/compare_pass_game_direction.py --layer 35 --n 200 --n-splits 5
+  python interp/compare_pass_game_direction.py --layers 35 50 79 --n-splits 10
 """
 
 from __future__ import annotations
@@ -21,7 +17,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
-from typing import List, Tuple
+from typing import List, Tuple, Dict, Optional
 
 import numpy as np
 import pandas as pd
@@ -46,9 +42,6 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 # --------- Utilities ---------
 def build_pass_game_prompt(question_text: str, options_dict: dict) -> str:
     """Builds the simplified pass-game prompt used for the decision-only test."""
-    # Format options as:
-    # A: ...
-    # B: ...
     options_text = ""
     for k, v in options_dict.items():
         options_text += f"{k}: {v}\n"
@@ -85,12 +78,12 @@ def load_model() -> Tuple[AutoTokenizer, AutoModelForCausalLM]:
     return tokenizer, model
 
 
-def get_hidden_state_and_choice(
-    model, tokenizer, prompt: str, layer_idx: int
+def get_all_layers_hidden_states_and_choice(
+    model, tokenizer, prompt: str
 ) -> Tuple[torch.Tensor, str]:
     """
     Run the model on a single pass-game prompt and return:
-      - h_L: hidden state at layer L (last token)
+      - all_hs: hidden states for all layers at last token shape (num_layers, d)
       - choice: "1" or "2" based on next-token argmax prob
     """
     messages = [{"role": "user", "content": prompt}]
@@ -102,13 +95,19 @@ def get_hidden_state_and_choice(
     with torch.no_grad():
         outputs = model(**inputs, output_hidden_states=True)
 
-        # hidden_states index: 0 = embeddings, 1 = layer0, ..., L+1 = layer L
-        h = outputs.hidden_states[layer_idx + 1][:, -1, :].squeeze(0)
+        # hidden_states: tuple of (batch, seq, dim). 0=embeds, 1..N=layers.
+        # We want layers 0..79 (which are indices 1..80 in the tuple).
+        # Stack them: (num_layers, batch, seq, dim)
+        # We take the last token directly.
+
+        # Taking outputs.hidden_states[1:] gives layers 0..79
+        layer_hs = [hs[:, -1, :] for hs in outputs.hidden_states[1:]]
+        # Stack -> (num_layers, 1, d)
+        all_hs = torch.stack(layer_hs, dim=0).squeeze(1) # (num_layers, d)
 
         logits = outputs.logits[:, -1, :]
         probs = F.softmax(logits, dim=-1)
 
-        # ids for "1" and "2"
         id_1 = tokenizer.encode("1", add_special_tokens=False)[0]
         id_2 = tokenizer.encode("2", add_special_tokens=False)[0]
 
@@ -117,60 +116,200 @@ def get_hidden_state_and_choice(
 
         choice = "1" if prob_1 > prob_2 else "2"
 
-    return h, choice
+    return all_hs, choice
 
 
 def compute_auc(scores: np.ndarray, labels: np.ndarray) -> float:
-    """
-    Compute ROC AUC for binary labels without sklearn.
-    labels: 1 for Answer, 0 for Pass.
-    """
+    """Compute ROC AUC for binary labels (1=Answer, 0=Pass)."""
     assert scores.shape[0] == labels.shape[0]
-    # sort scores ascending
+    import warnings
+    if len(np.unique(labels)) < 2:
+        return float("nan")
+
     order = np.argsort(scores)
     ranks = np.empty_like(order, dtype=float)
-    ranks[order] = np.arange(len(scores)) + 1  # 1-based ranks
+    ranks[order] = np.arange(len(scores)) + 1
 
     pos_mask = labels == 1
-    neg_mask = labels == 0
     n_pos = pos_mask.sum()
-    n_neg = neg_mask.sum()
+    n_neg = (labels == 0).sum()
+
     if n_pos == 0 or n_neg == 0:
         return float("nan")
 
     sum_pos_ranks = ranks[pos_mask].sum()
-    # Mann–Whitney U -> AUC
     auc = (sum_pos_ranks - n_pos * (n_pos + 1) / 2.0) / (n_pos * n_neg)
     return float(auc)
+
+
+def analyze_layer(
+    layer_idx: int,
+    H_L: torch.Tensor,     # (N, d)
+    labels: np.ndarray,    # (N,) 1=Answer, 0=Pass
+    n_splits: int,
+    seed: int,
+    device: torch.device
+) -> Dict:
+    """Evaluate d_pass, d_so, and d_conf for a specific layer."""
+
+    # Masks
+    ans_mask = labels == 1
+    pass_mask = labels == 0
+    n_ans = ans_mask.sum()
+    n_pass = pass_mask.sum()
+
+    stats = {
+        "layer": layer_idx,
+        "n_total": int(len(labels)),
+        "n_answer": int(n_ans),
+        "n_pass": int(n_pass)
+    }
+
+    # 1. Learn d_pass (Full Data)
+    if n_ans == 0 or n_pass == 0:
+        d_pass_full = None
+    else:
+        mean_ans = H_L[ans_mask].mean(dim=0)
+        mean_pass = H_L[pass_mask].mean(dim=0)
+        d_pass_full = mean_ans - mean_pass
+
+    # 2. Split-Half CV for d_pass
+    rng = np.random.default_rng(seed)
+    n = len(labels)
+    indices = np.arange(n)
+
+    split_metrics = []
+    if n_ans > 1 and n_pass > 1:
+        for _ in range(n_splits):
+            rng.shuffle(indices)
+            mid = n // 2
+            train_idx = indices[:mid]
+            test_idx = indices[mid:]
+
+            # Check balance
+            train_labels = labels[train_idx]
+            test_labels = labels[test_idx]
+            if len(np.unique(train_labels)) < 2 or len(np.unique(test_labels)) < 2:
+                continue
+
+            H_train = H_L[train_idx]
+            H_test = H_L[test_idx]
+
+            # Train d_pass
+            m_ans = H_train[train_labels==1].mean(dim=0)
+            m_pass = H_train[train_labels==0].mean(dim=0)
+            d_p = m_ans - m_pass
+
+            # Evaluate
+            with torch.no_grad():
+                scores_train = (H_train @ d_p).cpu().numpy()
+                scores_test = (H_test @ d_p).cpu().numpy()
+
+            split_metrics.append({
+                "train_auc": compute_auc(scores_train, train_labels),
+                "test_auc": compute_auc(scores_test, test_labels)
+            })
+
+    # Aggregates
+    def get_stats(key):
+        vals = [m[key] for m in split_metrics]
+        if not vals: return float("nan"), float("nan")
+        return float(np.mean(vals)), float(np.std(vals))
+
+    stats["d_pass"] = {
+        "split_train_auc_mean": get_stats("train_auc")[0],
+        "split_train_auc_std": get_stats("train_auc")[1],
+        "split_test_auc_mean": get_stats("test_auc")[0],
+        "split_test_auc_std": get_stats("test_auc")[1],
+    }
+
+    # Helper for external directions
+    def eval_external_direction(name: str, filename: str):
+        path = OUTPUT_DIR / filename
+        if not path.exists():
+            stats[name] = {"available": False}
+            return
+
+        try:
+            data = torch.load(path, map_location=device)
+            d_ext = data["direction"].to(device)
+
+            # Project
+            with torch.no_grad():
+                scores = (H_L @ d_ext).cpu().numpy()
+
+            # Orientation check: Mean score of Answer should be > Mean score of Pass
+            if n_ans > 0 and n_pass > 0:
+                m_a = scores[ans_mask].mean()
+                m_p = scores[pass_mask].mean()
+                flipped = False
+                if m_a < m_p:
+                    scores = -scores
+                    d_ext = -d_ext
+                    flipped = True
+
+                auc = compute_auc(scores, labels)
+
+                # Cosine with d_pass_full
+                if d_pass_full is not None:
+                    cos = F.cosine_similarity(d_pass_full.unsqueeze(0), d_ext.unsqueeze(0)).item()
+                else:
+                    cos = float("nan")
+            else:
+                auc = float("nan")
+                cos = float("nan")
+                flipped = False
+
+            stats[name] = {
+                "available": True,
+                "auc_ans_vs_pass": float(auc),
+                "cos_d_pass_full": float(cos),
+                "flipped": flipped
+            }
+        except Exception as e:
+            print(f"Error evaluating {name}: {e}")
+            stats[name] = {"available": False, "error": str(e)}
+
+    # 3. Evaluate d_so
+    eval_external_direction("d_so", f"self_other_direction_layer{layer_idx}.pt")
+
+    # 4. Evaluate d_conf
+    eval_external_direction("d_conf", f"confidence_direction_layer{layer_idx}.pt")
+
+    return stats
 
 
 # --------- Main ---------
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--n", type=int, default=150, help="Number of questions to sample")
-    parser.add_argument("--layer", type=int, default=35, help="Layer index (0-based)")
     parser.add_argument(
-        "--direction-file",
-        type=str,
+        "--n",
+        type=int,
         default=None,
-        help="Path to self_other_direction_layer{L}.pt (defaults to interp/outputs/self_other_direction_layer{L}.pt)",
+        help="If set, number of questions to sample; if None, use all matched questions."
     )
-    parser.add_argument("--n-splits", type=int, default=5, help="Split-half repetitions")
-    parser.add_argument("--seed", type=int, default=0, help="RNG seed for splits")
+    parser.add_argument(
+        "--layers",
+        type=int,
+        nargs="*",
+        default=[35, 50, 79],
+        help="Layer indices (0-based) to analyze. Default: 35, 50, 79.",
+    )
+    parser.add_argument("--n-splits", type=int, default=10, help="Split-half repetitions")
+    parser.add_argument("--seed", type=int, default=42, help="RNG seed")
     args = parser.parse_args()
 
-    layer = args.layer
+    print(f"Analyzing layers: {args.layers}")
 
-    # 1. Load CSV with question_text
+    # 1. Load Data
     print(f"Loading CSV from {INPUT_CSV}...")
     df = pd.read_csv(INPUT_CSV)
 
-    # 2. Load compiled JSON to recover options
-    print(f"Loading full question data from {COMPILED_JSON}...")
+    print(f"Loading compiled JSON from {COMPILED_JSON}...")
     with open(COMPILED_JSON) as f:
         data = json.load(f)
 
-    # Map: question_id -> (question_text, options)
+    # Join by qid
     q_map = {}
     for qid, res in data["results"].items():
         q_data = res["question"] if isinstance(res["question"], dict) else res
@@ -179,199 +318,111 @@ def main():
         if q_text and options:
             q_map[qid] = (q_text, options)
 
-    # Filter df to rows where we have options
     valid_indices = [i for i, row in df.iterrows() if row["question_id"] in q_map]
     df = df.loc[valid_indices]
 
-    if len(df) > args.n:
-        df = df.sample(n=args.n, random_state=42)
+    # Sample if requested
+    if args.n is not None and len(df) > args.n:
+        print(f"Sampling {args.n} from {len(df)} matched questions...")
+        df = df.sample(n=args.n, random_state=args.seed)
+    else:
+        print(f"Using all {len(df)} matched questions.")
 
     df = df.reset_index(drop=True)
-    print(f"Selected {len(df)} questions with options.")
+    if len(df) == 0:
+        print("Error: No questions found after matching!")
+        return
 
-    # 3. Load model
+    # 2. Load Model
     tokenizer, model = load_model()
 
-    # 4. Collect activations
-    answer_states: List[torch.Tensor] = []
-    pass_states: List[torch.Tensor] = []
+    # 3. Collect Data
+    print("Collecting hidden states for all layers...")
+    all_hidden_list = [] # List of tensors (num_layers, d)
+    labels_list = []     # List of ints (1 or 0)
 
-    print(f"Running simplified Pass Game (layer {layer})...")
     for _, row in tqdm(df.iterrows(), total=len(df)):
         qid = row["question_id"]
         q_text, options = q_map[qid]
         prompt = build_pass_game_prompt(q_text, options)
 
-        h, choice = get_hidden_state_and_choice(model, tokenizer, prompt, layer)
-        if choice == "1":
-            answer_states.append(h)
-        else:
-            pass_states.append(h)
+        # Run model
+        hs_layers, choice = get_all_layers_hidden_states_and_choice(model, tokenizer, prompt)
 
-    n_answer = len(answer_states)
-    n_pass = len(pass_states)
-    print(f"\nStats: Answer='1': {n_answer}, Pass='2': {n_pass}")
+        all_hidden_list.append(hs_layers.cpu())
+        labels_list.append(1 if choice == "1" else 0)
 
-    if n_answer < 5 or n_pass < 5:
-        print("Warning: very unbalanced groups; results may be noisy.")
+    # Convert to tensors
+    N = len(df)
+    # Stack -> (N, num_layers, d)
+    all_hidden = torch.stack(all_hidden_list)
+    labels = np.array(labels_list, dtype=int)
 
-    if n_answer == 0 or n_pass == 0:
-        print("Error: one group is empty; aborting.")
-        return
+    n_ans = (labels == 1).sum()
+    n_pass = (labels == 0).sum()
+    print(f"\nTotal Data: N={N}, Answer={n_ans}, Pass={n_pass}")
 
-    # Stack all states
-    all_states = answer_states + pass_states
-    H = torch.stack(all_states)  # (N, d)
-    labels = np.array([1] * n_answer + [0] * n_pass, dtype=int)
+    if n_ans < 5 or n_pass < 5:
+        print("Warning: Extreme class imbalance. Stats might be unstable.")
 
-    # 5. Load d_so for this layer
-    if args.direction_file is not None:
-        direction_path = Path(args.direction_file)
-    else:
-        direction_path = OUTPUT_DIR / f"self_other_direction_layer{layer}.pt"
+    # 4. Analyze each requested layer
+    all_stats = []
 
-    print(f"Loading d_so from {direction_path}...")
-    d_so_data = torch.load(direction_path, map_location=model.device)
-    d_so = d_so_data["direction"].to(model.device)  # (d,)
+    for layer in args.layers:
+        print(f"\nProcessing Layer {layer}...")
+        try:
+            # all_hidden is (N, 80, d) assuming 80 layers
+            # We need to map the canonical layer index to the tensor index.
+            # get_all_layers.. returned outputs.hidden_states[1:] which is layers 0..L-1
+            # So index `layer` corresponds to `layer`.
+            if layer >= all_hidden.shape[1]:
+                print(f"Error: Layer {layer} out of bounds (max {all_hidden.shape[1]-1}). skipping.")
+                continue
 
-    # 6. Evaluate d_so on Answer vs Pass
-    with torch.no_grad():
-        scores_dso = (H @ d_so).cpu().numpy()
-    mean_ans = float(scores_dso[:n_answer].mean())
-    mean_pass = float(scores_dso[n_answer:].mean())
+            H_L = all_hidden[:, layer, :].to(model.device)
 
-    # Orientation: flip so that Answer has higher mean score
-    flipped = False
-    if mean_ans < mean_pass:
-        scores_dso *= -1.0
-        d_so = -d_so
-        mean_ans, mean_pass = -mean_ans, -mean_pass
-        flipped = True
+            stats = analyze_layer(
+                layer, H_L, labels,
+                n_splits=args.n_splits,
+                seed=args.seed,
+                device=model.device
+            )
+            all_stats.append(stats)
 
-    auc_dso = compute_auc(scores_dso, labels)
+            # Print Summary
+            print(f"===== Pass Game Direction Analysis (Layer {layer}) =====")
+            print(f"N total: {stats['n_total']} (Answer={stats['n_answer']}, Pass={stats['n_pass']})")
 
-    # 7. Learn d_pass on full data
-    mean_answer = torch.stack(answer_states).mean(dim=0)
-    mean_pass_vec = torch.stack(pass_states).mean(dim=0)
-    d_pass_full = mean_answer - mean_pass_vec  # oriented toward Answer
+            if stats["d_so"]["available"]:
+                auc = stats["d_so"]["auc_ans_vs_pass"]
+                cos = stats["d_so"]["cos_d_pass_full"]
+                print(f"d_so AUC (Ans vs Pass):   {auc:.4f}")
+                print(f"cos(d_pass_full, d_so):   {cos:.4f}")
+            else:
+                print("d_so: Not found")
 
-    cos_full = float(
-        F.cosine_similarity(d_pass_full.unsqueeze(0), d_so.unsqueeze(0)).item()
-    )
+            if stats["d_conf"]["available"]:
+                auc = stats["d_conf"]["auc_ans_vs_pass"]
+                cos = stats["d_conf"]["cos_d_pass_full"]
+                print(f"d_conf AUC (Ans vs Pass): {auc:.4f}")
+                print(f"cos(d_pass_full, d_conf): {cos:.4f}")
+            else:
+                print("d_conf: Not found")
 
-    # 8. Split-half evaluation for d_pass
-    rng = np.random.default_rng(args.seed)
-    n = H.shape[0]
-    indices = np.arange(n)
+            test_auc = stats["d_pass"]["split_test_auc_mean"]
+            test_std = stats["d_pass"]["split_test_auc_std"]
+            print(f"d_pass split-half test AUC: {test_auc:.4f} \u00b1 {test_std:.4f}")
 
-    split_metrics = []
-    for split in range(args.n_splits):
-        rng.shuffle(indices)
-        mid = n // 2
-        train_idx = indices[:mid]
-        test_idx = indices[mid:]
+        except Exception as e:
+            print(f"Detailed error for layer {layer}: {e}")
+            import traceback
+            traceback.print_exc()
 
-        train_labels = labels[train_idx]
-        test_labels = labels[test_idx]
-
-        # Need both classes in train
-        if train_labels.sum() == 0 or train_labels.sum() == len(train_labels):
-            continue
-
-        H_train = H[train_idx]
-        H_test = H[test_idx]
-
-        # Build d_pass on train
-        ans_mask = train_labels == 1
-        pass_mask = train_labels == 0
-        mean_ans_train = H_train[ans_mask].mean(dim=0)
-        mean_pass_train = H_train[pass_mask].mean(dim=0)
-        d_pass_train = mean_ans_train - mean_pass_train
-
-        with torch.no_grad():
-            train_scores = (H_train @ d_pass_train).cpu().numpy()
-            test_scores = (H_test @ d_pass_train).cpu().numpy()
-
-        train_auc = compute_auc(train_scores, train_labels)
-        test_auc = compute_auc(test_scores, test_labels)
-        cos_split = float(
-            F.cosine_similarity(d_pass_train.unsqueeze(0), d_so.unsqueeze(0)).item()
-        )
-
-        split_metrics.append(
-            {
-                "train_auc": float(train_auc),
-                "test_auc": float(test_auc),
-                "cos": cos_split,
-            }
-        )
-
-    if not split_metrics:
-        print("Warning: no valid split-half runs (class imbalance).")
-
-    # Aggregate split stats
-    def mean_std(key: str) -> Tuple[float, float]:
-        if not split_metrics:
-            return float("nan"), float("nan")
-        vals = np.array([m[key] for m in split_metrics], dtype=float)
-        return float(vals.mean()), float(vals.std())
-
-    train_auc_mean, train_auc_std = mean_std("train_auc")
-    test_auc_mean, test_auc_std = mean_std("test_auc")
-    cos_mean, cos_std = mean_std("cos")
-
-    # 9. Print summary
-    print("\n" + "=" * 50)
-    print(f"Pass Game Direction Analysis (Layer {layer})")
-    print("=" * 50)
-    print(f"N total: {n} (Answer={n_answer}, Pass={n_pass})")
-    print(f"d_so orientation flipped for this task: {flipped}")
-    print(f"d_so Answer mean proj:   {mean_ans:.4f}")
-    print(f"d_so Pass mean proj:     {mean_pass:.4f}")
-    print(f"d_so AUC (Ans vs Pass):  {auc_dso:.4f}")
-    print(f"d_pass_full · d_so (cos): {cos_full:.4f}")
-    print(f"d_pass split-half train AUC: {train_auc_mean:.4f} ± {train_auc_std:.4f}")
-    print(f"d_pass split-half test  AUC: {test_auc_mean:.4f} ± {test_auc_std:.4f}")
-    print(f"d_pass split-half cos(d_pass, d_so): {cos_mean:.4f} ± {cos_std:.4f}")
-    print("=" * 50)
-
-    # 10. Save artifacts
-    pass_vec_path = OUTPUT_DIR / f"pass_game_direction_layer{layer}.pt"
-    torch.save(
-        {
-            "direction": d_pass_full.cpu(),
-            "layer": int(layer),
-            "cos_sim_full": cos_full,
-            "d_so_flipped_for_task": flipped,
-        },
-        pass_vec_path,
-    )
-    print(f"Saved d_pass_full to {pass_vec_path}")
-
-    stats = {
-        "layer": int(layer),
-        "n_total": int(n),
-        "n_answer": int(n_answer),
-        "n_pass": int(n_pass),
-        "d_so_path": str(direction_path),
-        "d_so_flipped_for_task": flipped,
-        "d_so_mean_answer_proj": mean_ans,
-        "d_so_mean_pass_proj": mean_pass,
-        "d_so_auc_ans_vs_pass": auc_dso,
-        "d_pass_full_cos_with_d_so": cos_full,
-        "split_metrics": split_metrics,
-        "split_train_auc_mean": train_auc_mean,
-        "split_train_auc_std": train_auc_std,
-        "split_test_auc_mean": test_auc_mean,
-        "split_test_auc_std": test_auc_std,
-        "split_cos_mean": cos_mean,
-        "split_cos_std": cos_std,
-    }
-    stats_path = OUTPUT_DIR / f"pass_game_stats_layer{layer}.json"
-    with open(stats_path, "w") as f:
-        json.dump(stats, f, indent=2)
-    print(f"Saved stats to {stats_path}")
-
+    # 5. Save Results
+    out_file = OUTPUT_DIR / "pass_game_stats_all_layers.json"
+    with open(out_file, "w") as f:
+        json.dump(all_stats, f, indent=2)
+    print(f"\nSaved all stats to {out_file}")
 
 if __name__ == "__main__":
     main()
