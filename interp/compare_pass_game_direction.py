@@ -170,17 +170,17 @@ def main():
     with open(COMPILED_JSON) as f:
         data = json.load(f)
 
-    # Map: question_text -> options dict
+    # Map: question_id -> (question_text, options)
     q_map = {}
     for qid, res in data["results"].items():
         q_data = res["question"] if isinstance(res["question"], dict) else res
         q_text = q_data.get("question")
         options = q_data.get("options")
         if q_text and options:
-            q_map[q_text] = options
+            q_map[qid] = (q_text, options)
 
     # Filter df to rows where we have options
-    valid_indices = [i for i, row in df.iterrows() if row["question_text"] in q_map]
+    valid_indices = [i for i, row in df.iterrows() if row["question_id"] in q_map]
     df = df.loc[valid_indices]
 
     if len(df) > args.n:
@@ -198,8 +198,8 @@ def main():
 
     print(f"Running simplified Pass Game (layer {layer})...")
     for _, row in tqdm(df.iterrows(), total=len(df)):
-        q_text = row["question_text"]
-        options = q_map[q_text]
+        qid = row["question_id"]
+        q_text, options = q_map[qid]
         prompt = build_pass_game_prompt(q_text, options)
 
         h, choice = get_hidden_state_and_choice(model, tokenizer, prompt, layer)
