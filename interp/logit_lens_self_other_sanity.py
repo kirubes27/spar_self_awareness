@@ -16,12 +16,13 @@ at these specific layers, even before the final output.
 
 import argparse
 from pathlib import Path
+
 import pandas as pd
 import torch
+from prompt_utils import build_other_prompt, build_self_prompt
 from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 
-from prompt_utils import build_self_prompt, build_other_prompt
 
 # --------- CONFIG ---------
 MODEL_ID = "meta-llama/Llama-3.3-70B-Instruct"
@@ -34,6 +35,7 @@ OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 LAYERS_TO_CHECK = [35, 50, 79]
 SAMPLE_SIZE = 50
 TOP_K = 50
+
 
 def load_model():
     print(f"Loading tokenizer for {MODEL_ID}...")
@@ -56,8 +58,10 @@ def load_model():
     model.eval()
     return tokenizer, model
 
+
 def get_unembedding_matrix(model):
     return model.lm_head.weight
+
 
 def analyze_hidden_states(model, tokenizer, prompts, layer_indices, label):
     """
@@ -90,14 +94,14 @@ def analyze_hidden_states(model, tokenizer, prompts, layer_indices, label):
     for layer in layer_indices:
         # Average hidden states
         stacked_h = torch.stack(hidden_states_by_layer[layer])
-        avg_h = stacked_h.mean(dim=0) # (hidden_dim,)
+        avg_h = stacked_h.mean(dim=0)  # (hidden_dim,)
 
         # Project to vocab
         avg_h = avg_h.to(W_U.device, dtype=W_U.dtype)
         logits = torch.matmul(W_U, avg_h)
 
         # Get top-k
-        scores = logits.float().cpu().numpy()
+        scores = logits.float().detach().cpu().numpy()
         top_indices = scores.argsort()[-TOP_K:][::-1]
 
         # Save to file
@@ -116,6 +120,7 @@ def analyze_hidden_states(model, tokenizer, prompts, layer_indices, label):
                 printable = repr(token)
                 line = f"{rank:2d}. id={idx:6d}  token={printable:20s}  score={score:.4f}\n"
                 f.write(line)
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -141,6 +146,7 @@ def main():
         # Fallback: load from compiled results
         print("  'question_text' column missing, loading from JSON map...")
         import json
+
         json_path = Path("compiled_results_smc") / f"{MODEL_NAME}_phase1_compiled.json"
         with open(json_path) as f:
             data = json.load(f)
@@ -162,6 +168,7 @@ def main():
     analyze_hidden_states(model, tokenizer, other_prompts, LAYERS_TO_CHECK, "OTHER")
 
     print("\nDone! Check interp/outputs/ for results.")
+
 
 if __name__ == "__main__":
     main()
