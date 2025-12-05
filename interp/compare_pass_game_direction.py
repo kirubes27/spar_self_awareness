@@ -436,7 +436,8 @@ def main():
             traceback.print_exc()
 
     # 5. Save Results
-    out_file = OUTPUT_DIR / "pass_game_stats_all_layers.json"
+    suffix = "chat" if use_chat_template else "nochat"
+    out_file = OUTPUT_DIR / f"pass_game_stats_all_layers_{suffix}.json"
     with open(out_file, "w") as f:
         json.dump(all_stats, f, indent=2)
     print(f"\nSaved all stats to {out_file}")
