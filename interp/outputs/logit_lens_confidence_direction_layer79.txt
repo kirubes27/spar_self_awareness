@@ -1,0 +1,88 @@
+
+============================================================
+Top tokens on POSITIVE side (SELF-aligned)
+============================================================
+ 1. id=   220  token='Ġ'                   score= 0.0739
+ 2. id=    38  token='G'                   score= 0.0685
+ 3. id=121890  token='ÂłG'                 score= 0.0668
+ 4. id= 80864  token='GMEM'                score= 0.0632
+ 5. id=  9796  token='ĉG'                  score= 0.0594
+ 6. id=   480  token='ĠG'                  score= 0.0574
+ 7. id= 92939  token='Gatt'                score= 0.0522
+ 8. id= 12270  token='FG'                  score= 0.0521
+ 9. id= 73183  token='[G'                  score= 0.0509
+10. id= 12279  token='-G'                  score= 0.0508
+11. id= 20419  token='467'                 score= 0.0502
+12. id= 76620  token='GST'                 score= 0.0501
+13. id=    70  token='g'                   score= 0.0479
+14. id= 89274  token='GuidId'              score= 0.0479
+15. id= 66657  token='GLE'                 score= 0.0479
+16. id=117899  token='ÂłF'                 score= 0.0473
+17. id= 42472  token='erner'               score= 0.0471
+18. id=  1246  token='.G'                  score= 0.0469
+19. id= 82252  token='Gs'                  score= 0.0467
+20. id=  1928  token='_g'                  score= 0.0464
+21. id= 70341  token='GPC'                 score= 0.0463
+22. id= 21287  token='GM'                  score= 0.0458
+23. id= 93109  token='=G'                  score= 0.0453
+24. id= 90473  token='Ġredundancy'         score= 0.0453
+25. id= 22638  token='614'                 score= 0.0451
+26. id= 97756  token='.Selenium'           score= 0.0449
+27. id=110118  token='alama'               score= 0.0446
+28. id= 56618  token='_locale'             score= 0.0444
+29. id= 52194  token='ĠHugo'               score= 0.0437
+30. id=118231  token='emey'                score= 0.0437
+31. id= 67717  token='iosa'                score= 0.0437
+32. id= 77887  token='TG'                  score= 0.0435
+33. id= 71217  token='ĠHeg'                score= 0.0433
+34. id= 29978  token='Ġbip'                score= 0.0433
+35. id= 25101  token='ceipt'               score= 0.0432
+36. id= 54854  token='YG'                  score= 0.0431
+37. id=  6838  token='(G'                  score= 0.0428
+38. id= 26165  token='FER'                 score= 0.0427
+39. id= 86733  token='Ġbudding'            score= 0.0422
+40. id= 47961  token='ALLE'                score= 0.0421
+
+============================================================
+Top tokens on NEGATIVE side (OTHER-aligned)
+============================================================
+ 1. id=    32  token='A'                   score=-0.1083
+ 2. id=   362  token='ĠA'                  score=-0.1053
+ 3. id=   885  token='.A'                  score=-0.0811
+ 4. id=  1596  token='_A'                  score=-0.0791
+ 5. id=  6830  token='-A'                  score=-0.0760
+ 6. id=   356  token='ĠC'                  score=-0.0739
+ 7. id= 57855  token='ĠÐĲ'                 score=-0.0688
+ 8. id=118586  token='ÂłA'                 score=-0.0688
+ 9. id=    35  token='D'                   score=-0.0684
+10. id=   423  token='ĠD'                  score=-0.0676
+11. id= 24362  token='>A'                  score=-0.0661
+12. id= 75821  token='*A'                  score=-0.0652
+13. id= 23845  token='ĉA'                  score=-0.0646
+14. id=    34  token='C'                   score=-0.0628
+15. id= 31292  token='<A'                  score=-0.0626
+16. id= 47723  token='=A'                  score=-0.0621
+17. id= 56748  token=':A'                  score=-0.0609
+18. id=100423  token='ĠÎĳ'                 score=-0.0604
+19. id= 37255  token='ÐĲ'                  score=-0.0590
+20. id=  9607  token='-D'                  score=-0.0574
+21. id=   426  token='ĠB'                  score=-0.0552
+22. id= 30233  token='"A'                  score=-0.0547
+23. id=  1586  token='_D'                  score=-0.0547
+24. id= 15381  token=',A'                  score=-0.0544
+25. id= 52374  token="'A"                  score=-0.0536
+26. id=    33  token='B'                   score=-0.0533
+27. id=116531  token='ï¼¡'                 score=-0.0523
+28. id= 50313  token='ĠSew'                score=-0.0521
+29. id= 93580  token='+A'                  score=-0.0514
+30. id=  4444  token='(A'                  score=-0.0504
+31. id= 38612  token='ĠKO'                 score=-0.0503
+32. id=  7826  token='-B'                  score=-0.0500
+33. id=   920  token='.D'                  score=-0.0495
+34. id=   932  token='_C'                  score=-0.0492
+35. id=   732  token='.C'                  score=-0.0490
+36. id= 24476  token='AZ'                  score=-0.0484
+37. id=  7813  token='-C'                  score=-0.0479
+38. id=100341  token='Îĳ'                  score=-0.0474
+39. id= 23335  token='[A'                  score=-0.0474
+40. id=100461  token='ĠØ§ÙĦØ£'             score=-0.0470

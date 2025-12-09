@@ -1,0 +1,53 @@
+Logit Lens Sanity Check: SELF Prompts (Avg of 50)
+Layer: 79
+============================================================
+ 1. id=    32  token='A'                   score=39.7500
+ 2. id=    39  token='H'                   score=35.0938
+ 3. id=    33  token='B'                   score=34.1875
+ 4. id=    36  token='E'                   score=31.1875
+ 5. id=    35  token='D'                   score=30.7656
+ 6. id=    38  token='G'                   score=28.5469
+ 7. id=    34  token='C'                   score=28.4219
+ 8. id=    37  token='F'                   score=27.1250
+ 9. id=    40  token='I'                   score=22.7500
+10. id=    45  token='N'                   score=21.1875
+11. id=    55  token='X'                   score=20.0781
+12. id=    57  token='Z'                   score=19.6406
+13. id=    49  token='R'                   score=19.6406
+14. id=    44  token='M'                   score=19.5781
+15. id=    42  token='K'                   score=19.5000
+16. id=    43  token='L'                   score=19.5000
+17. id=    52  token='U'                   score=19.2188
+18. id=    50  token='S'                   score=19.0625
+19. id=    51  token='T'                   score=18.9219
+20. id=    46  token='O'                   score=18.7656
+21. id=    41  token='J'                   score=18.3438
+22. id=    64  token='a'                   score=18.1719
+23. id=    47  token='P'                   score=18.1562
+24. id=  4444  token='(A'                  score=17.7969
+25. id=  2822  token='No'                  score=17.7188
+26. id=    56  token='Y'                   score=17.7031
+27. id=  6830  token='-A'                  score=17.3438
+28. id=    54  token='W'                   score=17.1875
+29. id= 30233  token='"A'                  score=17.1406
+30. id=    53  token='V'                   score=17.1094
+31. id=    48  token='Q'                   score=17.0312
+32. id=    27  token='<'                   score=16.9219
+33. id=   791  token='The'                 score=16.9219
+34. id= 52374  token="'A"                  score=16.5781
+35. id=    71  token='h'                   score=16.4688
+36. id=  4155  token='None'                score=16.1719
+37. id= 24362  token='>A'                  score=16.1250
+38. id=  1596  token='_A'                  score=16.0938
+39. id= 31292  token='<A'                  score=16.0312
+40. id=  5462  token='(B'                  score=15.9219
+41. id=  2688  token='Not'                 score=15.8047
+42. id= 12834  token='Since'               score=15.5625
+43. id=  3947  token='There'               score=15.4688
+44. id= 11135  token='(H'                  score=15.4062
+45. id= 46639  token='"H'                  score=15.3438
+46. id= 23335  token='[A'                  score=15.1562
+47. id= 75821  token='*A'                  score=14.8594
+48. id=  2028  token='This'                score=14.8281
+49. id=    65  token='b'                   score=14.7969
+50. id= 23845  token='ĉA'                  score=14.6875

@@ -1,0 +1,45 @@
+{
+  "layer": 50,
+  "n_total": 102,
+  "n_answer": 93,
+  "n_pass": 9,
+  "d_so_path": "interp/outputs/self_other_direction_layer50.pt",
+  "d_so_flipped_for_task": false,
+  "d_so_mean_answer_proj": 0.59716796875,
+  "d_so_mean_pass_proj": 0.53759765625,
+  "d_so_auc_ans_vs_pass": 0.5937873357228196,
+  "d_pass_full_cos_with_d_so": 0.015777587890625,
+  "split_metrics": [
+    {
+      "train_auc": 1.0,
+      "test_auc": 0.9043478260869565,
+      "cos": 0.0139007568359375
+    },
+    {
+      "train_auc": 0.987012987012987,
+      "test_auc": 0.9795918367346939,
+      "cos": 0.0201263427734375
+    },
+    {
+      "train_auc": 0.9956521739130435,
+      "test_auc": 0.9574468085106383,
+      "cos": 0.01776123046875
+    },
+    {
+      "train_auc": 0.991304347826087,
+      "test_auc": 0.9893617021276596,
+      "cos": 0.029083251953125
+    },
+    {
+      "train_auc": 0.9956521739130435,
+      "test_auc": 0.9893617021276596,
+      "cos": 0.020416259765625
+    }
+  ],
+  "split_train_auc_mean": 0.9939243365330321,
+  "split_train_auc_std": 0.0044162342238637,
+  "split_test_auc_mean": 0.9640219751175216,
+  "split_test_auc_std": 0.032033922641802375,
+  "split_cos_mean": 0.020257568359375,
+  "split_cos_std": 0.004991509784073112
+}

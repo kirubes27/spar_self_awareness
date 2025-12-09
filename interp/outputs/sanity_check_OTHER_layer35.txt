@@ -1,0 +1,53 @@
+Logit Lens Sanity Check: OTHER Prompts (Avg of 50)
+Layer: 35
+============================================================
+ 1. id=   263  token='on'                  score=0.4697
+ 2. id=    64  token='a'                   score=0.4436
+ 3. id= 45354  token='ĠHunting'            score=0.4343
+ 4. id=  7835  token='udo'                 score=0.4277
+ 5. id= 54007  token='ĠBaron'              score=0.4231
+ 6. id=  1131  token='...'                 score=0.4224
+ 7. id= 16497  token='mid'                 score=0.4194
+ 8. id= 85962  token='ĠSass'               score=0.4148
+ 9. id=    82  token='s'                   score=0.4121
+10. id= 39252  token='isma'                score=0.4109
+11. id= 12035  token='Ġhardware'           score=0.4067
+12. id= 79745  token='ĠSark'               score=0.4058
+13. id= 61589  token='IGO'                 score=0.4058
+14. id=  2201  token='no'                  score=0.4043
+15. id=  3643  token='swer'                score=0.3982
+16. id=  4821  token='ĠBar'                score=0.3945
+17. id= 30884  token='Ġhug'                score=0.3933
+18. id= 20716  token='Ġbra'                score=0.3928
+19. id=  3458  token='na'                  score=0.3928
+20. id= 51094  token='~-'                  score=0.3923
+21. id= 32544  token='ĠCatal'              score=0.3906
+22. id= 37865  token='ĠHardware'           score=0.3892
+23. id= 73779  token='Ġstrained'           score=0.3870
+24. id= 40884  token='Ġfoul'               score=0.3860
+25. id=  3988  token='uly'                 score=0.3855
+26. id= 63677  token='Ġrampant'            score=0.3850
+27. id=  5849  token='oly'                 score=0.3850
+28. id= 88917  token='WindowSize'          score=0.3823
+29. id=   589  token='ath'                 score=0.3809
+30. id=  9964  token='Ġtu'                 score=0.3799
+31. id= 78161  token='Ġstron'              score=0.3787
+32. id= 12777  token='Ġconsequ'            score=0.3772
+33. id= 17055  token='Ġhydro'              score=0.3760
+34. id= 15629  token='Ġlatter'             score=0.3750
+35. id= 15618  token='vp'                  score=0.3740
+36. id= 57743  token='itel'                score=0.3713
+37. id=    65  token='b'                   score=0.3706
+38. id= 85052  token='ĠVID'                score=0.3706
+39. id=   198  token='Ċ'                   score=0.3704
+40. id=  2822  token='No'                  score=0.3696
+41. id=  4785  token='Ġweight'             score=0.3694
+42. id= 67015  token='Ġ$#'                 score=0.3682
+43. id= 59850  token='ĠBrennan'            score=0.3674
+44. id= 14192  token='Ġtack'               score=0.3662
+45. id=  8475  token='Ġappropriate'        score=0.3660
+46. id=    70  token='g'                   score=0.3660
+47. id=    77  token='n'                   score=0.3652
+48. id= 13714  token='ĠEmp'                score=0.3650
+49. id=   784  token='ss'                  score=0.3638
+50. id=118981  token='å©Ĩ'                 score=0.3633

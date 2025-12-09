@@ -1,0 +1,88 @@
+
+============================================================
+Top tokens on POSITIVE side (SELF-aligned)
+============================================================
+ 1. id= 77645  token='GenerationStrategy'  score= 0.0523
+ 2. id=  1672  token='Ġins'                score= 0.0513
+ 3. id= 43757  token='ovan'                score= 0.0505
+ 4. id= 54650  token='abbo'                score= 0.0498
+ 5. id=  3347  token='Ġpast'               score= 0.0482
+ 6. id=   961  token='Ġpart'               score= 0.0477
+ 7. id=111222  token='ÐĦ'                  score= 0.0470
+ 8. id= 92130  token='ĠStout'              score= 0.0464
+ 9. id= 16117  token='lessly'              score= 0.0456
+10. id= 60285  token='undy'                score= 0.0444
+11. id=  5554  token='Ġsil'                score= 0.0442
+12. id= 48011  token='Ġwatchdog'           score= 0.0440
+13. id=   490  token='Ġtr'                 score= 0.0435
+14. id= 16414  token='ieren'               score= 0.0433
+15. id= 89274  token='GuidId'              score= 0.0431
+16. id=  6859  token='Ġsplit'              score= 0.0423
+17. id= 61533  token='buffers'             score= 0.0423
+18. id= 84845  token='PostalCodes'         score= 0.0423
+19. id= 45087  token='Ġreim'               score= 0.0420
+20. id= 90843  token='_Util'               score= 0.0414
+21. id=126447  token='èĩ³å°ĳ'              score= 0.0413
+22. id=118223  token='ç¥¥'                 score= 0.0412
+23. id= 33772  token='.IsTrue'             score= 0.0412
+24. id=  2882  token='Ġoverride'           score= 0.0411
+25. id= 48455  token='ĠTeil'               score= 0.0407
+26. id=  6912  token='ĠAM'                 score= 0.0406
+27. id=112237  token='èĻİ'                 score= 0.0406
+28. id=   658  token='Ġel'                 score= 0.0405
+29. id= 35882  token='ĠLan'                score= 0.0402
+30. id= 71596  token='ĠLime'               score= 0.0401
+31. id= 45896  token='COOKIE'              score= 0.0400
+32. id=  3831  token='Ġstrong'             score= 0.0400
+33. id=103517  token='á»ķng'               score= 0.0398
+34. id= 93585  token='PAT'                 score= 0.0397
+35. id=112293  token='Ġsáº¡n'              score= 0.0397
+36. id= 23752  token='adesh'               score= 0.0396
+37. id=   342  token='Ġg'                  score= 0.0395
+38. id= 40060  token='Ġdesp'               score= 0.0395
+39. id=  1428  token='AM'                  score= 0.0392
+40. id= 75481  token='Ġseriousness'        score= 0.0391
+
+============================================================
+Top tokens on NEGATIVE side (OTHER-aligned)
+============================================================
+ 1. id=  1670  token='Ġdefault'            score=-0.0487
+ 2. id= 82584  token='ĠEstr'               score=-0.0479
+ 3. id=  2309  token='default'             score=-0.0472
+ 4. id= 75372  token='Ġhumility'           score=-0.0465
+ 5. id=  2826  token='acy'                 score=-0.0457
+ 6. id= 28382  token='Ġminus'              score=-0.0446
+ 7. id= 88823  token='ewe'                 score=-0.0439
+ 8. id= 15821  token='Ġlowest'             score=-0.0438
+ 9. id= 76617  token='uae'                 score=-0.0436
+10. id= 36224  token='onest'               score=-0.0430
+11. id= 90970  token='ĠMcKay'              score=-0.0428
+12. id= 29694  token='.getDefault'         score=-0.0425
+13. id= 77930  token='.setDefault'         score=-0.0424
+14. id= 41605  token='ĠLOW'                score=-0.0423
+15. id= 50090  token='indy'                score=-0.0422
+16. id= 48463  token='é»ĺè®¤'              score=-0.0418
+17. id= 60369  token='-low'                score=-0.0414
+18. id= 50810  token='wor'                 score=-0.0412
+19. id=111628  token='à¤¯à¤¨'              score=-0.0409
+20. id=  5599  token='oub'                 score=-0.0408
+21. id= 30527  token='ĠinitialState'       score=-0.0407
+22. id= 51957  token='ĠNegative'           score=-0.0405
+23. id= 10516  token='low'                 score=-0.0403
+24. id= 85642  token='ĠHaram'              score=-0.0403
+25. id=  2822  token='No'                  score=-0.0403
+26. id= 30607  token='Ġestr'               score=-0.0402
+27. id= 66493  token='ĠEXTRA'              score=-0.0398
+28. id=  4167  token='ients'               score=-0.0397
+29. id= 94384  token='ĠZi'                 score=-0.0397
+30. id= 95952  token='Ã³st'                score=-0.0393
+31. id= 39557  token='_minus'              score=-0.0393
+32. id= 90998  token='lowest'              score=-0.0392
+33. id= 82914  token='.INPUT'              score=-0.0389
+34. id= 31528  token='Ġviable'             score=-0.0386
+35. id= 92529  token='ĠBlanch'             score=-0.0386
+36. id= 40488  token='acin'                score=-0.0382
+37. id= 32492  token='ĠLiberty'            score=-0.0382
+38. id= 12320  token='eed'                 score=-0.0381
+39. id= 35794  token='eton'                score=-0.0380
+40. id= 56254  token='ĠMarty'              score=-0.0380

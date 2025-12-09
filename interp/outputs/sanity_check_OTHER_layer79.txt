@@ -1,0 +1,53 @@
+Logit Lens Sanity Check: OTHER Prompts (Avg of 50)
+Layer: 79
+============================================================
+ 1. id=    39  token='H'                   score=35.9375
+ 2. id=    38  token='G'                   score=25.5000
+ 3. id=    32  token='A'                   score=25.0625
+ 4. id=    36  token='E'                   score=24.9375
+ 5. id=    33  token='B'                   score=24.5938
+ 6. id=    37  token='F'                   score=23.3594
+ 7. id=    35  token='D'                   score=22.5625
+ 8. id=    40  token='I'                   score=21.5625
+ 9. id=    45  token='N'                   score=21.2812
+10. id=  3947  token='There'               score=20.2188
+11. id=    34  token='C'                   score=20.0625
+12. id=  2822  token='No'                  score=18.9688
+13. id= 12834  token='Since'               score=18.9688
+14. id=  2181  token='It'                  score=17.9375
+15. id=    57  token='Z'                   score=17.5156
+16. id=   791  token='The'                 score=17.4688
+17. id=    50  token='S'                   score=17.1406
+18. id=  2688  token='Not'                 score=17.1406
+19. id=    51  token='T'                   score=16.8281
+20. id=    43  token='L'                   score=16.7812
+21. id=  2028  token='This'                score=16.7344
+22. id=    42  token='K'                   score=16.6406
+23. id=    44  token='M'                   score=16.5156
+24. id=    41  token='J'                   score=16.2812
+25. id=  4155  token='None'                score=16.2188
+26. id=    49  token='R'                   score=16.0625
+27. id=    55  token='X'                   score=15.6016
+28. id=    47  token='P'                   score=15.5781
+29. id=    54  token='W'                   score=15.2969
+30. id=    46  token='O'                   score=15.2188
+31. id= 11135  token='(H'                  score=15.0938
+32. id= 22818  token='Given'               score=14.9922
+33. id=  1041  token='100'                 score=14.9453
+34. id=  8087  token='Invalid'             score=14.8438
+35. id=  9290  token='Note'                score=14.8438
+36. id= 17512  token='Unable'              score=14.5781
+37. id=    52  token='U'                   score=14.5781
+38. id= 11536  token='since'               score=14.5703
+39. id=    48  token='Q'                   score=14.5234
+40. id=  2675  token='You'                 score=14.4688
+41. id= 23678  token='NaN'                 score=14.2812
+42. id=119493  token='ÂłH'                 score=14.2656
+43. id= 61600  token='>H'                  score=14.2266
+44. id=  2460  token='All'                 score=14.1953
+45. id=  7927  token='Your'                score=14.0938
+46. id= 46639  token='"H'                  score=14.0938
+47. id=    53  token='V'                   score=14.0781
+48. id= 19285  token='nan'                 score=13.9688
+49. id=    56  token='Y'                   score=13.9531
+50. id= 13595  token='ĉH'                  score=13.7344
