@@ -64,7 +64,11 @@ DEFAULT_ALPHAS = [-2.0, -1.0, -0.5, 0.0, 0.5, 1.0, 2.0]
 # --------- Direction Loading ---------
 def get_direction_path(direction_name: str, layer_idx: int) -> Path:
     """Map CLI direction name to file path."""
-    if direction_name == "conf":
+    # Handle random directions (e.g., random_0, random_5)
+    if direction_name.startswith("random_"):
+        idx = direction_name.split("_")[1]
+        return DIRECTION_DIR / f"random_direction_{idx}_layer35.pt"
+    elif direction_name == "conf":
         return DIRECTION_DIR / f"confidence_direction_layer{layer_idx}.pt"
     elif direction_name == "pass":
         return DIRECTION_DIR / f"pass_game_direction_layer{layer_idx}.pt"
@@ -399,8 +403,7 @@ def main():
         type=str,
         nargs="+",
         default=["conf"],
-        choices=["conf", "pass", "so"],
-        help="Directions to steer with (default: conf)",
+        help="Directions to steer with (conf, pass, so, or random_0, random_1, etc.)",
     )
     parser.add_argument(
         "--layers",
