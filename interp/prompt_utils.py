@@ -6,6 +6,7 @@ Ensures consistent wording for "Self" (Confidence) and "Other" (3rd Party) promp
 across different scripts (layer_sweep, analyze_introspective_extremes, etc.).
 """
 
+
 def build_self_prompt(question_text: str) -> str:
     """
     Constructs the 'Self' prompt (Introspective Confidence).
@@ -61,3 +62,18 @@ def build_other_prompt(question_text: str) -> str:
         f"{setup}\n\nQuestion: {question_text}\n\n{question_prompt}\n\n{options}\n\n"
         "Your choice (A, B, C, D, E, F, G, or H): "
     )
+
+
+def build_pass_game_prompt(question_text: str, options_dict: dict[str, str]) -> str:
+    """
+    Simplified Pass Game prompt:
+    - Shows MCQ stem + options
+    - Asks model to output '1' (Answer) if >=10% certain, else '2' (Pass)
+    """
+    options_text = "".join(f"{k}: {v}\n" for k, v in options_dict.items())
+    return f"""Consider the answer to the following question:
+{question_text}
+{options_text}
+Consider your level of certainty in your answer. If you are at least 10% certain that you know the correct answer, output '1'; if not, output '2'.
+Respond ONLY with '1' or '2'.
+Your choice ('1' or '2'): """
