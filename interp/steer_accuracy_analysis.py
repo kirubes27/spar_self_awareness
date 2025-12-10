@@ -210,7 +210,7 @@ def run_accuracy_analysis(
                 "baseline_correct": q["baseline_correct"],
             })
 
-        # Compute metrics
+        # Compute metrics for answered questions
         answered = [d for d in decisions if d["decision"] == "1"]
         n_answer = len(answered)
         n_pass = len(decisions) - n_answer
@@ -219,6 +219,11 @@ def run_accuracy_analysis(
         accuracy = n_correct_answered / n_answer if n_answer > 0 else 0.0
         coverage = n_answer / len(decisions)
 
+        # Compute metrics for passed questions (are they actually harder?)
+        passed = [d for d in decisions if d["decision"] == "2"]
+        n_correct_passed = sum(1 for d in passed if d["baseline_correct"])
+        pass_accuracy = n_correct_passed / len(passed) if passed else 0.0
+
         results.append({
             "alpha": alpha,
             "n_answer": n_answer,
@@ -226,11 +231,14 @@ def run_accuracy_analysis(
             "p_answer": round(coverage, 4),
             "n_correct_answered": n_correct_answered,
             "accuracy_given_answer": round(accuracy, 4),
+            "n_correct_passed": n_correct_passed,
+            "accuracy_given_pass": round(pass_accuracy, 4),
             "decisions": decisions,  # Full per-question data
         })
 
         print(f"  Coverage: {n_answer}/{len(decisions)} ({coverage:.1%})")
-        print(f"  Accuracy (given answer): {n_correct_answered}/{n_answer} = {accuracy:.1%}")
+        print(f"  Accuracy (answered): {n_correct_answered}/{n_answer} = {accuracy:.1%}")
+        print(f"  Accuracy (passed): {n_correct_passed}/{n_pass} = {pass_accuracy:.1%}")
 
     return results
 
@@ -302,6 +310,8 @@ def main():
             "p_answer": r["p_answer"],
             "n_correct_answered": r["n_correct_answered"],
             "accuracy_given_answer": r["accuracy_given_answer"],
+            "n_correct_passed": r["n_correct_passed"],
+            "accuracy_given_pass": r["accuracy_given_pass"],
         })
 
     output = {
@@ -330,17 +340,18 @@ def main():
     print(f"Saved full per-question data to {full_path}")
 
     # Print summary table
-    print("\n" + "=" * 60)
+    print("\n" + "=" * 80)
     print("SUMMARY: Accuracy vs Coverage")
-    print("=" * 60)
-    print(f"{'α':>6} | {'Coverage':>10} | {'Accuracy':>10} | {'Answered':>10}")
-    print("-" * 50)
+    print("=" * 80)
+    print(f"{'α':>6} | {'Coverage':>10} | {'Acc(Answer)':>12} | {'Acc(Pass)':>12} | {'Answered':>8}")
+    print("-" * 70)
     for r in results_compact:
         print(
             f"{r['alpha']:>6.1f} | {r['p_answer']:>10.1%} | "
-            f"{r['accuracy_given_answer']:>10.1%} | {r['n_answer']:>10}"
+            f"{r['accuracy_given_answer']:>12.1%} | "
+            f"{r['accuracy_given_pass']:>12.1%} | {r['n_answer']:>8}"
         )
-    print("=" * 60)
+    print("=" * 80)
 
 
 if __name__ == "__main__":
