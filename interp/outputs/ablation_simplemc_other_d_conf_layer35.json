@@ -1,0 +1,26 @@
+{
+  "config": {
+    "task": "simplemc_other",
+    "layer": 35,
+    "direction": "d_conf",
+    "mode": "ablation",
+    "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+    "n_questions": 500,
+    "use_chat_template": true,
+    "timestamp": "2025-12-10T06:45:59.206469"
+  },
+  "metrics": {
+    "counts": {
+      "A": 168,
+      "B": 257,
+      "C": 23,
+      "D": 50,
+      "E": 0,
+      "F": 1,
+      "G": 1,
+      "H": 0
+    },
+    "mean_conf": 0.0869,
+    "p_high": 0.002
+  }
+}
