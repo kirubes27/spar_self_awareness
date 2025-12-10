@@ -1,0 +1,13 @@
+{
+  "layer": 35,
+  "norms": {
+    "d_conf": 0.9998,
+    "d_pass": 1.336,
+    "d_so": 1.0002
+  },
+  "cosine_similarities": {
+    "d_conf_vs_d_pass": 0.2862,
+    "d_conf_vs_d_so": 0.3992,
+    "d_pass_vs_d_so": 0.0225
+  }
+}

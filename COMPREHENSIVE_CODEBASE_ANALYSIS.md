@@ -856,7 +856,33 @@ This suggests **redundancy**: the model has multiple pathways encoding confidenc
 
 ---
 
+## 🔗 Direction Similarity Analysis
+
+**Question:** Are d_conf, d_pass, and d_so the same direction or distinct?
+
+### Cosine Similarities (Layer 35)
+
+| Direction Pair | Cosine | Interpretation |
+|----------------|--------|----------------|
+| **d_conf vs d_pass** | 0.29 | Distinct directions |
+| **d_conf vs d_so** | 0.40 | Related but different |
+| **d_pass vs d_so** | 0.02 | **Nearly orthogonal** |
+
+### Interpretation
+
+> [!NOTE]
+> **Three distinct directions exist, each capturing something different.**
+
+1. **d_conf ≠ d_pass** (cos=0.29): Introspective confidence is NOT the same as the Answer/Pass decision direction.
+2. **d_pass ⊥ d_so** (cos=0.02): Answer/Pass is completely orthogonal to Self/Other — surprising!
+3. **d_conf ↔ d_so** (cos=0.40): Moderate correlation — high self-confidence correlates with "being the Self."
+
+**Implication:** d_conf is a *more fundamental* feature that influences the downstream pass/answer decision. The three directions form a partially orthogonal basis in activation space.
+
+---
+
 ## 🚀 Next Steps (Updated)
+
 
 1. ✅ **Causal Steering (Pass Game):** COMPLETED - d_conf causally controls Answer/Pass behavior
 2. ✅ **Layer 79 Steering:** COMPLETED - confirms d_conf effect is localized to early layers
