@@ -1,0 +1,112 @@
+{
+  "config": {
+    "layer": 35,
+    "alphas": [
+      -3.0,
+      -2.0,
+      -1.0,
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      2.0,
+      3.0
+    ],
+    "n_questions": 500,
+    "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+    "timestamp": "2025-12-10T08:44:40.511526"
+  },
+  "baseline_accuracy": 0.456,
+  "results": [
+    {
+      "alpha": -3.0,
+      "n_answer": 42,
+      "n_pass": 458,
+      "p_answer": 0.084,
+      "n_correct_answered": 19,
+      "accuracy_given_answer": 0.4524,
+      "n_correct_passed": 209,
+      "accuracy_given_pass": 0.4563
+    },
+    {
+      "alpha": -2.0,
+      "n_answer": 105,
+      "n_pass": 395,
+      "p_answer": 0.21,
+      "n_correct_answered": 50,
+      "accuracy_given_answer": 0.4762,
+      "n_correct_passed": 178,
+      "accuracy_given_pass": 0.4506
+    },
+    {
+      "alpha": -1.0,
+      "n_answer": 196,
+      "n_pass": 304,
+      "p_answer": 0.392,
+      "n_correct_answered": 96,
+      "accuracy_given_answer": 0.4898,
+      "n_correct_passed": 132,
+      "accuracy_given_pass": 0.4342
+    },
+    {
+      "alpha": -0.5,
+      "n_answer": 235,
+      "n_pass": 265,
+      "p_answer": 0.47,
+      "n_correct_answered": 117,
+      "accuracy_given_answer": 0.4979,
+      "n_correct_passed": 111,
+      "accuracy_given_pass": 0.4189
+    },
+    {
+      "alpha": 0.0,
+      "n_answer": 272,
+      "n_pass": 228,
+      "p_answer": 0.544,
+      "n_correct_answered": 135,
+      "accuracy_given_answer": 0.4963,
+      "n_correct_passed": 93,
+      "accuracy_given_pass": 0.4079
+    },
+    {
+      "alpha": 0.5,
+      "n_answer": 300,
+      "n_pass": 200,
+      "p_answer": 0.6,
+      "n_correct_answered": 144,
+      "accuracy_given_answer": 0.48,
+      "n_correct_passed": 84,
+      "accuracy_given_pass": 0.42
+    },
+    {
+      "alpha": 1.0,
+      "n_answer": 334,
+      "n_pass": 166,
+      "p_answer": 0.668,
+      "n_correct_answered": 158,
+      "accuracy_given_answer": 0.4731,
+      "n_correct_passed": 70,
+      "accuracy_given_pass": 0.4217
+    },
+    {
+      "alpha": 2.0,
+      "n_answer": 405,
+      "n_pass": 95,
+      "p_answer": 0.81,
+      "n_correct_answered": 188,
+      "accuracy_given_answer": 0.4642,
+      "n_correct_passed": 40,
+      "accuracy_given_pass": 0.4211
+    },
+    {
+      "alpha": 3.0,
+      "n_answer": 449,
+      "n_pass": 51,
+      "p_answer": 0.898,
+      "n_correct_answered": 207,
+      "accuracy_given_answer": 0.461,
+      "n_correct_passed": 21,
+      "accuracy_given_pass": 0.4118
+    }
+  ]
+}
