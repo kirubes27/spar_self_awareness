@@ -881,8 +881,41 @@ This suggests **redundancy**: the model has multiple pathways encoding confidenc
 
 ---
 
-## 🚀 Next Steps (Updated)
+## 🎲 Random Direction Baseline (NEW!)
 
+**Question:** Is d_conf a special direction, or would ANY random vector produce similar steering effects?
+
+**Method:**
+1. Generate 10 random unit vectors in the same 8192-dimensional space as d_conf
+2. Scale each to match d_conf's norm (~1.0) for fair comparison
+3. Run the same steering experiment (α ∈ [-3, +3]) on all 3 tasks
+4. Compare "swing" (effect at α=+3 minus α=-3) between d_conf and random directions
+
+### Results (Layer 35, N=500 questions)
+
+| Task | d_conf Swing | Random Max | Random Mean±Std | **d_conf is X× larger** |
+|------|--------------|------------|-----------------|-------------------------|
+| **pass_game** | **0.814** | 0.100 | -0.02 ± 0.06 | **8.1×** |
+| **simplemc_self** | **0.156** | 0.029 | -0.01 ± 0.01 | **5.5×** |
+| **simplemc_other** | 0.035 | 0.007 | 0.00 ± 0.00 | **4.8×** |
+
+### Key Finding
+
+> [!IMPORTANT]
+> **d_conf is 5-8× stronger than ANY random direction tested.**
+
+- Random directions produce **near-zero steering effect** (swings in range [-0.10, +0.08])
+- d_conf's swing of 0.814 means it moves P(Answer) from 8% to 90%
+- This eliminates the null hypothesis that steering works with arbitrary vectors
+- **d_conf captures a REAL, MEANINGFUL direction in activation space**
+
+### Visualization
+
+See `interp/outputs/random_baseline_comparison.png` for the bar chart comparison.
+
+---
+
+## 🚀 Next Steps (Updated)
 
 1. ✅ **Causal Steering (Pass Game):** COMPLETED - d_conf causally controls Answer/Pass behavior
 2. ✅ **Layer 79 Steering:** COMPLETED - confirms d_conf effect is localized to early layers
@@ -890,7 +923,7 @@ This suggests **redundancy**: the model has multiple pathways encoding confidenc
 4. ✅ **simplemc_other Steering:** COMPLETED - d_conf has minimal effect on Other (0.06→0.09)
 5. ✅ **Ablation Experiment:** COMPLETED - d_conf is sufficient but not necessary (redundancy)
 6. ✅ **Accuracy vs α Analysis:** COMPLETED - d_conf is a threshold knob, not overconfidence
-7. 🔄 **Random Direction Baseline:** IN PROGRESS - verify d_conf >> random vectors
+7. ✅ **Random Direction Baseline:** COMPLETED - d_conf is 8.1× stronger than random vectors
 8. 📝 **Publication:** Draft ICML paper with these breakthrough results
 
 ---
@@ -902,13 +935,13 @@ This suggests **redundancy**: the model has multiple pathways encoding confidenc
 
 1. **Single Model:** All results on Llama-3.3-70B-Instruct only. Replication on other architectures needed.
 2. **Redundancy:** Ablation shows d_conf is not the only pathway—model has backup circuits.
-3. ~~**Random Baseline:**~~ Pending completion - will verify d_conf >> random directions.
+3. ~~**Random Baseline:**~~ ✅ RESOLVED - d_conf is 8.1× stronger than max random direction.
 4. ~~**Accuracy Not Measured:**~~ ✅ RESOLVED - accuracy stays flat across α, d_conf is not "overconfidence."
 5. **"Epistemic" Terminology:** Use "self-reported confidence" rather than "epistemic" until stronger calibration evidence.
 6. **AUC 1.0 Caveat:** Perfect AUC on introspective extremes is on held-out test set (n=250).
 
 ---
 
-*Generated: 2025-12-10 | Updated with ablation + accuracy analysis results*
+*Generated: 2025-12-11 | Updated with random baseline results*
 
 *End of Comprehensive Analysis*

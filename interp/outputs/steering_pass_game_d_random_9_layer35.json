@@ -1,0 +1,94 @@
+{
+  "config": {
+    "task": "pass_game",
+    "direction": "random_9",
+    "layer": 35,
+    "alphas": [
+      -3.0,
+      -2.0,
+      -1.0,
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      2.0,
+      3.0
+    ],
+    "model_id": "meta-llama/Llama-3.3-70B-Instruct",
+    "use_chat_template": true,
+    "n_questions": 500,
+    "timestamp": "2025-12-10T05:37:53.566879"
+  },
+  "baseline": {
+    "alpha": 0.0,
+    "n_answer": 272,
+    "n_pass": 228,
+    "p_answer": 0.544,
+    "delta_p_answer": 0.0
+  },
+  "results": [
+    {
+      "alpha": -3.0,
+      "n_answer": 311,
+      "n_pass": 189,
+      "p_answer": 0.622,
+      "delta_p_answer": 0.078
+    },
+    {
+      "alpha": -2.0,
+      "n_answer": 292,
+      "n_pass": 208,
+      "p_answer": 0.584,
+      "delta_p_answer": 0.04
+    },
+    {
+      "alpha": -1.0,
+      "n_answer": 279,
+      "n_pass": 221,
+      "p_answer": 0.558,
+      "delta_p_answer": 0.014
+    },
+    {
+      "alpha": -0.5,
+      "n_answer": 273,
+      "n_pass": 227,
+      "p_answer": 0.546,
+      "delta_p_answer": 0.002
+    },
+    {
+      "alpha": 0.0,
+      "n_answer": 272,
+      "n_pass": 228,
+      "p_answer": 0.544,
+      "delta_p_answer": 0.0
+    },
+    {
+      "alpha": 0.5,
+      "n_answer": 270,
+      "n_pass": 230,
+      "p_answer": 0.54,
+      "delta_p_answer": -0.004
+    },
+    {
+      "alpha": 1.0,
+      "n_answer": 268,
+      "n_pass": 232,
+      "p_answer": 0.536,
+      "delta_p_answer": -0.008
+    },
+    {
+      "alpha": 2.0,
+      "n_answer": 275,
+      "n_pass": 225,
+      "p_answer": 0.55,
+      "delta_p_answer": 0.006
+    },
+    {
+      "alpha": 3.0,
+      "n_answer": 287,
+      "n_pass": 213,
+      "p_answer": 0.574,
+      "delta_p_answer": 0.03
+    }
+  ]
+}
