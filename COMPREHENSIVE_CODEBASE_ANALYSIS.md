@@ -55,16 +55,38 @@ spar_self_awareness/
 │
 ├── Interpretability (Phase 3) ⭐ NEW
 │   ├── interp/
-│   │   ├── layer_sweep.py             # Sweep all layers to find best signal (AUC)
-│   │   ├── save_layer_directions.py   # Compute & save direction vectors (d_so)
+│   │   ├── steer_activations.py        # ⭐ Main steering experiment script
+│   │   ├── steer_activations_ablation.py # Ablation: project out d_conf
+│   │   ├── steer_accuracy_analysis.py  # Accuracy vs α analysis
+│   │   ├── layer_sweep.py              # Sweep layers to find best AUC
+│   │   ├── save_layer_directions.py    # Save direction vectors to .pt
+│   │   ├── generate_random_directions.py # Create random baseline vectors
 │   │   ├── analyze_introspective_extremes.py # Validate d_conf vs d_so
-│   │   ├── logit_lens.py              # Project directions onto vocabulary
-│   │   ├── logit_lens_introspective.py # Sanity check (Logit Lens on prompts)
-│   │   ├── logit_lens_self_other_sanity.py # Sanity check (Self vs Other prompts)
-│   │   ├── compare_pass_game_direction.py # Compare d_so with Pass Game choice
-│   │   ├── logit_lens_heatmap.py      # Visualization (Heatmaps)
-│   │   ├── prompt_utils.py            # Centralized prompt templates
-│   │   └── outputs/                   # Generated artifacts (.pt, .json, .png)
+│   │   ├── analyze_direction_similarity.py # Cosine similarity analysis
+│   │   ├── analyze_random_baseline.py  # Random vs special direction comparison
+│   │   ├── compare_pass_game_direction.py # Compare d_so with Pass Game
+│   │   ├── self_other_direction.py     # Compute d_so direction
+│   │   ├── logit_lens.py               # Project directions onto vocabulary
+│   │   ├── logit_lens_introspective.py # Logit lens sanity check
+│   │   ├── logit_lens_self_other_sanity.py # Self vs Other sanity check
+│   │   ├── logit_lens_heatmap.py       # Heatmap visualizations
+│   │   ├── prompt_utils.py             # Centralized prompt templates
+│   │   ├── run_random_baseline.sh      # ⭐ Random baseline workflow script
+│   │   ├── debug_token_pos.py          # Debug utility
+│   │   ├── plotting/                   # 📊 Visualization scripts (moved here)
+│   │   │   ├── plot_steering_main.py       # Main steering figure (Layer 35)
+│   │   │   ├── plot_steering_supplementary.py # Supplementary (Layers 50, 79)
+│   │   │   ├── plot_self_vs_other_specificity.py # Self vs Other figure
+│   │   │   ├── plot_self_vs_other_layer50.py # Layer 50 supplementary
+│   │   │   ├── plot_accuracy_vs_coverage.py # Accuracy vs Coverage figure
+│   │   │   ├── plot_random_baseline.py  # Random baseline comparison
+│   │   │   ├── plot_steering_curves.py  # Legacy steering curves
+│   │   │   ├── plot_pass_game_results.py # Pass game results
+│   │   │   ├── make_paper_plots.py      # Legacy paper plots
+│   │   │   ├── make_confidence_table.py # Confidence metrics table
+│   │   │   └── make_plots_pretty.py     # Plot styling utilities
+│   │   └── outputs/                    # Generated artifacts (102 files + plots/)
+
 │
 ├── Data Directories
 │   ├── compiled_results_smc/          # Phase 1 compiled data (SimpleMC)
@@ -104,6 +126,194 @@ spar_self_awareness/
    ├── tom/                           # Theory of Mind game (separate)
    └── scratch.ipynb                  # Exploratory notebook
 ```
+
+---
+
+## 📂 Output Files Reference (`interp/outputs/`)
+
+**Total:** 102 files across 7 categories.
+
+### Direction Vectors (`.pt` files)
+Pre-computed direction vectors for activation steering.
+
+| File Pattern | Description | Layers |
+|--------------|-------------|--------|
+| `confidence_direction_layer{L}.pt` | d_conf: High vs Low introspective confidence | 35, 50, 79 |
+| `pass_game_direction_layer{L}.pt` | d_pass: Answer vs Pass decisions | 35, 50, 79 |
+| `self_other_direction_layer{L}.pt` | d_so: Self vs Other prompts | 35, 50, 79 |
+| `random_direction_{0-9}_layer35.pt` | Random baseline vectors (10 total) | 35 |
+
+**Structure:** `torch.Tensor` of shape `(8192,)` — normalized unit vector in hidden space.
+
+---
+
+### Steering Results (`.json` files)
+Results from `steer_activations.py` with format: `steering_{task}_d_{direction}_layer{L}.json`
+
+| Task | Directions | Layers | Files |
+|------|------------|--------|-------|
+| `pass_game` | conf, pass, so, random_0-9 | 35, 50, 79 | 22 |
+| `simplemc_self` | conf, so, random_0-9 | 35, 50 | 14 |
+| `simplemc_other` | conf, so, random_0-9 | 35, 50 | 14 |
+
+**Structure (pass_game):**
+```json
+{
+  "config": { "task", "direction", "layer", "alphas", "model_id", "n_questions", "timestamp" },
+  "baseline": { "alpha": 0.0, "n_answer", "n_pass", "p_answer", "delta_p_answer" },
+  "results": [  // One per alpha value
+    { "alpha", "n_answer", "n_pass", "p_answer", "delta_p_answer" }
+  ]
+}
+```
+- `p_answer`: P(model chooses to answer) = n_answer / n_questions
+- `delta_p_answer`: Change from baseline (α=0)
+
+**Structure (simplemc_self/other):**
+```json
+{
+  "config": { ... },
+  "baseline": { "alpha": 0.0, "counts": {"A".."H"}, "mean_conf", "p_high" },
+  "results": [
+    { "alpha", "counts": {"A".."H"}, "mean_conf", "p_high" }
+  ]
+}
+```
+- `counts`: Letter distribution (A=0%, B=12.5%, ..., H=100% confidence)
+- `mean_conf`: Average confidence (0-1 scale)
+- `p_high`: P(high confidence) = P(letter ∈ {G, H})
+
+---
+
+### Ablation Results
+| File | Description |
+|------|-------------|
+| `ablation_pass_game_d_conf_layer35.json` | d_conf ablation on Pass Game |
+| `ablation_simplemc_self_d_conf_layer35.json` | d_conf ablation on Self confidence |
+| `ablation_simplemc_other_d_conf_layer35.json` | d_conf ablation on Other confidence |
+
+**Structure:**
+```json
+{
+  "config": { "task", "layer", "direction", "mode": "ablation", "model_id", "n_questions" },
+  "metrics": { ... } // Varies by task
+}
+```
+- **pass_game metrics:** `{ "n_answer", "n_pass", "p_answer" }`
+- **simplemc metrics:** `{ "counts": {"A".."H"}, "mean_conf", "p_high" }`
+
+
+---
+
+### Analysis Results
+| File | Description |
+|------|-------------|
+| `accuracy_vs_alpha_layer35.json` | Accuracy among answered vs passed questions |
+| `accuracy_vs_alpha_layer35_full.json` | Full per-question decisions (837KB) |
+| `direction_similarity_analysis.json` | Cosine similarities: d_conf, d_pass, d_so |
+| `random_baseline_stats.json` | Random vs special direction comparison |
+| `introspective_vs_self_other_sweep.json` | AUC by layer for d_conf and d_so |
+| `layer_sweep_results.json` | Layer-wise AUC for SAME vs DIFFERENT |
+| `pass_game_stats_*.json` | Pass game decision statistics (layer-specific) |
+| `pass_game_stats_*.json` | Pass game decision statistics (layer-specific) |
+| `pass_game_stats_all_layers*.json` | Consolidated stats (chat/nochat variants) |
+
+**Structure (accuracy_vs_alpha):**
+```json
+{
+  "baseline_accuracy": 0.456,
+  "results": [
+    { "alpha": -3.0, "coverage": 0.084, "accuracy_answered": 0.452, "accuracy_passed": 0.456 }
+  ]
+}
+```
+- `coverage`: Proportion of questions the model chose to answer.
+- `accuracy_answered`: Accuracy on the subset of answered questions.
+- `accuracy_passed`: Accuracy on the subset of passed questions (hypothetical).
+
+**Structure (pass_game_stats):**
+```json
+{
+  "layer": 35,
+  "d_so_auc_ans_vs_pass": 0.59,
+  "split_metrics": [  // 5-fold cross-validation
+    { "test_auc": 0.96, "train_auc": 1.0, "cos": 0.03 }
+  ],
+  "split_test_auc_mean": 0.915
+}
+```
+- Contains 5-fold CV results for training `d_pass`.
+- `pass_game_stats_all_layers.json` is a list `[]` containing this object for each layer.
+
+**Structure (plots/ directory):**
+Ten additional clean figures generated for the paper:
+- `ablation_impact_layer35.png`
+- `id_vs_coverage_layer35.png` (accuracy vs coverage)
+- `confidence_steering_curves_layer35.png`
+- `direction_similarity_heatmap.png`
+- `pass_game_layerwise_chat_nochat.png`
+- `random_baseline_clean.png`
+- ...and others (distributions, violins)
+
+**Structure (direction_similarity_analysis.json):**
+```json
+{
+  "layer": 35,
+  "norms": { "d_conf": 0.9998, "d_pass": 1.336, "d_so": 1.0002 },
+  "cosine_similarities": {
+    "d_conf_vs_d_pass": 0.2862,
+    "d_conf_vs_d_so": 0.3992,
+    "d_pass_vs_d_so": 0.0225
+  }
+}
+```
+
+**Structure (random_baseline_stats.json):**
+```json
+{
+  "pass_game": {
+    "random": { "n", "swing_mean", "swing_std", "swing_min", "swing_max", "max_dev_mean", "max_dev_max" },
+    "specials": { "d_conf": { "swing", "max_dev" }, "d_so": {...}, "d_pass": {...} }
+  },
+  "simplemc_self": { ... },
+  "simplemc_other": { ... }
+}
+```
+- `swing`: P(answer)@α=+3 minus P(answer)@α=-3 (how much steering changes behavior)
+- `max_dev`: Maximum deviation from baseline at any α
+
+**Structure (layer_sweep_results.json):**
+```json
+[ { "layer": 0, "auc": 0.52, "num_train_diff": 102, "num_test": 69 }, ... ]
+```
+- Array of 80 items (layers 0-79)
+- `auc`: Area under ROC curve for SAME vs DIFFERENT classification
+
+### Visualizations (`.png/.pdf` files)
+| File | Description |
+|------|-------------|
+| `steering_curves_pass_game.png/.pdf` | Main steering curves: d_conf, d_pass, d_so |
+| `random_baseline_comparison.png/.pdf` | d_conf vs random directions (primary) |
+| `random_baseline_all_tasks.png` | Steering curves for all 3 tasks |
+| `random_baseline_swing_comparison.png` | Bar chart of swing values |
+| `random_vs_dconf_distribution.png` | Scatter: 10 random swings vs d_conf |
+| `layer_sweep_plot.png` | AUC by layer |
+| `introspective_vs_self_other_plot.png` | d_conf vs d_so comparison |
+| `pass_game_auc_comparison.png` | AUC for different directions |
+| `logit_lens_heatmap_*.png` | 3 heatmaps for logit lens analysis |
+
+### Markdown Summaries
+| File | Description |
+|------|-------------|
+| `PASS_GAME_RESULTS.md` | Summary of Pass Game steering results |
+| `random_baseline_summary.md` | Random baseline analysis summary |
+
+### Logit Lens Outputs (`.txt` files)
+- `logit_lens_{direction}_layer{L}.txt`: Top 20 / Bottom 20 vocabulary tokens for the direction vector.
+- `introspective_logit_lens_layer{L}.txt`: Logit lens specifically for d_conf.
+
+### Sanity Checks (`.txt` files)
+- `sanity_check_{SELF|OTHER}_layer{L}.txt`: Logit lens applied to the *last token position* of 50 random Self/Other prompts to verify the model is attending to the right features.
 
 ---
 
@@ -447,22 +657,66 @@ capabilities_test.py
  - **Metric:** AUC (Area Under ROC Curve) on held-out test set.
 - **Result:** Peak AUC ~0.79 at Layers 70-73.
 
-#### **2. Direction Extraction (`interp/save_layer_directions.py`)**
+#### **2. Self-Other Direction Computation (`interp/self_other_direction.py`)**
+- **Goal:** Compute the Self-Other direction (`d_so`) that separates "Self" prompts from "Other" prompts.
+- **Method:**
+  1. Load SAME and DIFFERENT contrastive pairs (train/test split from CSVs).
+  2. For each pair, run the model on both `build_self_prompt()` and `build_other_prompt()`.
+  3. Extract hidden states at the last token position for specified layer.
+  4. Compute direction: `d_so = mean(h_self) - mean(h_other)` across DIFFERENT_train pairs.
+  5. Evaluate on held-out test set using AUC.
+- **Key Data Class:** `Pair(question_id, self_prompt, other_prompt, label)`
+- **Output:** Direction vector and AUC score.
+
+#### **3. Direction Extraction (`interp/save_layer_directions.py`)**
 - **Goal:** Save the direction vectors for the best layers.
 - **Action:** Computes `d_so` for Layers 35, 50, and 79 and saves to `.pt` files.
 - **Output:** `interp/outputs/self_other_direction_layerXX.pt`
 
-#### **3. Validation (`interp/analyze_introspective_extremes.py`)**
+#### **4. Random Baseline Generation (`interp/generate_random_directions.py`)**
+- **Goal:** Create random vectors for baseline comparison (null hypothesis testing).
+- **Method:**
+  1. Load reference direction (`d_conf`) to get hidden_dim (8192) and norm (~1.0).
+  2. Generate N random vectors from `torch.randn(hidden_dim)`.
+  3. Normalize each to unit length, then scale to match `d_conf` norm.
+  4. Use fixed seed (42) for reproducibility.
+- **Output:** `random_direction_{0-9}_layer35.pt` (10 vectors)
+- **Purpose:** Verify that d_conf is special—random directions should have near-zero steering effect.
+
+#### **5. Validation (`interp/analyze_introspective_extremes.py`)**
 - **Goal:** Compare "Self-Other" direction (`d_so`) with "Introspective Confidence" direction (`d_conf`).
 - **Method:**
  - `d_conf` = `mean(HighConfidence) - mean(LowConfidence)` (from "Opposite Extremes" dataset).
  - Compute Cosine Similarity(`d_so`, `d_conf`).
 - **Result:** High correlation (>0.90) in late layers, suggesting they are the same mechanism.
 
-#### **4. Visualization (`interp/logit_lens.py` & `heatmap`)**
+#### **6. Visualization (`interp/logit_lens.py` & `heatmap`)**
 - **Logit Lens:** Projects `d_so` onto vocabulary.
  - Layer 79 Top Tokens: "I", "my", "me", "Self".
 - **Heatmap:** Visualizes the activations of `d_so` across all layers for specific prompts.
+
+---
+
+### **Utilities & Analysis Scripts**
+
+#### **Random Baseline Analysis (`interp/analyze_random_baseline.py`)**
+- **Goal:** Quantify the strength of `d_conf` vs random directions.
+- **Method:**
+  - Loads steering results for `d_conf`, `d_so`, `d_pass`, and 10 random vectors.
+  - Computes **"Swing"**: `P(Answer|α=+3) - P(Answer|α=-3)` (Total behavioral range).
+  - Computes **"Max Deviation"**: Max abs diff from baseline at any α.
+- **Outputs:** `random_baseline_stats.json` (metrics) and `random_baseline_summary.md` (report).
+- **Workflow:** Orchestrated by `run_random_baseline.sh` (bash script to run steering + analysis).
+
+#### **Plotting Utilities**
+Scripts to generate NeurIPS-quality figures from JSON outputs:
+- `interp/plot_steering_curves.py`: Generates `steering_curves_pass_game.png` (Main Figure).
+- `interp/plot_random_baseline.py`: Generates `random_baseline_comparison.png` (Bar chart/Curves).
+- `interp/make_plots_pretty.py`: Shared styling (fonts, colors, sizes) for consistent aesthetics.
+
+#### **Debug & Sanity Tools**
+- `interp/debug_token_pos.py`: Verifies token indices for chat templates to ensure we steer the *last* token of the user prompt, not the system prompt.
+- `interp/compare_pass_game_direction.py`: Runs the validation logic for Pass Game (Layer 35 vs 50 vs 79) and emits `pass_game_stats_*.json`.
 
 ---
 
@@ -702,6 +956,35 @@ To verify the signal is not an artifact of instruction tuning, we ran the same e
 
 ---
 
+## 🎯 Steering Experiments: Task Overview
+
+**Which tasks are used for steering experiments?**
+
+| Task | Used for Steering? | What it Measures |
+|------|-------------------|------------------|
+| **Pass Game** | ✅ Yes | Answer vs Pass decision (binary) |
+| **SimpleMC Self** | ✅ Yes | Self-confidence rating (A-H scale) |
+| **SimpleMC Other** | ✅ Yes | Other-confidence rating (A-H scale) |
+| **Delegate Game** | ❌ No | Exists in codebase but NOT used for steering |
+
+**Data Flow:**
+
+```
+Contrastive Pairs (CSV)          Direction Extraction (GPU)           Steering (GPU)
+─────────────────────────────────────────────────────────────────────────────────────
+introspective_extremes_AB_train  →  d_conf (high/low self-confidence) → steer on all 3 tasks
+different_perspective_train      →  d_so (self/other perspective)     → steer on all 3 tasks
+pass_game activations            →  d_pass (answer/pass decision)     → steer on pass_game only
+random vectors                   →  random_0..9 (control)             → steer on all 3 tasks
+```
+
+**Why Delegate Game is NOT used:**
+- Delegate Game involves a teammate, complicating the causal intervention
+- Pass Game is a cleaner binary decision (Answer vs Pass) with no external actors
+- Pass Game directly tests "does the model know when it knows?"
+
+---
+
 ## 🎯 Phase 4: Causal Steering Results (NEW!)
 **Status:** Completed on A100 (Vast.ai)
 **Date:** 2025-12-09
@@ -915,7 +1198,43 @@ See `interp/outputs/random_baseline_comparison.png` for the bar chart comparison
 
 ---
 
-## 🚀 Next Steps (Updated)
+## � Train-Test Contamination Analysis (NEW!)
+
+**Problem:** The 30 questions used to train `d_conf` overlap with the 500 test questions.
+
+| Direction | Training Questions | Overlap with Test 500 |
+|-----------|-------------------|----------------------|
+| **d_conf** | 30 (introspective extremes) | **30 (100%)** ⚠️ |
+| **d_so** | 102 (different perspective) | **102 (100%)** ⚠️ |
+| **d_pass** | Model's own choices | N/A — task-specific by design |
+| **Random** | None | None ✓ |
+
+### Clean 470 Experiment
+
+Re-ran steering on **470 questions** (excluding the 30 contaminated ones).
+
+**Script:** `interp/steer_clean_470.py`
+
+**Results:**
+
+| α | Clean 470 | Original 500 | Δ |
+|---|-----------|--------------|---|
+| -3.0 | 7.2% | 8.4% | -1.2pp |
+| -2.0 | 20.2% | 21.0% | -0.8pp |
+| -1.0 | 38.7% | 39.2% | -0.5pp |
+| 0.0 | 54.0% | 54.4% | -0.4pp |
+| +3.0 | 89.1% | 89.8% | -0.7pp |
+
+> [!TIP]
+> **Contamination did NOT inflate the steering effect.**
+>
+> Clean 470 tracks original 500 within <1.5pp at all α values. The 30 overlapping questions were not special.
+
+**Documentation:** See `interp/TRAIN_TEST_CONTAMINATION.md` for full analysis.
+
+---
+
+## �🚀 Next Steps (Updated)
 
 1. ✅ **Causal Steering (Pass Game):** COMPLETED - d_conf causally controls Answer/Pass behavior
 2. ✅ **Layer 79 Steering:** COMPLETED - confirms d_conf effect is localized to early layers
@@ -924,7 +1243,8 @@ See `interp/outputs/random_baseline_comparison.png` for the bar chart comparison
 5. ✅ **Ablation Experiment:** COMPLETED - d_conf is sufficient but not necessary (redundancy)
 6. ✅ **Accuracy vs α Analysis:** COMPLETED - d_conf is a threshold knob, not overconfidence
 7. ✅ **Random Direction Baseline:** COMPLETED - d_conf is 8.1× stronger than random vectors
-8. 📝 **Publication:** Draft ICML paper with these breakthrough results
+8. ✅ **Contamination Analysis:** COMPLETED - Clean 470 validates results (no inflation from overlap)
+9. 📝 **Publication:** Draft NeurIPS paper with these breakthrough results
 
 ---
 
@@ -945,3 +1265,41 @@ See `interp/outputs/random_baseline_comparison.png` for the bar chart comparison
 *Generated: 2025-12-11 | Updated with random baseline results*
 
 *End of Comprehensive Analysis*
+
+---
+
+## 📦 Appendix: Notable Scripts & Artifacts (Interpretability)
+
+This appendix lists commonly used interpretability scripts and outputs (excluding the `plots/` folder) so all assets are accounted for.
+
+**Random baselines**
+- `interp/generate_random_directions.py` — create matched-norm random vectors against `d_conf`.
+- `interp/run_random_baseline.sh` — run random steering for pass_game/simplemc_self/simplemc_other, then analyze.
+- `interp/analyze_random_baseline.py` — summarizes swing/max-dev vs random; outputs `random_baseline_stats.json`, `random_baseline_summary.md`.
+- `interp/plot_random_baseline.py` — helper to render baseline comparisons (older figures kept in `interp/outputs/`).
+
+**Direction similarity & diagnostics**
+- `interp/analyze_direction_similarity.py` — norms/cosines among `d_conf`, `d_so`, `d_pass`; output: `direction_similarity_analysis.json`.
+- `interp/debug_token_pos.py` — chat-template/token position sanity check.
+- Plot utilities: `interp/make_plots_pretty.py`, `interp/plot_pass_game_results.py`, `interp/plot_steering_curves.py` (render NeurIPS-style figures from saved JSONs).
+
+**Accuracy vs steering**
+- `interp/steer_accuracy_analysis.py` — pass_game accuracy vs coverage under steering (d_conf); outputs `accuracy_vs_alpha_layer35.json` (+ `_full.json` with per-question decisions).
+
+**Pass-game stats**
+- `interp/outputs/pass_game_stats_all_layers_chat.json` and `_nochat.json` — per-layer AUC/cosine for d_conf/d_so/d_pass (plus layer-specific stats files).
+- `PASS_GAME_RESULTS.md` — tabular summary (chat/no-chat) for layers 35/50/79.
+
+**Direction files**
+- `confidence_direction_layer{35,50,79}.pt`, `self_other_direction_layer{35,50,79}.pt`, `pass_game_direction_layer{35,50,79}.pt` — saved unit directions for reuse (steering, logit-lens).
+
+**Sanity/logit-lens dumps**
+- `sanity_check_SELF/OTHER_layer*.txt` — averaged logit-lens token lists for Self vs Other prompts.
+- `logit_lens_self_other_direction_layer*.txt`, `introspective_logit_lens_layer*.txt`, `logit_lens_confidence_direction_layer*.txt` — top/bottom tokens for key directions.
+
+**Steering runs**
+- `steering_pass_game_d_{conf,so,pass,random_*}_layer*.json` — pass_game steering outputs (coverage over alphas).
+- `steering_simplemc_self_d_{conf,so,random_*}_layer*.json`, `steering_simplemc_other_d_{conf,so,random_*}_layer*.json` — Self/Other confidence steering outputs (mean_conf, P(high)).
+
+**Random-baseline visuals (legacy, kept in outputs/)**
+- `random_baseline_all_tasks.png`, `random_baseline_comparison.{png,pdf}`, `random_baseline_swing_comparison.png`, `random_vs_dconf_distribution.png` — older random-baseline figures (superseded by cleaned plots).
