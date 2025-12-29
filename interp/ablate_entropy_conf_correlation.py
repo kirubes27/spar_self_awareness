@@ -111,12 +111,38 @@ def load_questions(
     with open(COMPILED_JSON) as f:
         compiled_data = json.load(f)
 
+    def format_mcq(q_data: dict) -> str:
+        """Format MCQ with options so entropy and confidence are comparable."""
+        q_stem = (q_data.get("question") or "").strip()
+        opts = q_data.get("options")
+
+        if not q_stem:
+            return ""
+
+        # Handle dict options: {'A': 'answer1', 'B': 'answer2', ...}
+        if isinstance(opts, dict) and opts:
+            lines = [q_stem, ""]
+            for k in ["A", "B", "C", "D"]:
+                if k in opts:
+                    lines.append(f"{k}) {opts[k]}")
+            return "\n".join(lines).strip()
+
+        # Handle list options: ['answer1', 'answer2', ...]
+        if isinstance(opts, list) and len(opts) >= 2:
+            lines = [q_stem, ""]
+            for k, opt in zip(["A", "B", "C", "D"], opts[:4]):
+                lines.append(f"{k}) {opt}")
+            return "\n".join(lines).strip()
+
+        # Fallback: just the question stem
+        return q_stem
+
     # Build question text map from compiled results
     q_text_map = {}
     for qid, res in compiled_data.get("results", {}).items():
         q_data = res.get("question", {})
         if isinstance(q_data, dict):
-            q_text = q_data.get("question", "")
+            q_text = format_mcq(q_data)
         else:
             q_text = ""
         if q_text:
