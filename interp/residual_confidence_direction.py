@@ -173,28 +173,24 @@ def extract_hidden_state(
 
 # --------- Metrics ---------
 def compute_auc_manual(scores_high: torch.Tensor, scores_low: torch.Tensor) -> float:
-    """Compute AUC using Mann-Whitney U statistic (rank-based, no sklearn)."""
+    """Compute AUC using Mann-Whitney U statistic (rank-based, no sklearn).
+
+    AUC = P(score_high > score_low) for random pair.
+    """
     n_high = len(scores_high)
     n_low = len(scores_low)
 
-    # Concatenate and get ranks
-    all_scores = torch.cat([scores_high, scores_low])
-    labels = torch.cat([torch.ones(n_high), torch.zeros(n_low)])
+    # Count how many (high, low) pairs where high > low
+    count = 0
+    for s_h in scores_high:
+        for s_l in scores_low:
+            if s_h > s_l:
+                count += 1
+            elif s_h == s_l:
+                count += 0.5
 
-    # Sort by scores
-    sorted_indices = torch.argsort(all_scores, descending=True)
-    sorted_labels = labels[sorted_indices]
-
-    # Compute AUC via rank sum
-    ranks = torch.arange(1, len(all_scores) + 1, dtype=torch.float32)
-    high_mask = sorted_labels == 1
-    rank_sum_high = ranks[high_mask].sum()
-
-    # U statistic
-    u_high = rank_sum_high - n_high * (n_high + 1) / 2
-    auc = u_high / (n_high * n_low)
-
-    return auc.item()
+    auc = count / (n_high * n_low)
+    return auc
 
 
 def compute_cohens_d(scores_high: torch.Tensor, scores_low: torch.Tensor) -> float:
