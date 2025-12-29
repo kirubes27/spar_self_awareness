@@ -317,7 +317,13 @@ def main():
     # 6. Compute residual direction
     d_res = H_high_perp.mean(dim=0) - H_low_perp.mean(dim=0)
     d_res_norm = d_res.norm().item()
-    d_res_unit = d_res / d_res.norm()
+
+    # Guard against tiny residual (would cause NaN)
+    if d_res_norm < 1e-8:
+        print("\n⚠ Residual norm ~0 — confidence is essentially 1D along d_conf")
+        d_res_unit = torch.zeros_like(d_res)
+    else:
+        d_res_unit = d_res / d_res.norm()
 
     print(f"\n||d_res|| (before normalization): {d_res_norm:.4f}")
 
