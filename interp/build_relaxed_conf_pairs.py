@@ -98,10 +98,11 @@ def get_question_text(qid: str, compiled_data: dict) -> str:
 
 
 # --------- COUNT MODE ---------
-def run_count_mode(df: pd.DataFrame, self_col: str, entropy_col: str):
-    """Print counts for threshold grid."""
+def run_count_mode(df: pd.DataFrame, self_col: str, entropy_col: str, qid_col: str, excluded_qids: set):
+    """Print counts for threshold grid (accounting for exclusions)."""
     print("\n" + "=" * 60)
     print("COUNT MODE: Threshold Grid")
+    print(f"Excluded QIDs: {len(excluded_qids)}")
     print("=" * 60)
 
     self_thresholds = [0.85, 0.80, 0.75, 0.70]
@@ -118,14 +119,20 @@ def run_count_mode(df: pd.DataFrame, self_col: str, entropy_col: str):
             high_mask = (df[self_col] >= self_hi) & (df[entropy_col] <= q_low)
             low_mask = (df[self_col] <= (1 - self_hi)) & (df[entropy_col] >= q_high)
 
-            n_high = high_mask.sum()
-            n_low = low_mask.sum()
+            # Apply exclusions
+            high_df = df[high_mask]
+            low_df = df[low_mask]
+            high_df = high_df[~high_df[qid_col].astype(str).isin(excluded_qids)]
+            low_df = low_df[~low_df[qid_col].astype(str).isin(excluded_qids)]
+
+            n_high = len(high_df)
+            n_low = len(low_df)
             n_pairs = min(n_high, n_low)
 
             marker = "✓" if n_pairs >= 30 else ""
             print(f"{self_hi:<10} {ent_q:<10} {n_high:<10} {n_low:<10} {n_pairs:<10} {marker}")
 
-    print("\n✓ = n_pairs >= 30 (recommended)\n")
+    print("\n✓ = n_pairs >= 30 (recommended, after exclusions)\n")
 
 
 # --------- BUILD PAIRS ---------
@@ -307,6 +314,14 @@ def extract_directions(
             H_A_list.append(h_a)
             H_B_list.append(h_b)
 
+        # Check we have enough valid pairs
+        K_valid = len(H_A_list)
+        if K_valid < 5:
+            raise ValueError(f"Too few valid pairs with text: {K_valid}. Need at least 5.")
+
+        if K_valid < K:
+            print(f"Warning: Only {K_valid}/{K} pairs had valid text")
+
         H_A = torch.stack(H_A_list).float().cpu()
         H_B = torch.stack(H_B_list).float().cpu()
 
@@ -314,6 +329,11 @@ def extract_directions(
         D = H_A - H_B
         d_vec = D.mean(dim=0)
         d_norm = d_vec.norm().item()
+
+        # Guard against zero norm
+        if d_norm < 1e-8:
+            raise ValueError(f"Direction norm is ~0 ({d_norm}). Cannot normalize.")
+
         d_unit = d_vec / d_vec.norm()
 
         print(f"||d_vec||: {d_norm:.4f}")
@@ -323,17 +343,24 @@ def extract_directions(
         half = n // 2
         d_half1 = D[:half].mean(dim=0)
         d_half2 = D[half:].mean(dim=0)
-        d_half1_unit = d_half1 / d_half1.norm()
-        d_half2_unit = d_half2 / d_half2.norm()
-        split_cos = (d_half1_unit @ d_half2_unit).item()
+
+        # Guard split-half norms
+        if d_half1.norm() < 1e-8 or d_half2.norm() < 1e-8:
+            split_cos = 0.0
+            print("Warning: Split-half norm ~0, setting split_cos=0")
+        else:
+            d_half1_unit = d_half1 / d_half1.norm()
+            d_half2_unit = d_half2 / d_half2.norm()
+            split_cos = (d_half1_unit @ d_half2_unit).item()
         print(f"Split-half cosine: {split_cos:.4f}")
 
-        # Save
-        out_path = out_dir / f"confidence_direction_layer{layer}_relaxed_S{self_hi}_E{ent_q}_N{K}.pt"
+        # Save (use K_valid in filename)
+        out_path = out_dir / f"confidence_direction_layer{layer}_relaxed_S{self_hi}_E{ent_q}_N{K_valid}.pt"
         torch.save({
             "direction": d_unit,
             "layer": layer,
-            "K": K,
+            "K": K_valid,
+            "K_original": K,
             "self_hi": self_hi,
             "ent_q": ent_q,
             "seed": seed,
@@ -388,14 +415,16 @@ def main():
         if col not in df.columns:
             raise ValueError(f"Column not found: {col}")
 
-    # Count-only mode
-    if args.count_only:
-        run_count_mode(df, args.self_col, args.entropy_col)
-        return
-
-    # Load excluded QIDs
+    # Load excluded QIDs (needed for count-only too)
     excluded_qids = load_excluded_qids(Path(args.exclude_pairs_csv))
     print(f"Excluded QIDs: {len(excluded_qids)}")
+
+    # Count-only mode
+    if args.count_only:
+        run_count_mode(df, args.self_col, args.entropy_col, qid_col, excluded_qids)
+        return
+
+    # excluded_qids already loaded above
 
     # Build pairs
     pairs_df, meta = build_pairs(
