@@ -354,6 +354,22 @@ def extract_directions(
             split_cos = (d_half1_unit @ d_half2_unit).item()
         print(f"Split-half cosine: {split_cos:.4f}")
 
+        # Compare with original d_conf
+        original_path = out_dir / f"confidence_direction_layer{layer}.pt"
+        cos_with_original = None
+        if original_path.exists():
+            orig_data = torch.load(original_path, map_location="cpu", weights_only=False)
+            if isinstance(orig_data, dict) and "direction" in orig_data:
+                d_orig = orig_data["direction"].view(-1).float()
+            elif isinstance(orig_data, torch.Tensor):
+                d_orig = orig_data.view(-1).float()
+            else:
+                d_orig = None
+
+            if d_orig is not None:
+                cos_with_original = (d_unit.cpu().float() @ d_orig).item() / (d_unit.norm().item() * d_orig.norm().item())
+                print(f"cos(d_relaxed, d_original): {cos_with_original:.4f}")
+
         # Save (use K_valid in filename)
         out_path = out_dir / f"confidence_direction_layer{layer}_relaxed_S{self_hi}_E{ent_q}_N{K_valid}.pt"
         torch.save({
@@ -366,6 +382,7 @@ def extract_directions(
             "seed": seed,
             "norm": d_norm,
             "split_half_cos": split_cos,
+            "cos_with_original": cos_with_original,
             "timestamp": datetime.now().isoformat(),
         }, out_path)
         print(f"Saved: {out_path}")
