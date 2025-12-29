@@ -310,6 +310,31 @@ def main():
 
     print("=" * 60)
 
+    # Save JSON output
+    from datetime import datetime
+
+    # Build output filename based on pairs CSV
+    pairs_csv_name = Path(args.pairs_csv).stem
+    out_json = DIRECTION_DIR / f"pca_results_{pairs_csv_name}_layer{args.layer}.json"
+
+    results = {
+        "config": {
+            "layer": args.layer,
+            "k": args.k,
+            "n_pairs": len(pairs),
+            "pairs_csv": str(args.pairs_csv),
+            "timestamp": datetime.now().isoformat(),
+        },
+        "variance_explained": [float(v) for v in var_explained],
+        "cumulative_variance": float(cumulative),
+        "cos_pc1_dconf": float(cos_pc1_dconf) if cos_pc1_dconf is not None else None,
+        "cos_pc2_dconf": float(cos_pc2_dconf) if cos_pc2_dconf is not None else None,
+    }
+
+    with open(out_json, "w") as f:
+        json.dump(results, f, indent=2)
+    print(f"\nSaved results to: {out_json}")
+
 
 if __name__ == "__main__":
     main()
