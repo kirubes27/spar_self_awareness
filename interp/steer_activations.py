@@ -70,6 +70,8 @@ def get_direction_path(direction_name: str, layer_idx: int) -> Path:
         return DIRECTION_DIR / f"random_direction_{idx}_layer35.pt"
     elif direction_name == "conf":
         return DIRECTION_DIR / f"confidence_direction_layer{layer_idx}.pt"
+    elif direction_name == "conf_bad":
+        return DIRECTION_DIR / f"d_conf_bad_layer{layer_idx}.pt"
     elif direction_name == "pass":
         return DIRECTION_DIR / f"pass_game_direction_layer{layer_idx}.pt"
     elif direction_name == "so":
@@ -121,8 +123,18 @@ def load_model_and_tokenizer(model_id: str) -> Tuple[AutoTokenizer, AutoModelFor
 
 
 # --------- Data Loading ---------
-def load_questions(n: Optional[int] = None) -> List[Dict]:
-    """Load questions from unified CSV and compiled JSON."""
+def load_questions(
+    n: Optional[int] = None,
+    only_qids: Optional[List[str]] = None,
+    exclude_qids: Optional[List[str]] = None,
+) -> List[Dict]:
+    """Load questions from unified CSV and compiled JSON.
+
+    Args:
+        n: Maximum number of questions to load.
+        only_qids: If provided, only include questions with these QIDs.
+        exclude_qids: If provided, exclude questions with these QIDs.
+    """
     print(f"Loading questions from {INPUT_CSV}...")
     df = pd.read_csv(INPUT_CSV)
 
@@ -151,6 +163,20 @@ def load_questions(n: Optional[int] = None) -> List[Dict]:
                     "options": q_map[qid]["options"],
                 }
             )
+
+    initial_count = len(questions)
+
+    # Apply QID filters
+    if only_qids is not None:
+        only_qids_set = set(only_qids)
+        questions = [q for q in questions if q["question_id"] in only_qids_set]
+        print(f"  After --only-qids filter: {len(questions)} (was {initial_count})")
+
+    if exclude_qids is not None:
+        exclude_qids_set = set(exclude_qids)
+        before_exclude = len(questions)
+        questions = [q for q in questions if q["question_id"] not in exclude_qids_set]
+        print(f"  After --exclude-qids filter: {len(questions)} (was {before_exclude})")
 
     if n is not None and len(questions) > n:
         questions = questions[:n]
@@ -299,11 +325,15 @@ def run_steering_experiment(
     use_chat_template: bool,
     output_dir: Path,
     model_id: str,
+    direction_path_override: Optional[Path] = None,
 ) -> Dict:
     """Run steering experiment for one (task, direction, layer) combination."""
 
     # Load direction
-    direction_path = get_direction_path(direction_name, layer_idx)
+    if direction_path_override is not None:
+        direction_path = direction_path_override
+    else:
+        direction_path = get_direction_path(direction_name, layer_idx)
     direction_vec = load_direction(direction_path, model.device)
     print(f"Loaded direction from {direction_path} (shape: {direction_vec.shape})")
 
@@ -448,6 +478,24 @@ def main():
         default=str(OUTPUT_DIR),
         help=f"Output directory (default: {OUTPUT_DIR})",
     )
+    parser.add_argument(
+        "--direction-path",
+        type=str,
+        default=None,
+        help="Path to direction .pt file. If provided, overrides --directions.",
+    )
+    parser.add_argument(
+        "--only-qids",
+        type=str,
+        default=None,
+        help="Path to JSON file with list of QIDs to include (filter to only these).",
+    )
+    parser.add_argument(
+        "--exclude-qids",
+        type=str,
+        default=None,
+        help="Path to JSON file with list of QIDs to exclude.",
+    )
     args = parser.parse_args()
 
     # Handle chat template flag
@@ -456,14 +504,39 @@ def main():
     output_dir = Path(args.output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Load QID filter lists if provided
+    only_qids = None
+    if args.only_qids:
+        with open(args.only_qids) as f:
+            only_qids = json.load(f)
+        print(f"Loaded {len(only_qids)} QIDs from --only-qids: {args.only_qids}")
+
+    exclude_qids = None
+    if args.exclude_qids:
+        with open(args.exclude_qids) as f:
+            exclude_qids = json.load(f)
+        print(f"Loaded {len(exclude_qids)} QIDs from --exclude-qids: {args.exclude_qids}")
+
+    # Determine directions to run
+    if args.direction_path:
+        # Use custom path, create a placeholder direction name
+        directions_to_run = ["custom"]
+        direction_path_override = Path(args.direction_path)
+        print(f"Using custom direction path: {direction_path_override}")
+    else:
+        directions_to_run = args.directions
+        direction_path_override = None
+
     print("=" * 60)
     print("ACTIVATION STEERING EXPERIMENT")
     print("=" * 60)
     print(f"Task: {args.task}")
-    print(f"Directions: {args.directions}")
+    print(f"Directions: {directions_to_run}")
     print(f"Layers: {args.layers}")
     print(f"Alphas: {args.alphas}")
     print(f"N questions: {args.n or 'all'}")
+    print(f"Only QIDs: {args.only_qids or 'none'}")
+    print(f"Exclude QIDs: {args.exclude_qids or 'none'}")
     print(f"Model: {args.model_id}")
     print(f"Chat template: {use_chat_template}")
     print(f"Output dir: {output_dir}")
@@ -471,10 +544,10 @@ def main():
 
     # Load model and data
     tokenizer, model = load_model_and_tokenizer(args.model_id)
-    questions = load_questions(args.n)
+    questions = load_questions(args.n, only_qids=only_qids, exclude_qids=exclude_qids)
 
     # Run experiments
-    for direction in args.directions:
+    for direction in directions_to_run:
         for layer in args.layers:
             print(f"\n{'='*60}")
             print(f"Running: task={args.task}, direction={direction}, layer={layer}")
@@ -492,6 +565,7 @@ def main():
                     use_chat_template=use_chat_template,
                     output_dir=output_dir,
                     model_id=args.model_id,
+                    direction_path_override=direction_path_override,
                 )
             except Exception as e:
                 print(f"ERROR: {e}")
